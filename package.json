@@ -1,0 +1,35 @@
+{
+    "name": "bedrock",
+    "version": "0.0.1",
+    "description": "Bedrock - React Component Library",
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "./node_modules/.bin/webpack && cp src/index.html dist/index.html",
+        "start": "./node_modules/.bin/webpack-dev-server --port 9000 --open --hot --inline --content-base src",
+        "styleguide": "styleguidist server",
+        "styleguide:build": "styleguidist build"
+    },
+    "author": {
+        "name": "Sandeep Gupta",
+        "email": "sandy.pec@gmail.com",
+        "url": "https://sangupta.com"
+    },
+    "license": "Apache-2.0",
+    "dependencies": {
+        "@types/react": "^16.8.19",
+        "@types/react-dom": "^16.8.4",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6"
+    },
+    "devDependencies": {
+        "awesome-typescript-loader": "^5.2.1",
+        "css-loader": "^2.1.1",
+        "react-docgen-typescript": "^1.12.4",
+        "react-styleguidist": "^9.1.5",
+        "source-map-loader": "^0.2.4",
+        "style-loader": "^0.23.1",
+        "typescript": "^3.5.1",
+        "webpack": "^4.33.0",
+        "webpack-dev-server": "^3.7.1"
+    }
+}
