@@ -2,8 +2,8 @@ Used to vertically align all children.
 
 ```js
 <VBox>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <div class='bedrock-docs-block'>1</div>
+    <div class='bedrock-docs-block'>2</div>
+    <div class='bedrock-docs-block'>3</div>
 </VBox>
 ```
