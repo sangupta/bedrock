@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Variant } from 'Bedrock';
 
 interface ButtonProps {
-    variant?: Variant;
+    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
     size?: string;
     icon?: string;
     title?: string;

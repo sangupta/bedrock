@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Variant } from 'Bedrock';
 
 interface AlertProps {
     className?: string;
-    variant?: Variant;
+    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
     isOpen?: boolean;
 }
 

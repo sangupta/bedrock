@@ -9,6 +9,8 @@ module.exports = {
     propsParser: require( "react-docgen-typescript" ).parse,
     webpackConfig: Object.assign( {}, require( "./webpack.config" ), {} ),
     styleguideDir: "docs",
+    exampleMode: 'expand',
+    usageMode: 'expand',
     template : {
         head : {
             links : [

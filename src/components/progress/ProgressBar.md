@@ -5,8 +5,10 @@ To display progress of an operation.
 ```
 
 ```js
-<ProgressBar value={50} variant='primary' />
-<ProgressBar value={50} variant='info' />
-<ProgressBar value={50} variant='warning' />
-<ProgressBar value={50} variant='danger' />
+<div class='bedrock-docs-bar'>
+    <ProgressBar value={50} variant='primary' />
+    <ProgressBar value={50} variant='info' />
+    <ProgressBar value={50} variant='warning' />
+    <ProgressBar value={50} variant='danger' />
+</div>
 ```

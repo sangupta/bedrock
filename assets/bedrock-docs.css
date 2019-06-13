@@ -1,5 +1,9 @@
-.bedrock-docs-btn-bar .btn {
-    margin: 5px;
+.bedrock-docs-bar span, 
+.bedrock-docs-bar .btn, 
+.bedrock-docs-bar .progress, 
+.bedrock-docs-bar .spinner-grow,
+.bedrock-docs-bar .spinner-border {
+    margin: 10px 5px;
 }
 .bedrock-docs-block {
     width: 100px;

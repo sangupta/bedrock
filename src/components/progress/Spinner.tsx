@@ -7,10 +7,13 @@ interface SpinnerProps {
 
 export default class Spinner extends React.Component<SpinnerProps, any> {
 
+    static defaultProps = {
+        variant : 'primary',
+        type : 'border'
+    }
+
     render() {
-        let variant = this.props.variant || 'primary';
-        let type = this.props.type || 'border'
-        return <div className={'spinner-' + type + ' text-' + variant} role="status">
+        return <div className={'spinner-' + this.props.type + ' text-' + this.props.variant} role="status">
             <span className="sr-only">Loading...</span>
         </div>;
     }

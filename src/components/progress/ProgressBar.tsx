@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Variant } from 'Bedrock';
 
 interface ProgressBarProps {
     /**
@@ -25,7 +24,7 @@ interface ProgressBarProps {
     /**
      * Color styling variant for the component.
      */
-    variant?: Variant;
+    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
 
     /**
      * Whether to display a striped progress bar.
@@ -50,19 +49,18 @@ export default class ProgressBar extends React.Component<ProgressBarProps, any> 
     }
 
     render() {
-        const max = this.props.max || 100;
-        const min = this.props.min || 0;
-        const value = this.props.value || 0;
-        const variant = this.props.variant || 'primary';
-
-        let percent: number = ((value - min) * 100 / (max - min));
+        let percent: number = ((this.props.value - this.props.min) * 100 / (this.props.max - this.props.min));
         if (percent < 0) {
             percent = 0;
         }
         const width = '' + percent.toFixed(0) + '%';
 
         return <div className='progress'>
-            <div className={'progress-bar bg-' + variant} role="progressbar" style={{ width: width }} aria-valuenow={value} aria-valuemin={min} aria-valuemax={max}></div>
+            <div className={'progress-bar bg-' + this.props.variant} 
+                 role="progressbar" style={{ width: width }} 
+                 aria-valuenow={this.props.value} 
+                 aria-valuemin={this.props.min} 
+                 aria-valuemax={this.props.max}></div>
         </div>;
     }
 
