@@ -1,7 +1,8 @@
 import * as React from 'react';
+import { Variant } from 'Bedrock';
 
 interface ButtonProps {
-    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+    variant?: Variant;
     size?: string;
     icon?: string;
     title?: string;
@@ -9,6 +10,10 @@ interface ButtonProps {
 }
 
 export default class Button extends React.Component<ButtonProps, any> {
+
+    static defaultProps = {
+        variant: 'primary'
+    }
 
     render() {
         let classes: string = 'btn';
