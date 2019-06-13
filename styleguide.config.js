@@ -37,6 +37,10 @@ module.exports = {
                 },
                 {
                     rel : 'stylesheet',
+                    href : './assets/bedrock.css'
+                },
+                {
+                    rel : 'stylesheet',
                     href : './assets/bedrock-docs.css'
                 }
             ]
