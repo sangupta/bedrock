@@ -10,3 +10,9 @@ Provide contextual feedback messages for typical user actions with the handful o
 <Alert variant='light'>A simple light alert.</Alert>
 <Alert variant='dark'>A simple dark alert.</Alert>
 ```
+
+Alerts can also be set to show a cross-button to dismiss them.
+
+```js
+<Alert closeable={true} onClose={() => alert('alert dismissed') }>A dismissable alert.</Alert>
+```

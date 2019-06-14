@@ -1,24 +1,79 @@
 import * as React from 'react';
+import BedrockUtils from './../../BedrockUtils';
 
 interface AlertProps {
+    /**
+     * CSS classes to be applied to the element
+     */
     className?: string;
+
+    /**
+     * Element styling to be applied
+     */
     variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
-    isOpen?: boolean;
+
+    /**
+     * Is the alert open or hidden?
+     */
+    closed?: boolean;
+
+    /**
+     * Should the alert show the cross button to allow self-close. Note that
+     * this does not remove the component from React tree, only hides the
+     * content rendering. An event `onClose` is raised that the parent container
+     * should catch and remove the element from the React tree.
+     */
+    closeable?: boolean;
+
+    /**
+     * Function called when the alert is closed via the `closeable` prop.
+     */
+    onClose?: Function;
 }
 
-export default class Alert extends React.Component<AlertProps, any> {
+interface AlertState {
+    closed: boolean
+}
+
+export default class Alert extends React.Component<AlertProps, AlertState> {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            closed: this.props.closed
+        }
+    }
 
     static defaultProps = {
-        isOpen: true
+        variant: 'primary',
+        closed: false,
+        closeable: false
+    }
+
+    closeAlert = () => {
+        this.setState({ closed: true });
+        BedrockUtils.invoke(this.props.onClose);
+    }
+
+    getCrossButton = () => {
+        if (!this.props.closeable) {
+            return null;
+        }
+
+        return <button type="button" className="close" aria-label="Close" onClick={this.closeAlert}>
+            <span aria-hidden="true">&times;</span>
+        </button>;
     }
 
     render() {
-        if (!this.props.isOpen) {
+        if (this.state.closed) {
             return null;
         }
 
         return <div className={'alert alert-' + this.props.variant} role="alert">
             {this.props.children}
+            {this.getCrossButton()}
         </div>;
     }
 
