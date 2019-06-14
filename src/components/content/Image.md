@@ -1,5 +1,3 @@
-Used to display images.
-
 ```js
 <div class='bedrock-docs-bar'>
     <Image src='https://via.placeholder.com/150' />
