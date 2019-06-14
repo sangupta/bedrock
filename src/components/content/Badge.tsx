@@ -1,6 +1,14 @@
 import * as React from 'react';
 
 interface BadgeProps {
+    /**
+     * Custom CSS classes to be applied to the element
+     */
+    className?: string;
+
+    /**
+     * Element styling to be applied
+     */
     variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
 }
 

@@ -28,7 +28,7 @@ interface BadgeButtonProps {
     className?: string;
 
     /**
-     * Type of badge that needs to be rendered
+     * Element styling to be applied
      */
     variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
 }

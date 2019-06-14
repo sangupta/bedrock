@@ -1,10 +1,34 @@
 import * as React from 'react';
 
 interface ButtonProps {
+    /**
+     * Custom CSS classes to be applied to the element
+     */
+    className?: string;
+
+    /**
+     * Element styling to be applied
+     */
     variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+
+    /**
+     * Size of the button
+     */
     size?: string;
+
+    /**
+     * Icon to show inside the button
+     */
     icon?: string;
+
+    /**
+     * Text label to display on the button
+     */
     title?: string;
+
+    /**
+     * Handler to be invoked when button is clicked
+     */
     onClick?: React.MouseEventHandler;
 }
 
