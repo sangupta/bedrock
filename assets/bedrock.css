@@ -3,3 +3,10 @@
     height: 50px;
     display: table-cell;
 }
+.indicator-dot {
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+    display: inline-block;
+    margin-right: 4px;
+}
