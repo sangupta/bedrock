@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface ProgressBarProps {
+interface ProgressBarProps extends BaseProps {
     /**
      * The minimum value to use when computing percentage progress.
      */

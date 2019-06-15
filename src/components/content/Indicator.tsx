@@ -1,15 +1,11 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface IndicatorProps {
+interface IndicatorProps extends BaseProps {
     /**
      * Text label to be displayed along side the indicator
      */
     label?: string;
-
-    /**
-     * Custom CSS classes to be applied to the element
-     */
-    className?: string;
 
     /**
      * Element styling to be applied

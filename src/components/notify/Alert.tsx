@@ -1,12 +1,8 @@
 import * as React from 'react';
 import BedrockUtils from './../../BedrockUtils';
+import { BaseProps } from './../../BedrockUtils';
 
-interface AlertProps {
-    /**
-     * CSS classes to be applied to the element
-     */
-    className?: string;
-
+interface AlertProps extends BaseProps {
     /**
      * Element styling to be applied
      */

@@ -1,11 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface JumbotronProps {
-    /**
-     * Custom CSS classes to be applied to the element
-     */
-    className?: string;
-
+interface JumbotronProps extends BaseProps{
     /**
      * Use full-width for the jumbotron without rounded corners.
      */
@@ -26,7 +22,7 @@ export default class Jumbotron extends React.Component<JumbotronProps, any> {
         if(this.props.className) {
             clazz = this.props.className + ' ' + clazz;
         }
-        
+
         return <div className={clazz}>
             {this.props.children}
         </div>;

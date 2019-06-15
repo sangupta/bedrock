@@ -1,7 +1,8 @@
 import * as React from 'react';
 import Image from './../content/Image';
+import { BaseProps } from './../../BedrockUtils';
 
-interface GravatarProps {
+interface GravatarProps extends BaseProps {
     /**
      * The email address for which gravatar needs to be shown.
      */

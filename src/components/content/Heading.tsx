@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface HeadingProps {
+interface HeadingProps extends BaseProps {
 
     /**
      * The size of heading between 1 and 6.

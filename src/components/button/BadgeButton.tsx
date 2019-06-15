@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface BadgeButtonProps {
+interface BadgeButtonProps extends BaseProps {
     
     /**
      * Icon to display
@@ -21,11 +22,6 @@ interface BadgeButtonProps {
      * The value to display as the badge
      */
     badge?: string | number;
-
-    /**
-     * Extra CSS classes that can be added to the parent DIV
-     */
-    className?: string;
 
     /**
      * Element styling to be applied

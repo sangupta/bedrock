@@ -1,11 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface SpinnerProps {
-    /**
-     * Custom CSS classes to be applied to the element
-     */
-    className?: string;
-
+interface SpinnerProps extends BaseProps {
     /**
      * Element styling to be applied
      */

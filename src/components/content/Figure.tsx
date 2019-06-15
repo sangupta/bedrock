@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface FigureProps {
+interface FigureProps extends BaseProps {
     caption?: string;
     align?: 'left' | 'right'
 }

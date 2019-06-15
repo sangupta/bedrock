@@ -1,10 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface VBoxProps {
-    /**
-     * Extra CSS classes that can be added to the parent DIV
-     */
-    className?: string;
+interface VBoxProps extends BaseProps {
 }
 
 export default class VBox extends React.Component<VBoxProps, any> {

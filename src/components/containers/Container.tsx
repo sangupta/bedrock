@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface ContainerProps {
+interface ContainerProps extends BaseProps {
     /**
      * Use full-width for the jumbotron without rounded corners.
      */

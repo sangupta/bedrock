@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface ColorBoxProps {
+interface ColorBoxProps extends BaseProps {
     /**
      * The color to fill the box with
      */

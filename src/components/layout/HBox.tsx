@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface HBoxProps {
+interface HBoxProps extends BaseProps {
 
 }
 

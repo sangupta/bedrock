@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface KeyboardProps {
+interface KeyboardProps extends BaseProps {
     value: string;
     variant?: 'light' | 'dark';
 }

@@ -1,8 +1,9 @@
 import * as React from 'react';
-import HBox from './../layout/HBox';
-import ColorBox from './ColorBox';
+import HBox from '../layout/HBox';
+import ColorBox from '../content/ColorBox';
+import { BaseProps } from './../../BedrockUtils';
 
-interface ColorBarProps {
+interface ColorBarProps extends BaseProps {
     /**
      * An array of colors specified as a string, or an object
      */

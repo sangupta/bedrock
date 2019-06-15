@@ -1,13 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from './../../BedrockUtils';
 
-interface CodeProps {
-    /**
-     * Custom CSS classes to be applied to the element
-     */
-    className?: string;
-}
-
-export default class Code extends React.Component<CodeProps, any> {
+export default class Code extends React.Component<BaseProps, any> {
 
     render() {
         return <code className={this.props.className || ''}>{this.props.children}</code>;
