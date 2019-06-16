@@ -1,6 +1,5 @@
 import * as React from 'react';
-import BedrockUtils from './../../BedrockUtils';
-import { BaseProps } from './../../BedrockUtils';
+import { mergeCSS, invokeFn, BaseProps } from './../../BedrockUtils';
 
 interface AlertProps extends BaseProps {
     /**
@@ -25,6 +24,11 @@ interface AlertProps extends BaseProps {
      * Function called when the alert is closed via the `closeable` prop.
      */
     onClose?: Function;
+
+    /**
+     * ARIA role to specify
+     */
+    role?: string;
 }
 
 interface AlertState {
@@ -44,12 +48,13 @@ export default class Alert extends React.Component<AlertProps, AlertState> {
     static defaultProps = {
         variant: 'primary',
         closed: false,
-        closeable: false
+        closeable: false,
+        role: 'alert'
     }
 
     closeAlert = () => {
         this.setState({ closed: true });
-        BedrockUtils.invoke(this.props.onClose);
+        invokeFn(this.props.onClose);
     }
 
     getCrossButton = () => {
@@ -67,7 +72,9 @@ export default class Alert extends React.Component<AlertProps, AlertState> {
             return null;
         }
 
-        return <div className={'alert alert-' + this.props.variant} role="alert">
+        let css = mergeCSS('alert', 'alert-' + this.props.variant, this.props.className);
+
+        return <div className={css} role={this.props.role}>
             {this.props.children}
             {this.getCrossButton()}
         </div>;
