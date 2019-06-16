@@ -1,7 +1,7 @@
 Indicate the loading state of a component or page with Bootstrap spinners, built entirely with HTML, and CSS.
 
 ```js
-<div class='bedrock-docs-bar'>
+<div className='bedrock-docs-bar'>
     <Spinner variant='primary' />
     <Spinner variant='secondary' />
     <Spinner variant='success' />
@@ -16,7 +16,7 @@ Indicate the loading state of a component or page with Bootstrap spinners, built
 Growing spinner
 
 ```js
-<div class='bedrock-docs-bar'>
+<div className='bedrock-docs-bar'>
     <Spinner type='grow' variant='primary' />
     <Spinner type='grow' variant='secondary' />
     <Spinner type='grow' variant='success' />

@@ -5,7 +5,7 @@ Badges are useful as small count and labeling component.
 ```
 All available variants are:
 ```js
-<div class='bedrock-docs-bar'>
+<div className='bedrock-docs-bar'>
     <Badge variant='primary'>New</Badge>
     <Badge variant='secondary'>New</Badge>
     <Badge variant='success'>New</Badge>
@@ -20,7 +20,7 @@ All available variants are:
 ## Badge Pills
 
 ```js
-<div class='bedrock-docs-bar'>
+<div className='bedrock-docs-bar'>
     <Badge variant='primary' asPill={true}>New</Badge>
     <Badge variant='secondary' asPill={true}>New</Badge>
     <Badge variant='success' asPill={true}>New</Badge>
@@ -35,7 +35,7 @@ All available variants are:
 ## Link Badges
 
 ```js
-<div class='bedrock-docs-bar'>
+<div className='bedrock-docs-bar'>
     <Badge variant='primary' asLink={true} onClick={() => alert('primary clicked')}>New</Badge>
     <Badge variant='secondary' asLink={true} onClick={() => alert('secondary clicked')}>New</Badge>
     <Badge variant='success' asLink={true} onClick={() => alert('success clicked')}>New</Badge>

@@ -1,5 +1,5 @@
 ```js
-<div class='bedrock-docs-bar'>
+<div className='bedrock-docs-bar'>
     <Image src='https://via.placeholder.com/150' />
     <Image rounded={true} src='https://via.placeholder.com/150' />
     <Image thumbnail={true} src='https://via.placeholder.com/150' />

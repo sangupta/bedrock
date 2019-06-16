@@ -5,7 +5,7 @@ To display progress of an operation.
 ```
 
 ```js
-<div class='bedrock-docs-bar'>
+<div className='bedrock-docs-bar'>
     <ProgressBar value={50} variant='primary' />
     <ProgressBar value={50} variant='info' />
     <ProgressBar value={50} variant='warning' />

@@ -1,7 +1,7 @@
 Simple buttons.
 
 ```js
-<div class='bedrock-docs-bar'>
+<div className='bedrock-docs-bar'>
     <Button variant='primary' title='Primary Button' />
     <Button variant='secondary' title='Secondary Button' />
     <Button variant='success' title='Success Button' />
