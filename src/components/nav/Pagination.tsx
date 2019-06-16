@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS } from './../../BedrockUtils';
 
 interface PaginationProps extends BaseProps {
     ariaLabel?: string;
@@ -8,6 +8,13 @@ interface PaginationProps extends BaseProps {
      * Size of the pagination bar to render.
      */
     size?: 'large' | 'default' | 'small';
+
+    /**
+     * CSS classes to be applied to parent `nav` element.
+     * This is different from other components as the default
+     * `className` attribute applies to actual `ul` element.
+     */
+    navCSS?: string;
 }
 
 /**
@@ -21,15 +28,13 @@ export default class Pagination extends React.Component<PaginationProps, any> {
     }
 
     render() {
-        let clazz: string = 'pagination';
-        if (this.props.size === 'large') {
-            clazz += ' pagination-lg'
-        }
-        if (this.props.size === 'small') {
-            clazz += ' pagination-sm'
-        }
-        return <nav aria-label={this.props.ariaLabel}>
-            <ul className={clazz}>
+        const css: string = mergeCSS('pagination', {
+            'pagination-lg': this.props.size === 'large',
+            'pagination-sm': this.props.size === 'small'
+        }, this.props.className);
+
+        return <nav aria-label={this.props.ariaLabel} className={this.props.navCSS}>
+            <ul className={css}>
                 {this.props.children}
             </ul>
         </nav>;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS } from './../../BedrockUtils';
 
 interface ListGroupProps extends BaseProps {
     /**
@@ -23,14 +23,8 @@ export default class ListGroup extends React.Component<ListGroupProps, any> {
     }
 
     render() {
-        let clazz = 'list-group';
-        if (this.props.flush) {
-            clazz += ' list-group-flush';
-        }
-        if(this.props.horizontal) {
-            clazz += ' list-group-horizontal';
-        }
-        return <ul className={clazz}>
+        const css: string = mergeCSS('list-group', { 'list-group-flush': this.props.flush, 'list-group-horizontal': this.props.horizontal }, this.props.className);
+        return <ul className={css}>
             {this.props.children}
         </ul>;
     }

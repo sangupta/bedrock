@@ -4,7 +4,7 @@ import { BaseProps } from './../../BedrockUtils';
 export default class Code extends React.Component<BaseProps, any> {
 
     render() {
-        return <code className={this.props.className || ''}>{this.props.children}</code>;
+        return <code className={this.props.className}>{this.props.children}</code>;
     }
 
 }

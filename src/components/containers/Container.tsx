@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS } from './../../BedrockUtils';
 
 interface ContainerProps extends BaseProps {
     /**
@@ -15,8 +15,8 @@ export default class Jumbotron extends React.Component<ContainerProps, any> {
     }
 
     render() {
-        let clazz: string =  this.props.fluid ? 'container-fluid' : 'container';
-        return <div className={clazz}>
+        const css: string = mergeCSS(this.props.fluid ? 'container-fluid' : 'container', this.props.className);
+        return <div className={css}>
             {this.props.children}
         </div>;
     }

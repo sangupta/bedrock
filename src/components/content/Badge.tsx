@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS } from './../../BedrockUtils';
 
 interface BadgeProps extends BaseProps {
     /**
@@ -34,13 +34,13 @@ export default class Badge extends React.Component<BadgeProps, any> {
     render() {
         let Tag: any = this.props.asLink ? 'a' : 'span';
 
-        let css: string = 'badge badge-' + this.props.variant;
-        if (this.props.asPill) {
-            css += ' badge-pill';
-        }
+        const css: string = mergeCSS('badge', {
+            'badge-': this.props.variant,
+            'badge-pill': this.props.asPill
+        }, this.props.className);
 
-        let extra:any = {};
-        if(this.props.asLink && this.props.onClick) {
+        let extra: any = {};
+        if (this.props.asLink && this.props.onClick) {
             extra.onClick = this.props.onClick;
         }
         return <Tag className={css} {...extra}>

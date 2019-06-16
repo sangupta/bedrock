@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS } from './../../BedrockUtils';
 
 interface BreadcrumbItemProps extends BaseProps {
     /**
@@ -29,17 +29,16 @@ export default class BreadcrumbItem extends React.Component<BreadcrumbItemProps,
     }
 
     render() {
-        let clazz: string = 'breadcrumb-item';
-        if (this.props.active) {
-            clazz += ' active';
-        }
+        const css: string = mergeCSS('breadcrumb-item', {
+            'active': this.props.active
+        }, this.props.className);
 
         let children = this.props.children;
         if (!this.props.active) {
             children = <a href={this.props.href} onClick={this.props.onClick}>{this.props.children}</a>;
         }
 
-        return <li className={clazz} aria-current='page'>
+        return <li className={css} aria-current='page'>
             {children}
         </li>;
     }

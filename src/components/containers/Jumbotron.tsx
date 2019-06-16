@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS } from './../../BedrockUtils';
 
-interface JumbotronProps extends BaseProps{
+interface JumbotronProps extends BaseProps {
     /**
      * Use full-width for the jumbotron without rounded corners.
      */
@@ -15,15 +15,11 @@ export default class Jumbotron extends React.Component<JumbotronProps, any> {
     }
 
     render() {
-        let clazz: string = 'jumbotron';
-        if (this.props.fluid) {
-            clazz += ' jumbotron-fluid';
-        }
-        if(this.props.className) {
-            clazz = this.props.className + ' ' + clazz;
-        }
+        const css: string = mergeCSS('jumbotron', {
+            'jumbotron-fluid': this.props.fluid
+        }, this.props.className);
 
-        return <div className={clazz}>
+        return <div className={css}>
             {this.props.children}
         </div>;
     }

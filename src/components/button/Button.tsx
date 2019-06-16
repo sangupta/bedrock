@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS } from './../../BedrockUtils';
 
 interface ButtonProps extends BaseProps {
     /**
@@ -10,7 +10,7 @@ interface ButtonProps extends BaseProps {
     /**
      * Size of the button
      */
-    size?: string;
+    size?: 'lg' | 'sm' | '';
 
     /**
      * Icon to show inside the button
@@ -31,26 +31,21 @@ interface ButtonProps extends BaseProps {
 export default class Button extends React.Component<ButtonProps, any> {
 
     static defaultProps = {
-        variant: 'primary'
+        variant: 'primary',
+        size: ''
     }
 
     render() {
-        let classes: string = 'btn';
-        if (this.props.variant) {
-            classes += ' btn-' + this.props.variant;
-        }
-        if (this.props.size) {
-            classes += ' btn-' + this.props.size;
-        }
+        const css: string = mergeCSS('btn', 'btn-' + this.props.variant, { 'btn-': this.props.size }, this.props.className);
 
         if (this.props.icon) {
-            return <a href='#' className={classes} onClick={this.props.onClick}>
+            return <a href='#' className={css} onClick={this.props.onClick}>
                 <i className={this.props.icon} />&nbsp;
             {this.props.title}
             </a>;
         }
 
-        return <a href='#' className={classes} onClick={this.props.onClick}>
+        return <a href='#' className={css} onClick={this.props.onClick}>
             {this.props.title}
         </a>;
     }

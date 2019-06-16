@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from '../../BedrockUtils';
+import { BaseProps, mergeCSS } from '../../BedrockUtils';
 
 interface FontAwesomeProps extends BaseProps {
     /**
@@ -15,8 +15,10 @@ interface FontAwesomeProps extends BaseProps {
  * page for this to work correctly.
  */
 export default class FontAwesome extends React.Component<FontAwesomeProps, any> {
+
     render() {
-        let clazz: string = 'fa-icon ' + this.props.icon;
-        return <i className={clazz}>{this.props.children}</i>
+        const css = mergeCSS('fa-icon', this.props.icon, this.props.className);
+        return <i className={css}>{this.props.children}</i>
     }
+
 }

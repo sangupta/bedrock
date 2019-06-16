@@ -17,7 +17,7 @@ export default class Heading extends React.Component<HeadingProps, any> {
 
     render() {
         const Element: any = 'h' + this.props.size;
-        return <Element>{this.props.children}</Element>
+        return <Element className={this.props.className}>{this.props.children}</Element>
     }
 
 }

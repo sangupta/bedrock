@@ -55,6 +55,6 @@ export default class Gravatar extends React.Component<GravatarProps, any> {
     }
 
     render() {
-        return <Image src={`https://www.gravatar.com/avatar/${this.props.md5}.jpg?s=${this.props.size}&r=${this.props.rating}&d=${this.props.default}`} />;
+        return <Image className={this.props.className} src={`https://www.gravatar.com/avatar/${this.props.md5}.jpg?s=${this.props.size}&r=${this.props.rating}&d=${this.props.default}`} />;
     }
 }

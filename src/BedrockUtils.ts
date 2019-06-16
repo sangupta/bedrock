@@ -51,11 +51,13 @@ export function mergeCSS(...args: any[]): string {
                 let key = keys[kindex]
                 let value = arg[key];
 
-                if(!value) {
-                    continue;
+                if(value) {
+                    if(typeof value === 'boolean') {
+                        final += ' ' + key
+                    } else {
+                        final += ' ' + key + value;
+                    }
                 }
-
-                final += ' ' + key;
             }
         }
     }

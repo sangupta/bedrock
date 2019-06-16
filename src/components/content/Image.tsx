@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS } from './../../BedrockUtils';
 
 interface ImageProps extends BaseProps {
     /**
@@ -35,17 +35,13 @@ export default class Image extends React.Component<ImageProps, any> {
     }
 
     render() {
-        let clazz: string = '';
-        if (this.props.fluid) {
-            clazz += ' img-fluid';
-        }
-        if (this.props.rounded) {
-            clazz += 'rounded';
-        }
-        if (this.props.thumbnail) {
-            clazz += 'img-thumbnail';
-        }
-        return <img className={clazz} src={this.props.src} />;
+        const css: string = mergeCSS({
+            'img-fluid': this.props.fluid,
+            'rounded': this.props.rounded,
+            'img-thumbnail': this.props.thumbnail
+        }, this.props.className);
+
+        return <img className={css} src={this.props.src} />;
     }
 
 }

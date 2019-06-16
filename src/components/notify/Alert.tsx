@@ -72,7 +72,7 @@ export default class Alert extends React.Component<AlertProps, AlertState> {
             return null;
         }
 
-        let css = mergeCSS('alert', 'alert-' + this.props.variant, this.props.className);
+        const css: string = mergeCSS('alert', 'alert-' + this.props.variant, this.props.className);
 
         return <div className={css} role={this.props.role}>
             {this.props.children}

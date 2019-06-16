@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS } from './../../BedrockUtils';
 
 interface ListGroupItemProps extends BaseProps {
     /**
@@ -42,27 +42,23 @@ export default class ListGroupItem extends React.Component<ListGroupItemProps, a
     render() {
         const Tag: any = this.props.action ? 'a' : 'li';
 
-        let extra:any = {};
+        let extra: any = {};
 
-        let clazz = 'list-group-item';
-        if (this.props.active) {
-            clazz += ' active';
-        }
-        if (this.props.disabled) {
-            clazz += ' disabled';
-        }
-        if (this.props.variant && 'default' !== this.props.variant) {
-            clazz += ' list-group-item-' + this.props.variant;
-        }
+        const css: string = mergeCSS('list-group-item', {
+            'active': this.props.active,
+            'disabled': this.props.disabled,
+            'list-group-item-action': this.props.action,
+            'list-group-item-': this.props.variant
+        }, this.props.className);
+
         if (this.props.action) {
-            clazz += ' list-group-item-action';
-            if(this.props.href) {
+            if (this.props.href) {
                 extra.href = this.props.href;
             } else {
                 extra.href = '#';
             }
         }
 
-        return <Tag {...extra} className={clazz}>{this.props.children}</Tag>;
+        return <Tag {...extra} className={css}>{this.props.children}</Tag>;
     }
 }

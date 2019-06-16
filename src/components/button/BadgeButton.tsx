@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS } from './../../BedrockUtils';
 
 interface BadgeButtonProps extends BaseProps {
-    
+
     /**
      * Icon to display
      */
@@ -17,7 +17,7 @@ interface BadgeButtonProps extends BaseProps {
      * Method to call when the badge button is clicked
      */
     onClick?: React.MouseEventHandler<any>;
-    
+
     /**
      * The value to display as the badge
      */
@@ -31,21 +31,24 @@ interface BadgeButtonProps extends BaseProps {
 
 export default class BadgeButton extends React.Component<BadgeButtonProps, any> {
 
+    static defaultProps = {
+        variant: 'default'
+    }
+
     getBadge = () => {
-        if(!this.props.badge) {
+        if (!this.props.badge) {
             return null;
         }
-        
+
         return <span className='badge badge-primary'>{this.props.badge}</span>;
     }
 
     render() {
-        let variant = this.props.variant || 'default';
-        variant = 'badge badge-' + variant;
+        const css: string = mergeCSS('badge', 'bagde-' + this.props.variant, this.props.className);
 
-        return <a href='#' className={this.props.className} onClick={this.props.onClick} >
+        return <a href='#' className={css} onClick={this.props.onClick} >
             <i className={this.props.icon} /> {this.props.title}
-            { this.getBadge() }
+            {this.getBadge()}
         </a>;
     }
 }

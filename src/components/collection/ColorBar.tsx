@@ -13,6 +13,11 @@ interface ColorBarProps extends BaseProps {
      * Click handler to be invoked when any color is clicked on
      */
     onClick?: React.MouseEventHandler;
+
+    /**
+     * CSS to be applied to each color box
+     */
+    boxCSS?: string;
 }
 
 export default class ColorBar extends React.Component<ColorBarProps, any> {
@@ -34,7 +39,7 @@ export default class ColorBar extends React.Component<ColorBarProps, any> {
                 label = item.label || '';
             }
 
-            result.push(<ColorBox color={color} label={label} />);
+            result.push(<ColorBox className={this.props.boxCSS} color={color} label={label} />);
         }
 
         return result;
@@ -45,6 +50,6 @@ export default class ColorBar extends React.Component<ColorBarProps, any> {
             return null;
         }
 
-        return <HBox>{this.getColors()}</HBox>;
+        return <HBox className={this.props.className}>{this.getColors()}</HBox>;
     }
 }
