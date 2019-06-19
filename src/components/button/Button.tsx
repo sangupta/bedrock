@@ -10,7 +10,7 @@ interface ButtonProps extends BaseProps {
     /**
      * Size of the button
      */
-    size?: 'lg' | 'sm' | '';
+    size?: 'large' | 'small' | 'default';
 
     /**
      * Icon to show inside the button
@@ -18,7 +18,8 @@ interface ButtonProps extends BaseProps {
     icon?: string;
 
     /**
-     * Text label to display on the button
+     * Text label to display on the button, only, if children
+     * to this component are not specified
      */
     title?: string;
 
@@ -32,21 +33,26 @@ export default class Button extends React.Component<ButtonProps, any> {
 
     static defaultProps = {
         variant: 'primary',
-        size: ''
+        size: 'default'
     }
 
     render() {
-        const css: string = mergeCSS('btn', 'btn-' + this.props.variant, { 'btn-': this.props.size }, this.props.className);
+        const css: string = mergeCSS('btn', 'btn-' + this.props.variant, { 
+            'btn-lg': this.props.size === 'large',
+            'btn-sm': this.props.size === 'small'
+        }, this.props.className);
+
+        const children = this.props.children ? this.props.children : this.props.title;
 
         if (this.props.icon) {
             return <a href='#' className={css} onClick={this.props.onClick}>
                 <i className={this.props.icon} />&nbsp;
-            {this.props.title}
+            {children}
             </a>;
         }
 
         return <a href='#' className={css} onClick={this.props.onClick}>
-            {this.props.title}
+            {children}
         </a>;
     }
 }
