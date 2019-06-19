@@ -10,3 +10,13 @@
     display: inline-block;
     margin-right: 4px;
 }
+.bedrock-tag {
+    display: inline-block;
+    border: 1px solid;
+    padding: 4px;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
