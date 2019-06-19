@@ -6,7 +6,7 @@ interface ButtonGroupProps extends BaseProps {
     role?: string;
 
     /**
-     * Size of the button
+     * Size of the button group
      */
     size?: 'large' | 'small' | 'default';
 }
@@ -14,7 +14,8 @@ interface ButtonGroupProps extends BaseProps {
 export default class ButtonGroup extends React.Component<ButtonGroupProps, any> {
 
     static defaultProps = {
-        role: 'group'
+        role: 'group',
+        size: 'default'
     }
 
     render() {
