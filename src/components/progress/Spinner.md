@@ -27,3 +27,18 @@ Growing spinner
     <Spinner type='grow' variant='dark' />
 </div>
 ```
+
+## Small size
+
+```js
+<div className='bedrock-docs-bar'>
+    <Spinner type='border' variant='primary' size='small' />
+    <Spinner type='border' variant='secondary' size='small' />
+    <Spinner type='border' variant='success' size='small' />
+    <Spinner type='border' variant='danger' size='small' />
+    <Spinner type='grow' variant='warning' size='small' />
+    <Spinner type='grow' variant='info' size='small' />
+    <Spinner type='grow' variant='light' size='small' />
+    <Spinner type='grow' variant='dark' size='small' />
+</div>
+```

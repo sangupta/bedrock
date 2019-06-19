@@ -11,22 +11,36 @@ interface SpinnerProps extends BaseProps {
      * Type of spinner to display
      */
     type?: 'border' | 'grow';
+
+    /**
+     * Size of the spinner
+     */
+    size?: 'large' | 'small' | 'default';
+
+    /**
+     * Role value to use
+     */
+    role?: string;
 }
 
 export default class Spinner extends React.PureComponent<SpinnerProps, any> {
 
     static defaultProps = {
         variant: 'primary',
-        type: 'border'
+        type: 'border',
+        role: 'status'
     }
 
     render() {
         const css: string = mergeCSS({
             'spinner-': this.props.type,
-            'text-': this.props.variant
+            'text-': this.props.variant,
+            'spinner-border': this.props.size === 'small' && this.props.type === 'border',
+            'spinner-border-sm': this.props.size === 'small' && this.props.type === 'border',
+            'spinner-grow-sm': this.props.size === 'small' && this.props.type === 'grow'
         }, this.props.className);
-        
-        return <div className={css} role="status">
+
+        return <div className={css} role={this.props.role}>
             <span className="sr-only">Loading...</span>
         </div>;
     }
