@@ -3,7 +3,8 @@ import { BaseProps, mergeCSS } from './../../BedrockUtils';
 
 interface IndicatorProps extends BaseProps {
     /**
-     * Text label to be displayed along side the indicator
+     * Text label to be displayed along side the indicator.
+     * For rich label use as component children
      */
     label?: string;
 
@@ -24,9 +25,11 @@ export default class Indicator extends React.Component<IndicatorProps, any> {
     }
 
     render() {
+        const children = this.props.children ? this.props.children : this.props.label;
+
         return <div className={mergeCSS('indicator', this.props.className)}>
             <span className={'indicator-dot bg-' + this.props.variant}></span>
-            {this.props.label}
+            {children}
         </div>;
     }
 }
