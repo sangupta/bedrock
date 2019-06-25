@@ -8,6 +8,11 @@ interface JumbotronProps extends BaseProps {
     fluid?: boolean;
 }
 
+/**
+ * Jumbotron component is used to focus visitor's attention
+ * or highlight special piece of information.
+ * 
+ */
 export default class Jumbotron extends React.Component<JumbotronProps, any> {
 
     static defaultProps = {
