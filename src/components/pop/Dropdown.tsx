@@ -40,6 +40,10 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
         }
     }
 
+    closeMenu = () => {
+        this.setState({ isOpen: false });
+    }
+
     handleClick = () => {
         this.setState(state => {
             return { isOpen: !state.isOpen }
@@ -89,10 +93,12 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
     }
 
     getMenu(children: any) {
-        if(children.length === 1 && children[0].type === Menu) {
+        if (children.length === 1 && children[0].type === Menu) {
             return React.cloneElement(children[0], {
                 show: true,
-                position: 'absolute'
+                position: 'absolute',
+                trackOutsideClick: true,
+                onOutsideClick: this.closeMenu
             });
         }
 
