@@ -36,8 +36,15 @@ export default class Button extends React.Component<ButtonProps, any> {
         size: 'default'
     }
 
+    handleClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        if (this.props.onClick) {
+            this.props.onClick(e);
+        }
+    }
+
     render() {
-        const css: string = mergeCSS('btn', 'btn-' + this.props.variant, { 
+        const css: string = mergeCSS('btn', 'btn-' + this.props.variant, {
             'btn-lg': this.props.size === 'large',
             'btn-sm': this.props.size === 'small'
         }, this.props.className);
@@ -45,13 +52,13 @@ export default class Button extends React.Component<ButtonProps, any> {
         const children = this.props.children ? this.props.children : this.props.title;
 
         if (this.props.icon) {
-            return <a href='#' className={css} onClick={this.props.onClick}>
+            return <a href='#' className={css} onClick={this.handleClick}>
                 <i className={this.props.icon} />&nbsp;
             {children}
             </a>;
         }
 
-        return <a href='#' className={css} onClick={this.props.onClick}>
+        return <a href='#' className={css} onClick={this.handleClick}>
             {children}
         </a>;
     }
