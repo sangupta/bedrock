@@ -5,11 +5,11 @@ import MenuItem from './MenuItem';
 
 <Dropdown>
     <Button variant='primary' title='Menu' />
-    <Menu>
-        <MenuItem>Action</MenuItem>
-        <MenuItem active={true}>Another action</MenuItem>
-        <MenuItem disabled={true}>Disabled action</MenuItem>
-        <MenuItem>Something else here</MenuItem>
+    <Menu onSelect={v => alert('selected value: ' + v)}>
+        <MenuItem value='action'>Action</MenuItem>
+        <MenuItem value='another'>Another action</MenuItem>
+        <MenuItem value='disabled' disabled={true}>Disabled action</MenuItem>
+        <MenuItem value='else'>Something else here</MenuItem>
     </Menu>
 </Dropdown>
 ```
@@ -25,7 +25,7 @@ import SplitButton from './../button/SplitButton';
     <SplitButton variant='primary' label='Menu' />
     <Menu>
         <MenuItem>Action</MenuItem>
-        <MenuItem active={true}>Another action</MenuItem>
+        <MenuItem>Another action</MenuItem>
         <MenuItem disabled={true}>Disabled action</MenuItem>
         <MenuItem>Something else here</MenuItem>
     </Menu>
