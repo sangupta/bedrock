@@ -9,6 +9,9 @@
 .bedrock-docs-bar .color-box {
     margin: 10px 5px;
 }
+.bedrock-docs-bar .btn-group .btn {
+    margin-right: 0;
+}
 .bedrock-docs-block {
     width: 100px;
     height: 100px;
