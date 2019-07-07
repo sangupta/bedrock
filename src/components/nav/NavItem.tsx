@@ -30,7 +30,7 @@ interface NavItemProps extends BaseProps {
 /**
  * Useful to display basic navigation.
  */
-export default class Nav extends React.Component<NavItemProps, any> {
+export default class NavItem extends React.Component<NavItemProps, any> {
 
     static defaultProps = {
         linkCSS: '',
