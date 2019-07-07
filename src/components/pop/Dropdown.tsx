@@ -14,9 +14,27 @@ interface DropdownProps extends BaseProps {
      * dropdown. The default value is `onClick`.
      */
     triggerEvent?: string;
+
+    /**
+     * Handler called when dropdown is open
+     */
+    onShow?: Function;
+
+    /**
+     * Handler called when dropdown is close
+     */
+    onClose?: Function;
+
+    /**
+     * Function called when a dropdown menu item is selected
+     */
+    onSelect?: Function;
 }
 
 interface DropdownState {
+    /**
+     * Is the dropdown open or not
+     */
     isOpen: boolean;
 }
 
@@ -40,14 +58,43 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
         }
     }
 
+    /**
+     * Close the menu
+     */
     closeMenu = () => {
-        this.setState({ isOpen: false });
+        this.setState({ isOpen: false }, this.shootEvents);
     }
 
+    /**
+     * Shoot onShow/onClose events on dropdown
+     */
+    shootEvents = () => {
+        if (this.state.isOpen) {
+            if (this.props.onShow) {
+                this.props.onShow();
+            }
+
+            return;
+        }
+
+        if (this.props.onClose) {
+            this.props.onClose();
+        }
+    }
+
+    /**
+     * Handle click event
+     */
     handleClick = () => {
         this.setState(state => {
             return { isOpen: !state.isOpen }
-        });
+        }, this.shootEvents);
+    }
+
+    handleSelect = (selected) => {
+        if (this.props.onSelect) {
+            this.props.onSelect(selected);
+        }
     }
 
     render() {
@@ -98,7 +145,9 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
                 show: true,
                 position: 'absolute',
                 trackOutsideClick: true,
-                onOutsideClick: this.closeMenu
+                onOutsideClick: this.closeMenu,
+                onClick: this.handleClick,
+                onSelect: this.handleSelect
             });
         }
 

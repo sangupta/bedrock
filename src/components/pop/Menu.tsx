@@ -4,7 +4,7 @@ import { BaseProps, mergeCSS } from './../../BedrockUtils';
 interface MenuProps extends BaseProps {
     /**
      * Whether to display the menu or not. The value is
-     * set as defauly `false` as mostly the menu will be
+     * set as default `false` as mostly the menu will be
      * used with some kind of `Dropdown` or `Dropup` component.
      * 
      */
@@ -28,14 +28,15 @@ interface MenuProps extends BaseProps {
     trackOutsideClick?: boolean;
 
     /**
+     * `React.MouseEventHandler` called when menu or its child
+     * is clicked
+     */
+    onClick?:React.MouseEventHandler;
+
+    /**
      * Handler called when a menu item is selected inside.
      */
     onSelect?: Function;
-
-    /**
-     * Whether to close the menu when an item is selected
-     */
-    closeOnSelect?: boolean;
 }
 
 /**
@@ -91,6 +92,7 @@ export default class Menu extends React.Component<MenuProps, any> {
         const children = this.props.children;
         return React.Children.map(children, (child: any, index) => {
             const updatedProps = {
+                onClick: this.handleClick,
                 onSelect: this.handleSelect
             };
 
@@ -98,13 +100,13 @@ export default class Menu extends React.Component<MenuProps, any> {
         });
     }
 
-    handleSelect = (selectedValue) => {
-        if (this.props.closeOnSelect) {
-            this.setState({
-                show: false
-            });
+    handleClick = (e:React.MouseEvent) => {
+        if(this.props.onClick) {
+            this.props.onClick(e);
         }
+    }
 
+    handleSelect = (selectedValue) => {
         if (this.props.onSelect) {
             this.props.onSelect(selectedValue);
         }

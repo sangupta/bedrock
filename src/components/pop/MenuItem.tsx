@@ -33,7 +33,9 @@ export default class MenuItem extends React.Component<MenuItemProps, any> {
         disabled: false
     }
 
-    handleClick = (e) => {
+    handleClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+
         if (this.props.onClick) {
             this.props.onClick(e);
         }
