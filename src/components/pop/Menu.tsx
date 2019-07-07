@@ -26,6 +26,16 @@ interface MenuProps extends BaseProps {
      * Whether to track click outside of the menu or not
      */
     trackOutsideClick?: boolean;
+
+    /**
+     * Handler called when a menu item is selected inside.
+     */
+    onSelect?: Function;
+
+    /**
+     * Whether to close the menu when an item is selected
+     */
+    closeOnSelect?: boolean;
 }
 
 /**
@@ -45,7 +55,8 @@ export default class Menu extends React.Component<MenuProps, any> {
     static defaultProps = {
         show: true,
         position: 'relative',
-        trackOutsideClick: false
+        trackOutsideClick: false,
+        closeOnSelect: true
     }
 
     componentDidMount() {
@@ -76,6 +87,31 @@ export default class Menu extends React.Component<MenuProps, any> {
         }
     }
 
+    getMenuChildren = () => {
+        const children = this.props.children;
+        return React.Children.map(children, (child: any, index) => {
+            const updatedProps = {
+                onSelect: this.handleSelect
+            };
+
+            return React.cloneElement(child, updatedProps);
+        });
+    }
+
+    handleSelect = (selectedValue) => {
+        if (this.props.closeOnSelect) {
+            this.setState({
+                show: false
+            });
+        }
+
+        if (this.props.onSelect) {
+            this.props.onSelect(selectedValue);
+        }
+
+        return false;
+    }
+
     render() {
         const css: string = mergeCSS('dropdown-menu', {
             show: this.props.show,
@@ -83,7 +119,7 @@ export default class Menu extends React.Component<MenuProps, any> {
         }, this.props.className);
 
         return <div ref={this.menuRef} className={css} aria-labelledby="dropdownMenuButton">
-            {this.props.children}
+            {this.getMenuChildren()}
         </div>;
     }
 
