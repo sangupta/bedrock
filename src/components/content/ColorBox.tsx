@@ -11,6 +11,17 @@ interface ColorBoxProps extends BaseProps {
      * Optional label to display within the color box
      */
     label?: string;
+
+    /**
+     * Handler called when the color box is clicked
+     */
+    onClick?: React.MouseEventHandler;
+
+    /**
+     * Function called when the color is selected with the selected
+     * color value
+     */
+    onSelect?: Function;
 }
 
 export default class ColorBox extends React.Component<ColorBoxProps, any> {
@@ -19,9 +30,19 @@ export default class ColorBox extends React.Component<ColorBoxProps, any> {
         label: ''
     }
 
+    handleClick = (e) => {
+        if (this.props.onClick) {
+            this.props.onClick(e);
+        }
+
+        if (this.props.onSelect) {
+            this.props.onSelect(this.props.color);
+        }
+    }
+
     render() {
         const css: string = mergeCSS('color-box', this.props.className);
-        return <div className={css} style={{ 'backgroundColor': this.props.color }} >{this.props.label}</div>;
+        return <div className={css} style={{ 'backgroundColor': this.props.color }} onClick={this.handleClick}>{this.props.label}</div>;
     }
 
 }
