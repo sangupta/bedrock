@@ -4,7 +4,7 @@ While containers can be nested, most layouts do not require a nested container.
 
 ```js
 <Container>
-    <div style={{width: '100%', height: '100px', 'background-color' : 'lightblue'}}>
+    <div style={{width: '100%', height: '100px', 'backgroundColor' : 'lightblue'}}>
     </div>
 </Container>
 ```
@@ -13,7 +13,7 @@ A full-width repsonsive container:
 
 ```js
 <Container fluid={true} >
-    <div style={{width: '100%', height: '100px', 'background-color' : 'lightblue'}}>
+    <div style={{width: '100%', height: '100px', 'backgroundColor' : 'lightblue'}}>
     </div>
 </Container>
 ```
