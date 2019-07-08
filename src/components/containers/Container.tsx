@@ -8,7 +8,7 @@ interface ContainerProps extends BaseProps {
     fluid?: boolean;
 }
 
-export default class Jumbotron extends React.Component<ContainerProps, any> {
+export default class Container extends React.Component<ContainerProps, any> {
 
     static defaultProps = {
         fluid: false
