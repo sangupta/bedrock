@@ -29,6 +29,11 @@ interface DropdownProps extends BaseProps {
      * Function called when a dropdown menu item is selected
      */
     onSelect?: Function;
+
+    /**
+     * Dropdown position to display
+     */
+    position?: 'down' | 'up' | 'right' | 'left';
 }
 
 interface DropdownState {
@@ -47,7 +52,8 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
 
     static defaultProps = {
         isOpen: false,
-        triggerEvent: 'onClick'
+        triggerEvent: 'onClick',
+        position: 'down'
     }
 
     constructor(props) {
@@ -118,11 +124,12 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
         }
 
         // build the trigger props
-        const props = {};
-        props[eventName] = this.handleClick;
+        const triggerProps = {};
+
+        triggerProps[eventName] = this.handleClick;
 
         // create the trigger
-        let trigger = React.cloneElement(triggerElement, props, null);
+        let trigger = React.cloneElement(triggerElement, triggerProps, null);
 
         // return the trigger
         if (!this.state.isOpen) {
@@ -158,7 +165,7 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
     }
 
     makeDropdown(children: any) {
-        const css: string = mergeCSS('dropdown', this.props.className);
+        const css: string = mergeCSS('d-inline-flex', 'drop' + this.props.position, this.props.className);
 
         return <div className={css}>
             {children}

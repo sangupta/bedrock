@@ -3,7 +3,8 @@ import Button from './../button/Button';
 import Menu from './Menu';
 import MenuItem from './MenuItem';
 
-<Dropdown onShow={() => console.log('dropdown open')} 
+<Dropdown position='right'
+    onShow={() => console.log('dropdown open')} 
     onClose={() => console.log('dropdown closed')}
     onSelect={v => console.log('selected value: ' + v)}>
     
