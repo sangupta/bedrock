@@ -12,7 +12,7 @@ toggleModal = () => {
 }
 
 <React.Fragment>
-    <Button title='Open Modal' onClick={ this.toggleModal } />
+    <Button label='Open Modal' onClick={ this.toggleModal } />
     <ModalContainer open={state.modalOpen}>
         <div className="modal-header">
             <h5 className="modal-title" >Modal title</h5>

@@ -6,7 +6,7 @@ import Well from './../containers/Well';
     onShow={() => console.log('show children')}
     onClose={() => console.log('hide children')}>
 
-    <Button title='Toggle' />
+    <Button label='Toggle' />
     <Well>
         This text toggles when the button above is clicked.
     </Well>

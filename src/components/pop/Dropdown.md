@@ -3,12 +3,12 @@ import Button from './../button/Button';
 import Menu from './Menu';
 import MenuItem from './MenuItem';
 
-<Dropdown position='right'
+<Dropdown position='down'
     onShow={() => console.log('dropdown open')} 
     onClose={() => console.log('dropdown closed')}
     onSelect={v => console.log('selected value: ' + v)}>
     
-    <Button variant='primary' title='Menu' />
+    <Button variant='primary' label='Menu' />
     <Menu >
         <MenuItem value='action'>Action</MenuItem>
         <MenuItem value='another'>Another action</MenuItem>
