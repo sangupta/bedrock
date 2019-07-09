@@ -21,7 +21,7 @@ interface ButtonProps extends BaseProps {
      * Text label to display on the button, only, if children
      * to this component are not specified
      */
-    title?: string;
+    label?: string;
 
     /**
      * Handler to be invoked when button is clicked
@@ -49,7 +49,7 @@ export default class Button extends React.Component<ButtonProps, any> {
             'btn-sm': this.props.size === 'small'
         }, this.props.className);
 
-        const children = this.props.children ? this.props.children : this.props.title;
+        const children = this.props.children ? this.props.children : this.props.label;
 
         if (this.props.icon) {
             return <a href='#' className={css} onClick={this.handleClick}>
