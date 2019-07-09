@@ -75,7 +75,7 @@ export function invokeFn(fn: Function, thisRef: any = null, args: any = null) {
  * List of all coutnries that can be used in a
  * `Select` form element.
  */
-export const countries = [
+export const COUNTRIES = [
     'Afghanistan',
     'Albania',
     'Algeria',
