@@ -67,22 +67,28 @@ export default class ToggleTrigger extends React.Component<ToggleTriggerProps, a
         }
     }
 
-    render() {
-        const children = React.Children.toArray(this.props.children);
-        if (!children || children.length === 0) {
-            return null;
-        }
-
-        let triggerElement: any = children[0];
-
+    /**
+     * Create the trigger element from the base
+     * first child so that we can trap the click
+     * event on it.
+     */
+    getTriggerElement = (triggerElement:any) => {
         // build the trigger props
         const triggerProps = {};
 
         triggerProps[this.props.triggerEvent] = this.handleClick;
 
         // create the trigger
-        let trigger = React.cloneElement(triggerElement, triggerProps, null);
+        return React.cloneElement(triggerElement, triggerProps, null);
+    }
 
+    render() {
+        const children = React.Children.toArray(this.props.children);
+        if (!children || children.length === 0) {
+            return null;
+        }
+
+        const trigger = this.getTriggerElement(children[0]);
         if(!this.state.isOpen) {
             return trigger;
         }
