@@ -23,6 +23,11 @@ interface TextAreaProps extends BaseProps {
      * the number of rows to show
      */
     rows?: number;
+
+    /**
+     * Handler fired when the value changes for the text area
+     */
+    onChange?: Function;
 }
 
 export default class TextArea extends React.Component<TextAreaProps, any> {
@@ -32,6 +37,12 @@ export default class TextArea extends React.Component<TextAreaProps, any> {
         readOnly: false,
         required: false,
         placeholder: ''
+    }
+
+    handleChange = (e) => {
+        if(this.props.onChange) {
+            this.props.onChange(e.target.value);
+        }
     }
 
     render() {
@@ -54,6 +65,6 @@ export default class TextArea extends React.Component<TextAreaProps, any> {
             extra.placeholder = this.props.placeholder;
         }
 
-        return <textarea className={css} {...extra}>{this.props.children}</textarea>;
+        return <textarea className={css} {...extra} onChange={this.handleChange}>{this.props.children}</textarea>;
     }
 }
