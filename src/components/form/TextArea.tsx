@@ -28,6 +28,11 @@ interface TextAreaProps extends BaseProps {
      * Handler fired when the value changes for the text area
      */
     onChange?: Function;
+
+    /**
+     * The current value of the text-area
+     */
+    value?: string;
 }
 
 export default class TextArea extends React.Component<TextAreaProps, any> {
@@ -36,11 +41,12 @@ export default class TextArea extends React.Component<TextAreaProps, any> {
         disabled: false,
         readOnly: false,
         required: false,
-        placeholder: ''
+        placeholder: '',
+        value: ''
     }
 
     handleChange = (e) => {
-        if(this.props.onChange) {
+        if (this.props.onChange) {
             this.props.onChange(e.target.value);
         }
     }
@@ -53,7 +59,7 @@ export default class TextArea extends React.Component<TextAreaProps, any> {
             extra.rows = this.props.rows;
         }
         if (this.props.readOnly) {
-            extra.readonly = 'readonly';
+            extra.readOnly = 'readonly';
         }
         if (this.props.required) {
             extra.required = 'required';
@@ -65,6 +71,6 @@ export default class TextArea extends React.Component<TextAreaProps, any> {
             extra.placeholder = this.props.placeholder;
         }
 
-        return <textarea className={css} {...extra} onChange={this.handleChange}>{this.props.children}</textarea>;
+        return <textarea className={css} {...extra} onChange={this.handleChange} value={this.props.value || this.props.children}></textarea>;
     }
 }

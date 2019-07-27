@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS } from '../../BedrockUtils';
 
 interface FormFieldProps extends BaseProps {
     label?: string;
@@ -20,10 +20,7 @@ export default class FormField extends React.Component<FormFieldProps, any> {
             return null;
         }
 
-        const extraProps = {
-            for:this.props.for
-        };
-        return <label {...extraProps}>{this.props.label}</label>;
+        return <label htmlFor={this.props.for}>{this.props.label}</label>;
     }
 
     getHelp = () => {

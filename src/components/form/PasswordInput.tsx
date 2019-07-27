@@ -3,6 +3,11 @@ import { mergeCSS, BaseProps } from './../../BedrockUtils';
 
 interface PasswordInputProps extends BaseProps {
     placeholder?: string;
+
+    /**
+     * Handler fired when the value changes
+     */
+    onChange?: Function;
 }
 
 export default class PasswordInput extends React.Component<PasswordInputProps, any> {
@@ -25,12 +30,18 @@ export default class PasswordInput extends React.Component<PasswordInputProps, a
         });
     }
 
+    handleChange = (e) => {
+        if (this.props.onChange) {
+            this.props.onChange(e.target.value);
+        }
+    }
+
     render() {
         const css: string = mergeCSS('input-group', this.props.className);
         const type: string = this.state.show ? 'text' : 'password';
         const label: string = this.state.show ? 'Hide' : 'Show';
         return <div className={css}>
-            <input type={type} className="form-control" placeholder={this.props.placeholder} />
+            <input type={type} className="form-control" placeholder={this.props.placeholder} onChange={this.handleChange} />
             <div className="input-group-append">
                 <span className="input-group-text cursor-pointer" onClick={this.toggleMode}>{label}</span>
             </div>

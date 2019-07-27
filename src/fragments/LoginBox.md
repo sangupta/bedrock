@@ -1,3 +1,3 @@
 ```js
-<LoginBox />
+<LoginBox onSubmit={v => console.log(v) } />
 ```
