@@ -27,6 +27,32 @@ export interface BaseProps {
     data?: any;
 }
 
+export function getProps(props: any, names: string[]): any {
+    const result = {};
+    if (!props) {
+        return result;
+    }
+    if (!names || names.length === 0) {
+        return result;
+    }
+
+    for (let index = 0; index < names.length; index++) {
+        let name: string = names[index];
+        let prop = props[name];
+        if (prop) {
+            result[name] = prop;
+        }
+    }
+
+    return result;
+}
+
+/**
+ * Convenience function to merge various CSS classname attributes
+ * based on the values that are passed as arguments.
+ * 
+ * @param args 
+ */
 export function mergeCSS(...args: any[]): string {
     let final: string = '';
     for (let index = 0; index < args.length; index++) {
