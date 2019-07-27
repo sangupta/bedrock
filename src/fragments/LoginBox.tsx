@@ -4,6 +4,7 @@ import FormField from '../components/form/FormField';
 import TextInput from './../components/form/TextInput';
 import PasswordInput from './../components/form/PasswordInput';
 import { BaseProps } from 'BedrockUtils';
+import FormButton from './../components/form/FormButton';
 
 interface LoginBoxProps extends BaseProps {
     /**
@@ -43,7 +44,7 @@ export default class LoginBox extends React.Component<LoginBoxProps, any> {
             <FormField label="Password">
                 <PasswordInput onChange={this.handlePasswordChange} />
             </FormField>
-            <button type="submit" className="btn btn-primary" onClick={this.handleSubmitClick}>Submit</button>
+            <FormButton type="submit" onClick={this.handleSubmitClick}>Submit</FormButton>
         </Form>;
     }
 
