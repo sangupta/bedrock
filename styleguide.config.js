@@ -4,15 +4,10 @@ const fs = require( "fs" );
 
 function getComponents(folder) {
     if(!folder) {
-        folder = '**'
+        return [];
     }
 
-    const files1 = glob.sync('src/components/' + folder + '/*.{ts,tsx}');
-    const files2 = glob.sync('src/fragments/' + folder + '/*.{ts,tsx}');
-    const files3 = glob.sync('src/primed/' + folder + '/*.{ts,tsx}');
-    const files4 = glob.sync('src/templates/' + folder + '/*.{ts,tsx}');
-
-    const files = [].concat(files1, files2, files3, files4);
+    const files = glob.sync('src/' + folder + '/**/*.{ts,tsx}');
 
     // sort based on file name and not path
     files.sort(function(file1, file2) {
@@ -36,53 +31,26 @@ module.exports = {
     styleguideDir: "docs",
     exampleMode: 'expand',
     usageMode: 'expand',
-    components : getComponents,
-    // sections : [
-    //     {
-    //         name : 'Assets',
-    //         components: getComponents('assets')
-    //     },
-    //     {
-    //         name : 'Buttons',
-    //         components: getComponents('button')
-    //     },
-    //     {
-    //         name : 'Cards',
-    //         components: getComponents('card')
-    //     },
-    //     {
-    //         name : 'Collections',
-    //         components: getComponents('collection')
-    //     },
-    //     {
-    //         name : 'containers',
-    //         components: getComponents('containers')
-    //     },
-    //     {
-    //         name : 'Content',
-    //         components: getComponents('content')
-    //     },
-    //     {
-    //         name : 'Form',
-    //         components: getComponents('form')
-    //     },
-    //     {
-    //         name : 'Layout',
-    //         components: getComponents('layout')
-    //     },
-    //     {
-    //         name : 'Navigation',
-    //         components: getComponents('nav')
-    //     },
-    //     {
-    //         name : 'Notifications',
-    //         components: getComponents('notify')
-    //     },
-    //     {
-    //         name : 'Progress',
-    //         components: getComponents('progress')
-    //     }
-    // ],
+    // components : getComponents,
+    sections : [
+        {
+            name : 'Components',
+            components: getComponents('components'),
+            sectionDepth : 2
+        },
+        {
+            name : 'Fragments',
+            components: getComponents('fragments')
+        },
+        {
+            name : 'Primed Components',
+            components: getComponents('primed')
+        },
+        {
+            name : 'Layout Templates',
+            components: getComponents('templates')
+        }
+    ],
     template : {
         head : {
             links : [
