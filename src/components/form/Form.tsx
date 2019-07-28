@@ -11,6 +11,10 @@ interface FormProps extends BaseProps {
     target?: string;
 }
 
+/**
+ * Component to encapsulate various form elements in a single
+ * form.
+ */
 export default class Form extends React.Component<FormProps, any> {
 
     static defaultProps = {
