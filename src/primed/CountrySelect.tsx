@@ -12,7 +12,7 @@ export default class CountrySelect extends React.Component<BaseProps, any> {
         for (let index = 0; index < COUNTRIES.length; index++) {
             let item = COUNTRIES[index];
 
-            result.push(<option value={item}>{item}</option>);
+            result.push(<option key={item} value={item}>{item}</option>);
         }
 
         return result;
