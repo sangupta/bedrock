@@ -1,5 +1,5 @@
 ```js
-import Button from './../button/Button';
+import Button from './../buttons/Button';
 
 initialState = { modalOpen : false }
 

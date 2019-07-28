@@ -1,5 +1,5 @@
 ```js
-import Button from './../button/Button';
+import Button from './../buttons/Button';
 import Menu from './Menu';
 import MenuItem from './MenuItem';
 
@@ -23,7 +23,7 @@ import MenuItem from './MenuItem';
 ```js
 import Menu from './Menu';
 import MenuItem from './MenuItem';
-import SplitButton from './../button/SplitButton';
+import SplitButton from './../buttons/SplitButton';
 
 <Dropdown>
     <SplitButton variant='primary' label='Menu' />

@@ -3,9 +3,9 @@ import FontAwesome from './components/connectors/FontAwesome';
 import Gravatar from './components/connectors/Gravatar';
 
 // buttons
-import BadgeButton from './components/button/BadgeButton';
-import Button from './components/button/Button';
-import SplitButton from './components/button/SplitButton';
+import BadgeButton from './components/buttons/BadgeButton';
+import Button from './components/buttons/Button';
+import SplitButton from './components/buttons/SplitButton';
 
 // collection
 import ButtonGroup from './components/collection/ButtonGroup';

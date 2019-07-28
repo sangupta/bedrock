@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BaseProps, mergeCSS } from './../../BedrockUtils';
-import SplitButton from './../button/SplitButton';
+import SplitButton from './../buttons/SplitButton';
 import Menu from './Menu';
 
 interface DropdownProps extends BaseProps {

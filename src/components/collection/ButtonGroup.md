@@ -1,5 +1,5 @@
 ```js
-import Button from './../button/Button';
+import Button from './../buttons/Button';
 
 <ButtonGroup>
     <Button>Left</Button>
@@ -13,7 +13,7 @@ import Button from './../button/Button';
 ### Large
 
 ```js
-import Button from './../button/Button';
+import Button from './../buttons/Button';
 
 <ButtonGroup size='large'>
     <Button>Left</Button>
@@ -25,7 +25,7 @@ import Button from './../button/Button';
 ### Small
 
 ```js
-import Button from './../button/Button';
+import Button from './../buttons/Button';
 
 <ButtonGroup size='small'>
     <Button>Left</Button>
