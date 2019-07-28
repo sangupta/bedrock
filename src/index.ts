@@ -1,6 +1,6 @@
 // assets
-import FontAwesome from './components/assets/FontAwesome';
-import Gravatar from './components/assets/Gravatar';
+import FontAwesome from './components/connectors/FontAwesome';
+import Gravatar from './components/connectors/Gravatar';
 
 // buttons
 import BadgeButton from './components/button/BadgeButton';
