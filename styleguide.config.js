@@ -35,8 +35,53 @@ module.exports = {
     sections : [
         {
             name : 'Components',
-            components: getComponents('components'),
-            sectionDepth : 2
+            sectionDepth : 3,
+            sections : [
+                {
+                    name : 'Assets',
+                    components: getComponents('components/assets'),
+                },
+                {
+                    name : 'Buttons',
+                    components: getComponents('components/button'),
+                },
+                {
+                    name : 'Cards',
+                    components: getComponents('components/card'),
+                },
+                {
+                    name : 'Collection',
+                    components: getComponents('components/collection'),
+                },
+                {
+                    name : 'Content',
+                    components: getComponents('components/content'),
+                },
+                {
+                    name : 'Form',
+                    components: getComponents('components/form'),
+                },
+                {
+                    name : 'Layout',
+                    components: getComponents('components/layout'),
+                },
+                {
+                    name : 'Navigation',
+                    components: getComponents('components/nav'),
+                },
+                {
+                    name : 'Popovers',
+                    components: getComponents('components/pop'),
+                },
+                {
+                    name : 'Progress',
+                    components: getComponents('components/progress'),
+                },
+                {
+                    name : 'Tables',
+                    components: getComponents('components/tables'),
+                },
+            ]
         },
         {
             name : 'Fragments',
