@@ -13,6 +13,11 @@ interface TextInputProps extends BaseProps {
     placeholder?: string;
 
     /**
+     * The attribute name to use
+     */
+    name?: string;
+
+    /**
      * Handler fired when the value changes
      */
     onChange?: Function;
@@ -35,7 +40,8 @@ export default class TextInput extends React.Component<TextInputProps, any> {
         const css: string = mergeCSS('form-control', this.props.className);
         return <input className={css} type={this.props.type}
             placeholder={this.props.placeholder}
-            onChange={this.handleChange}>
+            onChange={this.handleChange}
+            name={this.props.name}>
         </input>;
     }
 }

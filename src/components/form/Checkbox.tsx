@@ -1,9 +1,15 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface CheckboxProps extends BaseProps {
     disabled?: boolean;
+
     value?: string;
+
+    /**
+     * The attribute name to use
+     */
+    name?: string;
 }
 
 export default class Checkbox extends React.Component<CheckboxProps, any> {
@@ -15,12 +21,9 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
 
     render() {
         const css: string = mergeCSS('form-check-input', this.props.className);
-        const extra: any = {};
+        const extra: any = getProps(this.props, ['name', 'value']);
         if (this.props.disabled) {
             extra.disabled = 'disabled';
-        }
-        if (this.props.value) {
-            extra.value = this.props.value;
         }
 
         return <input {...extra} type='checkbox' className={css} />;

@@ -19,12 +19,19 @@ export default class FormField extends React.Component<FormFieldProps, any> {
         label: ''
     }
 
-    getLabel = () => {
+    getLabel = (hasCheckbox: boolean) => {
         if (!this.props.label) {
             return null;
         }
+        const extra: any = {};
+        if (hasCheckbox) {
+            extra.className = 'form-check-label';
+        }
+        if (this.props.for) {
+            extra.htmlFor = this.props.for;
+        }
 
-        return <label htmlFor={this.props.for}>{this.props.label}</label>;
+        return <label {...extra}>{this.props.label}</label>;
     }
 
     getHelp = () => {
@@ -54,13 +61,13 @@ export default class FormField extends React.Component<FormFieldProps, any> {
         if (hasCheckbox) {
             return <div className={css}>
                 {this.props.children}
-                {this.getLabel()}
+                {this.getLabel(hasCheckbox)}
             </div>;
         }
 
         // a non-checkbox form element
         return <div className={css}>
-            {this.getLabel()}
+            {this.getLabel(hasCheckbox)}
             {this.props.children}
             {this.getHelp()}
         </div>;

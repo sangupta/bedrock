@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface TextAreaProps extends BaseProps {
     /**
@@ -11,6 +11,11 @@ interface TextAreaProps extends BaseProps {
      * Whether the text-area is read only or not
      */
     readOnly?: boolean;
+
+    /**
+     * The attribute name to use
+     */
+    name?: string;
 
     required?: boolean;
 
@@ -53,11 +58,8 @@ export default class TextArea extends React.Component<TextAreaProps, any> {
 
     render() {
         const css: string = mergeCSS('form-control', this.props.className);
-        const extra: any = {};
+        const extra: any = getProps(this.props, ['rows', 'placeholder', 'name']);
 
-        if (this.props.rows > 0) {
-            extra.rows = this.props.rows;
-        }
         if (this.props.readOnly) {
             extra.readOnly = 'readonly';
         }
@@ -66,9 +68,6 @@ export default class TextArea extends React.Component<TextAreaProps, any> {
         }
         if (this.props.disabled) {
             extra.disabled = 'disabled';
-        }
-        if (this.props.placeholder) {
-            extra.placeholder = this.props.placeholder;
         }
 
         return <textarea className={css} {...extra} onChange={this.handleChange} value={this.props.value || this.props.children}></textarea>;
