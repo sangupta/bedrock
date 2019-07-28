@@ -8,5 +8,8 @@ import FormField from './FormField';
     <FormField label='Disabled checkbox'>
         <Checkbox disabled={true} onChange={v => console.log(v) } />
     </FormField>
+    <FormField label='Indeterminate checkbox'>
+        <Checkbox indeterminate={true} onChange={v => console.log(v) } />
+    </FormField>
 </React.Fragment>
 ```

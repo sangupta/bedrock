@@ -20,17 +20,47 @@ interface CheckboxProps extends BaseProps {
      * Handler fired when the value changes
      */
     onChange?: Function;
+
+    /**
+     * Whether the checkbox is in indeterminate state
+     */
+    indeterminate?: boolean;
 }
 
 export default class Checkbox extends React.Component<CheckboxProps, any> {
 
     static defaultProps = {
         disabled: false,
-        value: ''
+        value: '',
+        indeterminate: false
+    }
+
+    inputRef: any;
+
+    constructor(props, context) {
+        super(props, context);
+
+        this.inputRef = React.createRef();
+    }
+
+    componentDidMount() {
+        this.setIndeterminateState();
+    }
+
+    componentDidUpdate() {
+        this.setIndeterminateState();
+    }
+
+    setIndeterminateState = () => {
+        let value = this.props.indeterminate;
+        let ref = this.inputRef.current;
+        if (ref) {
+            ref.indeterminate = value;
+        }
     }
 
     handleChange = (e) => {
-        if(this.props.onChange) {
+        if (this.props.onChange) {
             this.props.onChange(e.target.checked);
         }
     }
@@ -45,7 +75,7 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
             extra.checked = 'checked';
         }
 
-        return <input {...extra} type='checkbox' className={css} onChange={this.handleChange} />;
+        return <input ref={this.inputRef} {...extra} type='checkbox' className={css} onChange={this.handleChange} />;
     }
 
 }
