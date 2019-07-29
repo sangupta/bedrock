@@ -38,20 +38,24 @@ module.exports = {
             sectionDepth : 3,
             sections : [
                 {
-                    name : 'Assets',
-                    components: getComponents('components/assets'),
-                },
-                {
                     name : 'Buttons',
-                    components: getComponents('components/button'),
+                    components: getComponents('components/buttons'),
                 },
                 {
                     name : 'Cards',
-                    components: getComponents('components/card'),
+                    components: getComponents('components/cards'),
                 },
                 {
                     name : 'Collection',
                     components: getComponents('components/collection'),
+                },
+                {
+                    name : '3rd party connectors',
+                    components: getComponents('components/connectors'),
+                },
+                {
+                    name : 'Containers',
+                    components: getComponents('components/containers'),
                 },
                 {
                     name : 'Content',
@@ -70,11 +74,15 @@ module.exports = {
                     components: getComponents('components/nav'),
                 },
                 {
+                    name : 'Notifications',
+                    components: getComponents('components/notify'),
+                },
+                {
                     name : 'Popovers',
                     components: getComponents('components/pop'),
                 },
                 {
-                    name : 'Progress',
+                    name : 'Progress Indicators',
                     components: getComponents('components/progress'),
                 },
                 {
@@ -92,7 +100,7 @@ module.exports = {
             components: getComponents('primed')
         },
         {
-            name : 'Layout Templates',
+            name : 'Page Templates',
             components: getComponents('templates')
         }
     ],
