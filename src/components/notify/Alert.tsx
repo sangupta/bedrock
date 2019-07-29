@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mergeCSS, invokeFn, BaseProps } from './../../BedrockUtils';
+import { mergeCSS, invokeFn, BaseProps, getProps } from './../../BedrockUtils';
 
 interface AlertProps extends BaseProps {
     /**
@@ -73,8 +73,9 @@ export default class Alert extends React.Component<AlertProps, AlertState> {
         }
 
         const css: string = mergeCSS('alert', 'alert-' + this.props.variant, this.props.className);
-
-        return <div className={css} role={this.props.role}>
+        const extra:any = getProps(this.props);
+        
+        return <div {...extra} className={css} role={this.props.role}>
             {this.props.children}
             {this.getCrossButton()}
         </div>;

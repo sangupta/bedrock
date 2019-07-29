@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface ButtonProps extends BaseProps {
     /**
@@ -49,16 +49,17 @@ export default class Button extends React.Component<ButtonProps, any> {
             'btn-sm': this.props.size === 'small'
         }, this.props.className);
 
+        const extra:any = getProps(this.props);
         const children = this.props.children ? this.props.children : this.props.label;
 
         if (this.props.icon) {
-            return <a href='#' className={css} onClick={this.handleClick}>
+            return <a {...extra} href='#' className={css} onClick={this.handleClick}>
                 <i className={this.props.icon} />&nbsp;
             {children}
             </a>;
         }
 
-        return <a href='#' className={css} onClick={this.handleClick}>
+        return <a {...extra} href='#' className={css} onClick={this.handleClick}>
             {children}
         </a>;
     }

@@ -27,15 +27,21 @@ export interface BaseProps {
     data?: any;
 }
 
-export function getProps(props: any, names: string[]): any {
+export function getProps(props: any, names: string[] = []): any {
     const result = {};
     if (!props) {
         return result;
     }
-    if (!names || names.length === 0) {
+
+    // copy the ID if present
+    result['id'] = props.id;
+
+    // check if names are available
+    if (!names || names.length === 0) {        
         return result;
     }
 
+    // iterate over
     for (let index = 0; index < names.length; index++) {
         let name: string = names[index];
         let prop = props[name];

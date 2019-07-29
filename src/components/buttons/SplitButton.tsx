@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface SplitButtonProps extends BaseProps {
     /**
@@ -65,9 +65,10 @@ export default class SplitButton extends React.Component<SplitButtonProps, any> 
             'btn-sm': this.props.size === 'small'
         }, this.props.className);
 
+        const extra:any = getProps(this.props);
         const splitCss: string = mergeCSS('btn', 'btn-' + this.props.variant, 'dropdown-toggle', this.props.splitClassName)
 
-        return <div className={mergeCSS("btn-group", this.props.groupClassName)}>
+        return <div {...extra} className={mergeCSS("btn-group", this.props.groupClassName)}>
             <button type="button" className={css} onClick={this.handleClick}>{this.props.label}</button>
             <button type="button" className={splitCss} onClick={this.handleAction} />
         </div>;

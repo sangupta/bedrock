@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface ButtonGroupProps extends BaseProps {
     ariaLabel?: string;
@@ -24,7 +24,9 @@ export default class ButtonGroup extends React.Component<ButtonGroupProps, any> 
             'btn-group-sm': this.props.size === 'small'
         }, this.props.className);
 
-        return <div className={css} role={this.props.role} aria-label={this.props.ariaLabel}>
+        const extra:any = getProps(this.props);
+        
+        return <div {...extra} className={css} role={this.props.role} aria-label={this.props.ariaLabel}>
             {this.props.children}
         </div>;
     }

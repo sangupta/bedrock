@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface ImageProps extends BaseProps {
     /**
@@ -40,8 +40,10 @@ export default class Image extends React.Component<ImageProps, any> {
             'rounded': this.props.rounded,
             'img-thumbnail': this.props.thumbnail
         }, this.props.className);
-
-        return <img className={css} src={this.props.src} />;
+        
+        const extra:any = getProps(this.props);
+        
+        return <img {...extra} className={css} src={this.props.src} />;
     }
 
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface TableProps extends BaseProps {
     /**
@@ -59,7 +59,9 @@ export default class Table extends React.Component<TableProps, any> {
             'table-responsive': this.props.isResponsive
         }, this.props.className);
 
-        return <table className={css}>
+        const extra:any = getProps(this.props);
+
+        return <table {...extra} className={css}>
             {this.props.children}
         </table>;
     }

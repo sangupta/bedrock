@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface ColorInputProps extends BaseProps {
     name?: string;
@@ -29,7 +29,9 @@ export default class ColorInput extends React.Component<ColorInputProps, any> {
 
     render() {
         const css: string = mergeCSS('form-control', this.props.className);
-        return <input className={css} type='color'
+        const extra:any = getProps(this.props);
+        
+        return <input {...extra} className={css} type='color'
             onChange={this.handleChange}
             defaultValue={this.props.value}
             name={this.props.name}>

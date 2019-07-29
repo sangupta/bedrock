@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface KeyboardProps extends BaseProps {
     value: string;
@@ -14,7 +14,9 @@ export default class Keyboard extends React.Component<KeyboardProps, any> {
     }
 
     render() {
-        return <kbd className={mergeCSS({ 'kbd-': this.props.variant }, this.props.className)}>
+        const extra:any = getProps(this.props);
+        
+        return <kbd {...extra} className={mergeCSS({ 'kbd-': this.props.variant }, this.props.className)}>
             {this.props.value}
         </kbd>;
     }

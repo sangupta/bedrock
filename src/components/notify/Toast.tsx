@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface ToastProps extends BaseProps {
 
@@ -66,8 +66,9 @@ export default class Toast extends React.Component<ToastProps, any> {
 
     render() {
         const css: string = mergeCSS('toast', this.props.className);
-
-        return <div className={css} role="alert" aria-live="assertive" aria-atomic="true">
+        const extra:any = getProps(this.props);
+        
+        return <div {...extra} className={css} role="alert" aria-live="assertive" aria-atomic="true">
             {this.getToastHeader()}
             <div className="toast-body">
                 {this.props.children}

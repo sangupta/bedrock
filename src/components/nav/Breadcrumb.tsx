@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface BreadcrumbProps extends BaseProps {
     /**
@@ -16,7 +16,9 @@ interface BreadcrumbProps extends BaseProps {
 export default class Breadcrumb extends React.Component<BreadcrumbProps, any> {
 
     render() {
-        return <nav aria-label='breadcrumb' className={this.props.navCSS} >
+        const extra:any = getProps(this.props);
+        
+        return <nav {...extra} aria-label='breadcrumb' className={this.props.navCSS} >
             <ol className={mergeCSS('breadcrumb', this.props.className)}>
                 {this.props.children}
             </ol>

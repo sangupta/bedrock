@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, getProps } from './../../BedrockUtils';
 
 interface PaginationItemProps extends BaseProps {
     /**
@@ -43,7 +43,9 @@ export default class PaginationItem extends React.Component<PaginationItemProps,
             clazz += ' disabled';
         }
 
-        return <li className={clazz} aria-current='page'>
+        const extra:any = getProps(this.props);
+
+        return <li {...extra} className={clazz} aria-current='page'>
             <a className='page-link' href={this.props.href} onClick={this.props.onClick}>{this.props.children}</a>
         </li>;
     }

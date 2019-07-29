@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface ParaProps extends BaseProps {
     /**
@@ -23,6 +23,8 @@ export default class Para extends React.Component<ParaProps, any> {
             'text-' : this.props.variant
         }, this.props.className);
         
-        return <p className={css}>{this.props.children}</p>;
+        const extra:any = getProps(this.props);
+
+        return <p {...extra} className={css}>{this.props.children}</p>;
     }
 }

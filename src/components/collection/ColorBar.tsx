@@ -1,7 +1,7 @@
 import * as React from 'react';
 import HBox from '../layout/HBox';
 import ColorBox from '../content/ColorBox';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, getProps } from './../../BedrockUtils';
 
 interface ColorBarProps extends BaseProps {
     /**
@@ -56,6 +56,8 @@ export default class ColorBar extends React.Component<ColorBarProps, any> {
             return null;
         }
 
-        return <HBox className={this.props.className}>{this.getColors()}</HBox>;
+        const extra:any = getProps(this.props);
+        
+        return <HBox {...extra} className={this.props.className}>{this.getColors()}</HBox>;
     }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mergeCSS, BaseProps } from './../../BedrockUtils';
+import { mergeCSS, BaseProps, getProps } from './../../BedrockUtils';
 
 interface PasswordInputProps extends BaseProps {
     placeholder?: string;
@@ -40,8 +40,10 @@ export default class PasswordInput extends React.Component<PasswordInputProps, a
         const css: string = mergeCSS('input-group', this.props.className);
         const type: string = this.state.show ? 'text' : 'password';
         const label: string = this.state.show ? 'Hide' : 'Show';
+        const extra: any = getProps(this.props, ['name']);
+
         return <div className={css}>
-            <input type={type} className="form-control" placeholder={this.props.placeholder} onChange={this.handleChange} />
+            <input {...extra} type={type} className="form-control" placeholder={this.props.placeholder} onChange={this.handleChange} />
             <div className="input-group-append">
                 <span className="input-group-text cursor-pointer" onClick={this.toggleMode}>{label}</span>
             </div>

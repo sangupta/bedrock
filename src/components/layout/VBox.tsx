@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface VBoxProps extends BaseProps {
 }
@@ -8,8 +8,9 @@ export default class VBox extends React.Component<VBoxProps, any> {
 
     render() {
         const css: string = mergeCSS('d-flex', 'flex-column', this.props.className);
-
-        return <div className={css}>
+        const extra:any = getProps(this.props);
+        
+        return <div {...extra} className={css}>
             {this.props.children}
         </div>;
     }

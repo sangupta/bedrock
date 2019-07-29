@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface SpinnerProps extends BaseProps {
     /**
@@ -40,7 +40,9 @@ export default class Spinner extends React.PureComponent<SpinnerProps, any> {
             'spinner-grow-sm': this.props.size === 'small' && this.props.type === 'grow'
         }, this.props.className);
 
-        return <div className={css} role={this.props.role}>
+        const extra:any = getProps(this.props);
+        
+        return <div {...extra} className={css} role={this.props.role}>
             <span className="sr-only">Loading...</span>
         </div>;
     }

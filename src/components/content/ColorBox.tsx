@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface ColorBoxProps extends BaseProps {
     /**
@@ -42,7 +42,9 @@ export default class ColorBox extends React.Component<ColorBoxProps, any> {
 
     render() {
         const css: string = mergeCSS('color-box', this.props.className);
-        return <div className={css} style={{ 'backgroundColor': this.props.color }} onClick={this.handleClick}>{this.props.label}</div>;
+        const extra:any = getProps(this.props);
+
+        return <div {...extra} className={css} style={{ 'backgroundColor': this.props.color }} onClick={this.handleClick}>{this.props.label}</div>;
     }
 
 }

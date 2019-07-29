@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from '../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from '../../BedrockUtils';
 import Checkbox from './Checkbox';
 
 interface FormFieldProps extends BaseProps {
@@ -23,7 +23,8 @@ export default class FormField extends React.Component<FormFieldProps, any> {
         if (!this.props.label) {
             return null;
         }
-        const extra: any = {};
+
+        const extra:any = getProps(this.props);
         if (hasCheckbox) {
             extra.className = 'form-check-label';
         }

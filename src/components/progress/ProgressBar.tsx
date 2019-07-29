@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface ProgressBarProps extends BaseProps {
     /**
@@ -57,8 +57,9 @@ export default class ProgressBar extends React.Component<ProgressBarProps, any> 
         
         const width = '' + percent.toFixed(0) + '%';
         const css: string = mergeCSS('progress', this.props.className);
-
-        return <div className={css}>
+        const extra:any = getProps(this.props);
+        
+        return <div {...extra} className={css}>
             <div className={'progress-bar bg-' + this.props.variant}
                 role="progressbar" style={{ width: width }}
                 aria-valuenow={this.props.value}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from 'BedrockUtils';
+import { BaseProps, getProps } from './../../BedrockUtils';
 
 interface LinkProps extends BaseProps {
     href?: string;
@@ -17,7 +17,9 @@ export default class Link extends React.Component<LinkProps, any> {
     }
 
     render() {
-        return <a href={this.props.href} onClick={this.props.onClick}>
+        const extra:any = getProps(this.props);
+        
+        return <a {...extra} href={this.props.href} onClick={this.props.onClick}>
             {this.props.children}
         </a>;
     }

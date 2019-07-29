@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface NavbarProps extends BaseProps {
 
@@ -25,7 +25,9 @@ export default class Navbar extends React.Component<NavbarProps, any> {
             'bg-': this.props.background
         }, this.props.className);
 
-        return <nav className={css}>
+        const extra:any = getProps(this.props);
+        
+        return <nav {...extra} className={css}>
             {this.props.children}
         </nav>;
     }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface PaginationProps extends BaseProps {
     ariaLabel?: string;
@@ -33,7 +33,9 @@ export default class Pagination extends React.Component<PaginationProps, any> {
             'pagination-sm': this.props.size === 'small'
         }, this.props.className);
 
-        return <nav aria-label={this.props.ariaLabel} className={this.props.navCSS}>
+        const extra:any = getProps(this.props);
+
+        return <nav {...extra} aria-label={this.props.ariaLabel} className={this.props.navCSS}>
             <ul className={css}>
                 {this.props.children}
             </ul>

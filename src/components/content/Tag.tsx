@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface TagProps extends BaseProps {
     /**
@@ -36,7 +36,9 @@ export default class Tag extends React.Component<TagProps, any> {
             'border-': this.props.variant
         }, this.props.className);
 
-        return <div className={css}>
+        const extra:any = getProps(this.props);
+
+        return <div {...extra} className={css}>
             {this.props.children}
             {this.getCloseButton()}
         </div>;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface ContainerProps extends BaseProps {
     /**
@@ -16,7 +16,9 @@ export default class Container extends React.Component<ContainerProps, any> {
 
     render() {
         const css: string = mergeCSS(this.props.fluid ? 'container-fluid' : 'container', this.props.className);
-        return <div className={css}>
+        const extra:any = getProps(this.props);
+        
+        return <div {...extra} className={css}>
             {this.props.children}
         </div>;
     }

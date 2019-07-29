@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface NavItemProps extends BaseProps {
 
@@ -47,7 +47,9 @@ export default class NavItem extends React.Component<NavItemProps, any> {
             disabled: this.props.disabled
         }, this.props.linkCSS);
 
-        return <li className={css}>
+        const extra:any = getProps(this.props);
+
+        return <li {...extra} className={css}>
             <a className={linkCSS} href={this.props.href}>{this.props.children}</a>
         </li>;
     }

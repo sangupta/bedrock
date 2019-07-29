@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface FigureProps extends BaseProps {
     /**
@@ -24,7 +24,9 @@ export default class Figure extends React.Component<FigureProps, any> {
         const childCSS = mergeCSS('figure-caption', {
             'text-right': this.props.align === 'right'
         });
-        return <figure className={css}>
+        const extra:any = getProps(this.props);
+        
+        return <figure {...extra} className={css}>
             {this.props.children}
             <figcaption className={childCSS}>{this.props.caption}</figcaption>
         </figure>;

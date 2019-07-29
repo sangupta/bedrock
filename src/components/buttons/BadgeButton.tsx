@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface BadgeButtonProps extends BaseProps {
 
@@ -45,8 +45,9 @@ export default class BadgeButton extends React.Component<BadgeButtonProps, any> 
 
     render() {
         const css: string = mergeCSS('badge', 'bagde-' + this.props.variant, this.props.className);
+        const extra:any = getProps(this.props);
 
-        return <a href='#' className={css} onClick={this.props.onClick} >
+        return <a {...extra} href='#' className={css} onClick={this.props.onClick} >
             <i className={this.props.icon} /> {this.props.title}
             {this.getBadge()}
         </a>;

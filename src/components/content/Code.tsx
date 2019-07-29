@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, getProps } from './../../BedrockUtils';
 
 export default class Code extends React.Component<BaseProps, any> {
 
     render() {
-        return <code className={this.props.className}>{this.props.children}</code>;
+        const extra:any = getProps(this.props);
+        
+        return <code {...extra} className={this.props.className}>{this.props.children}</code>;
     }
 
 }

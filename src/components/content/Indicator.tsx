@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface IndicatorProps extends BaseProps {
     /**
@@ -26,8 +26,9 @@ export default class Indicator extends React.Component<IndicatorProps, any> {
 
     render() {
         const children = this.props.children ? this.props.children : this.props.label;
-
-        return <div className={mergeCSS('indicator', this.props.className)}>
+        const extra:any = getProps(this.props);
+        
+        return <div {...extra} className={mergeCSS('indicator', this.props.className)}>
             <span className={'indicator-dot bg-' + this.props.variant}></span>
             {children}
         </div>;

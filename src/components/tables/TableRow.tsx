@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, getProps } from './../../BedrockUtils';
 
 interface TableRowProps extends BaseProps {
 }
@@ -7,6 +7,8 @@ interface TableRowProps extends BaseProps {
 export default class TableRow extends React.Component<TableRowProps, any> {
 
     render() {
-        return <tr className={this.props.className}>{this.props.children}</tr>;
+        const extra:any = getProps(this.props);
+        
+        return <tr {...extra} className={this.props.className}>{this.props.children}</tr>;
     }
 }

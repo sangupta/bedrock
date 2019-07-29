@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, getProps } from './../../BedrockUtils';
 
 /**
  * Used to display the `thead` section of a table.
@@ -7,7 +7,9 @@ import { BaseProps } from './../../BedrockUtils';
 export default class TableHead extends React.Component<BaseProps, any> {
 
     render() {
-        return <thead className={this.props.className}>
+        const extra:any = getProps(this.props);
+        
+        return <thead {...extra} className={this.props.className}>
             <tr>
                 {this.props.children}
             </tr>

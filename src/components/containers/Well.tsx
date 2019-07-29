@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 /**
  * If you need a CSS styled `variant`-aware well to display
@@ -9,7 +9,9 @@ import { BaseProps, mergeCSS } from './../../BedrockUtils';
 export default class Well extends React.Component<BaseProps, any> {
     render() {
         const css: string = mergeCSS('card', 'card-body', this.props.className);
-        return <div className={css}>
+        const extra:any = getProps(this.props);
+        
+        return <div {...extra} className={css}>
             {this.props.children}
         </div>;
     }

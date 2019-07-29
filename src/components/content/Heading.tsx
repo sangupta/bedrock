@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from './../../BedrockUtils';
+import { BaseProps, getProps } from './../../BedrockUtils';
 
 interface HeadingProps extends BaseProps {
 
@@ -17,7 +17,9 @@ export default class Heading extends React.Component<HeadingProps, any> {
 
     render() {
         const Element: any = 'h' + this.props.size;
-        return <Element className={this.props.className}>{this.props.children}</Element>
+        const extra:any = getProps(this.props);
+        
+        return <Element {...extra} className={this.props.className}>{this.props.children}</Element>
     }
 
 }

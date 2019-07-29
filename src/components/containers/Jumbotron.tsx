@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface JumbotronProps extends BaseProps {
     /**
@@ -24,7 +24,9 @@ export default class Jumbotron extends React.Component<JumbotronProps, any> {
             'jumbotron-fluid': this.props.fluid
         }, this.props.className);
 
-        return <div className={css}>
+        const extra:any = getProps(this.props);
+        
+        return <div {...extra} className={css}>
             {this.props.children}
         </div>;
     }

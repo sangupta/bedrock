@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from '../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from '../../BedrockUtils';
 
 interface TextInputProps extends BaseProps {
     /**
@@ -38,10 +38,10 @@ export default class TextInput extends React.Component<TextInputProps, any> {
 
     render() {
         const css: string = mergeCSS('form-control', this.props.className);
-        return <input className={css} type={this.props.type}
+        const extra: any = getProps(this.props, ['name']);
+
+        return <input {...extra} className={css} type={this.props.type}
             placeholder={this.props.placeholder}
-            onChange={this.handleChange}
-            name={this.props.name}>
-        </input>;
+            onChange={this.handleChange} />;
     }
 }
