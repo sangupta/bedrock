@@ -3,6 +3,7 @@
     height: 50px;
     display: table-cell;
 }
+
 .indicator-dot {
     border-radius: 50%;
     height: 8px;
@@ -10,6 +11,7 @@
     display: inline-block;
     margin-right: 4px;
 }
+
 .bedrock-tag {
     display: inline-block;
     border: 1px solid;
@@ -17,9 +19,11 @@
     border-radius: 4px;
     margin: 0 5px;
 }
+
 .cursor-pointer {
     cursor: pointer;
 }
+
 .bedrock-underlay {
     position: fixed;
     top: 0;
@@ -28,5 +32,71 @@
     height: 100%;
     background: #000;
     opacity: 0.5;
-    z-index: 1040;    
+    z-index: 1040;
 }
+
+/**
+ * Used in CBox component for horizontal
+ * and vertical centering.
+ */
+.flex-center {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/**
+ * Start loading dots
+ * Borrowed from https://tobiasahlin.com/spinkit/
+ */
+
+ .loading-dots {
+    width: 70px;
+    text-align: center;
+}
+
+.loading-dots>div {
+    width: 18px;
+    height: 18px;
+    background-color: #333;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.loading-dots .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.loading-dots .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0)
+    }
+    40% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+
+/**
+ * End loading dots
+ */
