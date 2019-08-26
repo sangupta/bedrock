@@ -50,7 +50,7 @@ module.exports = {
                     components: getComponents('components/collection'),
                 },
                 {
-                    name : '3rd party connectors',
+                    name : 'Connectors',
                     components: getComponents('components/connectors'),
                 },
                 {
