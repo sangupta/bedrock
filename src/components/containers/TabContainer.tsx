@@ -10,6 +10,12 @@ interface TabContainerProps {
      */
     selected?: number;
 
+    /**
+     * Handler invoked with the old and new indices when
+     * tabs are changed.
+     */
+    onSelect?:Function;
+
 }
 
 /**
@@ -29,9 +35,13 @@ export default class TabContainer extends React.Component<TabContainerProps, any
 
     switchTab = (e: React.MouseEvent, index: number) => {
         e.preventDefault();
+        const previous = this.state.selected;
         this.setState({
             selected: index
         });
+        if(this.props.onSelect) {
+            this.props.onSelect(previous, index);
+        }
     }
 
     getChildren = (children, selected: number) => {
