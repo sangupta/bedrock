@@ -37,7 +37,7 @@ export function getProps(props: any, names: string[] = []): any {
     result['id'] = props.id;
 
     // check if names are available
-    if (!names || names.length === 0) {        
+    if (!names || names.length === 0) {
         return result;
     }
 
@@ -305,3 +305,17 @@ export const COUNTRIES = [
     'Zambia',
     'Zimbabwe'
 ];
+
+export const ONE_SECOND: number = 1000;
+
+export const ONE_MINUTE: number = 60 * 1000;
+
+export const ONE_HOUR: number = 60 * ONE_MINUTE;
+
+export const ONE_DAY: number = 24 * ONE_HOUR;
+
+export const ONE_WEEK: number = 7 * ONE_DAY;
+
+export const ONE_MONTH: number = 30 * ONE_DAY;
+
+export const ONE_YEAR: number = 365 * ONE_DAY;
