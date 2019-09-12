@@ -41,7 +41,7 @@ export default class CoverPage extends React.Component<BaseProps, any> {
 
         // header first
         let headerClass: string = mergeCSS(header.props.className, 'mb-auto');
-        header = React.cloneElement(header, { className: headerClass }, header.props.children);
+        header = React.cloneElement(header, { className: headerClass, key : 'header' }, header.props.children);
         kids.push(header);
 
         // main container
@@ -49,7 +49,7 @@ export default class CoverPage extends React.Component<BaseProps, any> {
 
         // footer next
         let footerClass: string = mergeCSS(footer.props.className, 'mt-auto');
-        footer = React.cloneElement(footer, { className: footerClass }, footer.props.children);
+        footer = React.cloneElement(footer, { className: footerClass, key : 'footer' }, footer.props.children);
         kids.push(footer);
 
         const css:string = mergeCSS('cover-container d-flex w-100 h-100 p-3 mx-auto flex-column', this.props.className);
