@@ -21,6 +21,11 @@ interface ImageProps extends BaseProps {
      * URL from which the image should be loaded
      */
     src: string;
+
+    /**
+     * Alternate text to use on image
+     */
+    altText?: string;
 }
 
 /**
@@ -31,7 +36,8 @@ export default class Image extends React.Component<ImageProps, any> {
     static defaultProps = {
         fluid: false,
         thumbnail: false,
-        rounded: false
+        rounded: false,
+        altText: ''
     }
 
     render() {
@@ -40,9 +46,12 @@ export default class Image extends React.Component<ImageProps, any> {
             'rounded': this.props.rounded,
             'img-thumbnail': this.props.thumbnail
         }, this.props.className);
-        
-        const extra:any = getProps(this.props);
-        
+
+        const extra: any = getProps(this.props);
+        if(this.props.altText) {
+            extra.alt = this.props.altText;
+        }
+
         return <img {...extra} className={css} src={this.props.src} />;
     }
 
