@@ -1,17 +1,11 @@
-.bedrock-docs-bar span, 
-.bedrock-docs-bar .btn,
-.bedrock-docs-bar .badge,
-.bedrock-docs-bar .progress, 
-.bedrock-docs-bar img,
-.bedrock-docs-bar .spinner-grow,
-.bedrock-docs-bar .spinner-border,
-.bedrock-docs-bar .navbar,
-.bedrock-docs-bar .color-box {
+.bedrock-docs-bar span, .bedrock-docs-bar .btn, .bedrock-docs-bar .badge, .bedrock-docs-bar .progress, .bedrock-docs-bar img, .bedrock-docs-bar .spinner-grow, .bedrock-docs-bar .spinner-border, .bedrock-docs-bar .navbar, .bedrock-docs-bar .color-box {
     margin: 10px 5px;
 }
+
 .bedrock-docs-bar .btn-group .btn {
     margin-right: 0;
 }
+
 .bedrock-docs-block {
     width: 100px;
     height: 100px;
@@ -21,4 +15,18 @@
     text-align: center;
     vertical-align: middle;
     line-height: 100px;
+}
+
+.bedrock-docs-gallery-view {
+    width: 1200px !important;
+    min-width: 1200px !important;
+    max-width: 1200px !important;
+    border: 1px solid black;
+    min-height: 200px;
+}
+
+.bedrock-docs-fullpage {
+    width: 800px !important;
+    height: 600px !important;
+    border: 1px solid black;
 }
