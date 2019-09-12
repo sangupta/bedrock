@@ -70,6 +70,10 @@ module.exports = {
                     components: getComponents('components/layout'),
                 },
                 {
+                    name : 'Miscellaneous',
+                    components: getComponents('components/misc'),
+                },
+                {
                     name : 'Navigation',
                     components: getComponents('components/nav'),
                 },
@@ -93,15 +97,18 @@ module.exports = {
         },
         {
             name : 'Fragments',
-            components: getComponents('fragments')
+            components: getComponents('fragments'),
+            sectionDepth : 3
         },
         {
             name : 'Primed Components',
-            components: getComponents('primed')
+            components: getComponents('primed'),
+            sectionDepth : 3
         },
         {
             name : 'Page Templates',
-            components: getComponents('templates')
+            components: getComponents('templates'),
+            sectionDepth : 3
         }
     ],
     template : {
