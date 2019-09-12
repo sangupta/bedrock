@@ -26,10 +26,16 @@ interface ImageProps extends BaseProps {
      * Alternate text to use on image
      */
     altText?: string;
+
+    /**
+     * Function handler called when the image is clicked
+     */
+    onClick?: Function;
 }
 
 /**
- * Used to display images.
+ * Used to display images. Supports the `fluid`, `rounded`, or the `thumbnail` variants.
+ * 
  */
 export default class Image extends React.Component<ImageProps, any> {
 
@@ -40,6 +46,12 @@ export default class Image extends React.Component<ImageProps, any> {
         altText: ''
     }
 
+    handleClick = (e: React.MouseEvent) => {
+        if (this.props.onClick) {
+            this.props.onClick();
+        }
+    }
+
     render() {
         const css: string = mergeCSS({
             'img-fluid': this.props.fluid,
@@ -48,11 +60,11 @@ export default class Image extends React.Component<ImageProps, any> {
         }, this.props.className);
 
         const extra: any = getProps(this.props);
-        if(this.props.altText) {
+        if (this.props.altText) {
             extra.alt = this.props.altText;
         }
 
-        return <img {...extra} className={css} src={this.props.src} />;
+        return <img {...extra} className={css} src={this.props.src} onClick={this.handleClick} />;
     }
 
 }
