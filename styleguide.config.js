@@ -116,7 +116,7 @@ module.exports = {
             links : [
                 {
                     rel : 'stylesheet',
-                    href : 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+                    href : './assets/bootstrap.min.css'
                 },
                 {
                     rel : 'stylesheet',
