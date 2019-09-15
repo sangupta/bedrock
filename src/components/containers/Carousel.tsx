@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from '../../BedrockUtils';
 import CarouselItem from './CarouselItem';
 
 interface CarouselProps extends BaseProps {
@@ -18,6 +18,17 @@ interface CarouselProps extends BaseProps {
      * The slide to select by default
      */
     selected?: number;
+
+    /**
+     * The amount of time to delay between automatically cycling an item.
+     * If the value is `zero` or `negative` the carousel will not slide.
+     */
+    interval?: number;
+
+    /**
+     * Whether the carousel should cycle continuously or have hard stops.
+     */
+    wrap?: boolean;
 }
 
 interface CarouselState {
@@ -37,7 +48,9 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
     static defaultProps = {
         showControls: true,
         showIndicators: true,
-        selected: 0
+        selected: 0,
+        interval: 5000,
+        wrap: true
     }
 
     constructor(props, context) {
@@ -59,7 +72,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="sr-only">Previous</span>
             </a>
-            <a className="carousel-control-next" role="button">
+            <a className="carousel-control-next" role="button" onClick={this.nextSlide}>
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="sr-only">Next</span>
             </a>
@@ -96,6 +109,10 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
     previousSlide = (): void => {
         let slide: number = this.state.currentSlide - 1;
         if (slide < 0) {
+            if(!this.props.wrap) {
+                return;
+            }
+
             slide = this.state.numSlides - 1;
         }
 
@@ -105,6 +122,10 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
     nextSlide = (): void => {
         let slide: number = this.state.currentSlide + 1;
         if (slide >= this.state.numSlides) {
+            if(!this.props.wrap) {
+                return;
+            }
+            
             slide = 0;
         }
 
