@@ -1,7 +1,3 @@
-Buttons can be created using either the `children` or
-using the `label` property. Preference is given to `children`
-over the `label`s.
-
 ### Using children
 
 ```js

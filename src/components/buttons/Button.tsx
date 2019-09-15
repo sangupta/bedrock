@@ -29,6 +29,13 @@ interface ButtonProps extends BaseProps {
     onClick?: React.MouseEventHandler;
 }
 
+/**
+ * Renders an `anchor` HTML element that looks like a button.
+ * 
+ * Buttons can be created using either the `children` or
+ * using the `label` property. Preference is given to `children`
+ * over the `label`s.
+ */
 export default class Button extends React.Component<ButtonProps, any> {
 
     static defaultProps = {
