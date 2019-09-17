@@ -8,12 +8,18 @@ interface PasswordInputProps extends BaseProps {
      * Handler fired when the value changes
      */
     onChange?: Function;
+
+    required?: boolean;
+
+    autoFocus?: boolean;
 }
 
 export default class PasswordInput extends React.Component<PasswordInputProps, any> {
 
     static defaultProps = {
-        placeholder: ''
+        placeholder: '',
+        required: false,
+        autoFocus: false
     }
 
     constructor(props, context) {
@@ -41,6 +47,14 @@ export default class PasswordInput extends React.Component<PasswordInputProps, a
         const type: string = this.state.show ? 'text' : 'password';
         const label: string = this.state.show ? 'Hide' : 'Show';
         const extra: any = getProps(this.props, ['name']);
+
+        if (this.props.required) {
+            extra.required = 'required';
+        }
+
+        if (this.props.autoFocus) {
+            extra.autoFocus = 'autoFocus';
+        }
 
         return <div className={css}>
             <input {...extra} type={type} className="form-control" placeholder={this.props.placeholder} onChange={this.handleChange} />
