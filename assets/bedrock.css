@@ -39,6 +39,7 @@
  * Used in CBox component for horizontal
  * and vertical centering.
  */
+
 .flex-center {
     align-items: center;
     justify-content: center;
@@ -52,7 +53,7 @@
  * Borrowed from https://tobiasahlin.com/spinkit/
  */
 
- .loading-dots {
+.loading-dots {
     width: 70px;
     text-align: center;
 }
@@ -102,3 +103,42 @@
 /**
  * End loading dots
  */
+
+/**
+  * start of Sign-in page
+  */
+
+.bedrock-signin-page {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 330px;
+    text-align: center;
+    padding: 15px;
+    margin: auto;
+    height: 100%;
+}
+
+.bedrock-signin-page .form-signin {
+    width: 100%;
+}
+
+.bedrock-signin-page input[type="email"] {
+    /* margin-bottom: -1px; */
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.bedrock-signin-page input[type="password"], .bedrock-signin-page .password-input-group .input-group-text {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.bedrock-signin-page .password-input-group {
+    user-select: none;
+}
+
+/**
+  * end of sign-in page
+  */
