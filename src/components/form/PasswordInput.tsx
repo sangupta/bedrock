@@ -2,6 +2,10 @@ import * as React from 'react';
 import { mergeCSS, BaseProps, getProps } from './../../BedrockUtils';
 
 interface PasswordInputProps extends BaseProps {
+
+    /**
+     * Placeholder text to use
+     */
     placeholder?: string;
 
     /**
@@ -9,9 +13,25 @@ interface PasswordInputProps extends BaseProps {
      */
     onChange?: Function;
 
+    /**
+     * Is the field required?
+     */
     required?: boolean;
 
+    /**
+     * Whether to auto-focus the field
+     */
     autoFocus?: boolean;
+
+    /**
+     * Whether to display the hide/show toggle
+     */
+    showHideToggle?: boolean;
+
+    /**
+     * Is auto-complete enabled/disabled?
+     */
+    autoComplete?: boolean;
 }
 
 export default class PasswordInput extends React.Component<PasswordInputProps, any> {
@@ -19,7 +39,9 @@ export default class PasswordInput extends React.Component<PasswordInputProps, a
     static defaultProps = {
         placeholder: '',
         required: false,
-        autoFocus: false
+        autoFocus: false,
+        showHideToggle: true,
+        autoComplete: true
     }
 
     constructor(props, context) {
@@ -54,6 +76,14 @@ export default class PasswordInput extends React.Component<PasswordInputProps, a
 
         if (this.props.autoFocus) {
             extra.autoFocus = 'autoFocus';
+        }
+
+        if (this.props.autoComplete) {
+            extra.autoComplete = '' + this.props.autoComplete;
+        }
+
+        if (!this.props.showHideToggle) {
+            return <input {...extra} type={type} className="form-control" placeholder={this.props.placeholder} onChange={this.handleChange} />
         }
 
         return <div className={css}>
