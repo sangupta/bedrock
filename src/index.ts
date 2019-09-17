@@ -14,22 +14,25 @@ import ListGroup from './components/collection/ListGroup';
 import ListGroupItem from './components/collection/ListGroupItem';
 
 // containers
+import Accordion from './components/containers/Accordion';
+import AccordionItem from './components/containers/AccordionItem';
+import Carousel from './components/containers/Carousel';
+import CarouselItem from './components/containers/CarouselItem';
+import CollapsiblePanel from './components/containers/CollapsiblePanel';
 import Column from './components/containers/Column';
-import Jumbotron from './components/containers/Jumbotron';
 import Container from './components/containers/Container';
+import Jumbotron from './components/containers/Jumbotron';
+import Row from './components/containers/Row';
+import TabContainer from './components/containers/TabContainer';
+import Well from './components/containers/Well';
 
 // content
 import Badge from './components/content/Badge';
-import Code from './components/content/Code';
 import ColorBox from './components/content/ColorBox';
 import Figure from './components/content/Figure';
-import Heading from './components/content/Heading';
 import Image from './components/content/Image';
 import Indicator from './components/content/Indicator';
 import Keyboard from './components/content/Keyboard';
-import Link from './components/content/Link';
-import Para from './components/content/Para';
-import Pre from './components/content/Pre';
 import Tag from './components/content/Tag';
 
 // form
@@ -74,6 +77,14 @@ import TableBody from './components/tables/TableBody';
 import TableCol from './components/tables/TableCol';
 import TableRow from './components/tables/TableRow';
 
+// text
+import Code from './components/text/Code';
+import Heading from './components/text/Heading';
+import Link from './components/text/Link';
+import Para from './components/text/Para';
+import Pre from './components/text/Pre';
+import TimeAgo from './components/text/TimeAgo';
+
 export {
     // assets
     FontAwesome,
@@ -93,22 +104,25 @@ export {
     ListGroupItem,
 
     // containers
+    Accordion,
+    AccordionItem,
+    Carousel,
+    CarouselItem,
+    CollapsiblePanel,
     Column,
     Container,
     Jumbotron,
+    Row,
+    TabContainer,
+    Well,
 
     // content
     Badge,
-    Code,
     ColorBox,
     Figure,
-    Heading,
     Image,
     Indicator,
     Keyboard,
-    Link,
-    Para,
-    Pre,
     Tag,
 
     // form
@@ -155,5 +169,13 @@ export {
     TableRow as TR,
     TableCol as TD,
     TableHead as THead,
-    TableBody as TBody
+    TableBody as TBody,
+
+    // text
+    Code,
+    Heading,
+    Link,
+    Para,
+    Pre,
+    TimeAgo
 };
