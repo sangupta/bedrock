@@ -22,9 +22,20 @@ interface TextInputProps extends BaseProps {
      */
     onChange?: Function;
 
+    /**
+     * Is the field required?
+     */
     required?: boolean;
 
+    /**
+     * Whether to auto-focus the field
+     */
     autoFocus?: boolean;
+
+    /**
+     * Current value of the input field
+     */
+    value?: string;
 }
 
 export default class TextInput extends React.Component<TextInputProps, any> {
@@ -44,13 +55,13 @@ export default class TextInput extends React.Component<TextInputProps, any> {
 
     render() {
         const css: string = mergeCSS('form-control', this.props.className);
-        const extra: any = getProps(this.props, ['name']);
+        const extra: any = getProps(this.props, ['name', 'value']);
 
-        if(this.props.required) {
+        if (this.props.required) {
             extra.required = 'required';
         }
 
-        if(this.props.autoFocus) {
+        if (this.props.autoFocus) {
             extra.autoFocus = 'autoFocus';
         }
 
