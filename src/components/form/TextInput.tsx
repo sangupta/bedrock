@@ -21,13 +21,19 @@ interface TextInputProps extends BaseProps {
      * Handler fired when the value changes
      */
     onChange?: Function;
+
+    required?: boolean;
+
+    autoFocus?: boolean;
 }
 
 export default class TextInput extends React.Component<TextInputProps, any> {
 
     static defaultProps = {
         type: 'text',
-        placeholder: ''
+        placeholder: '',
+        autoFocus: false,
+        required: false
     }
 
     handleChange = (e) => {
@@ -39,6 +45,14 @@ export default class TextInput extends React.Component<TextInputProps, any> {
     render() {
         const css: string = mergeCSS('form-control', this.props.className);
         const extra: any = getProps(this.props, ['name']);
+
+        if(this.props.required) {
+            extra.required = 'required';
+        }
+
+        if(this.props.autoFocus) {
+            extra.autoFocus = 'autoFocus';
+        }
 
         return <input {...extra} className={css} type={this.props.type}
             placeholder={this.props.placeholder}
