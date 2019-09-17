@@ -31,6 +31,10 @@ interface ImageProps extends BaseProps {
      * Function handler called when the image is clicked
      */
     onClick?: Function;
+
+    width?: number | string;
+
+    height?: number | string;
 }
 
 /**
@@ -43,7 +47,9 @@ export default class Image extends React.Component<ImageProps, any> {
         fluid: false,
         thumbnail: false,
         rounded: false,
-        altText: ''
+        altText: '',
+        width: '',
+        height: ''
     }
 
     handleClick = (e: React.MouseEvent) => {
@@ -59,7 +65,7 @@ export default class Image extends React.Component<ImageProps, any> {
             'img-thumbnail': this.props.thumbnail
         }, this.props.className);
 
-        const extra: any = getProps(this.props);
+        const extra: any = getProps(this.props, ['width', 'height']);
         if (this.props.altText) {
             extra.alt = this.props.altText;
         }
