@@ -142,3 +142,76 @@
 /**
   * end of sign-in page
   */
+
+.bedrock-popper-parent {
+    position: relative;
+    display: inline-block;
+}
+
+.bedrock-popped {
+    position: absolute;
+    width: 240px;
+    z-index: 160;
+}
+
+.popped-top {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.popped-top-left {
+    bottom: 100%;
+}
+
+.popped-top-right {
+    bottom: 100%;
+    right: 0;
+}
+
+.popped-bottom {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.popped-bottom-left {
+    top: 100%;
+}
+
+.popped-bottom-right {
+    top: 100%;
+    right: 0;
+}
+
+.popped-left-top {
+    top: 0;
+    right: 100%;
+}
+
+.popped-left {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100%;
+}
+
+.popped-left-bottom {
+    bottom: 0;
+    right: 100%;
+}
+
+.popped-right-top {
+    top: 0;
+    left: 100%;
+}
+
+.popped-right {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popped-right-bottom {
+    bottom: 0;
+    left: 100%;
+}
