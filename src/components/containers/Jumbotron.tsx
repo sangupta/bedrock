@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface JumbotronProps extends BaseProps {
     /**
@@ -13,7 +13,7 @@ interface JumbotronProps extends BaseProps {
  * or highlight special piece of information.
  * 
  */
-export default class Jumbotron extends React.Component<JumbotronProps, any> {
+export default class Jumbotron extends React.Component<JumbotronProps, NoProps> {
 
     static defaultProps = {
         fluid: false

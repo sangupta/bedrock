@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { NoProps } from 'BedrockUtils';
 
 interface TabContainerProps {
 
@@ -14,8 +15,12 @@ interface TabContainerProps {
      * Handler invoked with the old and new indices when
      * tabs are changed.
      */
-    onSelect?:Function;
+    onSelect?: Function;
 
+}
+
+interface TabContainerState {
+    selected: number;
 }
 
 /**
@@ -23,7 +28,7 @@ interface TabContainerProps {
  * a `title` property to render the respective tab title. The children of
  * the element are rendered depending on which tab is selected.
  */
-export default class TabContainer extends React.Component<TabContainerProps, any> {
+export default class TabContainer extends React.Component<TabContainerProps, TabContainerState> {
 
     constructor(props) {
         super(props);
@@ -39,7 +44,7 @@ export default class TabContainer extends React.Component<TabContainerProps, any
         this.setState({
             selected: index
         });
-        if(this.props.onSelect) {
+        if (this.props.onSelect) {
             this.props.onSelect(previous, index);
         }
     }

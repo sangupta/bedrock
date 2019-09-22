@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface ContainerProps extends BaseProps {
     /**
@@ -8,7 +8,7 @@ interface ContainerProps extends BaseProps {
     fluid?: boolean;
 }
 
-export default class Container extends React.Component<ContainerProps, any> {
+export default class Container extends React.Component<ContainerProps, NoProps> {
 
     static defaultProps = {
         fluid: false

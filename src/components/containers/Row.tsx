@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 /**
  * Used to render a row inside a Container.
  */
-export default class Row extends React.Component<BaseProps, any> {
+export default class Row extends React.Component<BaseProps, NoProps> {
 
     render() {
         const css: string = mergeCSS('row', this.props.className);
