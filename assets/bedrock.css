@@ -143,7 +143,7 @@
   * end of sign-in page
   */
 
-.bedrock-popper-parent {
+.bedrock-popper {
     position: relative;
     display: inline-block;
 }
@@ -158,60 +158,72 @@
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
+    margin-bottom: 2px;
 }
 
 .popped-top-left {
     bottom: 100%;
+    margin-bottom: 2px;
 }
 
 .popped-top-right {
     bottom: 100%;
     right: 0;
+    margin-bottom: 2px;
 }
 
 .popped-bottom {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: 2px;
 }
 
 .popped-bottom-left {
     top: 100%;
+    margin-top: 2px;
 }
 
 .popped-bottom-right {
     top: 100%;
     right: 0;
+    margin-top: 2px;
 }
 
 .popped-left-top {
     top: 0;
     right: 100%;
+    margin-right: 2px;
 }
 
 .popped-left {
     top: 50%;
     transform: translateY(-50%);
     right: 100%;
+    margin-right: 2px;
 }
 
 .popped-left-bottom {
     bottom: 0;
     right: 100%;
+    margin-right: 2px;
 }
 
 .popped-right-top {
     top: 0;
     left: 100%;
+    margin-left: 2px;
 }
 
 .popped-right {
     left: 100%;
     top: 50%;
     transform: translateY(-50%);
+    margin-left: 2px;
 }
 
 .popped-right-bottom {
     bottom: 0;
     left: 100%;
+    margin-left: 2px;
 }

@@ -1,24 +1,20 @@
 import * as React from 'react';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
-interface PopperProps {
+interface PopperProps extends BaseProps {
     /**
      * Where to place the popped element
      */
     direction?: 'top' | 'top-left' | 'top-right' |
-                'left' | 'left-top' | 'left-bottom' |
-                'bottom' | 'bottom-left' | 'bottom-right' |
-                'right' | 'right-top' | 'right-bottom';
+    'left' | 'left-top' | 'left-bottom' |
+    'bottom' | 'bottom-left' | 'bottom-right' |
+    'right' | 'right-top' | 'right-bottom';
 
     /**
-     * Display the arrow out of the element
+     * CSS class applied to the container for the popped
+     * element
      */
-    arrow?: boolean;
-
-    /**
-     * Whether to monitor the displayed popper to
-     * auto-align as the document is scrolled.
-     */
-    autoPlace?: boolean;
+    popClassName?: string;
 
     /**
      * Specifies the event on the trigger element to capture to show/hide
@@ -37,11 +33,15 @@ interface PopperProps {
     onClose?: Function;
 }
 
-export default class Popper extends React.Component<PopperProps, any> {
+interface PopperState {
+    isOpen: boolean;
+}
+
+export default class Popper extends React.Component<PopperProps, PopperState> {
 
     static defaultProps = {
         triggerEvent: 'onClick',
-        direction: 'bottom'
+        direction: 'bottom-left'
     }
 
     state = {
@@ -87,6 +87,11 @@ export default class Popper extends React.Component<PopperProps, any> {
     }
 
     render() {
+        console.log('state modified to: ', this.state.isOpen);
+
+        const css: string = mergeCSS('bedrock-popper', this.props.className);
+        const extra: any = getProps(this.props);
+
         const children = React.Children.toArray(this.props.children);
         if (!children || children.length === 0) {
             return null;
@@ -94,14 +99,15 @@ export default class Popper extends React.Component<PopperProps, any> {
 
         const trigger = this.getTriggerElement(children[0]);
         if (!this.state.isOpen) {
-            return <div className='bedrock-popper-parent'>
+            return <div {...extra} className={css}>
                 {trigger}
             </div>;
         }
 
-        return <div className='bedrock-popper-parent'>
+        const popClass: string = mergeCSS('bedrock-popped popped-' + this.props.direction, this.props.popClassName);
+        return <div {...extra} className={css}>
             {trigger}
-            <div className={'bedrock-popped popped-' + this.props.direction}>
+            <div className={popClass}>
                 {children.slice(1)}
             </div>
         </div>;
