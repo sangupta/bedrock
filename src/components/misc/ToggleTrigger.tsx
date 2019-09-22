@@ -11,11 +11,11 @@ interface ToggleTriggerProps {
      * toggle. The default value is `onClick`.
      */
     triggerEvent?: string;
-    
+
     /**
      * Handler called when toggle is open
      */
-    onShow?: Function;
+    onOpen?: Function;
 
     /**
      * Handler called when toggle is closed
@@ -24,12 +24,16 @@ interface ToggleTriggerProps {
 
 }
 
+interface ToggleTriggerState {
+    isOpen: boolean;
+}
+
 /**
  * A trigger that traps `onClick` event on the trigger (the first child)
  * element, and toggles the visibility of all other children.
  * 
  */
-export default class ToggleTrigger extends React.Component<ToggleTriggerProps, any> {
+export default class ToggleTrigger extends React.Component<ToggleTriggerProps, ToggleTriggerState> {
 
     static defaultProps = {
         isOpen: false,
@@ -55,8 +59,8 @@ export default class ToggleTrigger extends React.Component<ToggleTriggerProps, a
      */
     shootEvents = () => {
         if (this.state.isOpen) {
-            if (this.props.onShow) {
-                this.props.onShow();
+            if (this.props.onOpen) {
+                this.props.onOpen();
             }
 
             return;
@@ -72,7 +76,7 @@ export default class ToggleTrigger extends React.Component<ToggleTriggerProps, a
      * first child so that we can trap the click
      * event on it.
      */
-    getTriggerElement = (triggerElement:any) => {
+    getTriggerElement = (triggerElement: any) => {
         // build the trigger props
         const triggerProps = {};
 
@@ -89,7 +93,7 @@ export default class ToggleTrigger extends React.Component<ToggleTriggerProps, a
         }
 
         const trigger = this.getTriggerElement(children[0]);
-        if(!this.state.isOpen) {
+        if (!this.state.isOpen) {
             return trigger;
         }
 
