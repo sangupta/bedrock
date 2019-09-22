@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from '../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from '../../BedrockUtils';
 
 interface ParaProps extends BaseProps {
     /**
@@ -11,7 +11,7 @@ interface ParaProps extends BaseProps {
 /**
  * Display a paragraph of text.
  */
-export default class Para extends React.Component<ParaProps, any> {
+export default class Para extends React.Component<ParaProps, NoProps> {
 
     static defaultProps = {
         variant: 'primary',

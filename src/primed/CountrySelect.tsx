@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { BaseProps, COUNTRIES, getProps } from './../BedrockUtils';
+import { BaseProps, COUNTRIES, getProps, NoProps } from './../BedrockUtils';
 import Select from './../components/form/Select';
 
 /**
  * A country selector
  */
-export default class CountrySelect extends React.Component<BaseProps, any> {
+export default class CountrySelect extends React.Component<BaseProps, NoProps> {
 
     getCountries = () => {
         let result = [];

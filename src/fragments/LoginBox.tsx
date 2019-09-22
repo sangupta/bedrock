@@ -3,7 +3,7 @@ import Form from './../components/form/Form';
 import FormField from '../components/form/FormField';
 import TextInput from './../components/form/TextInput';
 import PasswordInput from './../components/form/PasswordInput';
-import { BaseProps, getProps } from './../BedrockUtils';
+import { BaseProps, getProps, NoProps } from './../BedrockUtils';
 import FormButton from './../components/form/FormButton';
 
 interface LoginBoxProps extends BaseProps {
@@ -13,7 +13,7 @@ interface LoginBoxProps extends BaseProps {
     onSubmit?: Function;
 }
 
-export default class LoginBox extends React.Component<LoginBoxProps, any> {
+export default class LoginBox extends React.Component<LoginBoxProps, NoProps> {
 
     username: string;
 

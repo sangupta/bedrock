@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { BaseProps, getProps } from '../../BedrockUtils';
+import { BaseProps, getProps, NoProps } from '../../BedrockUtils';
 
-export default class Code extends React.Component<BaseProps, any> {
+export default class Code extends React.Component<BaseProps, NoProps> {
 
     render() {
         const extra:any = getProps(this.props);

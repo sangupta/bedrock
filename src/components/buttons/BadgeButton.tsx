@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, NoProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface BadgeButtonProps extends BaseProps {
 
@@ -29,7 +29,7 @@ interface BadgeButtonProps extends BaseProps {
     variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
 }
 
-export default class BadgeButton extends React.Component<BadgeButtonProps, any> {
+export default class BadgeButton extends React.Component<BadgeButtonProps, NoProps> {
 
     static defaultProps = {
         variant: 'default'

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import HBox from '../layout/HBox';
 import ColorBox from '../content/ColorBox';
-import { BaseProps, getProps } from './../../BedrockUtils';
+import { BaseProps, getProps, NoProps } from './../../BedrockUtils';
 
 interface ColorBarProps extends BaseProps {
     /**
@@ -20,7 +20,7 @@ interface ColorBarProps extends BaseProps {
     boxCSS?: string;
 }
 
-export default class ColorBar extends React.Component<ColorBarProps, any> {
+export default class ColorBar extends React.Component<ColorBarProps, NoProps> {
 
     handleSelect = (selected) => {
         if (this.props.onSelect) {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, getProps } from '../../BedrockUtils';
+import { BaseProps, getProps, NoProps } from '../../BedrockUtils';
 
 interface LinkProps extends BaseProps {
     /**
@@ -18,7 +18,7 @@ interface LinkProps extends BaseProps {
  * the `onClick` handler is provided, the `href` functionality will
  * not be invoked. 
  */
-export default class Link extends React.Component<LinkProps, any> {
+export default class Link extends React.Component<LinkProps, NoProps> {
 
     static defaultProps = {
         href: '#'

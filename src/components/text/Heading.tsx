@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, getProps } from '../../BedrockUtils';
+import { BaseProps, getProps, NoProps } from '../../BedrockUtils';
 
 interface HeadingProps extends BaseProps {
 
@@ -9,7 +9,7 @@ interface HeadingProps extends BaseProps {
     size?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
-export default class Heading extends React.Component<HeadingProps, any> {
+export default class Heading extends React.Component<HeadingProps, NoProps> {
 
     static defaultProps = {
         size: 1

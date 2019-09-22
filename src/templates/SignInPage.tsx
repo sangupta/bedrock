@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../BedrockUtils';
+import { BaseProps, mergeCSS, NoProps } from './../BedrockUtils';
 import Form from './../components/form/Form';
 import Button from './../components/buttons/Button';
 import Image from './../components/content/Image';
@@ -89,7 +89,7 @@ interface SignInPageProps extends BaseProps {
     onRememberMe?: Function;
 }
 
-export default class SignInPage extends React.Component<SignInPageProps, any> {
+export default class SignInPage extends React.Component<SignInPageProps, NoProps> {
 
     static defaultProps = {
         title: 'Sign In',

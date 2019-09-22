@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface ListGroupProps extends BaseProps {
     /**
@@ -15,7 +15,7 @@ interface ListGroupProps extends BaseProps {
     horizontal?: boolean;
 }
 
-export default class ListGroup extends React.Component<ListGroupProps, any> {
+export default class ListGroup extends React.Component<ListGroupProps, NoProps> {
 
     static defaultProps = {
         flush: false,

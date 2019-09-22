@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface ButtonProps extends BaseProps {
     /**
@@ -36,7 +36,7 @@ interface ButtonProps extends BaseProps {
  * using the `label` property. Preference is given to `children`
  * over the `label`s.
  */
-export default class Button extends React.Component<ButtonProps, any> {
+export default class Button extends React.Component<ButtonProps, NoProps> {
 
     static defaultProps = {
         variant: 'primary',

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Image from './../content/Image';
-import { BaseProps, getProps } from './../../BedrockUtils';
+import { BaseProps, getProps, NoProps } from './../../BedrockUtils';
 
 interface GravatarProps extends BaseProps {
     /**
@@ -45,7 +45,7 @@ interface GravatarProps extends BaseProps {
 /**
  * React component for rendering a gravatar profile image.
  */
-export default class Gravatar extends React.Component<GravatarProps, any> {
+export default class Gravatar extends React.Component<GravatarProps, NoProps> {
 
     static defaultProps = {
         rating: 'g',

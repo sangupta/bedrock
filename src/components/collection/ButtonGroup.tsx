@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface ButtonGroupProps extends BaseProps {
     ariaLabel?: string;
@@ -11,7 +11,7 @@ interface ButtonGroupProps extends BaseProps {
     size?: 'large' | 'small' | 'default';
 }
 
-export default class ButtonGroup extends React.Component<ButtonGroupProps, any> {
+export default class ButtonGroup extends React.Component<ButtonGroupProps, NoProps> {
 
     static defaultProps = {
         role: 'group',

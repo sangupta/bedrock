@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface SplitButtonProps extends BaseProps {
     /**
@@ -39,7 +39,7 @@ interface SplitButtonProps extends BaseProps {
     groupClassName?: string;
 }
 
-export default class SplitButton extends React.Component<SplitButtonProps, any> {
+export default class SplitButton extends React.Component<SplitButtonProps, NoProps> {
 
     static defaultProps = {
         variant: 'primary'

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ONE_DAY, ONE_MINUTE, ONE_HOUR, ONE_WEEK, ONE_MONTH, ONE_YEAR } from '../../BedrockUtils';
+import { ONE_DAY, ONE_MINUTE, ONE_HOUR, ONE_WEEK, ONE_MONTH, ONE_YEAR, NoProps } from '../../BedrockUtils';
 
 interface TimeAgoProps {
 
@@ -11,7 +11,7 @@ interface TimeAgoProps {
 
 }
 
-export default class TimeAgo extends React.Component<TimeAgoProps, any> {
+export default class TimeAgo extends React.Component<TimeAgoProps, NoProps> {
 
     format(delta: number, unit: number, suffix: string): string {
         const value = Math.floor(delta / unit);

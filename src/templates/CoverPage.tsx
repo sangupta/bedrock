@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mergeCSS, getProps, BaseProps } from './../BedrockUtils';
+import { mergeCSS, getProps, BaseProps, NoProps } from './../BedrockUtils';
 
 /**
  * A simple cover page template based on Bootstrap
@@ -14,7 +14,7 @@ import { mergeCSS, getProps, BaseProps } from './../BedrockUtils';
  * three elements are used as `header`, `main`, and `footer` respectively. 
  * Other child elements are ignored.
  */
-export default class CoverPage extends React.Component<BaseProps, any> {
+export default class CoverPage extends React.Component<BaseProps, NoProps> {
 
     render() {
         const children: Array<any> = React.Children.toArray(this.props.children);
