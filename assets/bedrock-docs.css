@@ -34,4 +34,7 @@
 .bedrock-docs-carousel-example {
     height: 400px;
     background-color: #555;
+    color: white;
+    padding-top: 192px;
+    text-align: center;
 }
