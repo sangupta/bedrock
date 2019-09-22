@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface ProgressBarProps extends BaseProps {
     /**
@@ -38,7 +38,7 @@ interface ProgressBarProps extends BaseProps {
     animated?: boolean;
 }
 
-export default class ProgressBar extends React.Component<ProgressBarProps, any> {
+export default class ProgressBar extends React.Component<ProgressBarProps, NoProps> {
 
     static defaultProps = {
         variant: 'primary',

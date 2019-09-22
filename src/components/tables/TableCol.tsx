@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { BaseProps, getProps } from './../../BedrockUtils';
+import { BaseProps, getProps, NoProps } from './../../BedrockUtils';
 
 interface TableColProps extends BaseProps {
     head?: any;
 }
 
-export default class TableCol extends React.Component<TableColProps, any> {
+export default class TableCol extends React.Component<TableColProps, NoProps> {
 
     render() {
         const extra:any = getProps(this.props);

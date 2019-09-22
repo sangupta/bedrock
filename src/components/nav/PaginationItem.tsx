@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, getProps } from './../../BedrockUtils';
+import { BaseProps, getProps, NoProps } from './../../BedrockUtils';
 
 interface PaginationItemProps extends BaseProps {
     /**
@@ -26,7 +26,7 @@ interface PaginationItemProps extends BaseProps {
 /**
  * Specifies one item in the pagination list.
  */
-export default class PaginationItem extends React.Component<PaginationItemProps, any> {
+export default class PaginationItem extends React.Component<PaginationItemProps, NoProps> {
 
     static defaultProps = {
         active: false,

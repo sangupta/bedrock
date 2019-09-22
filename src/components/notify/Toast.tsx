@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface ToastProps extends BaseProps {
 
@@ -29,7 +29,7 @@ interface ToastProps extends BaseProps {
     closeable?: boolean;
 }
 
-export default class Toast extends React.Component<ToastProps, any> {
+export default class Toast extends React.Component<ToastProps, NoProps> {
 
     static defaultProps = {
         imageSrc: '',

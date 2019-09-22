@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface NavItemProps extends BaseProps {
 
@@ -30,7 +30,7 @@ interface NavItemProps extends BaseProps {
 /**
  * Useful to display basic navigation.
  */
-export default class NavItem extends React.Component<NavItemProps, any> {
+export default class NavItem extends React.Component<NavItemProps, NoProps> {
 
     static defaultProps = {
         linkCSS: '',

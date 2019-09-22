@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface NavProps extends BaseProps {
 
@@ -18,7 +18,7 @@ interface NavProps extends BaseProps {
 /**
  * Useful to display basic navigation.
  */
-export default class Nav extends React.Component<NavProps, any> {
+export default class Nav extends React.Component<NavProps, NoProps> {
 
     static defaultProps = {
         align: 'left',

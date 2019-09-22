@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, NoProps } from './../../BedrockUtils';
 
 interface UnderlayProps extends BaseProps {
     /**
@@ -7,7 +7,7 @@ interface UnderlayProps extends BaseProps {
      */
     show?: boolean;
 }
-export default class Underlay extends React.Component<UnderlayProps, any> {
+export default class Underlay extends React.Component<UnderlayProps, NoProps> {
 
     static defaultProps = {
         show: true

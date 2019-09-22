@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from '../../BedrockUtils';
+import { BaseProps, NoProps } from '../../BedrockUtils';
 import Underlay from './../misc/Underlay';
 
 interface ModalProps extends BaseProps {
@@ -19,7 +19,7 @@ interface ModalProps extends BaseProps {
     allowScroll?: boolean;
 }
 
-export default class ModalContainer extends React.Component<ModalProps, any> {
+export default class ModalContainer extends React.Component<ModalProps, NoProps> {
 
     static defaultProps = {
         open: false,

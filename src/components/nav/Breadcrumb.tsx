@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface BreadcrumbProps extends BaseProps {
     /**
@@ -13,7 +13,7 @@ interface BreadcrumbProps extends BaseProps {
 /**
  * Used to render a horizontal list of breadcrumbs.
  */
-export default class Breadcrumb extends React.Component<BreadcrumbProps, any> {
+export default class Breadcrumb extends React.Component<BreadcrumbProps, NoProps> {
 
     render() {
         const extra:any = getProps(this.props);

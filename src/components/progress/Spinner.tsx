@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface SpinnerProps extends BaseProps {
     /**
@@ -23,7 +23,7 @@ interface SpinnerProps extends BaseProps {
     role?: string;
 }
 
-export default class Spinner extends React.PureComponent<SpinnerProps, any> {
+export default class Spinner extends React.PureComponent<SpinnerProps, NoProps> {
 
     static defaultProps = {
         variant: 'primary',

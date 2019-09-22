@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface BreadcrumbItemProps extends BaseProps {
     /**
@@ -21,7 +21,7 @@ interface BreadcrumbItemProps extends BaseProps {
 /**
  * Specifies one item in the breadcrumb list.
  */
-export default class BreadcrumbItem extends React.Component<BreadcrumbItemProps, any> {
+export default class BreadcrumbItem extends React.Component<BreadcrumbItemProps, NoProps> {
 
     static defaultProps = {
         active: false,

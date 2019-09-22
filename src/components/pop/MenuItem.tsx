@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, NoProps } from './../../BedrockUtils';
 
 interface MenuItemProps extends BaseProps {
     /**
@@ -26,7 +26,7 @@ interface MenuItemProps extends BaseProps {
     onSelect?: Function;
 }
 
-export default class MenuItem extends React.Component<MenuItemProps, any> {
+export default class MenuItem extends React.Component<MenuItemProps, NoProps> {
 
     static defaultProps = {
         active: false,

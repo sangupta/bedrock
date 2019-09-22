@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface TableProps extends BaseProps {
     /**
@@ -39,7 +39,7 @@ interface TableProps extends BaseProps {
     caption?: string;
 }
 
-export default class Table extends React.Component<TableProps, any> {
+export default class Table extends React.Component<TableProps, NoProps> {
 
     static defaultProps = {
         isStriped: false,

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface PaginationProps extends BaseProps {
     ariaLabel?: string;
@@ -20,7 +20,7 @@ interface PaginationProps extends BaseProps {
 /**
  * Useful to display a navigation bar.
  */
-export default class Pagination extends React.Component<PaginationProps, any> {
+export default class Pagination extends React.Component<PaginationProps, NoProps> {
 
     static defaultProps = {
         ariaLabel: '',

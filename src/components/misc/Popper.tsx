@@ -87,8 +87,6 @@ export default class Popper extends React.Component<PopperProps, PopperState> {
     }
 
     render() {
-        console.log('state modified to: ', this.state.isOpen);
-
         const css: string = mergeCSS('bedrock-popper', this.props.className);
         const extra: any = getProps(this.props);
 

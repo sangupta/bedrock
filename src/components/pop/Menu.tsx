@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, NoProps } from './../../BedrockUtils';
 
 interface MenuProps extends BaseProps {
     /**
@@ -43,7 +43,7 @@ interface MenuProps extends BaseProps {
  * Useful to display a menu along side a `Dropdown` or a `Dropup`
  * component.
  */
-export default class Menu extends React.Component<MenuProps, any> {
+export default class Menu extends React.Component<MenuProps, NoProps> {
 
     menuRef: any;
 
