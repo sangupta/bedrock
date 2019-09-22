@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mergeCSS, BaseProps, getProps } from './../../BedrockUtils';
+import { mergeCSS, BaseProps, getProps, NoProps } from './../../BedrockUtils';
 
 interface PasswordInputProps extends BaseProps {
 
@@ -34,7 +34,11 @@ interface PasswordInputProps extends BaseProps {
     autoComplete?: boolean;
 }
 
-export default class PasswordInput extends React.Component<PasswordInputProps, any> {
+interface PasswordInputState {
+    show: boolean;
+}
+
+export default class PasswordInput extends React.Component<PasswordInputProps, PasswordInputState> {
 
     static defaultProps = {
         placeholder: '',

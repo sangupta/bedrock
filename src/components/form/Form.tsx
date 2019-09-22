@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface FormProps extends BaseProps {
     action?: string;
@@ -15,7 +15,7 @@ interface FormProps extends BaseProps {
  * Component to encapsulate various form elements in a single
  * form.
  */
-export default class Form extends React.Component<FormProps, any> {
+export default class Form extends React.Component<FormProps, NoProps> {
 
     static defaultProps = {
         autoComplete: true

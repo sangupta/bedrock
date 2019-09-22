@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mergeCSS, BaseProps, getProps } from './../../BedrockUtils';
+import { mergeCSS, BaseProps, getProps, NoProps } from './../../BedrockUtils';
 
 interface SelectProps extends BaseProps {
     /**
@@ -8,7 +8,7 @@ interface SelectProps extends BaseProps {
     onSelect?: Function;
 };
 
-export default class Select extends React.Component<SelectProps, any> {
+export default class Select extends React.Component<SelectProps, NoProps> {
 
     handleChange = (e) => {
         console.log(e.target.value);

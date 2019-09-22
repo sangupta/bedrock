@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
-export default class CBox extends React.Component<BaseProps, any> {
+export default class CBox extends React.Component<BaseProps, NoProps> {
 
     render() {
         const css:string = mergeCSS('d-flex', 'flex-center', this.props.className);

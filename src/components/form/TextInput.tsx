@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from '../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from '../../BedrockUtils';
 
 interface TextInputProps extends BaseProps {
     /**
@@ -38,7 +38,7 @@ interface TextInputProps extends BaseProps {
     value?: string;
 }
 
-export default class TextInput extends React.Component<TextInputProps, any> {
+export default class TextInput extends React.Component<TextInputProps, NoProps> {
 
     static defaultProps = {
         type: 'text',

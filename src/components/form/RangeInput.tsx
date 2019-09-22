@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface RangeInputProps extends BaseProps {
     /**
@@ -33,7 +33,7 @@ interface RangeInputProps extends BaseProps {
     onChange?: Function;
 }
 
-export default class RangeInput extends React.Component<RangeInputProps, any> {
+export default class RangeInput extends React.Component<RangeInputProps, NoProps> {
 
     static defaultProps = {
         min: 0,

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface TextAreaProps extends BaseProps {
     /**
@@ -40,7 +40,7 @@ interface TextAreaProps extends BaseProps {
     value?: string;
 }
 
-export default class TextArea extends React.Component<TextAreaProps, any> {
+export default class TextArea extends React.Component<TextAreaProps, NoProps> {
 
     static defaultProps = {
         disabled: false,

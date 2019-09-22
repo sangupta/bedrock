@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface ColorInputProps extends BaseProps {
     name?: string;
@@ -15,7 +15,7 @@ interface ColorInputProps extends BaseProps {
     onChange?:Function;
 }
 
-export default class ColorInput extends React.Component<ColorInputProps, any> {
+export default class ColorInput extends React.Component<ColorInputProps, NoProps> {
 
     static defaultProps = {
         name: ''

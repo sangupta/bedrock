@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from '../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from '../../BedrockUtils';
 import Checkbox from './Checkbox';
 
 interface FormFieldProps extends BaseProps {
@@ -11,7 +11,7 @@ interface FormFieldProps extends BaseProps {
 /**
  * Component used to render a form-input element inside a Form.
  */
-export default class FormField extends React.Component<FormFieldProps, any> {
+export default class FormField extends React.Component<FormFieldProps, NoProps> {
 
     static defaultProps = {
         for: '',

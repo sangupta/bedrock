@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface FormButtonProps extends BaseProps {
     /**
@@ -25,7 +25,7 @@ interface FormButtonProps extends BaseProps {
  * component. It can be used to reset a given form, or submit
  * the form.
  */
-export default class FormButton extends React.Component<FormButtonProps, any> {
+export default class FormButton extends React.Component<FormButtonProps, NoProps> {
 
     static defaultProps = {
         type: 'button',

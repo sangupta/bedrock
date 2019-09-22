@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
-interface CheckboxProps extends BaseProps {
+interface RadioProps extends BaseProps {
     disabled?: boolean;
 
     value?: string;
@@ -27,7 +27,7 @@ interface CheckboxProps extends BaseProps {
     indeterminate?: boolean;
 }
 
-export default class Checkbox extends React.Component<CheckboxProps, NoProps> {
+export default class Radiobox extends React.Component<RadioProps, NoProps> {
 
     static defaultProps = {
         disabled: false,
@@ -75,7 +75,7 @@ export default class Checkbox extends React.Component<CheckboxProps, NoProps> {
             extra.checked = 'checked';
         }
 
-        return <input ref={this.inputRef} {...extra} type='checkbox' className={css} onChange={this.handleChange} />;
+        return <input ref={this.inputRef} {...extra} type='radio' className={css} onChange={this.handleChange} />;
     }
 
 }
