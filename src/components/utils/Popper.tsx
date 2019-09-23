@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from '../../BedrockUtils';
 
 interface PopperProps extends BaseProps {
     /**

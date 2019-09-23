@@ -8,10 +8,10 @@ import Button from './components/buttons/Button';
 import SplitButton from './components/buttons/SplitButton';
 
 // collection
-import ButtonGroup from './components/collection/ButtonGroup';
-import ColorBar from './components/collection/ColorBar';
-import ListGroup from './components/collection/ListGroup';
-import ListGroupItem from './components/collection/ListGroupItem';
+import ButtonGroup from './components/groups/ButtonGroup';
+import ColorBar from './components/groups/ColorBar';
+import ListGroup from './components/groups/ListGroup';
+import ListGroupItem from './components/groups/ListGroupItem';
 
 // containers
 import Accordion from './components/containers/Accordion';
@@ -62,9 +62,9 @@ import Alert from './components/notify/Alert';
 import Toast from './components/notify/Toast';
 
 // pop
-import Dropdown from './components/pop/Dropdown';
-import Menu from './components/pop/Menu';
-import MenuItem from './components/pop/MenuItem';
+import Dropdown from './components/popovers/Dropdown';
+import Menu from './components/popovers/Menu';
+import MenuItem from './components/popovers/MenuItem';
 
 // progress
 import ProgressBar from './components/progress/ProgressBar';

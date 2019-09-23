@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, NoProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, NoProps } from '../../BedrockUtils';
 
 interface UnderlayProps extends BaseProps {
     /**

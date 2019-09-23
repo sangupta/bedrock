@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BaseProps, NoProps } from '../../BedrockUtils';
-import Underlay from './../misc/Underlay';
+import Underlay from '../utils/Underlay';
 
 interface ModalProps extends BaseProps {
     /**

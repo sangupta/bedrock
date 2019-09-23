@@ -27,13 +27,15 @@ export interface BaseProps {
     id?: string;
 
     /**
-     * Data attributes that can be passed to be added to the top-most
-     * HTML element emitted out by the component. The attributes are
-     * specified as an `object` where the key is prefixed with `data-`
-     * keyword and the value is used as is. For example, `{ name : 'bedrock' }` 
+     * Data attributes that to be added to the top-most HTML element 
+     * emitted out by the component. The attributes are specified as 
+     * an `object` where the key is prefixed with `data-` keyword and 
+     * the value is used as is. For example, `{ name : 'bedrock' }` 
      * which will render as `data-name='bedrock'`.
      */
     data?: any;
+
+    children?: any;
 }
 
 export function getProps(props: any, names: string[] = []): any {
