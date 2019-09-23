@@ -114,18 +114,10 @@ module.exports = {
     template : {
         head : {
             links : [
-                {
-                    rel : 'stylesheet',
-                    href : './assets/bootstrap.min.css'
-                },
-                {
-                    rel : 'stylesheet',
-                    href : './assets/bedrock.css'
-                },
-                {
-                    rel : 'stylesheet',
-                    href : './assets/bedrock-docs.css'
-                }
+                { rel : 'stylesheet', href : './assets/css/bootstrap.min.css' },
+                { rel : 'stylesheet', href : './assets/css/fontawesome-all.min.css' },
+                { rel : 'stylesheet', href : './assets/css/bedrock.css' },
+                { rel : 'stylesheet', href : './assets/css/bedrock-docs.css' }
             ]
         }
     }
