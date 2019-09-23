@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mergeCSS, BaseProps, getProps, NoProps } from './../../BedrockUtils';
+import { mergeCSS, BaseProps, getProps } from './../../BedrockUtils';
 
 interface PasswordInputProps extends BaseProps {
 
