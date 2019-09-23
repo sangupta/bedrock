@@ -1,8 +1,9 @@
 {
     "name": "bedrock",
-    "version": "0.0.1",
+    "version": "0.6.0",
     "description": "Bedrock - React Component Library",
-    "main": "src/index.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
         "build": "./node_modules/.bin/webpack && cp src/index.html dist/index.html",
         "start": "./node_modules/.bin/webpack-dev-server --port 9000 --open --hot --inline --content-base src",
