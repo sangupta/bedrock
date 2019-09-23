@@ -37,7 +37,7 @@ export default class Radiobox extends React.Component<RadioProps, NoProps> {
 
     inputRef: any;
 
-    constructor(props, context) {
+    constructor(props: RadioProps, context: any) {
         super(props, context);
 
         this.inputRef = React.createRef();

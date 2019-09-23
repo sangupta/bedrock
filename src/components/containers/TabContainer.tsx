@@ -29,8 +29,8 @@ interface TabContainerState {
  */
 export default class TabContainer extends React.Component<TabContainerProps, TabContainerState> {
 
-    constructor(props) {
-        super(props);
+    constructor(props: TabContainerProps, context: any) {
+        super(props, context);
 
         this.state = {
             selected: props.selected
@@ -48,7 +48,7 @@ export default class TabContainer extends React.Component<TabContainerProps, Tab
         }
     }
 
-    getChildren = (children, selected: number) => {
+    getChildren = (children: any, selected: number) => {
         let result = [];
 
         for (let index = 0; index < children.length; index++) {
@@ -66,7 +66,7 @@ export default class TabContainer extends React.Component<TabContainerProps, Tab
         return result;
     }
 
-    includeTabContent = (children, selected: number) => {
+    includeTabContent = (children: any, selected: number) => {
         let child = children[selected];
         if (child.props.children) {
             return child.props.children;

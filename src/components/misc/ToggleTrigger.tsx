@@ -40,8 +40,8 @@ export default class ToggleTrigger extends React.Component<ToggleTriggerProps, T
         triggerEvent: 'onClick'
     }
 
-    constructor(props) {
-        super(props);
+    constructor(props: ToggleTriggerProps, context: any) {
+        super(props, context);
 
         this.state = {
             isOpen: props.isOpen
@@ -78,7 +78,7 @@ export default class ToggleTrigger extends React.Component<ToggleTriggerProps, T
      */
     getTriggerElement = (triggerElement: any) => {
         // build the trigger props
-        const triggerProps = {};
+        const triggerProps: any = {};
 
         triggerProps[this.props.triggerEvent] = this.handleClick;
 

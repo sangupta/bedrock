@@ -30,7 +30,7 @@ export default class ColorBar extends React.Component<ColorBarProps, NoProps> {
 
     getColors = () => {
         let colors = this.props.colors;
-        let result = [];
+        const result = [];
 
         for (let index = 0; index < colors.length; index++) {
             const item = colors[index];

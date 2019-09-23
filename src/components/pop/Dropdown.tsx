@@ -56,8 +56,8 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
         position: 'down'
     }
 
-    constructor(props) {
-        super(props);
+    constructor(props: DropdownProps, context: any) {
+        super(props, context);
 
         this.state = {
             isOpen: props.isOpen
@@ -124,7 +124,7 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
         }
 
         // build the trigger props
-        const triggerProps = {};
+        const triggerProps: any = {};
 
         triggerProps[eventName] = this.handleClick;
 

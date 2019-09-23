@@ -37,7 +37,7 @@ export interface BaseProps {
 }
 
 export function getProps(props: any, names: string[] = []): any {
-    const result = {};
+    const result: any = {};
     if (!props) {
         return result;
     }
@@ -106,11 +106,11 @@ export function mergeCSS(...args: any[]): string {
     return final;
 }
 
-export function invokeFn(fn: Function, thisRef: any = null, args: any = null) {
-    if (fn && typeof fn === 'function') {
-        fn.apply(thisRef, args);
-    }
-}
+// export function invokeFn(fn: Function, thisRef: any = null, args: any = null) {
+//     if (fn && typeof fn === 'function') {
+//         fn.apply(thisRef, args);
+//     }
+// }
 
 /**
  * List of all coutnries that can be used in a

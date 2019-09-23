@@ -28,17 +28,17 @@ export default class LoginBox extends React.Component<LoginBoxProps, NoProps> {
         }
     }
 
-    handleUserChange = (v) => {
+    handleUserChange = (v: string) => {
         this.username = v;
     }
 
-    handlePasswordChange = (v) => {
+    handlePasswordChange = (v: string) => {
         this.password = v;
     }
 
     render() {
-        const extra:any = getProps(this.props);
-        
+        const extra: any = getProps(this.props);
+
         return <Form {...extra} className={this.props.className}>
             <FormField label="Username">
                 <TextInput type='email' placeholder='Email address' onChange={this.handleUserChange} />

@@ -50,15 +50,21 @@ export default class ProgressBar extends React.Component<ProgressBarProps, NoPro
     }
 
     render() {
-        let percent: number = ((this.props.value - this.props.min) * 100 / (this.props.max - this.props.min));
+        let { value, min, max } = this.props;
+
+        value = value || 0;
+        min = min || 0;
+        max = max || 0;
+
+        let percent: number = ((value - min) * 100 / (max - min));
         if (percent < 0) {
             percent = 0;
         }
-        
+
         const width = '' + percent.toFixed(0) + '%';
         const css: string = mergeCSS('progress', this.props.className);
-        const extra:any = getProps(this.props);
-        
+        const extra: any = getProps(this.props);
+
         return <div {...extra} className={css}>
             <div className={'progress-bar bg-' + this.props.variant}
                 role="progressbar" style={{ width: width }}

@@ -53,7 +53,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
         wrap: true
     }
 
-    constructor(props, context) {
+    constructor(props: CarouselProps, context: any) {
         super(props, context);
 
         this.state = {
@@ -109,7 +109,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
     previousSlide = (): void => {
         let slide: number = this.state.currentSlide - 1;
         if (slide < 0) {
-            if(!this.props.wrap) {
+            if (!this.props.wrap) {
                 return;
             }
 
@@ -122,10 +122,10 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
     nextSlide = (): void => {
         let slide: number = this.state.currentSlide + 1;
         if (slide >= this.state.numSlides) {
-            if(!this.props.wrap) {
+            if (!this.props.wrap) {
                 return;
             }
-            
+
             slide = 0;
         }
 

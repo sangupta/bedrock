@@ -108,7 +108,7 @@ export default class SignInPage extends React.Component<SignInPageProps, NoProps
 
     rememberMe: boolean;
 
-    constructor(props, context) {
+    constructor(props: SignInPageProps, context: any) {
         super(props, context);
 
         this.userName = props.userName;
@@ -153,11 +153,11 @@ export default class SignInPage extends React.Component<SignInPageProps, NoProps
         }
     }
 
-    handleUserNameChange = (userName): void => {
+    handleUserNameChange = (userName: string): void => {
         this.userName = userName;
     }
 
-    handlePasswordChange = (password): void => {
+    handlePasswordChange = (password: string): void => {
         this.password = password;
     }
 

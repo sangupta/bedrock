@@ -48,7 +48,7 @@ export default class PasswordInput extends React.Component<PasswordInputProps, P
         autoComplete: true
     }
 
-    constructor(props, context) {
+    constructor(props:PasswordInputProps, context:any) {
         super(props, context);
 
         this.state = {

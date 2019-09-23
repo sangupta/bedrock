@@ -24,7 +24,7 @@ export default class AccordionItem extends React.Component<AccordionItemProps, A
         isOpen: false
     }
 
-    constructor(props, context) {
+    constructor(props: AccordionItemProps, context: any) {
         super(props, context);
 
         this.state = {
@@ -35,7 +35,7 @@ export default class AccordionItem extends React.Component<AccordionItemProps, A
     handleClick = () => {
         this.setState((state) => {
             return {
-                open : !state.open
+                open: !state.open
             }
         });
     }

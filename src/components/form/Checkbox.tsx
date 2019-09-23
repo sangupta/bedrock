@@ -37,7 +37,7 @@ export default class Checkbox extends React.Component<CheckboxProps, NoProps> {
 
     inputRef: any;
 
-    constructor(props, context) {
+    constructor(props:CheckboxProps, context:any) {
         super(props, context);
 
         this.inputRef = React.createRef();

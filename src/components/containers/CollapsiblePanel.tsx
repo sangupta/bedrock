@@ -28,7 +28,7 @@ export default class CollapsiblePanel extends React.Component<CollapsiblePanelPr
         isOpen: false
     }
 
-    constructor(props, context) {
+    constructor(props: CollapsiblePanelProps, context: any) {
         super(props, context);
 
         this.state = {
@@ -39,7 +39,7 @@ export default class CollapsiblePanel extends React.Component<CollapsiblePanelPr
     handleClick = () => {
         this.setState((state) => {
             return {
-                open : !state.open
+                open: !state.open
             }
         });
     }
@@ -47,7 +47,7 @@ export default class CollapsiblePanel extends React.Component<CollapsiblePanelPr
     render() {
         const css: string = mergeCSS('card', this.props.className);
         const bodyCss: string = mergeCSS('collapse', { show: this.state.open });
-        const extra:any = getProps(this.props);
+        const extra: any = getProps(this.props);
 
         return <div className={css} {...extra}>
             <div className="card-header">
