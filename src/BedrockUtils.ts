@@ -1,4 +1,13 @@
 /**
+ * An interface with no properties to signal
+ * that a component either does not need a `prop`
+ * or does not store a `state` or may be both.
+ */
+export interface NoProps {
+
+}
+
+/**
  * Basic properties every Bedrock component needs
  * to implement. These are the properties all HTML
  * elements possess and are not component specific.
