@@ -46,8 +46,8 @@ module.exports = {
                     components: getComponents('components/cards'),
                 },
                 {
-                    name : 'Collection',
-                    components: getComponents('components/collection'),
+                    name : 'Groups',
+                    components: getComponents('components/groups'),
                 },
                 {
                     name : 'Connectors',
@@ -70,8 +70,8 @@ module.exports = {
                     components: getComponents('components/layout'),
                 },
                 {
-                    name : 'Miscellaneous',
-                    components: getComponents('components/misc'),
+                    name : 'Utilities',
+                    components: getComponents('components/utils'),
                 },
                 {
                     name : 'Navigation',
@@ -83,7 +83,7 @@ module.exports = {
                 },
                 {
                     name : 'Popovers',
-                    components: getComponents('components/pop'),
+                    components: getComponents('components/popovers'),
                 },
                 {
                     name : 'Progress Indicators',
