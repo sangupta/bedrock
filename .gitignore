@@ -1,0 +1,56 @@
+# Java/Maven noise
+*.class
+*.jar
+*.war
+*.ear
+target/
+**/target/
+**/.settings/
+
+# Windows noise
+desktop.ini
+
+# Node noise
+package-lock.json
+yarn.lock
+node_modules/
+**/node_modules/
+
+# Log file
+*.log
+*.log.gz
+*.log.txt
+
+# Flash Builder noise
+.actionScriptProperties
+.flexProperties
+.project
+.classpath
+bin/*
+bin-debug/*
+report/*
+bin-test/*
+docs/*
+.flexLibProperties
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.nar
+*.zip
+*.tar.gz
+*.rar
+*.gz
+*.7z
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Project specific
+.cache
+dist/*
+Todo.md
