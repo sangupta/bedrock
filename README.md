@@ -50,7 +50,7 @@ Bedrock is different from frameworks like [React Bootstrap](https://react-bootst
 
 ## Thanks
 
-Many thanks to the following from which ideas/code have been borrowed:
+Many thanks to the following project from which code has been borrowed into the library:
 
 * LoadingDots - https://projects.lukehaas.me/css-loaders/
 
