@@ -4,6 +4,15 @@ React Component Library based on Bootstrap UI kit. It has no external
 dependencies except the `React` framework. Bedrock leverages `typescript` 
 for added type-safety.
 
+## Usage
+
+Using `Bedrock` involves the following 3 steps:
+
+* Include Bootstrap CSS in your index.html
+* Include FontAwesome CSS in your index.html
+* Define `bedrock` as a dependency in your `package.json`
+* Use bedrock components
+
 ## Augmentation
 
 * `as` can change a `button` to an `anchor`
@@ -47,6 +56,7 @@ Bedrock is different from frameworks like [React Bootstrap](https://react-bootst
 * Built entirely using [Typescript](https://www.typescriptlang.org/)
 * No external dependencies
 * Minimal code for complex components
+* Bedrock prefers to leverage CSS caching to improve performance and reduce JS size. Thus, CSS files are to be directly included from a CDN (for Bootstrap and FontAwesome)
 
 ## Thanks
 
