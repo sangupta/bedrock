@@ -36,6 +36,14 @@ export interface BaseProps {
     data?: any;
 
     children?: any;
+
+    /**
+     * A unique identifier that is sent back to the event handlers
+     * when ever an event happens. This is particularly useful to have
+     * generic event handlers bound to components when rendered as a
+     * list.
+     */
+    eventID?: string;
 }
 
 export function getProps(props: any, names: string[] = []): any {
