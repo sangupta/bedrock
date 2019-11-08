@@ -2,6 +2,7 @@ import * as React from 'react';
 import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 export default class LoadingDots extends React.Component<BaseProps, NoProps> {
+
     render() {
         const css: string = mergeCSS('loading-dots', this.props.className);
         const extra: any = getProps(this.props);
@@ -12,4 +13,5 @@ export default class LoadingDots extends React.Component<BaseProps, NoProps> {
             <div className="bounce3"></div>
         </div>;
     }
+
 }
