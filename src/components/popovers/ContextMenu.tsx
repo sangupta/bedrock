@@ -24,12 +24,12 @@ interface ContextMenuProps extends BaseProps {
      * `React.MouseEventHandler` called when menu or its child
      * is clicked
      */
-    onClick?: React.MouseEventHandler;
+    onClick?: (e: React.MouseEvent, eventID: string) => void;
 
     /**
      * Handler called when a menu item is selected inside.
      */
-    onSelect?: Function;
+    onSelect?: (selected: any, eventID: string) => void;
 }
 
 export default class ContextMenu extends React.Component<ContextMenuProps, NoProps> {
