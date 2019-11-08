@@ -23,7 +23,7 @@ interface AlertProps extends BaseProps {
     /**
      * Function called when the alert is closed via the `closeable` prop.
      */
-    onClose?: Function;
+    onClose?: (eventID: string) => void;
 
     /**
      * ARIA role to specify
@@ -54,7 +54,7 @@ export default class Alert extends React.Component<AlertProps, AlertState> {
 
     closeAlert = () => {
         this.setState({ closed: true });
-        if(this.props.onClose) {
+        if (this.props.onClose) {
             this.props.onClose(this.props.eventID);
         }
     }

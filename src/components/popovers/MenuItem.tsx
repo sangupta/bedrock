@@ -21,9 +21,9 @@ interface MenuItemProps extends BaseProps {
     /**
      * Click handler to be invoked when the menu item is clicked
      */
-    onClick?: React.MouseEventHandler;
+    onClick?: (e: React.MouseEvent, eventID: string) => void;
 
-    onSelect?: Function;
+    onSelect?: (value: any, eventID: string) => void;
 }
 
 export default class MenuItem extends React.Component<MenuItemProps, NoProps> {
@@ -37,11 +37,11 @@ export default class MenuItem extends React.Component<MenuItemProps, NoProps> {
         e.preventDefault();
 
         if (this.props.onClick) {
-            this.props.onClick(e);
+            this.props.onClick(e, this.props.eventID);
         }
 
         if (this.props.onSelect) {
-            this.props.onSelect(this.props.value);
+            this.props.onSelect(this.props.value, this.props.eventID);
         }
 
         return false;

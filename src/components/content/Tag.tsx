@@ -11,7 +11,7 @@ interface TagProps extends BaseProps {
 
     variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
 
-    onClose: React.MouseEventHandler;
+    onClose: (e: React.MouseEvent, eventID: string) => void;
 }
 
 export default class Tag extends React.Component<TagProps, any> {
@@ -22,12 +22,18 @@ export default class Tag extends React.Component<TagProps, any> {
         closeable: false
     }
 
+    handleClick = (e: React.MouseEvent): void => {
+        if (this.props.onClose) {
+            this.props.onClose(e, this.props.eventID);
+        }
+    }
+
     getCloseButton = () => {
-        if(!this.props.closeable) {
+        if (!this.props.closeable) {
             return null;
         }
 
-        return <span aria-hidden="true" className='cursor-pointer' onClick={this.props.onClose}>&times;</span>;
+        return <span aria-hidden="true" className='cursor-pointer' onClick={this.handleClick}>&times;</span>;
     }
 
     render() {
@@ -36,7 +42,7 @@ export default class Tag extends React.Component<TagProps, any> {
             'border-': this.props.variant
         }, this.props.className);
 
-        const extra:any = getProps(this.props);
+        const extra: any = getProps(this.props);
 
         return <div {...extra} className={css}>
             {this.props.children}

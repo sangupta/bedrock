@@ -15,7 +15,7 @@ interface BreadcrumbItemProps extends BaseProps {
     /**
      * Method to call when the breadcrumb link is clicked
      */
-    onClick?: React.MouseEventHandler<any>;
+    onClick?: (e: React.MouseEvent, eventID: string) => void;
 }
 
 /**
@@ -28,16 +28,22 @@ export default class BreadcrumbItem extends React.Component<BreadcrumbItemProps,
         href: '#'
     }
 
+    handleClick = (e: React.MouseEvent): void => {
+        if (this.props.onClick) {
+            this.props.onClick(e, this.props.eventID);
+        }
+    }
+
     render() {
         const css: string = mergeCSS('breadcrumb-item', {
             'active': this.props.active
         }, this.props.className);
 
-        const extra:any = getProps(this.props);
+        const extra: any = getProps(this.props);
 
         let children = this.props.children;
         if (!this.props.active) {
-            children = <a href={this.props.href} onClick={this.props.onClick}>{this.props.children}</a>;
+            children = <a href={this.props.href} onClick={this.handleClick}>{this.props.children}</a>;
         }
 
         return <li {...extra} className={css} aria-current='page'>

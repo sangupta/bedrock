@@ -20,7 +20,7 @@ interface PaginationItemProps extends BaseProps {
     /**
      * Method to call when the pagination tiem link is clicked
      */
-    onClick?: React.MouseEventHandler<any>;
+    onClick?: (e: React.MouseEvent, eventID: string) => void;
 }
 
 /**
@@ -34,6 +34,12 @@ export default class PaginationItem extends React.Component<PaginationItemProps,
         href: '#'
     }
 
+    handleClick = (e: React.MouseEvent): void => {
+        if (this.props.onClick) {
+            this.props.onClick(e, this.props.eventID);
+        }
+    }
+
     render() {
         let clazz: string = 'page-item';
         if (this.props.active) {
@@ -43,10 +49,10 @@ export default class PaginationItem extends React.Component<PaginationItemProps,
             clazz += ' disabled';
         }
 
-        const extra:any = getProps(this.props);
+        const extra: any = getProps(this.props);
 
         return <li {...extra} className={clazz} aria-current='page'>
-            <a className='page-link' href={this.props.href} onClick={this.props.onClick}>{this.props.children}</a>
+            <a className='page-link' href={this.props.href} onClick={this.handleClick}>{this.props.children}</a>
         </li>;
     }
 }

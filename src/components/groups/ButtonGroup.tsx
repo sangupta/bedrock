@@ -2,7 +2,15 @@ import * as React from 'react';
 import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface ButtonGroupProps extends BaseProps {
+
+    /**
+     * The ARIA label to use
+     */
     ariaLabel?: string;
+
+    /**
+     * The ARIA role
+     */
     role?: string;
 
     /**

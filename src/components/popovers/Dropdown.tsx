@@ -18,17 +18,17 @@ interface DropdownProps extends BaseProps {
     /**
      * Handler called when dropdown is open
      */
-    onShow?: Function;
+    onShow?: (eventID: string) => void;
 
     /**
      * Handler called when dropdown is close
      */
-    onClose?: Function;
+    onClose?: (eventID: string) => void;
 
     /**
      * Function called when a dropdown menu item is selected
      */
-    onSelect?: Function;
+    onSelect?: (selected: any, eventID: string) => void;
 
     /**
      * Dropdown position to display
@@ -77,14 +77,14 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
     shootEvents = () => {
         if (this.state.isOpen) {
             if (this.props.onShow) {
-                this.props.onShow();
+                this.props.onShow(this.props.eventID);
             }
 
             return;
         }
 
         if (this.props.onClose) {
-            this.props.onClose();
+            this.props.onClose(this.props.eventID);
         }
     }
 
@@ -99,7 +99,7 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
 
     handleSelect = (selected) => {
         if (this.props.onSelect) {
-            this.props.onSelect(selected);
+            this.props.onSelect(selected, this.props.eventID);
         }
     }
 

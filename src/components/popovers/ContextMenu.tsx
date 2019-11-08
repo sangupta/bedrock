@@ -19,6 +19,17 @@ interface ContextMenuProps extends BaseProps {
      * Where to place the popped-up menu
      */
     direction?: 'top' | 'top-left' | 'top-right' | 'left' | 'left-top' | 'left-bottom' | 'bottom' | 'bottom-left' | 'bottom-right' | 'right' | 'right-top' | 'right-bottom';
+
+    /**
+     * `React.MouseEventHandler` called when menu or its child
+     * is clicked
+     */
+    onClick?: React.MouseEventHandler;
+
+    /**
+     * Handler called when a menu item is selected inside.
+     */
+    onSelect?: Function;
 }
 
 export default class ContextMenu extends React.Component<ContextMenuProps, NoProps> {
@@ -32,7 +43,7 @@ export default class ContextMenu extends React.Component<ContextMenuProps, NoPro
     render() {
         return <Popper direction={this.props.direction}>
             <Button icon='fas fa-ellipsis-v' variant={this.props.variant} size={this.props.size} />
-            <Menu>
+            <Menu onSelect={this.props.onSelect} onClick={this.props.onClick}>
                 {this.props.children}
             </Menu>
         </Popper>;

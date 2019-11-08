@@ -20,7 +20,7 @@ interface MenuProps extends BaseProps {
      * Event handler called when a click happens outside
      * the component.
      */
-    onOutsideClick?: Function;
+    onOutsideClick?: (e: MouseEvent, eventID: string) => void;
 
     /**
      * Whether to track click outside of the menu or not
@@ -31,12 +31,12 @@ interface MenuProps extends BaseProps {
      * `React.MouseEventHandler` called when menu or its child
      * is clicked
      */
-    onClick?: React.MouseEventHandler;
+    onClick?: (e: React.MouseEvent, eventID: string) => void;
 
     /**
      * Handler called when a menu item is selected inside.
      */
-    onSelect?: Function;
+    onSelect?: (selected: any, eventID: string) => void;
 }
 
 /**
@@ -84,7 +84,7 @@ export default class Menu extends React.Component<MenuProps, NoProps> {
         }
 
         if (this.props.onOutsideClick) {
-            this.props.onOutsideClick(e);
+            this.props.onOutsideClick(e, this.props.eventID);
         }
     }
 
@@ -102,13 +102,13 @@ export default class Menu extends React.Component<MenuProps, NoProps> {
 
     handleClick = (e: React.MouseEvent) => {
         if (this.props.onClick) {
-            this.props.onClick(e);
+            this.props.onClick(e, this.props.eventID);
         }
     }
 
     handleSelect = (selectedValue: any) => {
         if (this.props.onSelect) {
-            this.props.onSelect(selectedValue);
+            this.props.onSelect(selectedValue, this.props.eventID);
         }
 
         return false;

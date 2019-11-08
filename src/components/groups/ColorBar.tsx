@@ -12,7 +12,7 @@ interface ColorBarProps extends BaseProps {
     /**
      * Click handler to be invoked when any color is clicked on
      */
-    onSelect?: React.MouseEventHandler;
+    onSelect?: (color: string, eventID: string) => void;
 
     /**
      * CSS to be applied to each color box
@@ -22,9 +22,9 @@ interface ColorBarProps extends BaseProps {
 
 export default class ColorBar extends React.Component<ColorBarProps, NoProps> {
 
-    handleSelect = (selected) => {
+    handleSelect = (selected: string) => {
         if (this.props.onSelect) {
-            this.props.onSelect(selected);
+            this.props.onSelect(selected, this.props.eventID);
         }
     }
 
@@ -56,8 +56,8 @@ export default class ColorBar extends React.Component<ColorBarProps, NoProps> {
             return null;
         }
 
-        const extra:any = getProps(this.props);
-        
+        const extra: any = getProps(this.props);
+
         return <HBox {...extra} className={this.props.className}>{this.getColors()}</HBox>;
     }
 }

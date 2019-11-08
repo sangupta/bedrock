@@ -26,12 +26,12 @@ interface MediaProps extends BaseProps {
     /**
      * Function handler called when the media image is clicked
      */
-    onMediaClick?: Function;
+    onMediaClick?: (e: React.MouseEvent, eventID: string) => void;
 
     /**
      * Function handler called when the title is clicked
      */
-    onTitleClick?: Function;
+    onTitleClick?: (e: React.MouseEvent, eventID: string) => void;
 }
 
 /**
@@ -44,15 +44,15 @@ interface MediaProps extends BaseProps {
  */
 export default class Media extends React.Component<MediaProps, any> {
 
-    handleImageClick = () => {
+    handleImageClick = (e: React.MouseEvent) => {
         if (this.props.onMediaClick) {
-            this.props.onMediaClick();
+            this.props.onMediaClick(e, this.props.eventID);
         }
     }
 
-    handleTitleClick = () => {
+    handleTitleClick = (e: React.MouseEvent) => {
         if (this.props.onTitleClick) {
-            this.props.onTitleClick();
+            this.props.onTitleClick(e, this.props.eventID);
         }
     }
 

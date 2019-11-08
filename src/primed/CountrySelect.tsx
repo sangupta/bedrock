@@ -19,9 +19,9 @@ export default class CountrySelect extends React.Component<BaseProps, NoProps> {
     }
 
     render() {
-        const extra:any = getProps(this.props);
-        
-        return <Select {...extra} className={this.props.className}>
+        const extra: any = getProps(this.props);
+
+        return <Select {...extra} eventID={this.props.eventID} className={this.props.className}>
             {this.getCountries()}
         </Select>
     }
