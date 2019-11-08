@@ -54,3 +54,4 @@ hs_err_pid*
 .cache
 dist/*
 Todo.md
+src/components/layout
