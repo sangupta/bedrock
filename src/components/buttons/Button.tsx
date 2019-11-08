@@ -26,7 +26,7 @@ interface ButtonProps extends BaseProps {
     /**
      * Handler to be invoked when button is clicked
      */
-    onClick?: React.MouseEventHandler;
+    onClick?: (e: React.MouseEvent, eventID: string) => void;
 }
 
 /**
@@ -46,7 +46,7 @@ export default class Button extends React.Component<ButtonProps, NoProps> {
     handleClick = (e: React.MouseEvent) => {
         e.preventDefault();
         if (this.props.onClick) {
-            this.props.onClick(e);
+            this.props.onClick(e, this.props.eventID);
         }
     }
 
@@ -56,7 +56,7 @@ export default class Button extends React.Component<ButtonProps, NoProps> {
             'btn-sm': this.props.size === 'small'
         }, this.props.className);
 
-        const extra:any = getProps(this.props);
+        const extra: any = getProps(this.props);
         const children = this.props.children ? this.props.children : this.props.label;
 
         if (this.props.icon) {

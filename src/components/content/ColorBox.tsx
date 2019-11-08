@@ -15,13 +15,13 @@ interface ColorBoxProps extends BaseProps {
     /**
      * Handler called when the color box is clicked
      */
-    onClick?: React.MouseEventHandler;
+    onClick?: (e: React.MouseEvent, eventID: string) => void;
 
     /**
      * Function called when the color is selected with the selected
      * color value
      */
-    onSelect?: Function;
+    onSelect?: (color: string, eventID: string) => void;
 }
 
 export default class ColorBox extends React.Component<ColorBoxProps, any> {
@@ -32,17 +32,17 @@ export default class ColorBox extends React.Component<ColorBoxProps, any> {
 
     handleClick = (e) => {
         if (this.props.onClick) {
-            this.props.onClick(e);
+            this.props.onClick(e, this.props.eventID);
         }
 
         if (this.props.onSelect) {
-            this.props.onSelect(this.props.color);
+            this.props.onSelect(this.props.color, this.props.eventID);
         }
     }
 
     render() {
         const css: string = mergeCSS('color-box', this.props.className);
-        const extra:any = getProps(this.props);
+        const extra: any = getProps(this.props);
 
         return <div {...extra} className={css} style={{ 'backgroundColor': this.props.color }} onClick={this.handleClick}>{this.props.label}</div>;
     }

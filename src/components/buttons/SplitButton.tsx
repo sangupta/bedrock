@@ -21,12 +21,12 @@ interface SplitButtonProps extends BaseProps {
     /**
      * Handler to be invoked when button is clicked
      */
-    onClick?: React.MouseEventHandler;
+    onClick?: (e: React.MouseEvent, eventID: string) => void;
 
     /**
      * Handler to be invoked when icon (the split-part of button) is clicked
      */
-    onAction?: React.MouseEventHandler;
+    onAction?: (e: React.MouseEvent, eventID: string) => void;
 
     /**
      * CSS classes to be applied to the split part.
@@ -48,14 +48,14 @@ export default class SplitButton extends React.Component<SplitButtonProps, NoPro
     handleClick = (e: React.MouseEvent) => {
         e.preventDefault();
         if (this.props.onClick) {
-            this.props.onClick(e);
+            this.props.onClick(e, this.props.eventID);
         }
     }
 
     handleAction = (e: React.MouseEvent) => {
         e.preventDefault();
         if (this.props.onAction) {
-            this.props.onAction(e);
+            this.props.onAction(e, this.props.eventID);
         }
     }
 
@@ -65,7 +65,7 @@ export default class SplitButton extends React.Component<SplitButtonProps, NoPro
             'btn-sm': this.props.size === 'small'
         }, this.props.className);
 
-        const extra:any = getProps(this.props);
+        const extra: any = getProps(this.props);
         const splitCss: string = mergeCSS('btn', 'btn-' + this.props.variant, 'dropdown-toggle', this.props.splitClassName)
 
         return <div {...extra} className={mergeCSS("btn-group", this.props.groupClassName)}>

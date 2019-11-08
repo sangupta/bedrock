@@ -20,7 +20,7 @@ interface BadgeProps extends BaseProps {
     /**
      * Method to call when the badge button is clicked
      */
-    onClick?: React.MouseEventHandler<any>;
+    onClick?: (e: React.MouseEvent, eventID: string) => void;
 }
 
 export default class Badge extends React.Component<BadgeProps, any> {
@@ -31,6 +31,12 @@ export default class Badge extends React.Component<BadgeProps, any> {
         asLink: false
     }
 
+    handleClick = (e: React.MouseEvent): void => {
+        if (this.props.onClick) {
+            this.props.onClick(e, this.props.eventID);
+        }
+    }
+
     render() {
         let Tag: any = this.props.asLink ? 'a' : 'span';
 
@@ -39,11 +45,11 @@ export default class Badge extends React.Component<BadgeProps, any> {
             'badge-pill': this.props.asPill
         }, this.props.className);
 
-        const extra:any = getProps(this.props);
-        if (this.props.asLink && this.props.onClick) {
-            extra.onClick = this.props.onClick;
+        const extra: any = getProps(this.props);
+        if (this.props.asLink) {
+            extra.onClick = this.handleClick;
         }
-        
+
         return <Tag className={css} {...extra}>
             {this.props.children}
         </Tag>;

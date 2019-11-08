@@ -55,7 +55,7 @@ export default class Alert extends React.Component<AlertProps, AlertState> {
     closeAlert = () => {
         this.setState({ closed: true });
         if(this.props.onClose) {
-            this.props.onClose()
+            this.props.onClose(this.props.eventID);
         }
     }
 

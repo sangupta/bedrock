@@ -12,6 +12,11 @@ interface IndicatorProps extends BaseProps {
      * Element styling to be applied
      */
     variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+
+    /**
+     * Function handler called when someone clicks on the indicator
+     */
+    onClick?: (e: React.MouseEvent, eventID: string) => void;
 }
 
 /**
@@ -24,11 +29,17 @@ export default class Indicator extends React.Component<IndicatorProps, any> {
         variant: 'primary'
     }
 
+    handleClick = (e: React.MouseEvent): void => {
+        if (this.props.onClick) {
+            this.props.onClick(e, this.props.eventID);
+        }
+    }
+
     render() {
         const children = this.props.children ? this.props.children : this.props.label;
-        const extra:any = getProps(this.props);
-        
-        return <div {...extra} className={mergeCSS('indicator', this.props.className)}>
+        const extra: any = getProps(this.props);
+
+        return <div {...extra} className={mergeCSS('indicator', this.props.className, { 'cursor-pointer': this.props.onClick ? true : false })} onClick={this.handleClick}>
             <span className={'indicator-dot bg-' + this.props.variant}></span>
             {children}
         </div>;

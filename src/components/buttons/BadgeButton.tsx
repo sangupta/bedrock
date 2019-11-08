@@ -16,7 +16,7 @@ interface BadgeButtonProps extends BaseProps {
     /**
      * Method to call when the badge button is clicked
      */
-    onClick?: React.MouseEventHandler<any>;
+    onClick?: (e: React.MouseEvent, eventID: string) => void;
 
     /**
      * The value to display as the badge
@@ -35,6 +35,12 @@ export default class BadgeButton extends React.Component<BadgeButtonProps, NoPro
         variant: 'default'
     }
 
+    handleClick = (e:React.MouseEvent):void => {
+        if(this.props.onClick) {
+            this.props.onClick(e, this.props.eventID);
+        }
+    }
+
     getBadge = () => {
         if (!this.props.badge) {
             return null;
@@ -45,9 +51,9 @@ export default class BadgeButton extends React.Component<BadgeButtonProps, NoPro
 
     render() {
         const css: string = mergeCSS('badge', 'bagde-' + this.props.variant, this.props.className);
-        const extra:any = getProps(this.props);
+        const extra: any = getProps(this.props);
 
-        return <a {...extra} href='#' className={css} onClick={this.props.onClick} >
+        return <a {...extra} href='#' className={css} onClick={this.handleClick} >
             <i className={this.props.icon} /> {this.props.title}
             {this.getBadge()}
         </a>;

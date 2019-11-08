@@ -30,7 +30,7 @@ interface ImageProps extends BaseProps {
     /**
      * Function handler called when the image is clicked
      */
-    onClick?: Function;
+    onClick?: (e: React.MouseEvent, eventID: string) => void;
 
     width?: number | string;
 
@@ -54,7 +54,7 @@ export default class Image extends React.Component<ImageProps, any> {
 
     handleClick = (e: React.MouseEvent) => {
         if (this.props.onClick) {
-            this.props.onClick();
+            this.props.onClick(e, this.props.eventID);
         }
     }
 
