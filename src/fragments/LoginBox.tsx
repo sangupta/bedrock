@@ -10,7 +10,7 @@ interface LoginBoxProps extends BaseProps {
     /**
      * Handler fired when the login form is submitted
      */
-    onSubmit?: Function;
+    onSubmit?: (username: string, password: string, eventID: string) => void;
 }
 
 export default class LoginBox extends React.Component<LoginBoxProps, NoProps> {
@@ -21,10 +21,7 @@ export default class LoginBox extends React.Component<LoginBoxProps, NoProps> {
 
     handleSubmitClick = (e) => {
         if (this.props.onSubmit) {
-            this.props.onSubmit({
-                username: this.username,
-                password: this.password
-            });
+            this.props.onSubmit(this.username, this.password, this.props.eventID);
         }
     }
 
