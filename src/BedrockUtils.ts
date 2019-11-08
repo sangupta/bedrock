@@ -76,6 +76,16 @@ export function getProps(props: any, names: string[] = []): any {
  * Convenience function to merge various CSS classname attributes
  * based on the values that are passed as arguments.
  * 
+ * Will merge the CSS classname if one of the conditions below 
+ * is met:
+ * 
+ * 1. The argument is a defined value
+ * 2. The argument is not empty
+ * 3. The argument is a vanilla string
+ * 4. If the argument is an object, then:
+ *   a) Add the key if the value is boolean
+ *   b) Add the key with value, if the value is other than boolean
+ * 
  * @param args 
  */
 export function mergeCSS(...args: any[]): string {
