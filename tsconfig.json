@@ -1,11 +1,11 @@
 {
     "compilerOptions": {
         "experimentalDecorators": true,
-        "declaration": true,
+        "declaration": false,
         "rootDir": "src",
         "baseUrl": "src",
         "resolveJsonModule": true,
-        "allowJs": false,
+        "allowJs": true,
         "removeComments": true,
         "sourceMap": true,
         "jsx": "react",
@@ -34,6 +34,6 @@
     "exclude": [
         "assets",
         "dist",
-        "node_modules",
+        "node_modules"
     ]
 }
