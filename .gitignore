@@ -15,6 +15,9 @@ package-lock.json
 yarn.lock
 node_modules/
 **/node_modules/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
 
 # Log file
 *.log
