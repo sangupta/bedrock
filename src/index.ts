@@ -1,17 +1,11 @@
-// assets
-import FontAwesome from './components/connectors/FontAwesome';
-import Gravatar from './components/connectors/Gravatar';
-
 // buttons
 import BadgeButton from './components/buttons/BadgeButton';
 import Button from './components/buttons/Button';
 import SplitButton from './components/buttons/SplitButton';
 
-// collection
-import ButtonGroup from './components/groups/ButtonGroup';
-import ColorBar from './components/groups/ColorBar';
-import ListGroup from './components/groups/ListGroup';
-import ListGroupItem from './components/groups/ListGroupItem';
+// connectors
+import FontAwesome from './components/connectors/FontAwesome';
+import Gravatar from './components/connectors/Gravatar';
 
 // containers
 import Accordion from './components/containers/Accordion';
@@ -44,7 +38,14 @@ import Select from './components/form/Select';
 import TextArea from './components/form/TextArea';
 import TextInput from './components/form/TextInput';
 
+// groups
+import ButtonGroup from './components/groups/ButtonGroup';
+import ColorBar from './components/groups/ColorBar';
+import ListGroup from './components/groups/ListGroup';
+import ListGroupItem from './components/groups/ListGroupItem';
+
 // layout
+import CBox from './components/layout/CBox';
 import HBox from './components/layout/HBox';
 import VBox from './components/layout/VBox';
 
@@ -86,10 +87,6 @@ import Pre from './components/text/Pre';
 import TimeAgo from './components/text/TimeAgo';
 
 export {
-    // assets
-    FontAwesome,
-    Gravatar,
-
     // button
     BadgeButton,
     Button,
@@ -97,11 +94,9 @@ export {
 
     // card
 
-    // collection
-    ButtonGroup,
-    ColorBar,
-    ListGroup,
-    ListGroupItem,
+    // connectors
+    FontAwesome,
+    Gravatar,
 
     // containers
     Accordion,
@@ -134,7 +129,14 @@ export {
     TextArea,
     TextInput,
 
+    // groups
+    ButtonGroup,
+    ColorBar,
+    ListGroup,
+    ListGroupItem,
+
     // layout
+    CBox,
     HBox,
     VBox,
 
