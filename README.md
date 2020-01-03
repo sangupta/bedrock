@@ -43,7 +43,7 @@ Open http://localhost:6060 to access the component documentation.
 
 ### Publishing a build
 
-To publish the builde, fire:
+To publish the build, fire:
 
 ```sh
 $ npm run build
@@ -60,7 +60,7 @@ Bedrock is different from frameworks like [React Bootstrap](https://react-bootst
 
 ## Thanks
 
-Many thanks to the following project from which code has been borrowed into the library:
+Many thanks to the following projects from which code has been borrowed into the library:
 
 * LoadingDots - https://projects.lukehaas.me/css-loaders/
 

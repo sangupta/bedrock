@@ -1,7 +1,9 @@
 {
     "name": "bedrock",
-    "version": "0.6.0",
+    "version": "0.1.0",
+
     "description": "Bedrock - React Component Library",
+    "homepage": "https://github.com/sangupta/bedrock",
     
     "source": "src/index.ts",
     "main": "dist/index.js",
@@ -13,6 +15,10 @@
     "repository": {
         "url": "https://github.com/sangupta/bedrock",
         "type": "git"
+    },
+
+    "bugs": {
+        "url": "https://github.com/sangupta/bedrock/issues"
     },
 
     "scripts": {
