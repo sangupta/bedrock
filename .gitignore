@@ -33,7 +33,6 @@ bin/*
 bin-debug/*
 report/*
 bin-test/*
-docs/*
 .flexLibProperties
 
 # BlueJ files
