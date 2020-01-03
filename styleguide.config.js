@@ -2,8 +2,6 @@ const glob = require( "glob" );
 const path = require( "path" );
 const fs = require( "fs" );
 
-const useSections = false;
-
 function getComponents ( folder ) {
     if ( !folder ) {
         return [];
@@ -26,13 +24,26 @@ function getComponents ( folder ) {
 };
 
 const options = {
-    title: 'Bedrock Component Library',
+    title: 'Bedrock React Components',
     pagePerSection: true,
-    propsParser: require( "react-docgen-typescript" ).parse,
+
+    propsParser: require( "react-docgen-typescript" ).withDefaultConfig( {
+        savePropValueAsString: true,
+    } ).parse,
     webpackConfig: Object.assign( {}, require( "./webpack.config" ), {} ),
+
     styleguideDir: "docs",
+    ribbon: {
+        url: 'https://github.com/sangupta/bedrock',
+        text: 'Fork on Github'
+    },
+
     exampleMode: 'expand',
     usageMode: 'expand',
+    tocMode: 'expand',
+
+    previewDelay: 2000, // wait for 2 seconds after code changes in inline editor before refreshing changes
+
     template: {
         head: {
             links: [
@@ -45,96 +56,96 @@ const options = {
     }
 };
 
-if ( !useSections ) {
-    // use component mode
-    options.sections = [
+options.sections = [];
+
+options.sections.push( {
+    name: 'Bedrock',
+    content: './docs/bedrock.md'
+} );
+
+options.sections.push( {
+    name: 'Components',
+    content: './docs/components.md',
+    sectionDepth: 3,
+    sections: [
         {
-            name: 'Components',
-            components: getComponents( 'components' ),
-            sectionDepth: 3
-        }
+            name: 'Buttons',
+            components: getComponents( 'components/buttons' ),
+        },
+        {
+            name: 'Cards',
+            components: getComponents( 'components/cards' ),
+        },
+        {
+            name: 'Groups',
+            components: getComponents( 'components/groups' ),
+        },
+        {
+            name: 'Connectors',
+            components: getComponents( 'components/connectors' ),
+        },
+        {
+            name: 'Containers',
+            components: getComponents( 'components/containers' ),
+        },
+        {
+            name: 'Content',
+            components: getComponents( 'components/content' ),
+        },
+        {
+            name: 'Form',
+            components: getComponents( 'components/form' ),
+        },
+        {
+            name: 'Layout',
+            components: getComponents( 'components/layout' ),
+        },
+        {
+            name: 'Utilities',
+            components: getComponents( 'components/utils' ),
+        },
+        {
+            name: 'Navigation',
+            components: getComponents( 'components/nav' ),
+        },
+        {
+            name: 'Notifications',
+            components: getComponents( 'components/notify' ),
+        },
+        {
+            name: 'Popovers',
+            components: getComponents( 'components/popovers' ),
+        },
+        {
+            name: 'Progress Indicators',
+            components: getComponents( 'components/progress' ),
+        },
+        {
+            name: 'Tables',
+            components: getComponents( 'components/tables' ),
+        },
     ]
-} else {
-    options.sections = [
-        {
-            name: 'Components',
-            sectionDepth: 3,
-            sections: [
-                {
-                    name: 'Buttons',
-                    components: getComponents( 'components/buttons' ),
-                },
-                {
-                    name: 'Cards',
-                    components: getComponents( 'components/cards' ),
-                },
-                {
-                    name: 'Groups',
-                    components: getComponents( 'components/groups' ),
-                },
-                {
-                    name: 'Connectors',
-                    components: getComponents( 'components/connectors' ),
-                },
-                {
-                    name: 'Containers',
-                    components: getComponents( 'components/containers' ),
-                },
-                {
-                    name: 'Content',
-                    components: getComponents( 'components/content' ),
-                },
-                {
-                    name: 'Form',
-                    components: getComponents( 'components/form' ),
-                },
-                {
-                    name: 'Layout',
-                    components: getComponents( 'components/layout' ),
-                },
-                {
-                    name: 'Utilities',
-                    components: getComponents( 'components/utils' ),
-                },
-                {
-                    name: 'Navigation',
-                    components: getComponents( 'components/nav' ),
-                },
-                {
-                    name: 'Notifications',
-                    components: getComponents( 'components/notify' ),
-                },
-                {
-                    name: 'Popovers',
-                    components: getComponents( 'components/popovers' ),
-                },
-                {
-                    name: 'Progress Indicators',
-                    components: getComponents( 'components/progress' ),
-                },
-                {
-                    name: 'Tables',
-                    components: getComponents( 'components/tables' ),
-                },
-            ]
-        }
-    ];
-}
+} );
 
 options.sections.push( {
     name: 'Fragments',
     components: getComponents( 'fragments' ),
-    sectionDepth: 3
+    sectionDepth: 3,
+    content: './docs/fragments.md'
 } );
+
 options.sections.push( {
-    name: 'Primed Components',
+    name: 'Primed',
     components: getComponents( 'primed' ),
-    sectionDepth: 3
+    sectionDepth: 3,
+    content: './docs/primed.md'
 } );
+
 options.sections.push( {
-    name: 'Page Templates',
+    name: 'Templates',
     components: getComponents( 'templates' ),
-    sectionDepth: 3
+    sectionDepth: 3,
+    content: './docs/templates.md'
 } );
 
 module.exports = options;
