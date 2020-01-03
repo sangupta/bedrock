@@ -33,8 +33,8 @@ interface ButtonProps extends BaseProps {
  * Renders an `anchor` HTML element that looks like a button.
  * 
  * Buttons can be created using either the `children` or
- * using the `label` property. Preference is given to `children`
- * over the `label`s.
+ * using the `label` `prop`. Preference is given to `children`
+ * over the `prop`.
  */
 export default class Button extends React.Component<ButtonProps, NoProps> {
 
