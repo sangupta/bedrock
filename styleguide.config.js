@@ -60,12 +60,12 @@ options.sections = [];
 
 options.sections.push( {
     name: 'Bedrock',
-    content: './docs/bedrock.md'
+    content: './docpages/bedrock.md'
 } );
 
 options.sections.push( {
     name: 'Components',
-    content: './docs/components.md',
+    content: './docpages/components.md',
     sectionDepth: 3,
     sections: [
         {
@@ -131,21 +131,21 @@ options.sections.push( {
     name: 'Fragments',
     components: getComponents( 'fragments' ),
     sectionDepth: 3,
-    content: './docs/fragments.md'
+    content: './docpages/fragments.md'
 } );
 
 options.sections.push( {
     name: 'Primed',
     components: getComponents( 'primed' ),
     sectionDepth: 3,
-    content: './docs/primed.md'
+    content: './docpages/primed.md'
 } );
 
 options.sections.push( {
     name: 'Templates',
     components: getComponents( 'templates' ),
     sectionDepth: 3,
-    content: './docs/templates.md'
+    content: './docpages/templates.md'
 } );
 
 module.exports = options;
