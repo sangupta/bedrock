@@ -145,7 +145,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
             }
         }
 
-        return <div {...extra} class={css}>
+        return <div {...extra} className={css}>
             {this.getIndicators()}
             <div className="carousel-inner">
                 {children[this.state.currentSlide]}
