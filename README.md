@@ -1,4 +1,6 @@
-# Bedrock
+# Bedrock React Components
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a8029857-1dd5-43b6-90cf-817ec5ee925e/deploy-status)](https://app.netlify.com/sites/elastic-mcnulty-1ba012/deploys)
 
 React Component Library based on Bootstrap UI kit. It has no external
 dependencies except the `React` framework. Bedrock leverages `typescript` 
@@ -19,9 +21,7 @@ Using `Bedrock` involves the following 3 steps:
 
 ## Hacking
 
-Bedrock uses `npm` as the package manager, and [ParcelJS](https://parceljs.org/) 
-as the application bundler. For installation of `ParcelJS` follow the instructions
-[here](https://parceljs.org/getting_started.html).
+Bedrock uses `npm` as the package manager, and [microbundle](https://github.com/developit/microbundle) as the module packager. `yarn` should just work correctly.
 
 Clone the repository, and install the dependencies:
 
@@ -47,6 +47,12 @@ To publish the build, fire:
 
 ```sh
 $ npm run build
+```
+
+To publish the styleguide documentation, fire:
+
+```sh
+$ nm run build-docs
 ```
 
 ## Comparison with similar frameworks
