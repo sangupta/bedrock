@@ -1,6 +1,7 @@
 # Bedrock React Components
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a8029857-1dd5-43b6-90cf-817ec5ee925e/deploy-status)](https://app.netlify.com/sites/elastic-mcnulty-1ba012/deploys)
+[![Build Status](https://img.shields.io/travis/sangupta/bedrock.svg?style=flat-square)](https://travis-ci.org/sangupta/bedrock)
+[![Netlify Status](https://img.shields.io/netlify/a8029857-1dd5-43b6-90cf-817ec5ee925e?style=flat-square)](https://app.netlify.com/sites/elastic-mcnulty-1ba012/deploys)
 
 React Component Library based on Bootstrap UI kit. It has no external
 dependencies except the `React` framework. Bedrock leverages `typescript` 
