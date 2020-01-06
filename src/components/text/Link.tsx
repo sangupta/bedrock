@@ -25,8 +25,8 @@ export default class Link extends React.Component<LinkProps, NoProps> {
     }
 
     handleClick = (e: React.MouseEvent) => {
+        e.preventDefault();
         if (this.props.onClick) {
-            e.preventDefault();
             this.props.onClick(e);
         }
     }
@@ -34,7 +34,7 @@ export default class Link extends React.Component<LinkProps, NoProps> {
     render() {
         const extra: any = getProps(this.props);
 
-        return <a {...extra} href={this.props.href} onClick={this.handleClick}>
+        return <a {...extra} className={this.props.className} href={this.props.href} onClick={this.handleClick}>
             {this.props.children}
         </a>;
     }
