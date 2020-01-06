@@ -1,7 +1,7 @@
 {
-    "name": "bedrock",
+    "name": "@sangupta/bedrock",
     "version": "0.1.0",
-    "description": "Bedrock - React Component Library",
+    "description": "Bedrock React Components",
     "homepage": "https://github.com/sangupta/bedrock",
     "source": "src/index.ts",
     "main": "dist/index.js",
@@ -15,6 +15,9 @@
     },
     "bugs": {
         "url": "https://github.com/sangupta/bedrock/issues"
+    },
+    "publishConfig": {
+        "access" : "public"
     },
     "scripts": {
         "build": "microbundle",
