@@ -1,46 +1,37 @@
 {
     "name": "bedrock",
     "version": "0.1.0",
-
     "description": "Bedrock - React Component Library",
     "homepage": "https://github.com/sangupta/bedrock",
-    
     "source": "src/index.ts",
     "main": "dist/index.js",
     "umd:main": "dist/index.umd.js",
     "module": "dist/index.mjs",
     "unpkg": "dist/index.umd.js",
     "types": "dist/index.d.ts",
-
     "repository": {
         "url": "https://github.com/sangupta/bedrock",
         "type": "git"
     },
-
     "bugs": {
         "url": "https://github.com/sangupta/bedrock/issues"
     },
-
     "scripts": {
         "build": "microbundle",
+        "build-docs": "styleguidist build",
         "start": "microbundle watch",
-        "styleguide": "styleguidist server",
-        "styleguide:build": "styleguidist build"
+        "styleguide": "styleguidist server"
     },
-
     "author": {
         "name": "Sandeep Gupta",
         "email": "sandy.pec@gmail.com",
         "url": "https://sangupta.com"
     },
-    
     "license": "Apache-2.0",
-
     "peerDependencies": {
         "react": "^16.12.0",
         "react-dom": "^16.12.0"
     },
-
     "devDependencies": {
         "@types/react": "^16.9.17",
         "@types/react-dom": "^16.9.4",
