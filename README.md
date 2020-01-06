@@ -1,13 +1,13 @@
 # Bedrock React Components
 
-[![Build Status](travis-badge)](travis-url)
-[![Netlify Status](netlify-badge)](netlify-url)
-[![Version](version-badge)](version-url)
-[![Downloads](downloads-badge)](downloads-url)
-[![Package License](license-badge)](license-url)
-[![PRs welcome](pr-badge)](pr-url)
+[![Build Status][travis-badge]][travis-url]
+[![Netlify Status][netlify-badge]][netlify-url]
+[![Version][version-badge]][version-url]
+[![Downloads][downloads-badge]][downloads-url]
+[![Package License][license-badge]][license-url]
+[![PRs welcome][pr-badge]][pr-url]
 
-Bedrock is a [ReactJS](reactjs) component library built entirely using [Typescript](typescript) for type-safety and [Bootstrap](bootstrap) for UI styling. It also leverages [microbundle](microbundle) for releases, and [React Styleguidist](styleguidist) for component documentation.
+Bedrock is a [ReactJS][reactjs] component library built entirely using [Typescript][typescript] for type-safety and [Bootstrap][bootstrap] for UI styling. It also leverages [microbundle][microbundle] for releases, and [React Styleguidist][styleguidist] for component documentation.
 
 ## Usage
 
@@ -51,7 +51,7 @@ export default class TestComponent extends React.Component<any, any> {
 
 ## Hacking
 
-Bedrock uses `npm` as the package manager, and [microbundle](microbundle) as the module packager. `yarn` should just work correctly.
+Bedrock uses `npm` as the package manager, and [microbundle][microbundle] as the module packager. `yarn` should just work correctly.
 
 Clone the repository, and install the dependencies:
 
@@ -92,9 +92,9 @@ $ npm publish
 
 ## Comparison with similar frameworks
 
-Bedrock is different from frameworks like [React Bootstrap](react-bootstrap) and [React Strap](reactstrap) in the following ways:
+Bedrock is different from frameworks like [React Bootstrap][react-bootstrap] and [React Strap][reactstrap] in the following ways:
 
-* Built entirely using [Typescript](typescript)
+* Built entirely using [Typescript][typescript]
 * No external dependencies
 * Minimal code for complex components
 * Bedrock prefers to leverage CSS caching to improve performance and reduce JS size. Thus, CSS files are to be directly included from a CDN (for Bootstrap and FontAwesome)
@@ -128,9 +128,9 @@ Apache License v2.
 [netlify-badge]: https://img.shields.io/netlify/a8029857-1dd5-43b6-90cf-817ec5ee925e?style=flat-square
 [netlify-url]: https://app.netlify.com/sites/elastic-mcnulty-1ba012/deploys
 [version-badge]: https://img.shields.io/npm/v/@sangupta/bedrock.svg?style=flat-square
-[version-url]: 
+[version-url]: https://github.com/sangupta/bedrock
 [downloads-badge]: https://img.shields.io/npm/dm/@sangupta/bedrock.svg?style=flat-square
-[downloads-url]: 
+[downloads-url]: https://github.com/sangupta/bedrock
 [license-badge]: https://img.shields.io/npm/l/@sangupta/bedrock.svg?style=flat-square
 [license-url]: https://github.com/sangupta/bedrock/blob/master/LICENSE
 [pr-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
