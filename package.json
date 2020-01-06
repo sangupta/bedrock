@@ -18,7 +18,7 @@
     },
     "scripts": {
         "build": "microbundle",
-        "build-docs": "styleguidist build",
+        "build-docs": "styleguidist build && cp -r assets docs/",
         "start": "microbundle watch",
         "styleguide": "styleguidist server"
     },
