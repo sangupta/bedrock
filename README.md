@@ -10,10 +10,37 @@ for added type-safety.
 
 Using `Bedrock` involves the following 3 steps:
 
-* Include Bootstrap CSS in your index.html
-* Include FontAwesome CSS in your index.html
+* Include Bootstrap and Bedrock CSS in your index.html
+
+```html
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="https://bedrock.sangupta.com/assets/css/bedrock.css">
+```
+
 * Define `bedrock` as a dependency in your `package.json`
+
+```sh
+# using npm
+$ npm install --save @sangupta/bedrock
+
+# using yarn
+$ yarn add @sangupta/bedrock
+```
 * Use bedrock components
+
+```js
+import * as React from 'react';
+import { Button } from '@sangupta/bedrock';
+
+export default class TestComponent extends React.Component<any, any> {
+
+    render() {
+        return <Button>Hello World</Button>;
+    }
+
+}
+```
 
 ## Augmentation
 
@@ -39,20 +66,25 @@ server. To start the development server with documentation, fire:
 $ npm run styleguide
 ```
 
-Open http://localhost:6060 to access the component documentation.
+Open http://localhost:6060 to access the component documentation. To publish the styleguide documentation, fire:
+
+```sh
+$ nm run build-docs
+```
 
 ### Publishing a build
 
 To publish the build, fire:
 
 ```sh
+# clean up previous builds
+$ rm -rf dist
+
+# generate micro-bundles
 $ npm run build
-```
 
-To publish the styleguide documentation, fire:
-
-```sh
-$ nm run build-docs
+# publish to npm
+$ npm publish
 ```
 
 ## Comparison with similar frameworks
