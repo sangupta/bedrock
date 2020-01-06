@@ -124,6 +124,10 @@ options.sections.push( {
             name: 'Tables',
             components: getComponents( 'components/tables' ),
         },
+        {
+            name: 'Text',
+            components: getComponents( 'components/text' ),
+        }
     ]
 } );
 
