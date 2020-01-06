@@ -29,7 +29,8 @@
         "build": "microbundle",
         "build-docs": "styleguidist build && cp -r assets docs/",
         "start": "microbundle watch",
-        "styleguide": "styleguidist server"
+        "styleguide": "styleguidist server",
+        "test": "tsc --noEmit"
     },
     "author": {
         "name": "Sandeep Gupta",
