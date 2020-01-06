@@ -19,6 +19,12 @@
     "publishConfig": {
         "access" : "public"
     },
+    "files" : [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "tsconfig.json",
+        "dist/**"
+    ],
     "scripts": {
         "build": "microbundle",
         "build-docs": "styleguidist build && cp -r assets docs/",
