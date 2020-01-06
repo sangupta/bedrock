@@ -1,11 +1,13 @@
 # Bedrock React Components
 
-[![Build Status](https://img.shields.io/travis/sangupta/bedrock.svg?style=flat-square)](https://travis-ci.org/sangupta/bedrock)
-[![Netlify Status](https://img.shields.io/netlify/a8029857-1dd5-43b6-90cf-817ec5ee925e?style=flat-square)](https://app.netlify.com/sites/elastic-mcnulty-1ba012/deploys)
+[![Build Status](travis-badge)](travis-url)
+[![Netlify Status](netlify-badge)](netlify-url)
+[![Version](version-badge)](version-url)
+[![Downloads](downloads-badge)](downloads-url)
+[![Package License](license-badge)](license-url)
+[![PRs welcome](pr-badge)](pr-url)
 
-React Component Library based on Bootstrap UI kit. It has no external
-dependencies except the `React` framework. Bedrock leverages `typescript` 
-for added type-safety.
+Bedrock is a [ReactJS](reactjs) component library built entirely using [Typescript](typescript) for type-safety and [Bootstrap](bootstrap) for UI styling. It also leverages [microbundle](microbundle) for releases, and [React Styleguidist](styleguidist) for component documentation.
 
 ## Usage
 
@@ -49,7 +51,7 @@ export default class TestComponent extends React.Component<any, any> {
 
 ## Hacking
 
-Bedrock uses `npm` as the package manager, and [microbundle](https://github.com/developit/microbundle) as the module packager. `yarn` should just work correctly.
+Bedrock uses `npm` as the package manager, and [microbundle](microbundle) as the module packager. `yarn` should just work correctly.
 
 Clone the repository, and install the dependencies:
 
@@ -90,9 +92,9 @@ $ npm publish
 
 ## Comparison with similar frameworks
 
-Bedrock is different from frameworks like [React Bootstrap](https://react-bootstrap.github.io/) and [React Strap](https://reactstrap.github.io/) in the following ways:
+Bedrock is different from frameworks like [React Bootstrap](react-bootstrap) and [React Strap](reactstrap) in the following ways:
 
-* Built entirely using [Typescript](https://www.typescriptlang.org/)
+* Built entirely using [Typescript](typescript)
 * No external dependencies
 * Minimal code for complex components
 * Bedrock prefers to leverage CSS caching to improve performance and reduce JS size. Thus, CSS files are to be directly included from a CDN (for Bootstrap and FontAwesome)
@@ -118,3 +120,25 @@ Below sites and code-bases have been referenced in building **Bedrock**:
 ## License
 
 Apache License v2.
+
+
+[npm]: https://www.npmjs.com/
+[travis-badge]: https://img.shields.io/travis/sangupta/bedrock.svg?style=flat-square
+[travis-url]: https://travis-ci.org/sangupta/bedrock
+[netlify-badge]: https://img.shields.io/netlify/a8029857-1dd5-43b6-90cf-817ec5ee925e?style=flat-square
+[netlify-url]: https://app.netlify.com/sites/elastic-mcnulty-1ba012/deploys
+[version-badge]: https://img.shields.io/npm/v/@sangupta/bedrock.svg?style=flat-square
+[version-url]: 
+[downloads-badge]: https://img.shields.io/npm/dm/@sangupta/bedrock.svg?style=flat-square
+[downloads-url]: 
+[license-badge]: https://img.shields.io/npm/l/@sangupta/bedrock.svg?style=flat-square
+[license-url]: https://github.com/sangupta/bedrock/blob/master/LICENSE
+[pr-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+[pr-url]: http://makeapullrequest.com
+[reactjs]: https://reactjs.org/
+[typescript]: https://www.typescriptlang.org/
+[bootstrap]: https://getbootstrap.com/
+[microbundle]: https://github.com/developit/microbundle
+[react-bootstrap]: https://react-bootstrap.github.io/
+[reactstrap]: https://reactstrap.github.io/
+[styleguidist]: https://github.com/styleguidist/react-styleguidist
