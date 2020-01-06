@@ -30,6 +30,13 @@
     height: 600px !important;
     border: 1px solid black;
 }
+.bedrock-docs-fullpage .fixed-top {
+    position: inherit !important;
+}
+
+.bedrock-docs-fullpage .navbar {
+    justify-content: inherit !important;
+}
 
 .bedrock-docs-carousel-example {
     height: 400px;

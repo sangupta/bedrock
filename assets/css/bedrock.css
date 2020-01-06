@@ -139,6 +139,11 @@
     user-select: none;
 }
 
+.bedrock-rail-bars, .bedrock-rail-bars:visited {
+    color: #fff;
+    padding-left: 15px;
+}
+
 /**
   * end of sign-in page
   */
