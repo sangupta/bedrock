@@ -55,6 +55,8 @@ import BreadcrumbItem from './components/nav/BreadcrumbItem';
 import Nav from './components/nav/Nav';
 import Navbar from './components/nav/Navbar';
 import NavItem from './components/nav/NavItem';
+import NavTree from './components/nav/NavTree';
+import NavTreeItem from './components/nav/NavTreeItem';
 import Pagination from './components/nav/Pagination';
 import PaginationItem from './components/nav/PaginationItem';
 
@@ -146,6 +148,8 @@ export {
     Nav,
     Navbar,
     NavItem,
+    NavTree,
+    NavTreeItem,
     Pagination,
     PaginationItem,
 

@@ -232,3 +232,24 @@
     left: 100%;
     margin-left: 2px;
 }
+
+/**
+ * Tree component
+ */
+
+.bedrock-navtree {
+    list-style: none !important;
+    padding-left: 0
+}
+
+.bedrock-tree-branch {
+    list-style: none !important;
+    padding-left: 20px;
+}
+
+.navtree-leaf-icon {
+    font-size: 12px;
+    cursor: pointer;
+    width: 20px;
+    display: inline-block;
+}
