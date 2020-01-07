@@ -9,8 +9,6 @@
 
 Bedrock is a [ReactJS][reactjs] component library built entirely using [Typescript][typescript] for type-safety and [Bootstrap][bootstrap] for UI styling. It also leverages [microbundle][microbundle] for releases, and [React Styleguidist][styleguidist] for component documentation.
 
-<div style="border-radius: 4px; background-color: #333;">Note: The package has not yet been published.</div>
-
 ## Usage
 
 Using `Bedrock` involves the following 3 steps:
