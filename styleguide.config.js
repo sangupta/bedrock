@@ -46,6 +46,13 @@ const options = {
 
     template: {
         head: {
+            meta: [
+                { name: 'keywords', content: 'react,component,library,preact' },
+                { name: 'description', content: 'Bedrock is a React component library in Typescript' },
+                { name: 'robots', content: 'index,follow' },
+                { name: 'author', content: 'Sandeep Gupta, sandy.pec@gmail.com' },
+                { name: 'url', content: 'https://bedrock.sangupta.com' }
+            ],
             links: [
                 { rel: 'stylesheet', href: './assets/css/bootstrap.min.css' },
                 { rel: 'stylesheet', href: './assets/css/fontawesome-all.min.css' },
