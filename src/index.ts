@@ -27,13 +27,20 @@ import Figure from './components/content/Figure';
 import Image from './components/content/Image';
 import Indicator from './components/content/Indicator';
 import Keyboard from './components/content/Keyboard';
+import Media from './components/content/Media';
+import Rating from './components/content/Rating';
+import StaticContent from './components/content/StaticContent';
 import Tag from './components/content/Tag';
 
 // form
+import Checkbox from './components/form/Checkbox';
+import ColorInput from './components/form/ColorInput';
 import Form from './components/form/Form';
 import FormButton from './components/form/FormButton';
 import FormField from './components/form/FormField';
 import PasswordInput from './components/form/PasswordInput';
+import Radio from './components/form/Radio';
+import RangeInput from './components/form/RangeInput';
 import Select from './components/form/Select';
 import TextArea from './components/form/TextArea';
 import TextInput from './components/form/TextInput';
@@ -65,11 +72,14 @@ import Alert from './components/notify/Alert';
 import Toast from './components/notify/Toast';
 
 // pop
+import ContextMenu from './components/popovers/ContextMenu';
 import Dropdown from './components/popovers/Dropdown';
 import Menu from './components/popovers/Menu';
 import MenuItem from './components/popovers/MenuItem';
+import ModalContainer from './components/popovers/ModalContainer';
 
 // progress
+import LoadingDots from './components/progress/LoadingDots';
 import ProgressBar from './components/progress/ProgressBar';
 import Spinner from './components/progress/Spinner';
 
@@ -121,6 +131,9 @@ export {
     Indicator,
     Keyboard,
     Tag,
+    Media,
+    Rating,
+    StaticContent,
 
     // form
     Form,
@@ -130,6 +143,10 @@ export {
     Select,
     TextArea,
     TextInput,
+    Radio,
+    RangeInput,
+    Checkbox,
+    ColorInput,
 
     // groups
     ButtonGroup,
@@ -158,11 +175,14 @@ export {
     Toast,
 
     // pop
+    ContextMenu,
+    ModalContainer,
     Dropdown,
     Menu,
     MenuItem,
 
     // progress
+    LoadingDots,
     ProgressBar,
     Spinner,
 
