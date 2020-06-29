@@ -142,3 +142,25 @@ Apache License v2.
 [react-bootstrap]: https://react-bootstrap.github.io/
 [reactstrap]: https://reactstrap.github.io/
 [styleguidist]: https://github.com/styleguidist/react-styleguidist
+
+
+# May be somewhat related projects
+
+* https://lit-element.polymer-project.org/
+* https://material-ui.com/components/drawers/
+* https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/Drawer/Drawer.js
+* https://github.com/codrops
+* https://github.com/jtablesaw/tablesaw
+* https://github.com/jet-admin
+* https://www.jetadmin.io/
+* https://material-ui.com/components/tree-view/
+* https://primer.style/components/Dropdown
+* https://sproutsocial.com/insights/social-media-image-sizes-guide/
+* https://johann-s.github.io/bs-stepper/
+* https://dialogs.github.io/dialog-web-components/#avatar
+* https://everydayhero.github.io/constructicon/#metric
+* http://bokuweb.github.io/re-bulma/
+* https://github.com/dialogs/dialog-web-components/blob/master/package.json
+* https://microsoft.github.io/YamUI/#spinner
+* https://hallister.github.io/semantic-react/#Rail
+* https://halfapx.com/left-middle-right-layout-with-flexbox-and-float/
