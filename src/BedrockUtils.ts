@@ -35,7 +35,7 @@ export interface BaseProps {
      */
     data?: any;
 
-    children?: any;
+    children?: React.ReactNode;
 
     /**
      * A unique identifier that is sent back to the event handlers

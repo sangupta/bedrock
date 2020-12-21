@@ -25,13 +25,13 @@ export default class NavTree extends React.Component<NavTreeProps, any> {
     }
 
     render() {
-        const children = React.Children.toArray(this.props.children);
+        const children: Array<React.ReactElement> = React.Children.toArray(this.props.children) as Array<React.ReactElement>;
         if (!children || children.length === 0) {
             return null;
         }
 
         let cloned = [];
-        for (let index = 0; index < children.length; index++) {
+        for (let index: number = 0; index < children.length; index++) {
             const child = children[index];
             let childProps = {
                 onClick: this.handleClick
