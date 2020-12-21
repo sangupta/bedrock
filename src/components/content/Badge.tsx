@@ -13,11 +13,6 @@ interface BadgeProps extends BaseProps {
     asPill?: boolean;
 
     /**
-     * Show the badge using an ANCHOR tag.
-     */
-    asLink?: boolean;
-
-    /**
      * Method to call when the badge button is clicked
      */
     onClick?: (e: React.MouseEvent, eventID: string) => void;
@@ -38,21 +33,18 @@ export default class Badge extends React.Component<BadgeProps, any> {
     }
 
     render() {
-        let Tag: any = this.props.asLink ? 'a' : 'span';
-
+        const noHanlder:boolean = !!!this.props.onClick;
         const css: string = mergeCSS('badge', {
-            'badge-': this.props.variant,
-            'badge-pill': this.props.asPill
+            'bg-': this.props.variant,
+            'rounded-pill': this.props.asPill,
+            'cursor-pointer': !noHanlder
         }, this.props.className);
 
         const extra: any = getProps(this.props);
-        if (this.props.asLink) {
-            extra.onClick = this.handleClick;
-        }
 
-        return <Tag className={css} {...extra}>
+        return <span className={css} {...extra} onClick={this.handleClick}>
             {this.props.children}
-        </Tag>;
+        </span>;
     }
 
 }
