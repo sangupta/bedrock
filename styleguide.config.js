@@ -54,7 +54,7 @@ const options = {
                 { name: 'url', content: 'https://bedrock.sangupta.com' }
             ],
             links: [
-                { rel: 'stylesheet', href: './assets/css/bootstrap.min.css' },
+                { rel: 'stylesheet', href: './assets/css/bootstrap-5beta1.min.css' },
                 { rel: 'stylesheet', href: './assets/css/fontawesome-all.min.css' },
                 { rel: 'stylesheet', href: './assets/css/bedrock.css' },
                 { rel: 'stylesheet', href: './assets/css/bedrock-docs.css' }
