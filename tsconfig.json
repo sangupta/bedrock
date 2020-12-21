@@ -5,7 +5,7 @@
         "rootDir": "src",
         "baseUrl": "src",
         "resolveJsonModule": true,
-        "allowJs": true,
+        "allowJs": false,
         "removeComments": true,
         "sourceMap": true,
         "jsx": "react",
