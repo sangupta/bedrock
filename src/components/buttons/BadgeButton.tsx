@@ -24,9 +24,14 @@ interface BadgeButtonProps extends BaseProps {
     badge?: string | number;
 
     /**
-     * Element styling to be applied
+     * Button styling to be applied
      */
     variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+
+    /**
+     * Badge styling to be applied
+     */
+    badgeVariant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
 }
 
 /**
@@ -39,14 +44,13 @@ interface BadgeButtonProps extends BaseProps {
 export default class BadgeButton extends React.Component<BadgeButtonProps, NoProps> {
 
     static defaultProps = {
-        variant: 'default'
+        variant: 'primary',
+        badgeVariant: 'secondary'
     }
 
-    handleClick = (e:React.MouseEvent):void => {
+    handleClick = (e: React.MouseEvent): void => {
         e.preventDefault();
-        // e.stopPropagation();
-        // e.nativeEvent.stopImmediatePropagation();
-        if(this.props.onClick) {
+        if (this.props.onClick) {
             this.props.onClick(e, this.props.eventID);
         }
     }
@@ -56,17 +60,26 @@ export default class BadgeButton extends React.Component<BadgeButtonProps, NoPro
             return null;
         }
 
-        return <span className='badge badge-primary'>{this.props.badge}</span>;
+        return <span className={'badge bg-' + this.props.badgeVariant}>{this.props.badge}</span>;
+    }
+
+    getIcon = () => {
+        if (!this.props.icon) {
+            return null;
+        }
+
+        return <i className={this.props.icon} />;
     }
 
     render() {
-        const css: string = mergeCSS('badge', 'bagde-' + this.props.variant, this.props.className);
+        const css: string = mergeCSS('btn', 'btn-' + this.props.variant, this.props.className);
         const extra: any = getProps(this.props);
         const children = this.props.children ? this.props.children : this.props.label;
 
-        return <a {...extra} href='#' className={css} onClick={this.handleClick} >
-            <i className={this.props.icon} /> {children}&nbsp;
+        return <button type='button' {...extra} className={css} onClick={this.handleClick} >
+            {this.getIcon()}
+            {children}&nbsp;
             {this.getBadge()}
-        </a>;
+        </button>;
     }
 }
