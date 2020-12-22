@@ -30,6 +30,7 @@ export default class BreadcrumbItem extends React.Component<BreadcrumbItemProps,
 
     handleClick = (e: React.MouseEvent): void => {
         if (this.props.onClick) {
+            e.preventDefault();
             this.props.onClick(e, this.props.eventID);
         }
     }
@@ -42,11 +43,13 @@ export default class BreadcrumbItem extends React.Component<BreadcrumbItemProps,
         const extra: any = getProps(this.props);
 
         let children = this.props.children;
-        if (!this.props.active) {
+        if (this.props.active) {
+            extra['aria-current'] = 'page';
+        } else {
             children = <a href={this.props.href} onClick={this.handleClick}>{this.props.children}</a>;
         }
 
-        return <li {...extra} className={css} aria-current='page'>
+        return <li {...extra} className={css}>
             {children}
         </li>;
     }
