@@ -2,7 +2,13 @@ import * as React from 'react';
 import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 
 interface PaginationProps extends BaseProps {
+
     ariaLabel?: string;
+
+    /**
+     * Horizontal alignment of the pagination
+     */
+    align?: 'start' | 'center' | 'end';
 
     /**
      * Size of the pagination bar to render.
@@ -24,16 +30,17 @@ export default class Pagination extends React.Component<PaginationProps, NoProps
 
     static defaultProps = {
         ariaLabel: '',
-        size: 'default'
+        size: 'default',
+        align: 'start'
     }
 
     render() {
-        const css: string = mergeCSS('pagination', {
+        const css: string = mergeCSS('pagination', 'justify-content-' + this.props.align, {
             'pagination-lg': this.props.size === 'large',
             'pagination-sm': this.props.size === 'small'
         }, this.props.className);
 
-        const extra:any = getProps(this.props);
+        const extra: any = getProps(this.props);
 
         return <nav {...extra} aria-label={this.props.ariaLabel} className={this.props.navCSS}>
             <ul className={css}>

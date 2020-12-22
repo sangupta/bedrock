@@ -9,10 +9,35 @@ import PaginationItem from './PaginationItem';
     <PaginationItem>Next</PaginationItem>
 </Pagination>
 ```
+### Alignment
 
-## Sizing
+You may align the pagination using `start`, `center` or `end` properties.
 
-### Large Size
+```js
+import PaginationItem from './PaginationItem';
+
+<Pagination align='center'>
+    <PaginationItem disabled={true}>Previous</PaginationItem>
+    <PaginationItem>1</PaginationItem>
+    <PaginationItem active={true}>2</PaginationItem>
+    <PaginationItem>3</PaginationItem>
+    <PaginationItem>Next</PaginationItem>
+</Pagination>
+```
+
+```js
+import PaginationItem from './PaginationItem';
+
+<Pagination align='end'>
+    <PaginationItem disabled={true}>Previous</PaginationItem>
+    <PaginationItem>1</PaginationItem>
+    <PaginationItem active={true}>2</PaginationItem>
+    <PaginationItem>3</PaginationItem>
+    <PaginationItem>Next</PaginationItem>
+</Pagination>
+```
+
+### Sizing
 
 ```js
 import PaginationItem from './PaginationItem';
@@ -25,8 +50,6 @@ import PaginationItem from './PaginationItem';
     <PaginationItem>Next</PaginationItem>
 </Pagination>
 ```
-
-### Small Size
 
 ```js
 import PaginationItem from './PaginationItem';
