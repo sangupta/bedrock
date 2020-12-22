@@ -23,7 +23,7 @@ export interface BaseProps {
     className?: string;
 
     /**
-     * Unique identifier to be added to the top-most HTML element
+     * Optional unique identifier to be added to the top-most HTML element
      * emitted out by the component.
      */
     id?: string;

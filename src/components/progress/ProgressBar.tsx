@@ -46,7 +46,8 @@ export default class ProgressBar extends React.Component<ProgressBarProps, NoPro
         max: 100,
         value: 0,
         striped: false,
-        animated: false
+        animated: false,
+        label: ''
     }
 
     render() {
@@ -65,12 +66,17 @@ export default class ProgressBar extends React.Component<ProgressBarProps, NoPro
         const css: string = mergeCSS('progress', this.props.className);
         const extra: any = getProps(this.props);
 
+        const barCSS: string = mergeCSS('progress-bar', 'bg-' + this.props.variant, {
+            'progress-bar-striped': this.props.striped,
+            'progress-bar-animated': this.props.animated
+        });
+
         return <div {...extra} className={css}>
-            <div className={'progress-bar bg-' + this.props.variant}
+            <div className={barCSS}
                 role="progressbar" style={{ width: width }}
                 aria-valuenow={this.props.value}
                 aria-valuemin={this.props.min}
-                aria-valuemax={this.props.max}></div>
+                aria-valuemax={this.props.max}>{this.props.label}</div>
         </div>;
     }
 
