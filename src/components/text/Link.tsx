@@ -13,6 +13,11 @@ interface LinkProps extends BaseProps {
     variant?: Variant;
 
     /**
+     * Is the link active
+     */
+    active?:boolean;
+
+    /**
      * Handler to be invoked when link is clicked
      */
     onClick?: React.MouseEventHandler;
@@ -38,7 +43,7 @@ export default class Link extends React.Component<LinkProps, NoProps> {
     }
 
     render() {
-        const css: string = mergeCSS({ 'link-': this.props.variant }, this.props.className);
+        const css: string = mergeCSS({ 'link-': this.props.variant, active : this.props.active }, this.props.className);
         const extra: any = getProps(this.props);
 
         return <a {...extra} className={css} href={this.props.href} onClick={this.handleClick}>
