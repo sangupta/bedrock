@@ -30,11 +30,11 @@ interface RangeInputProps extends BaseProps {
     /**
      * Handler fired when the value changes
      */
-    onChange?: Function;
+    onChange?: (value: number, eventID: string) => void;
 }
 
 interface RangeInputState {
-    value:number;
+    value: number;
 }
 
 export default class RangeInput extends React.Component<RangeInputProps, RangeInputState> {
@@ -53,9 +53,9 @@ export default class RangeInput extends React.Component<RangeInputProps, RangeIn
     }
 
     handleChange = (e) => {
-        this.setState({ value : e.target.value });
+        this.setState({ value: e.target.value });
         if (this.props.onChange) {
-            this.props.onChange(e.target.value);
+            this.props.onChange(e.target.value, this.props.eventID);
         }
     }
 
