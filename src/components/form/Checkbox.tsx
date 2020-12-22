@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface CheckboxProps extends BaseProps {
-    disabled?: boolean;
 
-    value?: string;
+    disabled?: boolean;
 
     /**
      * The attribute name to use
@@ -27,7 +26,11 @@ interface CheckboxProps extends BaseProps {
     indeterminate?: boolean;
 }
 
-export default class Checkbox extends React.Component<CheckboxProps, NoProps> {
+interface CheckboxState {
+    checked: boolean;
+}
+
+export default class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
 
     static defaultProps = {
         disabled: false,
@@ -37,9 +40,12 @@ export default class Checkbox extends React.Component<CheckboxProps, NoProps> {
 
     inputRef: any;
 
-    constructor(props:CheckboxProps, context:any) {
-        super(props, context);
+    constructor(props: CheckboxProps) {
+        super(props);
 
+        this.state = {
+            checked: props.checked
+        };
         this.inputRef = React.createRef();
     }
 
@@ -60,6 +66,7 @@ export default class Checkbox extends React.Component<CheckboxProps, NoProps> {
     }
 
     handleChange = (e) => {
+        this.setState({ checked: e.target.checked });
         if (this.props.onChange) {
             this.props.onChange(e.target.checked);
         }
@@ -71,7 +78,7 @@ export default class Checkbox extends React.Component<CheckboxProps, NoProps> {
         if (this.props.disabled) {
             extra.disabled = 'disabled';
         }
-        if (this.props.checked) {
+        if (this.state.checked) {
             extra.checked = 'checked';
         }
 
