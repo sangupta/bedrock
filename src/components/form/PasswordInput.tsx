@@ -11,7 +11,7 @@ interface PasswordInputProps extends BaseProps {
     /**
      * Handler fired when the value changes
      */
-    onChange?: Function;
+    onChange?: (value: string, eventID: string) => void;
 
     /**
      * Is the field required?
@@ -48,7 +48,7 @@ export default class PasswordInput extends React.Component<PasswordInputProps, P
         autoComplete: true
     }
 
-    constructor(props:PasswordInputProps, context:any) {
+    constructor(props: PasswordInputProps, context: any) {
         super(props, context);
 
         this.state = {
@@ -64,7 +64,7 @@ export default class PasswordInput extends React.Component<PasswordInputProps, P
 
     handleChange = (e) => {
         if (this.props.onChange) {
-            this.props.onChange(e.target.value);
+            this.props.onChange(e.target.value, this.props.eventID);
         }
     }
 
