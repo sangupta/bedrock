@@ -10,22 +10,20 @@ interface FigureProps extends BaseProps {
     /**
      * Alignment of the caption with respect to figure.
      */
-    align?: 'left' | 'right'
+    align?: 'start' | 'end'
 }
 
 export default class Figure extends React.Component<FigureProps, any> {
 
     static defaultProps = {
-        align: 'left'
+        align: 'start'
     }
 
     render() {
         const css: string = mergeCSS('figure', this.props.className);
-        const childCSS = mergeCSS('figure-caption', {
-            'text-right': this.props.align === 'right'
-        });
-        const extra:any = getProps(this.props);
-        
+        const childCSS = mergeCSS('figure-caption', 'text-' + this.props.align);
+        const extra: any = getProps(this.props);
+
         return <figure {...extra} className={css}>
             {this.props.children}
             <figcaption className={childCSS}>{this.props.caption}</figcaption>

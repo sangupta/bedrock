@@ -9,7 +9,7 @@ Anytime you need to display a piece of content—like an image with an optional 
 Use the `align` property for caption alignment.
 
 ```js
-<Figure align='right' caption='A caption for the above image.'>
+<Figure align='end' caption='A caption for the above image.'>
     <img src='https://via.placeholder.com/400x300' />
 </Figure>
 ```
