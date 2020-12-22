@@ -1,11 +1,16 @@
 import * as React from 'react';
-import { BaseProps, getProps, NoProps } from '../../BedrockUtils';
+import { BaseProps, getProps, NoProps, Variant, mergeCSS } from '../../BedrockUtils';
 
 interface LinkProps extends BaseProps {
     /**
      * The destination for this link
      */
     href?: string;
+
+    /**
+     * Style variant for this component
+     */
+    variant?: Variant;
 
     /**
      * Handler to be invoked when link is clicked
@@ -21,7 +26,8 @@ interface LinkProps extends BaseProps {
 export default class Link extends React.Component<LinkProps, NoProps> {
 
     static defaultProps = {
-        href: '#'
+        href: '#',
+        variant: 'primary'
     }
 
     handleClick = (e: React.MouseEvent) => {
@@ -32,9 +38,10 @@ export default class Link extends React.Component<LinkProps, NoProps> {
     }
 
     render() {
+        const css: string = mergeCSS({ 'link-': this.props.variant }, this.props.className);
         const extra: any = getProps(this.props);
 
-        return <a {...extra} className={this.props.className} href={this.props.href} onClick={this.handleClick}>
+        return <a {...extra} className={css} href={this.props.href} onClick={this.handleClick}>
             {this.props.children}
         </a>;
     }

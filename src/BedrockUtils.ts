@@ -7,6 +7,8 @@ export interface NoProps {
 
 }
 
+export type Variant = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+
 /**
  * Basic properties every Bedrock component needs
  * to implement. These are the properties all HTML
