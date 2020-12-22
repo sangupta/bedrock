@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, Variant } from './../../BedrockUtils';
 
 interface CollapsiblePanelProps extends BaseProps {
 
@@ -12,6 +12,10 @@ interface CollapsiblePanelProps extends BaseProps {
      * To display the panel in collapsed state or not
      */
     isOpen?: boolean;
+
+    type?: 'link' | 'button';
+
+    variant?: Variant;
 }
 
 interface CollapsiblePanelState {
@@ -25,7 +29,9 @@ interface CollapsiblePanelState {
 export default class CollapsiblePanel extends React.Component<CollapsiblePanelProps, CollapsiblePanelState> {
 
     static defaultProps = {
-        isOpen: false
+        isOpen: false,
+        type: 'link',
+        variant: 'primary'
     }
 
     constructor(props: CollapsiblePanelProps, context: any) {
@@ -45,25 +51,29 @@ export default class CollapsiblePanel extends React.Component<CollapsiblePanelPr
     }
 
     render() {
-        const css: string = mergeCSS('card', this.props.className);
+        const css: string = mergeCSS('collapsible-panel', this.props.className);
         const bodyCss: string = mergeCSS('collapse', { show: this.state.open });
         const extra: any = getProps(this.props);
+        
+        let btnCss = 'btn';
+        if(this.props.type === 'link') {
+            btnCss += ' btn-link';
+            btnCss += ' link-' + this.props.variant;
+        } else {
+            btnCss += ' btn-' + this.props.variant;
+        }
 
         return <div className={css} {...extra}>
-            <div className="card-header">
-                <h5 className="mb-0">
-                    <button className="btn btn-link" aria-expanded="true" onClick={this.handleClick}>
-                        {this.props.title}
-                    </button>
-                </h5>
-            </div>
+            <a className={btnCss} onClick={this.handleClick}>
+                {this.props.title}
+            </a>
 
             <div className={bodyCss}>
-                <div className="card-body">
+                <div className="card card-body">
                     {this.props.children}
                 </div>
             </div>
-        </div>;
+        </div>
     }
 
 }
