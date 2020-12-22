@@ -35,6 +35,9 @@ export interface BaseProps {
      */
     data?: any;
 
+    /**
+     * Children for this component
+     */
     children?: React.ReactNode;
 
     /**
@@ -46,6 +49,22 @@ export interface BaseProps {
     eventID?: string;
 }
 
+/**
+ * Copies given properties from component properties so that
+ * any additional prop not part of parent can be applied on the
+ * resulting HTML component.
+ * 
+ * The basic `id` property, if present is copied.
+ * 
+ * If no `names` are provided, the only `id` is copied.
+ * 
+ * For all names provided, each prop that matches in the `props`
+ * is copied if the value is specified and is `truthy`.
+ * 
+ * @param props the React component properties: `this.props`
+ * 
+ * @param names the `string` based names to be copied from `props`
+ */
 export function getProps(props: any, names: string[] = []): any {
     const result: any = {};
     if (!props) {
@@ -53,7 +72,9 @@ export function getProps(props: any, names: string[] = []): any {
     }
 
     // copy the ID if present
-    result['id'] = props.id;
+    if (props.id) {
+        result['id'] = props.id;
+    }
 
     // check if names are available
     if (!names || names.length === 0) {
@@ -61,7 +82,7 @@ export function getProps(props: any, names: string[] = []): any {
     }
 
     // iterate over
-    for (let index = 0; index < names.length; index++) {
+    for (let index: number = 0; index < names.length; index++) {
         let name: string = names[index];
         let prop = props[name];
         if (prop) {
