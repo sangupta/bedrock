@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps, Variant } from './../../BedrockUtils';
 
 interface ProgressBarProps extends BaseProps {
     /**
@@ -25,7 +25,7 @@ interface ProgressBarProps extends BaseProps {
     /**
      * Color styling variant for the component.
      */
-    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+    variant?: Variant;
 
     /**
      * Whether to display a striped progress bar.

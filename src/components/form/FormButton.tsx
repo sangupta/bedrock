@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps, Variant } from './../../BedrockUtils';
 
 interface FormButtonProps extends BaseProps {
     /**
      * Element styling to be applied
      */
-    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+    variant?: Variant;
 
     autoFocus?: boolean;
     disabled?: boolean;

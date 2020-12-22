@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, Variant } from './../../BedrockUtils';
 
 interface TagProps extends BaseProps {
     /**
@@ -9,7 +9,7 @@ interface TagProps extends BaseProps {
 
     disabled?: boolean;
 
-    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+    variant?: Variant;
 
     onClose: (e: React.MouseEvent, eventID: string) => void;
 }

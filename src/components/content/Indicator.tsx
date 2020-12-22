@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, Variant } from './../../BedrockUtils';
 
 interface IndicatorProps extends BaseProps {
     /**
@@ -11,7 +11,7 @@ interface IndicatorProps extends BaseProps {
     /**
      * Element styling to be applied
      */
-    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+    variant?: Variant;
 
     /**
      * Function handler called when someone clicks on the indicator

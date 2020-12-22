@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps, Variant } from './../../BedrockUtils';
 
 interface ListGroupItemProps extends BaseProps {
     /**
@@ -27,7 +27,7 @@ interface ListGroupItemProps extends BaseProps {
     /**
      * Element styling to be applied
      */
-    variant?: 'default' | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+    variant?: 'default' | Variant;
 }
 
 export default class ListGroupItem extends React.Component<ListGroupItemProps, NoProps> {

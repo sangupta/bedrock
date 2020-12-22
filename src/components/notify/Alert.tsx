@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { mergeCSS, BaseProps, getProps } from './../../BedrockUtils';
+import { mergeCSS, BaseProps, getProps, Variant } from './../../BedrockUtils';
 
 interface AlertProps extends BaseProps {
     /**
      * Element styling to be applied
      */
-    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+    variant?: Variant;
 
     /**
      * Is the alert open or hidden?

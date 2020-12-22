@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps, Variant } from './../../BedrockUtils';
 
 interface NavbarProps extends BaseProps {
 
     theme?: 'light' | 'dark';
 
-    background?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+    background?: Variant;
 
 }
 

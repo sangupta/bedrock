@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, NoProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, NoProps, mergeCSS, getProps, Variant } from './../../BedrockUtils';
 
 interface BadgeButtonProps extends BaseProps {
 
@@ -26,12 +26,12 @@ interface BadgeButtonProps extends BaseProps {
     /**
      * Button styling to be applied
      */
-    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+    variant?: Variant;
 
     /**
      * Badge styling to be applied
      */
-    badgeVariant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+    badgeVariant?: Variant;
 }
 
 /**

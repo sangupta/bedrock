@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps, NoProps } from '../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, NoProps, Variant } from '../../BedrockUtils';
 
 interface ParaProps extends BaseProps {
     /**
      * Element styling to be applied
      */
-    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'body' | 'muted' | 'white' | 'black-50' | 'white-50';
+    variant?: Variant | 'dark' | 'body' | 'muted' | 'white' | 'black-50' | 'white-50';
 }
 
 /**

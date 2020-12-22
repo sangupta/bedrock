@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, NoProps } from './../../BedrockUtils';
+import { BaseProps, NoProps, Variant } from './../../BedrockUtils';
 import Popper from './../utils/Popper';
 import Button from './../buttons/Button';
 import Menu from './Menu';
@@ -8,7 +8,7 @@ interface ContextMenuProps extends BaseProps {
     /**
      * Element styling to be applied
      */
-    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+    variant?: Variant;
 
     /**
      * Size of the button
