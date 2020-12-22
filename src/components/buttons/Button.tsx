@@ -24,6 +24,16 @@ interface ButtonProps extends BaseProps {
     label?: string;
 
     /**
+     * Render buttons as outline rather than completely filled
+     */
+    outline?:boolean;
+
+    /**
+     * Make the button look disabled
+     */
+    disabled?:boolean;
+
+    /**
      * Handler to be invoked when button is clicked
      */
     onClick?: (e: React.MouseEvent, eventID: string) => void;
@@ -40,7 +50,9 @@ export default class Button extends React.Component<ButtonProps, NoProps> {
 
     static defaultProps = {
         variant: 'primary',
-        size: 'default'
+        size: 'default',
+        outline: false,
+        disabled:false
     }
 
     handleClick = (e: React.MouseEvent) => {
@@ -51,12 +63,16 @@ export default class Button extends React.Component<ButtonProps, NoProps> {
     }
 
     render() {
-        const css: string = mergeCSS('btn', 'btn-' + this.props.variant, {
+        const prefix:string = this.props.outline ? 'btn-outline-' : 'btn-';
+        const css: string = mergeCSS('btn', prefix + this.props.variant, {
             'btn-lg': this.props.size === 'large',
             'btn-sm': this.props.size === 'small'
         }, this.props.className);
 
         const extra: any = getProps(this.props);
+        if(this.props.disabled) {
+            extra.disabled = 'disabled';
+        }
         const children = this.props.children ? this.props.children : this.props.label;
 
         if (this.props.icon) {
