@@ -24,8 +24,8 @@ export default class AccordionItem extends React.Component<AccordionItemProps, A
         isOpen: false
     }
 
-    constructor(props: AccordionItemProps, context: any) {
-        super(props, context);
+    constructor(props: AccordionItemProps) {
+        super(props);
 
         this.state = {
             open: props.isOpen
@@ -34,31 +34,27 @@ export default class AccordionItem extends React.Component<AccordionItemProps, A
 
     handleClick = () => {
         this.setState((state) => {
-            return {
-                open: !state.open
-            }
+            return { open: !state.open }
         });
     }
 
     render() {
-        const css: string = mergeCSS('card', this.props.className);
-        const bodyCss: string = mergeCSS('collapse', { show: this.state.open });
+        const css: string = mergeCSS('accordion-item', this.props.className);
+        const bodyCss: string = mergeCSS('accordion-collapse', 'collapse', { show: this.state.open });
 
         return <div className={css}>
-            <div className="card-header">
-                <h5 className="mb-0">
-                    <button className="btn btn-link" aria-expanded="true" onClick={this.handleClick}>
-                        {this.props.title}
-                    </button>
-                </h5>
-            </div>
+            <h2 className='accordion-header'>
+                <button className={mergeCSS('accordion-button', { 'collapsed': !this.state.open })} type='button' onClick={this.handleClick}>
+                    {this.props.title}
+                </button>
+            </h2>
 
             <div className={bodyCss}>
-                <div className="card-body">
+                <div className="accordion-body">
                     {this.props.children}
                 </div>
             </div>
-        </div>;
+        </div>
     }
 
 }

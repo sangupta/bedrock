@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
 
 interface AccordionProps extends BaseProps {
 
@@ -16,11 +16,17 @@ interface AccordionProps extends BaseProps {
 export default class Accordion extends React.Component<AccordionProps, any> {
 
     render() {
-        const css: string = mergeCSS('bedrock-accordion', this.props.className);
+        const { children } = this.props;
+        if (!children || children.length === 0) {
+            return null;
+        }
 
-        return <div className={css}>
+        const css: string = mergeCSS('accordion', this.props.className);
+        const extra: any = getProps(this.props);
+
+        return <div className={css} {...extra}>
             {this.props.children}
-        </div>;
+        </div>
     }
 
 }
