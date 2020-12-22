@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps, NoProps } from '../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps } from '../../BedrockUtils';
 
 interface TextInputProps extends BaseProps {
     /**
@@ -36,18 +36,38 @@ interface TextInputProps extends BaseProps {
      * Current value of the input field
      */
     value?: string;
+
+    disabled?: boolean;
+
+    readOnly?: boolean;
 }
 
-export default class TextInput extends React.Component<TextInputProps, NoProps> {
+interface TextInputState {
+    value: string;
+}
+
+export default class TextInput extends React.Component<TextInputProps, TextInputState> {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: props.value || ''
+        };
+    }
 
     static defaultProps = {
         type: 'text',
         placeholder: '',
         autoFocus: false,
-        required: false
+        required: false,
+        disabled: false,
+        readOnly: false
     }
 
     handleChange = (e) => {
+        this.setState({ value : e.target.value });
+
         if (this.props.onChange) {
             this.props.onChange(e.target.value);
         }
@@ -55,7 +75,7 @@ export default class TextInput extends React.Component<TextInputProps, NoProps> 
 
     render() {
         const css: string = mergeCSS('form-control', this.props.className);
-        const extra: any = getProps(this.props, ['name', 'value']);
+        const extra: any = getProps(this.props, ['name']);
 
         if (this.props.required) {
             extra.required = 'required';
@@ -65,8 +85,17 @@ export default class TextInput extends React.Component<TextInputProps, NoProps> 
             extra.autoFocus = 'autoFocus';
         }
 
+        if (this.props.disabled) {
+            extra.disabled = 'disabled';
+        }
+
+        if (this.props.readOnly) {
+            extra.readOnly = 'readonly';
+        }
+
         return <input {...extra} className={css} type={this.props.type}
             placeholder={this.props.placeholder}
+            value={this.state.value}
             onChange={this.handleChange} />;
     }
 }
