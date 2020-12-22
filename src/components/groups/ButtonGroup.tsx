@@ -4,11 +4,6 @@ import { BaseProps, mergeCSS, getProps, NoProps } from './../../BedrockUtils';
 interface ButtonGroupProps extends BaseProps {
 
     /**
-     * The ARIA label to use
-     */
-    ariaLabel?: string;
-
-    /**
      * The ARIA role
      */
     role?: string;
@@ -34,7 +29,7 @@ export default class ButtonGroup extends React.Component<ButtonGroupProps, NoPro
 
         const extra:any = getProps(this.props);
         
-        return <div {...extra} className={css} role={this.props.role} aria-label={this.props.ariaLabel}>
+        return <div {...extra} className={css} role={this.props.role}>
             {this.props.children}
         </div>;
     }
