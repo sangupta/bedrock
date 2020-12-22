@@ -40,7 +40,7 @@ export interface BaseProps {
     /**
      * Children for this component
      */
-    children?: React.ReactNode;
+    children?: any;
 
     /**
      * A unique identifier that is sent back to the event handlers
