@@ -41,10 +41,13 @@ export default class ColorBox extends React.Component<ColorBoxProps, any> {
     }
 
     render() {
-        const css: string = mergeCSS('color-box', this.props.className);
+        const hasHandlers = !!!(this.props.onClick || this.props.onSelect);
+        const css: string = mergeCSS('color-box', {
+            'cursor-pointer': !hasHandlers
+        }, this.props.className);
         const extra: any = getProps(this.props);
 
-        return <div {...extra} className={css} style={{ 'backgroundColor': this.props.color }} onClick={this.handleClick}>{this.props.label}</div>;
+        return <div {...extra} className={css} style={{ 'backgroundColor': this.props.color }} onClick={this.handleClick}>{this.props.label || this.props.color}</div>;
     }
 
 }

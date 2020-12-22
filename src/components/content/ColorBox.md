@@ -3,7 +3,8 @@ an optional `label`.
 
 ```js
 <div className='bedrock-docs-bar'>
-    <ColorBox color='#CC0E0E' />
-    <ColorBox color='#9E6A6F' label='Hello' />
+    <ColorBox color='#0A61FE' />
+    <ColorBox color='#5100EE' label='Labeled' />
+    <ColorBox color='#5B28B3' label='Clickable' onClick={() => alert('color box clicked') } />
 </div>
 ```
