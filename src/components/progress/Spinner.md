@@ -13,7 +13,7 @@ Indicate the loading state of a component or page with Bootstrap spinners, built
 </div>
 ```
 
-Growing spinner
+### Growing spinner
 
 ```js
 <div className='bedrock-docs-bar'>
@@ -28,7 +28,7 @@ Growing spinner
 </div>
 ```
 
-## Small size
+### Sizes
 
 ```js
 <div className='bedrock-docs-bar'>
