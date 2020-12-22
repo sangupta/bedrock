@@ -35,22 +35,26 @@ export default class BreadcrumbItem extends React.Component<BreadcrumbItemProps,
         }
     }
 
+    getLink = () => {
+        return <a href={this.props.href} onClick={this.handleClick}>{this.props.children}</a>
+    }
+
     render() {
+        const { active } = this.props;
+
         const css: string = mergeCSS('breadcrumb-item', {
-            'active': this.props.active
+            'active': active
         }, this.props.className);
 
         const extra: any = getProps(this.props);
 
         let children = this.props.children;
-        if (this.props.active) {
+        if (active) {
             extra['aria-current'] = 'page';
-        } else {
-            children = <a href={this.props.href} onClick={this.handleClick}>{this.props.children}</a>;
         }
 
         return <li {...extra} className={css}>
-            {children}
+            {active ? children : this.getLink()}
         </li>;
     }
 }
