@@ -23,9 +23,9 @@ interface RangeInputProps extends BaseProps {
     step?: number;
 
     /**
-     * Color value represented as RGB Hex to use
+     * Range value represented as number
      */
-    value?: string;
+    value?: number;
 
     /**
      * Handler fired when the value changes
@@ -33,7 +33,18 @@ interface RangeInputProps extends BaseProps {
     onChange?: Function;
 }
 
-export default class RangeInput extends React.Component<RangeInputProps, NoProps> {
+interface RangeInputState {
+    value:number;
+}
+
+export default class RangeInput extends React.Component<RangeInputProps, RangeInputState> {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: props.value
+        };
+    }
 
     static defaultProps = {
         min: 0,
@@ -42,6 +53,7 @@ export default class RangeInput extends React.Component<RangeInputProps, NoProps
     }
 
     handleChange = (e) => {
+        this.setState({ value : e.target.value });
         if (this.props.onChange) {
             this.props.onChange(e.target.value);
         }
@@ -51,7 +63,7 @@ export default class RangeInput extends React.Component<RangeInputProps, NoProps
         const css: string = mergeCSS('form-control-range', this.props.className);
         const extra: any = getProps(this.props, ['name', 'min', 'max', 'step'])
         if (this.props.value) {
-            extra.defaultValue = this.props.value;
+            extra.defaultValue = this.state.value;
         }
         return <input {...extra} type='range' className={css} onChange={this.handleChange} />;
     }
