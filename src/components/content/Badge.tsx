@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { BaseProps, mergeCSS, getProps } from './../../BedrockUtils';
+import { BaseProps, mergeCSS, getProps, Variant } from './../../BedrockUtils';
 
 interface BadgeProps extends BaseProps {
     /**
      * Element styling to be applied.
      */
-    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+    variant?: Variant;
 
     /**
      * Show the badge as a pill.
