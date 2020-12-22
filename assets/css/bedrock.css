@@ -253,3 +253,7 @@
     width: 20px;
     display: inline-block;
 }
+
+.img-rounded {
+    border-radius: 50%;
+}

@@ -61,7 +61,7 @@ export default class Image extends React.Component<ImageProps, any> {
     render() {
         const css: string = mergeCSS({
             'img-fluid': this.props.fluid,
-            'rounded': this.props.rounded,
+            'img-rounded': this.props.rounded,
             'img-thumbnail': this.props.thumbnail
         }, this.props.className);
 
