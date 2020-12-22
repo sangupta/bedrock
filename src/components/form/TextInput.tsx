@@ -37,8 +37,14 @@ interface TextInputProps extends BaseProps {
      */
     value?: string;
 
+    /**
+     * `true` if the component is disabled
+     */
     disabled?: boolean;
 
+    /**
+     * `true` if the component is read-only
+     */
     readOnly?: boolean;
 }
 
