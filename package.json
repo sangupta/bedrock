@@ -1,13 +1,12 @@
 {
     "name": "@sangupta/bedrock",
     "version": "0.1.0",
-    "description": "Bedrock React Components",
-    "homepage": "https://github.com/sangupta/bedrock",
+    "description": "Bedrock: UI Component Library",
+    "homepage": "https://bedrock.sangupta.com",
     "source": "src/index.ts",
-    "main": "dist/index.js",
-    "umd:main": "dist/index.umd.js",
-    "module": "dist/index.mjs",
-    "unpkg": "dist/index.umd.js",
+    
+    "main": "dist/bedrock.js",
+    "module": "dist/bedrock.module.js",
     "types": "dist/index.d.ts",
     "repository": {
         "url": "https://github.com/sangupta/bedrock",
@@ -26,11 +25,11 @@
         "dist/**"
     ],
     "scripts": {
-        "build": "microbundle --jsx React.createElement",
-        "build-docs": "styleguidist build && cp -r assets docs/",
-        "start": "microbundle watch",
-        "styleguide": "styleguidist server",
-        "test": "tsc --noEmit"
+        "build": "parcel build --target main",
+        "playground": "parcel serve src/playground.html --port 1309",
+        "serve": "parcel serve --target main --port 1309",
+        "tsc": "tsc --noEmit",
+        "watch": "parcel watch --target main"
     },
     "author": {
         "name": "Sandeep Gupta",
@@ -39,23 +38,15 @@
     },
     "license": "Apache-2.0",
     "peerDependencies": {
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1"
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
     },
     "devDependencies": {
-        "@types/react": "^17.0.0",
-        "@types/react-dom": "^17.0.0",
-        "awesome-typescript-loader": "^5.2.1",
-        "css-loader": "^5.0.1",
-        "microbundle": "^0.13.0",
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1",
-        "react-docgen-typescript": "^1.20.5",
-        "react-styleguidist": "^11.1.5",
-        "source-map-loader": "^1.1.3",
-        "style-loader": "^2.0.0",
-        "typescript": "^4.1.3",
-        "webpack": "^5.11.0",
-        "webpack-dev-server": "^3.11.0"
+        "@types/react": "^17.0.41",
+        "@types/react-dom": "^17.0.14",
+        "typescript": "^4.6.2",
+        "parcel": "^2.3.2",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
     }
 }

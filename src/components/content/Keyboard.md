@@ -1,3 +1,0 @@
-```js
-<Keyboard value='j' />
-```

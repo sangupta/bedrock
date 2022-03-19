@@ -19,6 +19,17 @@
  *
  */
 
-// Export all the components from this library
-export {
-};
+/**
+ * This playground allows to test the components directly
+ * in the browser as they are being developed. 
+ */
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+// modify the structure below to test your component
+const playground = <>
+    Hello World
+</>
+
+// render the playground
+ReactDOM.render(playground, document.getElementById('root'));
