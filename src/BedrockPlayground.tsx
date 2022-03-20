@@ -25,10 +25,15 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Heading from './components/typography/Heading';
+
+function test() {
+    alert('hello world');
+}
 
 // modify the structure below to test your component
 const playground = <>
-    Hello World
+    <Heading data-test='bedrock' size={3} className='temp' asParagraph={true} displayHeading={true}>Hello World</Heading>
 </>
 
 // render the playground
