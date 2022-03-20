@@ -58,7 +58,6 @@ hs_err_pid*
 .cache
 dist/*
 Todo.md
-src/components/layout
 docs/
 components.md
 src/BedrockPlayground.tsx
