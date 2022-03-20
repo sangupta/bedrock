@@ -46,7 +46,7 @@ interface HBoxProps extends BaseProps {
  * 
  * @author sangupta
  */
-export default class Code extends React.PureComponent<HBoxProps> {
+export default class HBox extends React.PureComponent<HBoxProps> {
 
     render(): React.ReactNode {
         const { justify, align, reverse, className, children, ...extraProps } = this.props;
