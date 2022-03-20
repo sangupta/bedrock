@@ -72,6 +72,8 @@ type FlexAlignContent =
 
 type FlexJustifyContent = FlexAlignContent | 'left' | 'right';
 
+type FlexDirection = 'row' | 'column';
+
 type BoxJustify = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
 
 type BoxAlign = 'start' | 'end' | 'center' | 'baseline' | 'stretch';

@@ -22,22 +22,27 @@
 import React from 'react';
 import { buildCss } from '../../Utils';
 
-interface HBoxProps extends BaseProps {
+interface FlexBoxProps extends BaseProps {
 
     /**
-     * Horizontal justification to use when aligning elements inside
+     * `justify-content` value
      */
-    justify?: BoxJustify
+    justifyContent?: FlexJustifyContent
 
     /**
-     * Vertical justification to use when aligning items
+     * `align-content` value
      */
-    align?: BoxAlign
+    alignContent?: FlexAlignContent
 
     /**
      * Reverse the arrangement of items inside this container
      */
     reverse?: boolean;
+
+    /**
+     * The flex direction
+     */
+    direction: FlexDirection;
 
 }
 
@@ -46,18 +51,22 @@ interface HBoxProps extends BaseProps {
  * 
  * @author sangupta
  */
-export default class HBox extends React.PureComponent<HBoxProps> {
+export default class FlexBox extends React.PureComponent<FlexBoxProps> {
 
     render(): React.ReactNode {
-        const { justify, align, reverse, className, children, ...extraProps } = this.props;
+        const { justifyContent, alignContent, direction, reverse, className, children, ...extraProps } = this.props;
 
-        const css = buildCss('d-flex', 'flex-row', {
-            'flex-row-reverse': reverse,
-            'justify-content-': justify,
-            'align-items-': align
+        const css = buildCss('d-flex', {
+            'flex-': direction,
+            'flex-row-reverse': reverse
         }, className);
 
-        return <div className={css} {...extraProps}>{children}</div>
+        const style = {
+            justifyContent: justifyContent,
+            alignContent: alignContent
+        };
+
+        return <div className={css} style={style} {...extraProps}>{children}</div>
     }
 
 }
