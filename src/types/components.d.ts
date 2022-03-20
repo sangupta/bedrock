@@ -47,3 +47,31 @@ type Alignment = 'start' | 'center' | 'end';
  * Applicable text transformations
  */
 type TextTransform = 'lowercase' | 'uppercase' | 'capitalize';
+
+/**
+ * Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/align-content
+ */
+type FlexAlignContent =
+    // positional
+    Alignment | 'flex-start' | 'flex-end'
+
+    // normal
+    | 'normal'
+
+    // baseline
+    | 'baseline' | 'first baseline' | 'last baseline'
+
+    // global values
+    | 'inherit' | 'initial' | 'revert' | 'unset'
+
+    // overflow alignment
+    | 'safe center' | 'unsafe center'
+
+    // distributed alignment
+    | 'space-between' | 'space-around' | 'space-evenly' | 'stretch';
+
+type FlexJustifyContent = FlexAlignContent | 'left' | 'right';
+
+type BoxJustify = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
+
+type BoxAlign = 'start' | 'end' | 'center' | 'baseline' | 'stretch';

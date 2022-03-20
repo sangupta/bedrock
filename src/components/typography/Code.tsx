@@ -23,7 +23,7 @@ import React from 'react';
 import { buildCss } from '../../Utils';
 
 /**
- * The code component.
+ * The `code` component.
  * 
  * @author sangupta
  */
