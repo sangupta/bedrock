@@ -81,15 +81,15 @@ export function buildCss(...args: any[]): string {
                 const value = arg[key];
 
                 // if value is `boolean` and `true`, include the key
-                if(typeof value === 'boolean') {
-                    if(value) {
+                if (typeof value === 'boolean') {
+                    if (value) {
                         css += ' ' + key;
                         return;
                     }
                 }
 
                 // if value is `string` or `number`, use it as `suffix`
-                if(typeof value === 'string' || typeof value === 'number') {
+                if ((typeof value === 'string' && value !== '') || typeof value === 'number') {
                     css += ' ' + key + value;
                     return;
                 }
