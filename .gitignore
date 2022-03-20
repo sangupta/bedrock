@@ -10,7 +10,7 @@ target/
 # Windows noise
 desktop.ini
 
-# Node noise
+# Node/yarn/npm/typescript/parcel noise
 package-lock.json
 yarn.lock
 node_modules/
@@ -19,6 +19,7 @@ node_modules/
 .rts2_cache_es/
 .rts2_cache_umd/
 .parcel-cache
+tsconfig.tsbuildinfo
 
 # Log file
 *.log
