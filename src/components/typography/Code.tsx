@@ -19,14 +19,20 @@
  *
  */
 
-import Code from "./components/typography/Code";
-import Heading from "./components/typography/Heading";
-import Para from "./components/typography/Para";
+import React from 'react';
+import { buildCss } from '../../Utils';
 
-// Export all the components from this library
-export {
-    // typography components
-    Code,
-    Heading,
-    Para
-};
+/**
+ * The code component.
+ * 
+ * @author sangupta
+ */
+export default class Code extends React.PureComponent<BaseProps> {
+
+    render(): React.ReactNode {
+        const { className, children, ...extraProps } = this.props;
+
+        return <code {...extraProps} className={buildCss(className)}>{children}</code>
+    }
+
+}
