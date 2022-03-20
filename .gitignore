@@ -60,3 +60,5 @@ Todo.md
 src/components/layout
 docs/
 components.md
+src/BedrockPlayground.tsx
+src/playground.html
