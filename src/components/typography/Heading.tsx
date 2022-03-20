@@ -29,15 +29,15 @@ export default class Heading extends React.PureComponent<HeadingProps> {
     }
 
     render(): React.ReactNode {
-        const { size, displayHeading, asParagraph, className, ...extra } = this.props;
+        const { size, displayHeading, asParagraph, className, children, ...extraProps } = this.props;
         const css: string = buildCss(className, displayHeading ? 'display-' + size : '');
 
         if (!asParagraph) {
-            const Element: any = 'h' + this.props.size;
-            return <Element className={css}>{this.props.children}</Element>
+            const Element: any = 'h' + size;
+            return <Element className={css}>{children}</Element>
         }
 
-        return <p {...extra} className={buildCss({ h: size }, css)}>{this.props.children}</p>
+        return <p {...extraProps} className={buildCss({ h: size }, css)}>{children}</p>
     }
 
 }
