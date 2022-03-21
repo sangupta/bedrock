@@ -77,3 +77,11 @@ type FlexDirection = 'row' | 'column';
 type BoxJustify = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
 
 type BoxAlign = 'start' | 'end' | 'center' | 'baseline' | 'stretch';
+
+type ComponentSize = 'default' | 'small' | 'large';
+
+/**
+ * Refer https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+ * for more details
+ */
+type ButtonType = 'reset' | 'submit' | 'button';
