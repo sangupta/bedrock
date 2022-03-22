@@ -101,3 +101,24 @@ export function buildCss(...args: any[]): string {
 
     return css.trim();
 }
+
+/**
+ * Reduce a validity map of {formChild:boolean} to find out
+ * if the entire form is valid or not.
+ * 
+ * @param map 
+ * @returns 
+ */
+export function reduceValidityMap(map: MapStringBoolean): boolean {
+    if (!map) {
+        return true;
+    }
+
+    for (const [key, value] of Object.entries(map)) {
+        if (!!!value) {
+            return false;
+        }
+    }
+
+    return true;
+}

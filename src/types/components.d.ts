@@ -85,3 +85,17 @@ type ComponentSize = 'default' | 'small' | 'large';
  * for more details
  */
 type ButtonType = 'reset' | 'submit' | 'button';
+
+/**
+ * Map where both key and value are strings.
+ * 
+ */
+type MapStringString = { [key: string]: string };
+
+type MapStringAny = { [key: string]: any };
+
+type MapStringBoolean = { [key: string]: boolean };
+
+type MapStringMapStringBoolean = { [key: string]: MapStringBoolean };
+
+type FormUpdator = (formName: string, propName: string, value: any, isValid: boolean) => void;
