@@ -1,0 +1,12 @@
+.indicator {
+    display: flex;
+    flex-direction: column;
+}
+
+.indicator-dot {
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+    display: inline-block;
+    margin-right: 4px;
+}
