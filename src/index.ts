@@ -40,6 +40,9 @@ import VBox from "./components/layout/VBox";
 // media imports
 import Image from "./components/media/Image";
 
+// navigation imports
+import Link from "./components/navigation/Link";
+
 // typography imports
 import Code from "./components/typography/Code";
 import Heading from "./components/typography/Heading";
@@ -67,6 +70,9 @@ export {
 
     // media
     Image,
+
+    // navigation
+    Link,
 
     // typography
     Code,
