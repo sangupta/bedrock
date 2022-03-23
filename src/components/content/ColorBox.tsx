@@ -34,11 +34,11 @@ interface ColorBoxProps extends BaseProps {
 }
 
 /**
- * The `img` component.
+ * A color box component.
  * 
  * @author sangupta
  */
-export default class Image extends React.PureComponent<ColorBoxProps> {
+export default class ColorBox extends React.PureComponent<ColorBoxProps> {
 
     /**
      * the default properties
