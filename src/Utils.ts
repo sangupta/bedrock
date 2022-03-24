@@ -122,3 +122,22 @@ export function reduceValidityMap(map: MapStringBoolean): boolean {
 
     return true;
 }
+
+export function validateField(value: any, validators: Array<Validator<any>>): string {
+    if (!validators || validators.length === 0) {
+        return undefined;
+    }
+
+    for (let index = 0; index < validators.length; index++) {
+        const validator = validators[index];
+
+        const isValid = validator.test(value);
+        if (!isValid) {
+            // test failed
+            return validator.errorMessage;
+        }
+    }
+
+    // all tests pass
+    return undefined;
+}

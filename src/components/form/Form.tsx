@@ -28,15 +28,6 @@ import { reduceValidityMap } from '../../Utils';
 // 
 
 /**
- * Strongly type data that can be stored inside
- * the `context`.
- */
-interface FormContextData {
-    formName: string;
-    updateForm: FormUpdator
-}
-
-/**
  * Default data to store in the `context`.
  */
 const contextDefault: FormContextData = {
@@ -119,12 +110,12 @@ export default class Form extends React.Component<FormProps> {
         bucket[propertyName] = value;
 
         // complete validity
-        const validityBucket = Form.fieldValidity[this.formName] || {};
-        Form.fieldValidity[this.formName] = validityBucket;
+        const validityBucket = Form.fieldValidity[formName] || {};
+        Form.fieldValidity[formName] = validityBucket;
         validityBucket[propertyName] = isValid;
 
         // find the form handler to invoke onUpdate handler
-        const handler = Form.formComponents[this.formName];
+        const handler = Form.formComponents[formName];
         if (handler && typeof handler === 'function') {
             handler(bucket, reduceValidityMap(validityBucket));
         }

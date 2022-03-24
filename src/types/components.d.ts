@@ -32,6 +32,10 @@ interface BaseProps {
     className?: string;
 }
 
+interface NoAttributes {
+
+}
+
 /**
  * Usual variants that apply mostly across Bootstrap.
  */
@@ -98,4 +102,34 @@ type MapStringBoolean = { [key: string]: boolean };
 
 type MapStringMapStringBoolean = { [key: string]: MapStringBoolean };
 
+/**
+ * Function called by form fields to update the form with
+ * field name, value and validity status.
+ */
 type FormUpdator = (formName: string, propName: string, value: any, isValid: boolean) => void;
+
+/**
+ * Strongly type data that can be stored inside
+ * the `context`.
+ */
+interface FormContextData {
+    formName: string;
+    updateForm: FormUpdator
+}
+
+/**
+ * Defines a validator object. It includes a validator function
+ * and a corresponding message.
+ */
+interface Validator<T> {
+    test: (value: T) => boolean;
+
+    errorMessage: string;
+}
+
+interface FormFieldPayload {
+    value: any;
+    isValid: boolean;
+    isRequired: boolean;
+    errorMessage: string;
+}
