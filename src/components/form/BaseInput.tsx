@@ -23,7 +23,7 @@ import React from 'react';
 import { buildCss, validateField } from '../../Utils';
 import { FormContext } from './Form';
 
-interface TextInputProps extends BaseProps {
+interface BaseInputProps extends BaseProps {
 
     /**
      * The initial value of the component 
@@ -71,7 +71,7 @@ interface TextInputProps extends BaseProps {
 /**
  * State attributes for the component
  */
-interface TextInputState {
+interface BaseInputState {
 
     /**
      * Updated value as entered by the user
@@ -86,7 +86,7 @@ interface TextInputState {
  * 
  * @author sangupta
  */
-export default class TextInput extends React.Component<TextInputProps, TextInputState> {
+export default class BaseInput extends React.Component<BaseInputProps, BaseInputState> {
 
     /**
      * The form context that we bind to
@@ -96,7 +96,7 @@ export default class TextInput extends React.Component<TextInputProps, TextInput
     /**
      * the default properties
      */
-    static defaultProps: TextInputProps = {
+    static defaultProps: BaseInputProps = {
         name: '',
         value: '',
         size: 'default',
@@ -108,7 +108,7 @@ export default class TextInput extends React.Component<TextInputProps, TextInput
      */
     declare context: React.ContextType<typeof FormContext>
 
-    constructor(props: TextInputProps) {
+    constructor(props: BaseInputProps) {
         super(props);
 
         this.state = {
