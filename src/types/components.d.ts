@@ -127,8 +127,8 @@ interface Validator<T> {
     errorMessage: string;
 }
 
-interface FormFieldPayload {
-    value: any;
+interface FormFieldPayload<T> {
+    value: T;
     isValid: boolean;
     isRequired: boolean;
     errorMessage: string;

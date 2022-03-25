@@ -23,12 +23,17 @@ import React from 'react';
 import { buildCss, validateField } from '../../Utils';
 import { FormContext } from './Form';
 
-interface BaseInputProps extends BaseProps {
+interface BaseInputProps<T> extends BaseProps {
+
+    /**
+     * The type of element to render. 
+     */
+    type: string;
 
     /**
      * The initial value of the component 
      */
-    value?: string;
+    value?: T;
 
     /**
      * The form to bind to, unless its the nearest ancestoral form
@@ -53,7 +58,7 @@ interface BaseInputProps extends BaseProps {
     /**
      * Validators, if any, required on the component
      */
-    validators?: Array<Validator<string>>;
+    validators?: Array<Validator<T>>;
 
     /**
      * Whether to show invalid state via red border and an
@@ -62,21 +67,25 @@ interface BaseInputProps extends BaseProps {
      */
     showInvalidState?: boolean;
 
+    valueConverter: (e: React.ChangeEvent<HTMLInputElement>) => T;
+
+    hasValue: (value: T) => boolean;
+
     /**
      * Handler invoked when value of this field changes
      */
-    onChange?: (payload: FormFieldPayload, e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (payload: FormFieldPayload<T>, e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 /**
  * State attributes for the component
  */
-interface BaseInputState {
+interface BaseInputState<T> {
 
     /**
      * Updated value as entered by the user
      */
-    value: string;
+    value: any;
 
     isValid: boolean;
 }
@@ -86,7 +95,7 @@ interface BaseInputState {
  * 
  * @author sangupta
  */
-export default class BaseInput extends React.Component<BaseInputProps, BaseInputState> {
+export default class BaseInput<T> extends React.Component<BaseInputProps<T>, BaseInputState<T>> {
 
     /**
      * The form context that we bind to
@@ -96,11 +105,17 @@ export default class BaseInput extends React.Component<BaseInputProps, BaseInput
     /**
      * the default properties
      */
-    static defaultProps: BaseInputProps = {
+    static defaultProps = {
+        type: 'text',
         name: '',
-        value: '',
         size: 'default',
-        showInvalidState: true
+        showInvalidState: true,
+        valueConverter: () => {
+            return undefined
+        },
+        hasValue: () => {
+            return true
+        }
     }
 
     /**
@@ -108,7 +123,7 @@ export default class BaseInput extends React.Component<BaseInputProps, BaseInput
      */
     declare context: React.ContextType<typeof FormContext>
 
-    constructor(props: BaseInputProps) {
+    constructor(props: BaseInputProps<T>) {
         super(props);
 
         this.state = {
@@ -143,7 +158,7 @@ export default class BaseInput extends React.Component<BaseInputProps, BaseInput
         }
 
         // is required
-        if (this.props.required && !value) {
+        if (this.props.required && !this.props.hasValue(value)) {
             return 'required';
         }
 
@@ -161,7 +176,7 @@ export default class BaseInput extends React.Component<BaseInputProps, BaseInput
      * @param e 
      */
     handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const updatedValue = e.target.value;
+        const updatedValue = this.props.valueConverter(e);
 
         // update the form component if any
         const errorMessage = this.validateForm(updatedValue);
@@ -173,7 +188,7 @@ export default class BaseInput extends React.Component<BaseInputProps, BaseInput
 
         // bubble this up to handlers, as needed
         if (this.props.onChange) {
-            const fieldPayload: FormFieldPayload = {
+            const fieldPayload: FormFieldPayload<T> = {
                 errorMessage: errorMessage,
                 isRequired: this.props.required,
                 isValid: isValid,
@@ -187,7 +202,7 @@ export default class BaseInput extends React.Component<BaseInputProps, BaseInput
     render(): React.ReactNode {
         const {
             // component props
-            value, form, name, size, required, validators, onChange, showInvalidState,
+            type, value, form, name, size, required, validators, onChange, showInvalidState, valueConverter, hasValue,
 
             // standard props
             children, className, ...extraProps
@@ -200,7 +215,7 @@ export default class BaseInput extends React.Component<BaseInputProps, BaseInput
         }, className);
         const formName = this.props.form || this.context.formName;
 
-        return <input type='text'
+        return <input type={type}
             className={css}
             onChange={this.handleValueChange}
             value={this.state.value}
