@@ -31,6 +31,8 @@ import Alert from "./components/feedback/Alert";
 import Button from "./components/form/Button";
 import ButtonGroup from "./components/form/ButtonGroup";
 import Form from "./components/form/Form";
+import NumberInput from "./components/form/NumberInput";
+import TextInput from "./components/form/TextInput";
 
 // layout imports 
 import FlexBox from "./components/layout/FlexBox";
@@ -62,6 +64,8 @@ export {
     Button,
     ButtonGroup,
     Form,
+    NumberInput,
+    TextInput,
 
     // layout
     FlexBox,
