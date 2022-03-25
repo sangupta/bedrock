@@ -106,16 +106,8 @@ export default class BaseInput<T> extends React.Component<BaseInputProps<T>, Bas
      * the default properties
      */
     static defaultProps = {
-        type: 'text',
-        name: '',
         size: 'default',
-        showInvalidState: true,
-        valueConverter: () => {
-            return undefined
-        },
-        hasValue: () => {
-            return true
-        }
+        showInvalidState: true
     }
 
     /**

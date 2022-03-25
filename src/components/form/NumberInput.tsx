@@ -22,12 +22,12 @@
 import React from 'react';
 import BaseInput from './BaseInput';
 
-interface TextInputProps extends BaseProps {
+interface NumberInputProps extends BaseProps {
 
     /**
      * The initial value of the component 
      */
-    value?: string;
+    value?: number;
 
     /**
      * The form to bind to, unless its the nearest ancestoral form
@@ -52,7 +52,7 @@ interface TextInputProps extends BaseProps {
     /**
      * Validators, if any, required on the component
      */
-    validators?: Array<Validator<string>>;
+    validators?: Array<Validator<number>>;
 
     /**
      * Whether to show invalid state via red border and an
@@ -64,32 +64,42 @@ interface TextInputProps extends BaseProps {
     /**
      * Handler invoked when value of this field changes
      */
-    onChange?: (payload: FormFieldPayload<string>, e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (payload: FormFieldPayload<number>, e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 /**
- * The `input type="text"` component.
+ * The `input type="number"` component.
  * 
  * @author sangupta
  */
-export default class TextInput extends React.PureComponent<TextInputProps> {
+export default class NumberInput extends React.PureComponent<NumberInputProps> {
 
-    handleValueConversion(e: React.ChangeEvent<HTMLInputElement>): string {
-        return e.target.value;
+    static defaultProps = {
+        value: 0
     }
 
-    hasValue(value: string): boolean {
-        if (value && value.length > 0) {
-            return true;
+    handleValueConversion(e: React.ChangeEvent<HTMLInputElement>): number {
+        const value = e.target.value;
+        if (value === '') {
+            return 0;
         }
 
-        return false;
+        return Number(value);
+    }
+
+    hasValue(value: number): boolean {
+        const str = String(value);
+        if (str.trim().length === 0) {
+            return false;
+        }
+
+        return true;
     }
 
     render(): React.ReactNode {
         const { children, ...extraProps } = this.props;
 
-        return <BaseInput<string> type='text' {...extraProps} valueConverter={this.handleValueConversion} hasValue={this.hasValue}>{children}</BaseInput>
+        return <BaseInput<number> type='number' {...extraProps} valueConverter={this.handleValueConversion} hasValue={this.hasValue}>{children}</BaseInput>
     }
 
 }
