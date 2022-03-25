@@ -122,7 +122,10 @@ export default class TextInput extends React.Component<TextInputProps, TextInput
      * if the form needs to pass its value to callee, it can.
      */
     componentDidMount() {
-        this.updateForm(this.state.value);
+        const { value } = this.state;
+        const errorMessage = this.validateForm(value);
+        const isValid = errorMessage === undefined;
+        this.updateForm(value, isValid);
     }
 
     /**
@@ -132,28 +135,24 @@ export default class TextInput extends React.Component<TextInputProps, TextInput
      * 
      * @param value 
      */
-    updateForm = (value: any): string => {
-        // check validity
-        let isValid = true;
-
+    validateForm = (value: any): string => {
         // run validators
-        let errorMessage;
-        if (isValid && value) {
-            errorMessage = validateField(value, this.props.validators);
-            isValid = errorMessage === undefined;
+        let errorMessage = validateField(value, this.props.validators);
+        if (errorMessage) {
+            return errorMessage;
         }
 
         // is required
-        if (isValid && this.props.required && !value) {
-            isValid = false;
-            errorMessage = 'required';
+        if (this.props.required && !value) {
+            return 'required';
         }
 
-        // update the form data
-        this.context.updateForm(this.props.form || this.context.formName, this.props.name, value, isValid);
+        // all valid
+        return undefined;
+    }
 
-        // return error message
-        return errorMessage;
+    updateForm = (value: any, isValid: boolean): void => {
+        this.context.updateForm(this.props.form || this.context.formName, this.props.name, value, isValid);
     }
 
     /**
@@ -165,11 +164,12 @@ export default class TextInput extends React.Component<TextInputProps, TextInput
         const updatedValue = e.target.value;
 
         // update the form component if any
-        const errorMessage = this.updateForm(updatedValue);
+        const errorMessage = this.validateForm(updatedValue);
         const isValid = errorMessage === undefined;
 
         // update internal state
         this.setState({ value: updatedValue, isValid: isValid });
+        this.updateForm(updatedValue, isValid);
 
         // bubble this up to handlers, as needed
         if (this.props.onChange) {
