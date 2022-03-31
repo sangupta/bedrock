@@ -102,6 +102,63 @@ export function buildCss(...args: any[]): string {
     return css.trim();
 }
 
+export function buildProps(...args: any[]): object {
+    const props = {};
+
+    if (!args || args.length === 0) {
+        return props;
+    }
+
+    args.forEach((arg: any) => {
+        // undefined/null values are skipped
+        if (arg === undefined || arg === null) {
+            return;
+        }
+
+        // a string is appended as is
+        if (typeof arg === 'string') {
+            arg = arg.trim();
+
+            // only if not empty
+            if (arg) {
+                props[arg] = arg;
+            }
+            return;
+        }
+
+        // is a dictionary
+        if (typeof arg === 'object') {
+            const keys = Object.keys(arg);
+            if (!keys || keys.length === 0) {
+                return;
+            }
+
+            // run over all keys of the object
+            keys.forEach((key: string) => {
+                const value = arg[key];
+
+                // if value is `boolean` and `true`, include the key
+                if (typeof value === 'boolean') {
+                    if (value) {
+                        props[key] = value
+                        return;
+                    }
+                }
+
+                // if value is `string` or `number`, use it as `suffix`
+                if ((typeof value === 'string' && value !== '') || typeof value === 'number') {
+                    props[key] = value;
+                    return;
+                }
+
+                // not yet know how to handle this key, skip for now
+            });
+        }
+    });
+
+    return props;
+}
+
 /**
  * Reduce a validity map of {formChild:boolean} to find out
  * if the entire form is valid or not.
