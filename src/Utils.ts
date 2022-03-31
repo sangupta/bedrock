@@ -123,6 +123,15 @@ export function reduceValidityMap(map: MapStringBoolean): boolean {
     return true;
 }
 
+/**
+ * Validate a field value against an array of validators.
+ * 
+ * @param value the value to validate
+ * 
+ * @param validators array of `Validator`s.
+ * 
+ * @returns `undefined` if all validators pass, else returns `Validator.errorMessage`
+ */
 export function validateField(value: any, validators: Array<Validator<any>>): string {
     if (!validators || validators.length === 0) {
         return undefined;
@@ -140,4 +149,59 @@ export function validateField(value: any, validators: Array<Validator<any>>): st
 
     // all tests pass
     return undefined;
+}
+
+/**
+ * Replace the character at index in a given string.
+ * 
+ * @param str the original string
+ * 
+ * @param index the index (0-based) for the character to remove
+ * 
+ * @param replacement usually single character to put in place.
+ * 
+ * @returns the updated string
+ */
+export function replaceAt(str: string, index: number, replacement: string): string {
+    return str.substring(0, index) + replacement + str.substring(index + replacement.length);
+}
+
+/**
+ * Returns a unique string. Generates a UUID v4 with
+ * optional prefix.
+ * 
+ * @returns 
+ */
+export function getUniqueString(prefix: string = ''): string {
+    if (window.crypto && window.crypto.randomUUID) {
+        return prefix + window.crypto.randomUUID();
+    }
+
+    return prefix + uuidv4();
+}
+
+/**
+ * Generate a random UUID v4 using `crypto.getRandomValues()`
+ * 
+ * @returns 
+ */
+function uuidv4() {
+    return (([1e7] as any) + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+}
+
+/**
+ * Check if the given string value is a single digit or not.
+ * 
+ * @param value the string character
+ * 
+ * @returns `true` when digit, `false` otherwise
+ */
+export function isDigit(value: string): boolean {
+    if (value && value.length === 1) {
+        return !isNaN(Number(value));
+    }
+
+    return false;
 }
