@@ -43,7 +43,7 @@ interface CountdownProps {
     /**
      * Delay between each update
      */
-    timeDelay?: number;
+    timeInMillis?: number;
 }
 
 interface CountdownState {
@@ -53,7 +53,7 @@ interface CountdownState {
 export default class Countdown extends React.PureComponent<CountdownProps, CountdownState> {
 
     static defaultProps = {
-        timeDelay: 1000,
+        timeInMillis: 1000,
         step: 1
     }
 
@@ -73,7 +73,7 @@ export default class Countdown extends React.PureComponent<CountdownProps, Count
     }
 
     componentDidMount(): void {
-        this.timer = setInterval(this.updateValue, this.props.timeDelay);
+        this.timer = setInterval(this.updateValue, this.props.timeInMillis);
         this.timerCreated = true;
     }
 
