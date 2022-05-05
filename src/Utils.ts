@@ -36,6 +36,62 @@ const ONE_YEAR: number = 365 * ONE_DAY;
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 /**
+ * File icons mapped to the extension they should be used in.
+ * 
+ */
+const ICON_EXTENSION_MAP: { [key: string]: Array<string> } = {
+    'bi bi-file-zip': ['zip', 'rar', '7z', 'gz', 'war', 'ear', 'jar', 'asar', 'tar', 'tgz'],
+    'bi bi-file-text': ['text', 'txt', 'log'],
+    'bi bi-file-word': ['doc', 'docx'],
+    'bi bi-file-ppt': ['ppt', 'pptx'],
+    'bi bi-file-font': ['eot', 'ttf', 'woff', 'woff2'],
+    'bi bi-file-pdf': ['pdf'],
+    'bi bi-file-diff': ['diff'],
+    'bi bi-file-code': [
+        'java', 'c', 'cpp', 'swift', 'scala', 'py', 'json', 'xml', 'html', 'go', 'yml', 'properties', 'js', 'jsx', 'ts', 'tsx',
+        'css', 'yaml'
+    ],
+    'bi bi-file-binary': ['bin', 'dat', 'dump', 'dylib', 'dll'],
+    'bi bi-file-excel': ['xls', 'xlsx'],
+    'bi bi-file-richtext': ['rtf'],
+    'bi bi-file-spreadsheet': ['csv', 'tsv', 'delim'],
+    'bi bi-file-play': ['mp4', 'mkv', 'flv'],
+    'bi bi-file-music': ['mp3', 'm4a', 'wav'],
+    'bi bi-file-lock': ['lock'],
+    'bi bi-markdown': ['md'],
+    'bi bi-hash': ['md5', 'sha', 'sha256'],
+    'bi bi-journal-text': ['log'],
+    'bi bi-file-image': ['png', 'gif', 'jpg', 'jpeg', 'ico', 'tiff', 'bmp', 'webp']
+}
+
+/**
+ * Map of extension to it's file icon.
+ */
+const EXTENSION_ICON_MAP: MapStringString = reverseIconMap();
+
+/**
+ * Function that converts a map of <string, string[]>
+ * into a map of <string, string> by reversing and expanding
+ * it.
+ * 
+ * @returns 
+ */
+export function reverseIconMap(): MapStringString {
+    const createdMap: MapStringString = {};
+
+    const icons = Object.keys(ICON_EXTENSION_MAP);
+    icons.forEach(icon => {
+        const array = ICON_EXTENSION_MAP[icon];
+
+        array.forEach(extension => {
+            createdMap[extension] = icon;
+        });
+    });
+
+    return createdMap;
+}
+
+/**
  * Function that allows us to build CSS using rules defined as:
  * 
  * 1. Any string argument is added to the list
@@ -401,4 +457,32 @@ export function pad(str: string | number, length: number, fill: string): string 
     }
 
     return fill.repeat(delta) + value;
+}
+
+export function getFileIcon(isFolder: boolean, mimeType: string, extension: string): string {
+    if (isFolder) {
+        return 'bi bi-folder';
+    }
+
+    if (mimeType) {
+        if (mimeType.startsWith('image/')) {
+            return 'bi bi-file-image';
+        }
+
+        if (mimeType.startsWith('video/')) {
+            return 'bi bi-file-play';
+        }
+
+        if (mimeType === 'text/plain') {
+            return 'bi bi-file-text';
+        }
+
+        if (mimeType === 'text/csv') {
+            return 'bi bi-file-spreasheet';
+        }
+    }
+
+    extension = extension?.startsWith('.') ? extension.substring(1) : (extension || '')
+    const lowerCaseExtension = extension.toLowerCase();
+    return EXTENSION_ICON_MAP[lowerCaseExtension] || 'bi bi-file';
 }
