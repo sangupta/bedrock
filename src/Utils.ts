@@ -33,6 +33,8 @@ const ONE_WEEK: number = 7 * ONE_DAY;
 const ONE_MONTH: number = 30 * ONE_DAY;
 const ONE_YEAR: number = 365 * ONE_DAY;
 
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
 /**
  * Function that allows us to build CSS using rules defined as:
  * 
@@ -354,4 +356,49 @@ export function asByteSize(value: any): string {
 
 export function roundedDecimal(num: number) {
     return Math.round(num * 10) / 10;
+}
+
+export function asDate(value: number): string {
+    const date = new Date(value);
+    const month = date.getMonth();
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    return MONTHS[month] + ' ' + pad(day, 2, '0') + ', ' + year;
+}
+
+export function asTime(value: number): string {
+    const date = new Date(value);
+    const hour = date.getHours();
+    const min = date.getMinutes();
+    const sec = date.getSeconds();
+
+    return pad(hour, 2, '0') + ':' + pad(min, 2, '0') + ':' + pad(sec, 2, '0');
+}
+
+export function asDateTime(value: number): string {
+    const date = new Date(value);
+    const month = date.getMonth();
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    const hour = date.getHours();
+    const min = date.getMinutes();
+    const sec = date.getSeconds();
+
+    return MONTHS[month] + ' ' + pad(day, 2, '0') + ', ' + year + ' ' + pad(hour, 2, '0') + ':' + pad(min, 2, '0') + ':' + pad(sec, 2, '0');
+}
+
+export function pad(str: string | number, length: number, fill: string): string {
+    const value = '' + str;
+    const delta = length - value.length;
+    if (delta <= 0) {
+        return value;
+    }
+
+    if (fill.length > 1) {
+        fill = fill.charAt(0);
+    }
+
+    return fill.repeat(delta) + value;
 }
