@@ -133,3 +133,25 @@ interface FormFieldPayload<T> {
     isRequired: boolean;
     errorMessage: string;
 }
+
+type DateTimeFormatType = 'date' | 'date-time' | 'time';
+
+type DataColumnType = 'string' | 'bytes' | 'time-ago' | 'time-ago' | DateTimeFormatType | 'icon';
+
+type ValueType = '' | 'seconds' | 'millis' | 'string' | 'number' | 'boolean';
+
+interface DataColumnFormat {
+    attributeName: string;
+
+    title: string;
+
+    formatAs?: DataColumnType;
+
+    valueType?: ValueType;
+
+    displayColumn?: (item: any) => boolean;
+
+    className?: string;
+
+    getValue?: (item: any) => any;
+}

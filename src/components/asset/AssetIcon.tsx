@@ -20,19 +20,17 @@
  */
 
 import React from 'react';
-import { getFileIcon } from '../../Utils';
+import { getAssetIcon } from '../../Utils';
 
-interface FileIconProps {
-    isFolder?: boolean;
-    mimeType?: string;
-    extension: string;
+interface AssetIconProps {
+    asset: Asset;
 }
 
-export default class FileIcon extends React.PureComponent<FileIconProps> {
+export default class AssetIcon extends React.PureComponent<AssetIconProps> {
 
     render() {
-        const { isFolder, mimeType, extension } = this.props;
-        const icon = getFileIcon(isFolder, mimeType, extension);
+        const { asset } = this.props;
+        const icon = getAssetIcon(asset);
         return <i className={'format-file-icon ' + (icon || '')} />
     }
 

@@ -459,30 +459,31 @@ export function pad(str: string | number, length: number, fill: string): string 
     return fill.repeat(delta) + value;
 }
 
-export function getFileIcon(isFolder: boolean, mimeType: string, extension: string): string {
-    if (isFolder) {
+export function getAssetIcon(asset: Asset): string {
+    if (asset.isFolder) {
         return 'bi bi-folder';
     }
 
-    if (mimeType) {
-        if (mimeType.startsWith('image/')) {
+    const mime = asset.mimeType;
+    if (mime) {
+        if (mime.startsWith('image/')) {
             return 'bi bi-file-image';
         }
 
-        if (mimeType.startsWith('video/')) {
+        if (mime.startsWith('video/')) {
             return 'bi bi-file-play';
         }
 
-        if (mimeType === 'text/plain') {
+        if (mime === 'text/plain') {
             return 'bi bi-file-text';
         }
 
-        if (mimeType === 'text/csv') {
+        if (mime === 'text/csv') {
             return 'bi bi-file-spreasheet';
         }
     }
 
-    extension = extension?.startsWith('.') ? extension.substring(1) : (extension || '')
+    const extension = asset.extension?.startsWith('.') ? asset.extension.substring(1) : (asset.extension || '')
     const lowerCaseExtension = extension.toLowerCase();
     return EXTENSION_ICON_MAP[lowerCaseExtension] || 'bi bi-file';
 }
