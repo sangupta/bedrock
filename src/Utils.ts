@@ -19,6 +19,12 @@
  *
  */
 
+const KB = 1024;
+const MB = KB * KB;
+const GB = KB * MB;
+const TB = KB * GB;
+const PB = KB * TB;
+
 const ONE_SECOND: number = 1000;
 const ONE_MINUTE: number = 60 * ONE_SECOND;
 const ONE_HOUR: number = 60 * ONE_MINUTE;
@@ -315,4 +321,37 @@ export function formatAgo(delta: number, unit: number, suffix: string): string {
     }
 
     return value + " " + suffix + "s ago";
+}
+
+export function asByteSize(value: any): string {
+    if (isNaN(value)) {
+        return value;
+    }
+
+    const num: number = Number(value).valueOf();
+    if (num < KB) {
+        return num + ' bytes';
+    }
+
+    if (num < MB) {
+        return roundedDecimal(num / KB) + ' KB';
+    }
+
+    if (num < GB) {
+        return roundedDecimal(num / MB) + ' MB';
+    }
+
+    if (num < TB) {
+        return roundedDecimal(num / GB) + ' GB';
+    }
+
+    if (num < PB) {
+        return roundedDecimal(num / TB) + ' TB';
+    }
+
+    return roundedDecimal(num / TB) + ' PB'
+}
+
+export function roundedDecimal(num: number) {
+    return Math.round(num * 10) / 10;
 }
