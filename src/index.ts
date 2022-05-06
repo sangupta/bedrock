@@ -38,6 +38,7 @@ import DataTable from "./components/data/DataTable";
 
 // feedback imports
 import Alert from "./components/feedback/Alert";
+import Modal from "./components/feedback/Modal";
 import Spinner from "./components/feedback/Spinner";
 
 // form imports
@@ -50,6 +51,7 @@ import TextInput from "./components/form/TextInput";
 // layout imports 
 import FlexBox from "./components/layout/FlexBox";
 import HBox from "./components/layout/HBox";
+import Underlay from "./components/layout/Underlay";
 import VBox from "./components/layout/VBox";
 
 // media imports
@@ -89,6 +91,7 @@ export {
 
     // feedback
     Alert,
+    Modal,
     Spinner,
 
     // form
@@ -101,6 +104,7 @@ export {
     // layout
     FlexBox,
     HBox,
+    Underlay,
     VBox,
 
     // media
