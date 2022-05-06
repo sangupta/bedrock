@@ -62,7 +62,7 @@ interface DataTableProps {
     /**
      * Return the icon for one item/one row
      */
-    getIconForItem?: (item: any) => string;
+    getIconForItem?: (item: any) => React.ReactNode;
 
     /**
      * Currently selected item
@@ -96,7 +96,7 @@ export default class DataTable extends React.Component<DataTableProps, DataTable
 
         const result: any = [];
 
-        columns.forEach((item, index) => {
+        (columns || []).forEach((item, index) => {
             result.push(
                 <div key={item.title} className='data-table-col' style={{ gridColumnStart: index + 1 }}>{item.title}</div>
             );
@@ -120,7 +120,12 @@ export default class DataTable extends React.Component<DataTableProps, DataTable
             const itemID = item[rowKeyAttribute];
 
             result.push(
-                <DataTableRow className={this.props.selectedRow === item ? 'selected' : ''} key={itemID || index} dataRow={item} onRowClick={this.props.onRowClick} onRowDoubleClick={this.props.onRowDoubleClick} >
+                <DataTableRow
+                    className={this.props.selectedRow === item ? 'selected' : ''}
+                    key={itemID || index}
+                    dataRow={item}
+                    onRowClick={this.props.onRowClick}
+                    onRowDoubleClick={this.props.onRowDoubleClick} >
                     {this.renderDataRow(item, format)}
                 </DataTableRow>
             );
@@ -138,6 +143,10 @@ export default class DataTable extends React.Component<DataTableProps, DataTable
      */
     renderDataRow(row: any, formats: Array<DataColumnFormat>) {
         const columns: any = [];
+
+        if (!formats || formats.length === 0) {
+            return columns;
+        }
 
         formats.forEach((format, index) => {
             let columnValue = format.attributeName !== '$' ? row[format.attributeName] : row;
@@ -187,10 +196,11 @@ export default class DataTable extends React.Component<DataTableProps, DataTable
                 return <TimeAgo value={value} valueType={valueType} />
 
             case 'icon':
-                return this.props.getIconForItem(value)
-        }
+                return this.props.getIconForItem ? this.props.getIconForItem(value) : ''
 
-        return value;
+            default:
+                return value;
+        }
     }
 
     /**
@@ -215,7 +225,7 @@ export default class DataTable extends React.Component<DataTableProps, DataTable
 /**
  * Prop attributes for DataTableRow component.
  */
-interface DataTableRowProps {
+interface DataTableRowProps extends BaseProps {
     dataRow: any;
     key: string;
     className?: string;

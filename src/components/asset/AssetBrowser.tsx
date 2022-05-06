@@ -21,6 +21,7 @@
 
 import React from 'react'
 import DataTable from '../data/DataTable';
+import AssetIcon from './AssetIcon';
 
 interface AssetBrowserProps {
     assets?: Array<Asset>
@@ -48,6 +49,14 @@ export default class AssetBrowser extends React.Component<AssetBrowserProps, Ass
         }
     }
 
+    getFileIcon = (asset: Asset): React.ReactNode => {
+        if (!asset) {
+            return null;
+        }
+
+        return <AssetIcon asset={asset} />
+    }
+
     render() {
         const { assets, displayColumns } = this.props;
 
@@ -57,6 +66,7 @@ export default class AssetBrowser extends React.Component<AssetBrowserProps, Ass
             onRowClick={this.handleAssetClick}
             onRowDoubleClick={this.props.onAssetOpen}
             selectedRow={this.state.selectedAsset}
+            getIconForItem={this.getFileIcon}
             rowKeyAttribute='id' />
     }
 
