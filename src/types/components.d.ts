@@ -30,6 +30,8 @@ interface BaseProps {
      * the component, unless, specified otherwise.
      */
     className?: string;
+
+    children?: React.ReactNode
 }
 
 interface NoAttributes {

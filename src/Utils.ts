@@ -19,12 +19,29 @@
  *
  */
 
+/**
+ * The following declaration takes care of eliminating
+ * Typescript compiler warning around `window.crypto.randomUUID()`
+ * not being available as a function.
+ */
+declare global {
+    interface Crypto {
+        randomUUID: () => string;
+    }
+}
+
+/**
+ * The following constants refer to size in bytes.
+ */
 const KB = 1024;
 const MB = KB * KB;
 const GB = KB * MB;
 const TB = KB * GB;
 const PB = KB * TB;
 
+/**
+ * Constants to define standard (and approximate) time intervals.
+ */
 const ONE_SECOND: number = 1000;
 const ONE_MINUTE: number = 60 * ONE_SECOND;
 const ONE_HOUR: number = 60 * ONE_MINUTE;
@@ -33,6 +50,9 @@ const ONE_WEEK: number = 7 * ONE_DAY;
 const ONE_MONTH: number = 30 * ONE_DAY;
 const ONE_YEAR: number = 365 * ONE_DAY;
 
+/**
+ * English names for months
+ */
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 /**
@@ -301,7 +321,7 @@ export function replaceAt(str: string, index: number, replacement: string): stri
  * @returns 
  */
 export function getUniqueString(prefix: string = ''): string {
-    if (window.crypto && window.crypto.randomUUID) {
+    if (window.crypto && window.crypto.randomUUID && typeof window.crypto.randomUUID === 'function') {
         return prefix + window.crypto.randomUUID();
     }
 

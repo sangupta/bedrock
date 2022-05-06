@@ -40,9 +40,10 @@ export default class DateTime extends React.Component<DateTimeProps> {
 
             case 'time':
                 return asTime(value);
-        }
 
-        return value;
+            default:
+                return value;
+        }
     }
 
     render() {

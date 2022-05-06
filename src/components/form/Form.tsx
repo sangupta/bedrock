@@ -48,7 +48,7 @@ export const FormContext = React.createContext(contextDefault);
 /**
  * Props for the component.
  */
-interface FormProps {
+interface FormProps extends BaseProps {
     onSubmit?: (data: any, isValid: boolean) => void;
     onUpdate?: (data: any, isValid: boolean) => void;
     name?: string;
@@ -130,11 +130,14 @@ export default class Form extends React.Component<FormProps> {
     }
 
     render() {
+        const { className, autoCapitalize, autoComplete, noValidate, onSubmit, onUpdate, ...extraProps } = this.props;
+
         return <FormContext.Provider value={this.contextPayload}>
-            <form name={this.formName} onSubmit={this.handleFormSubmit}
-                autoCapitalize={this.props.autoCapitalize}
-                autoComplete={this.props.autoComplete}
-                noValidate={this.props.noValidate}>
+            <form className={className} name={this.formName} onSubmit={this.handleFormSubmit}
+                autoCapitalize={autoCapitalize}
+                autoComplete={autoComplete}
+                noValidate={noValidate}
+                {...extraProps}>
                 {this.props.children}
             </form>
         </FormContext.Provider>

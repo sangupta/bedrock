@@ -1,17 +1,44 @@
 {
     "compilerOptions": {
+        // Specify how TypeScript looks up a file from a given module specifier
         "moduleResolution": "Node",
+        // Enable importing .json files
         "resolveJsonModule": true,
-        "jsx": "react-jsx",
+        // Specify what JSX code is generated
+        "jsx": "preserve",
+        // Specify the JSX factory function used when targeting React JSX emit, e.g. 'React.createElement' or 'h'
+        "jsxFactory": "React.createElement",
+        // Enable error reporting in type-checked JavaScript files
+        "checkJs": false,
         "removeComments": true,
+        // Set the JavaScript language version for emitted JavaScript and include compatible library declarations.
         "target": "ESNext",
+        // Enable all strict type-checking options
         "strict": false,
+        // Disable emitting files from a compilation
+        "noEmit": true,
+        // specify the root folder within your source files.
         "rootDir": "./src",
-        "incremental": true,
+        // Enable incremental compilation
+        "incremental": false,
+        // Allow 'import x from y' when a module doesn't have a default export.
         "allowSyntheticDefaultImports": true,
+        // Ensure that casing is correct in imports
         "forceConsistentCasingInFileNames": true,
+        // Enable error reporting for codepaths that do not explicitly return in a function.
         "noImplicitReturns": true,
-        "noImplicitThis": true
+        // Enable error reporting when `this` is given the type `any`
+        "noImplicitThis": true,
+        // Generate .d.ts files from TypeScript and JavaScript files in your project
+        "declaration": true,
+        // Specify the output directory for generated declaration files
+        "declarationDir": "./dist",
+        // Enable error reporting for fallthrough cases in switch statements
+        "noFallthroughCasesInSwitch": true,
+        // Disable error reporting for unreachable code
+        "allowUnreachableCode": false,
+        // Skip type checking all .d.ts files
+        "skipLibCheck": true
     },
     "include": [
         "src/**/*.tsx",
