@@ -1,12 +1,17 @@
 {
-    "name": "@sangupta/bedrock",
+    "name": "bedrock",
     "version": "0.1.0",
     "description": "Bedrock: UI Component Library",
     "homepage": "https://bedrock.sangupta.com",
     "source": "src/index.ts",
     "main": "dist/bedrock.js",
-    "module": "dist/bedrock.module.js",
     "types": "dist/index.d.ts",
+    "type": "module",
+    "targets": {
+        "main": {
+            "isLibrary": true
+        }
+    },
     "repository": {
         "url": "https://github.com/sangupta/bedrock",
         "type": "git"
@@ -28,7 +33,7 @@
         "playground": "parcel serve src/playground.html --port 1309",
         "serve": "parcel serve --target main --port 1309",
         "tsc": "tsc --noEmit",
-        "watch": "parcel watch --target main"
+        "watch": "parcel watch --target main --port 1309 --no-hmr"
     },
     "author": {
         "name": "Sandeep Gupta",
@@ -41,12 +46,12 @@
         "react-dom": "^17.0.2"
     },
     "devDependencies": {
-        "@parcel/transformer-sass": "2.3.2",
+        "@parcel/transformer-sass": "^2.5.0",
         "@types/react": "^17.0.41",
         "@types/react-dom": "^17.0.14",
-        "parcel": "^2.3.2",
+        "parcel": "^2.5.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "typescript": "^4.6.2"
+        "typescript": "^4.6.4"
     }
 }
