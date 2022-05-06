@@ -19,15 +19,31 @@
  *
  */
 
-@import "colorbox";
-@import "indicator";
-@import "tokeninput";
-@import "modal";
-@import "datatable";
+import * as React from 'react';
+import { buildCss } from '../../Utils';
 
-/**
- * General CSS rules
- */
-.cursor-pointer {
-    cursor: pointer;
+interface UnderlayProps extends BaseProps {
+    /**
+     * Whether to display the underlay or not
+     */
+    show?: boolean;
+}
+export default class Underlay extends React.PureComponent<UnderlayProps> {
+
+    static defaultProps = {
+        show: true
+    }
+
+    render() {
+        const { className, children, show, ...extraProps } = this.props;
+        if (!this.props.show) {
+            return null;
+        }
+
+        const css = buildCss('modal-underlay', className);
+        return <div className={css} {...extraProps}>
+            {this.props.children}
+        </div>
+    }
+
 }
