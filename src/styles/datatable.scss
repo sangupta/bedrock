@@ -1,0 +1,42 @@
+/**
+ * PrimeShell
+ *
+ * MIT License.
+ * Copyright (c) 2022, Sandeep Gupta.
+ *
+ * Use of this source code is governed by a MIT style license
+ * that can be found in LICENSE file in the code repository.
+ */
+
+@import "variables";
+
+.data-table {
+    display: grid;
+    grid-template-rows: 35px;
+    grid-template-columns: min-content;
+}
+.data-table-row,
+.data-table-row-header {
+    display: contents;
+}
+.data-table-row {
+    cursor: default;
+    user-select: none;
+}
+.data-table-row.selected .data-table-col {
+    background-color: #e9f0fd;
+}
+.data-table-row-header {
+    .data-table-col {
+        position: sticky;
+        background-color: #f8f8f8;
+    }
+}
+.data-table-row:hover .data-table-col {
+    background-color: #eee;
+}
+.data-table-col {
+    padding: 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
