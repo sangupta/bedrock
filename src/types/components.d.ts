@@ -157,3 +157,5 @@ interface DataColumnFormat {
 
     getValue?: (item: any) => any;
 }
+
+type ModalVerticalAlignment = 'top' | 'center';
