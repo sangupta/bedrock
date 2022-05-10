@@ -507,3 +507,15 @@ export function getAssetIcon(asset: Asset): string {
     const lowerCaseExtension = extension.toLowerCase();
     return EXTENSION_ICON_MAP[lowerCaseExtension] || 'bi bi-file';
 }
+
+export function asChar(chr: number): string {
+    if (chr === -1) {
+        return '';
+    }
+
+    if (chr <= 32) {
+        return '.';
+    }
+
+    return String.fromCharCode(chr);
+}
