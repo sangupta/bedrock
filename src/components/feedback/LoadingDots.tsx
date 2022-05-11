@@ -19,16 +19,20 @@
  *
  */
 
-@import "colorbox";
-@import "indicator";
-@import "tokeninput";
-@import "modal";
-@import "datatable";
-@import "loadingdots";
+import * as React from 'react';
+import { buildCss } from '../../Utils';
 
-/**
- * General CSS rules
- */
-.cursor-pointer {
-    cursor: pointer;
+export default class LoadingDots extends React.Component<BaseProps> {
+
+    render() {
+        const { className, ...extraProps } = this.props;
+        const css: string = buildCss('loading-dots', this.props.className);
+
+        return <div {...extraProps} className={css}>
+            <div className="bounce1"></div>
+            <div className="bounce2"></div>
+            <div className="bounce3"></div>
+        </div>;
+    }
+
 }
