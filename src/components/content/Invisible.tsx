@@ -34,7 +34,7 @@ interface InvisibleProps extends BaseProps {
 /**
  * Control the visibility of elements, without modifying their display, with visibility utilities.
  */
-export default class invisible extends React.Component<InvisibleProps> {
+export default class Invisible extends React.Component<InvisibleProps> {
 
     static defaultProps = {
         invisible: true
