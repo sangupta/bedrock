@@ -19,15 +19,8 @@
  *
  */
 
-.indicator {
-    display: flex;
-    flex-direction: column;
-}
-
-.indicator-dot {
-    border-radius: 50%;
-    height: 8px;
-    width: 8px;
-    display: inline-block;
-    margin-right: 4px;
+.token-input-box {
+    width: 2rem;
+    margin: 0.25rem;
+    text-align: center;
 }
