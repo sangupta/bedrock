@@ -22,6 +22,9 @@
 // asset imports
 import AssetBrowser from "./components/asset/AssetBrowser";
 import AssetIcon from "./components/asset/AssetIcon";
+import HexFileViewer from "./components/asset/HexFileViewer";
+import LogFileViewer from "./components/asset/LogFileViewer";
+import MonacoFileViewer from "./components/asset/MonacoFIleViewer";
 
 // content imports
 import ByteSize from "./components/content/ByteSize";
@@ -29,6 +32,7 @@ import ColorBox from "./components/content/ColorBox";
 import Countdown from "./components/content/Countdown";
 import DateTime from "./components/content/DateTime";
 import Indicator from "./components/content/Indicator";
+import Invisible from "./components/content/Invisible";
 import StaticContent from "./components/content/StaticContent";
 import TimeAgo from "./components/content/TimeAgo";
 import Typewriter from "./components/content/Typewriter";
@@ -38,6 +42,7 @@ import DataTable from "./components/data/DataTable";
 
 // feedback imports
 import Alert from "./components/feedback/Alert";
+import LoadingDots from "./components/feedback/LoadingDots";
 import Modal from "./components/feedback/Modal";
 import Spinner from "./components/feedback/Spinner";
 
@@ -55,6 +60,7 @@ import Underlay from "./components/layout/Underlay";
 import VBox from "./components/layout/VBox";
 
 // media imports
+import Gravatar from "./components/media/Gravatar";
 import Image from "./components/media/Image";
 import MediaSource from "./components/media/MediaSource";
 import Video from "./components/media/Video";
@@ -75,6 +81,9 @@ export {
     // asset
     AssetBrowser,
     AssetIcon,
+    HexFileViewer,
+    LogFileViewer,
+    MonacoFileViewer,
     
     // content
     ByteSize,
@@ -82,6 +91,7 @@ export {
     Countdown,
     DateTime,
     Indicator,
+    Invisible,
     StaticContent,
     TimeAgo,
     Typewriter,
@@ -91,6 +101,7 @@ export {
 
     // feedback
     Alert,
+    LoadingDots,
     Modal,
     Spinner,
 
@@ -108,6 +119,7 @@ export {
     VBox,
 
     // media
+    Gravatar,
     Image,
     MediaSource,
     Video,
