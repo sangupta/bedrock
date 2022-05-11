@@ -10,6 +10,9 @@ target/
 # Windows noise
 desktop.ini
 
+# CSS bundler noise
+.sass-cache
+
 # Node/yarn/npm/typescript/parcel noise
 package-lock.json
 yarn.lock
