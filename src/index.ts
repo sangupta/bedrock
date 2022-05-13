@@ -44,6 +44,7 @@ import DataTable from "./components/data/DataTable";
 import Alert from "./components/feedback/Alert";
 import LoadingDots from "./components/feedback/LoadingDots";
 import Modal from "./components/feedback/Modal";
+import ProgressBar from "./components/feedback/ProgressBar";
 import Spinner from "./components/feedback/Spinner";
 
 // form imports
@@ -54,6 +55,7 @@ import NumberInput from "./components/form/NumberInput";
 import TextInput from "./components/form/TextInput";
 
 // layout imports 
+import AspectRatio from "./components/layout/AspectRatio";
 import FlexBox from "./components/layout/FlexBox";
 import HBox from "./components/layout/HBox";
 import Underlay from "./components/layout/Underlay";
@@ -103,6 +105,7 @@ export {
     Alert,
     LoadingDots,
     Modal,
+    ProgressBar,
     Spinner,
 
     // form
@@ -113,6 +116,7 @@ export {
     TextInput,
 
     // layout
+    AspectRatio,
     FlexBox,
     HBox,
     Underlay,
