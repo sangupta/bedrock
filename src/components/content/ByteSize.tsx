@@ -22,10 +22,19 @@
 import React from 'react';
 import { asByteSize } from '../../Utils';
 
+/**
+ * Props for `ByteSize` component.
+ * 
+ */
 interface ByteSizeProps {
-    bytes: any;
+    bytes: number;
 }
 
+/**
+ * React component to convert number of bytes into human readable form.
+ * 
+ * @author sangupta
+ */
 export default class ByteSize extends React.Component<ByteSizeProps> {
 
     render() {
