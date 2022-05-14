@@ -401,12 +401,15 @@ export function formatAgo(delta: number, unit: number, suffix: string): string {
     return value + " " + suffix + "s ago";
 }
 
-export function asByteSize(value: any): string {
-    if (isNaN(value)) {
-        return value;
-    }
-
-    const num: number = Number(value).valueOf();
+/**
+ * Convert a number representing bytes to a human readabale
+ * form.
+ * 
+ * @param num the number of bytes
+ * 
+ * @returns human readable string form
+ */
+export function asByteSize(num: number): string {
     if (num < KB) {
         return num + ' bytes';
     }
