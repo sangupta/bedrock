@@ -430,7 +430,7 @@ export function asByteSize(num: number): string {
         return roundedDecimal(num / TB) + ' TB';
     }
 
-    return roundedDecimal(num / TB) + ' PB'
+    return roundedDecimal(num / PB) + ' PB'
 }
 
 export function roundedDecimal(num: number) {
