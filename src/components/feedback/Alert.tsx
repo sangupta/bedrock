@@ -73,11 +73,12 @@ export default class Alert extends React.PureComponent<AlertProps, AlertState> {
     /**
      * the default properties
      */
-    static defaultProps: AlertProps = {
+    static defaultProps = {
         variant: 'primary',
         role: 'alert',
         allowClose: false,
-        closeButtonAriaLabel: 'close'
+        closeButtonAriaLabel: 'close',
+        show: true
     }
 
     /**
