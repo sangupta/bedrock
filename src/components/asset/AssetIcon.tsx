@@ -26,6 +26,12 @@ interface AssetIconProps {
     asset: Asset;
 }
 
+/**
+ * Renders the icon depending on the file/asset using
+ * the provided MIME type or extension. This component
+ * uses Bootstrap icons.
+ * 
+ */
 export default class AssetIcon extends React.PureComponent<AssetIconProps> {
 
     render() {

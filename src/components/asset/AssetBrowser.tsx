@@ -34,6 +34,15 @@ interface AssetBrowserState {
     selectedAsset?: Asset;
 }
 
+/**
+ * Renders an asset browser for a list of assets providing
+ * the basic functionality like Finder/File Explorer. It supports
+ * the following features:
+ * 
+ * * Allows for click/double-click on an item (file/folder)
+ * * Displays the correct file icon using `AssetIcon`
+ * 
+ */
 export default class AssetBrowser extends React.Component<AssetBrowserProps, AssetBrowserState> {
 
     constructor(props: AssetBrowserProps) {

@@ -32,7 +32,8 @@ interface LogFileViewerProps {
 }
 
 /**
- * A basic log file viewer.
+ * A basic log file viewer. It supports display of line numbers besides
+ * each line.
  * 
  */
 export default class LogFileViewer extends React.Component<LogFileViewerProps> {

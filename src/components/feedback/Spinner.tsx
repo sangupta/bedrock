@@ -26,6 +26,11 @@ interface SpinnerProps {
     variant?: Variant;
 }
 
+/**
+ * Spinners can be used to show the loading state in your projects.
+ * 
+ * @author sangupta
+ */
 export default class Spinner extends React.Component<SpinnerProps> {
 
     static defaultProps = {

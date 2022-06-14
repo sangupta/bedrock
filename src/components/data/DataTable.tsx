@@ -78,8 +78,15 @@ interface DataTableState {
 }
 
 /**
- * Component to render a generic table.
+ * Component to render a generic data table. Consider this as
+ * a replacement to the `table` HTML tag. The data table uses
+ * `grid` layout and supports the following features:
  * 
+ * * capture click/double-click on data row
+ * * can render icons based on attributes
+ * * support for data formatting
+ * 
+ * @author sangupta
  */
 export default class DataTable extends React.Component<DataTableProps, DataTableState> {
 

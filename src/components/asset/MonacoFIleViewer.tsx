@@ -30,7 +30,9 @@ interface MonacoFileViewerProps {
 /**
  * Component that renders the file contents inside a Monaco editor
  * instance. Refer to https://microsoft.github.io/monaco-editor/ for
- * more details on the Monaco editor.
+ * more details on the Monaco editor. This component expects
+ * the Monaco editor JS to be available. Hence, you must include/load 
+ * the Monaco library externally on the page. 
  */
 export default class MonacoFileViewer extends React.Component<MonacoFileViewerProps> {
 

@@ -32,7 +32,9 @@ interface IndicatorProps extends BaseProps {
 }
 
 /**
- * A color box component.
+ * Renders a traffic light style indicator which can be
+ * used as a status in notification area or along with 
+ * bulleted items to represent their status.
  * 
  * @author sangupta
  */

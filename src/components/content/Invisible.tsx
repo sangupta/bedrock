@@ -32,7 +32,12 @@ interface InvisibleProps extends BaseProps {
 }
 
 /**
- * Control the visibility of elements, without modifying their display, with visibility utilities.
+ * Control the visibility of elements, without modifying 
+ * their display, with visibility utilities. This is useful
+ * when you want the content to be a part of the DOM tree
+ * but hidden from user's view.
+ * 
+ * @author sangupta
  */
 export default class Invisible extends React.Component<InvisibleProps> {
 

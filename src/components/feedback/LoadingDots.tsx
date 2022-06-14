@@ -22,6 +22,12 @@
 import * as React from 'react';
 import { buildCss } from '../../Utils';
 
+/**
+ * Displays animated dots that represent the loading
+ * status in a page. 
+ * 
+ * @author sangupta
+ */
 export default class LoadingDots extends React.Component<BaseProps> {
 
     render() {

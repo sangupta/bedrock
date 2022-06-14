@@ -50,6 +50,11 @@ interface CountdownState {
     value: number;
 }
 
+/**
+ * A simple countdown component that allows to step between
+ * a start and an end value (either increasing, or decreasing)
+ * at a given interval.
+ */
 export default class Countdown extends React.PureComponent<CountdownProps, CountdownState> {
 
     static defaultProps = {
