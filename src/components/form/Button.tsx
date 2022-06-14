@@ -97,7 +97,7 @@ export default class Button extends React.PureComponent<ButtonProps> {
 
     render(): React.ReactNode {
         const { variant, isOutline, size, label, disabled, type, asLink, children, href, className, active, ...extraProps } = this.props;
-        const btnVariant = (isOutline ? 'btn-outline-' : 'btn') + variant;
+        const btnVariant = (isOutline ? 'btn-outline-' : 'btn-') + variant;
 
         const css = buildCss('btn', btnVariant, {
             'btn-lg': size === 'large',
