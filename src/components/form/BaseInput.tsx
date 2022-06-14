@@ -28,7 +28,7 @@ interface BaseInputProps<T> extends BaseProps {
     /**
      * The type of element to render. 
      */
-    type: string;
+    type: HtmlInputType;
 
     /**
      * The initial value of the component 
@@ -67,8 +67,22 @@ interface BaseInputProps<T> extends BaseProps {
      */
     showInvalidState?: boolean;
 
+    /**
+     * This method is responsible for converting the change event
+     * to the value of this form field. For example, for `type='text'`
+     * we use `e.target.value` as the value, whereas for `type='checkbox'`
+     * we use `e.target.checked` as the value. This allows the strongly
+     * typed form fields to keep using this implementation without
+     * much change internally.
+     */
     valueConverter: (e: React.ChangeEvent<HTMLInputElement>) => T;
 
+    /**
+     * This method is responsible for detecting if the field has a
+     * value or not. This is useful with `strings` to check if the
+     * value of the field is empty or not. A required `text` field
+     * would need a non-empty value to be valid.
+     */
     hasValue: (value: T) => boolean;
 
     /**
@@ -91,7 +105,10 @@ interface BaseInputState<T> {
 }
 
 /**
- * The `input type='text'` component.
+ * The `input type='*'` component. This component is used directly by
+ * various implementations such as `TextInput`, `NumberInput`, `EmailInput`
+ * etc. You should prefer to use these implementations unless you have a
+ * custom use-case that those implementation do not provide for.
  * 
  * @author sangupta
  */
@@ -200,18 +217,31 @@ export default class BaseInput<T> extends React.Component<BaseInputProps<T>, Bas
             children, className, ...extraProps
         } = this.props;
 
-        const css = buildCss('form-control', {
+        const css = buildCss({
+            'form-control': type !== 'checkbox',
+            'form-check-input': type === 'checkbox',
             'form-control-lg': size === 'large',
             'form-control-sm': size === 'small',
             'is-invalid': showInvalidState && !this.state.isValid
         }, className);
+
+        // add form name only when need be
         const formName = this.props.form || this.context.formName;
+        if (formName) {
+            extraProps['form'] = formName;
+        }
+
+        // add value render, for checkbox we use `checked` attribute
+        if (type.toLowerCase() === 'checkbox') {
+            extraProps['checked'] = this.state.value || false;
+        } else {
+            extraProps['value'] = this.state.value;
+        }
 
         return <input type={type}
             className={css}
+            name={name}
             onChange={this.handleValueChange}
-            value={this.state.value}
-            form={formName}
             required={required}
             {...extraProps}
         />
