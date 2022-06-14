@@ -1,3 +1,5 @@
+# Default
+
 ```js
 <Indicator variant='success'>Upload complete.</Indicator>
 <Indicator variant='primary'>Network connected.</Indicator>
@@ -9,7 +11,7 @@
 <Indicator variant='dark'>Feature unavailable.</Indicator>
 ```
 
-## Using label
+# Using label
 
 ```js
 <Indicator variant='success' label='Upload complete.' />
