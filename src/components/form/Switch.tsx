@@ -20,14 +20,13 @@
  */
 
 import React from 'react';
-import BaseInput from './BaseInput';
+import Checkbox from './Checkbox';
 
-interface CheckboxProps extends BaseProps {
-
+interface SwitchProps {
     /**
      * The initial value of the component 
      */
-    checked?: boolean;
+    selected?: boolean;
 
     /**
      * The form to bind to, unless its the nearest ancestoral form
@@ -40,14 +39,14 @@ interface CheckboxProps extends BaseProps {
     name: string;
 
     /**
-     * Specify the role for the checkbox
-     */
-    role?: string;
-
-    /**
      * Size for the component
      */
     size?: ComponentSize;
+
+    /**
+     * Value required or not?
+     */
+    required?: boolean;
 
     /**
      * Validators, if any, required on the component
@@ -67,37 +66,14 @@ interface CheckboxProps extends BaseProps {
     onChange?: (payload: FormFieldPayload<boolean>, e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-/**
- * The `input type='checkbox'` component.
- * 
- * @author sangupta
- */
-export default class Checkbox extends React.PureComponent<CheckboxProps> {
+export default class Switch extends React.Component<SwitchProps> {
 
-    static defaultProps = {
-        value: false
-    }
+    render() {
+        const { selected, ...extraProps } = this.props;
 
-    handleValueConversion(e: React.ChangeEvent<HTMLInputElement>): boolean {
-        return e.target.checked;
-    }
-
-    hasValue(value: boolean): boolean {
-        // we always return true, as the checkbox always has a value
-        return true;
-    }
-
-    render(): React.ReactNode {
-        const { children, checked, ...extraProps } = this.props;
-
-        return <BaseInput<boolean>
-            type='checkbox'
-            {...extraProps}
-            valueConverter={this.handleValueConversion}
-            value={checked}
-            hasValue={this.hasValue}>
-            {children}
-        </BaseInput>
+        return <div className="form-check form-switch">
+            <Checkbox checked={selected} {...extraProps} role="switch" />
+        </div>
     }
 
 }
