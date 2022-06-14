@@ -59,8 +59,23 @@ interface FormProps extends BaseProps {
 }
 
 /**
- * The `form` component.
+ * The `form` component. This component behaves much like
+ * the HTML form component:
  * 
+ * * It bundles the entire payload of all child form elements.
+ * And thus, for all the fields inside this `form` you do not 
+ * need to handle individual updates. You can just subscribe 
+ * to `onSubmit` or `onUpdate` events and receive the entire 
+ * payload for this form.
+ *
+ * * Similarly, any form element inside that uses the `form`
+ * attribute can pass the payload to a different form on the
+ * page.
+ * 
+ * * Form features built-in validity handler, and will trigger
+ * `onSubmit` only when the entire payload is valid.
+ * 
+ * @author sangupta
  */
 export default class Form extends React.Component<FormProps> {
 
