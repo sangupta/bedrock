@@ -62,6 +62,13 @@ interface TextInputProps extends BaseProps {
     showInvalidState?: boolean;
 
     /**
+     * The placeholder to display
+     */
+    placeholder?: string;
+
+    maxLength?: number;
+
+    /**
      * Handler invoked when value of this field changes
      */
     onChange?: (payload: FormFieldPayload<string>, e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -73,6 +80,10 @@ interface TextInputProps extends BaseProps {
  * @author sangupta
  */
 export default class TextInput extends React.PureComponent<TextInputProps> {
+
+    static defaultProps = {
+        value: ''
+    }
 
     handleValueConversion(e: React.ChangeEvent<HTMLInputElement>): string {
         return e.target.value;
