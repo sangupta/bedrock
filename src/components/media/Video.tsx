@@ -27,7 +27,7 @@ import { buildCss } from '../../Utils';
  */
 interface VideoProps extends BaseProps {
     autoPlay?: boolean;
-    autoPip?: true;
+    autoPip?: boolean;
     controls?: boolean;
     controlsList?: 'nodownload' | 'nofullscreen' | 'noremoteplayback';
 
