@@ -30,7 +30,10 @@ interface HexFileViewerProps {
 }
 
 /**
- * The default HEX viewer used to view files in hex.
+ * A simple HEX viewer used to view files/data in hex. It renders
+ * the 16 columns in each row in a group of 4 and lays out the
+ * content in them. The rows are numbered in hex to mimic the CLI
+ * style. Use this with a monospace font to prevent UI layout issues.
  * 
  */
 export default class HexFileViewer extends React.Component<HexFileViewerProps> {
