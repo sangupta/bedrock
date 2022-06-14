@@ -27,14 +27,29 @@ import { buildCss } from '../../Utils';
  * Props for the component.
  */
 interface ParaProps extends BaseProps {
+    /**
+     * Theme variant to use
+     */
     variant?: Variant;
 
+    /**
+     * Is this the leading paragraph?
+     */
     leadPara?: boolean;
 
+    /**
+     * Text alignment within the paragraph.
+     */
     textAlign?: Alignment;
 
+    /**
+     * Wrapping mode to use.
+     */
     wrapMode?: '' | 'wrap' | 'no-wrap';
 
+    /**
+     * Any text-transformation to use
+     */
     transform?: TextTransform;
 }
 
