@@ -61,6 +61,23 @@ interface NumberInputProps extends BaseProps {
      */
     showInvalidState?: boolean;
 
+    placeholder?: string;
+
+    /**
+     * The minimum value
+     */
+    min?: number
+
+    /**
+     * The maximum value
+     */
+    max?: number;
+
+    /**
+     * Stepping value when up/down buttons are used
+     */
+    step?: number;
+
     /**
      * Handler invoked when value of this field changes
      */
