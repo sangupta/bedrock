@@ -159,3 +159,5 @@ interface DataColumnFormat {
 }
 
 type ModalVerticalAlignment = 'top' | 'center';
+
+type HtmlInputType = 'text' | 'password' | 'number' | 'checkbox';
