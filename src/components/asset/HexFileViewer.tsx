@@ -72,7 +72,7 @@ interface HexRowProps {
  */
 class HexRow extends React.Component<HexRowProps> {
 
-    render() {
+    render(): React.ReactNode {
         const { array, offset } = this.props;
 
         const offHex = offset.toString(16).padStart(8, '0');
