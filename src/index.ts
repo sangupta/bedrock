@@ -22,9 +22,12 @@
 // asset imports
 import AssetBrowser from "./components/asset/AssetBrowser";
 import AssetIcon from "./components/asset/AssetIcon";
+import AssetViewer from "./components/asset/AssetViewer";
 import HexFileViewer from "./components/asset/HexFileViewer";
+import ImageFileViewer from "./components/asset/ImageFileViewer";
 import LogFileViewer from "./components/asset/LogFileViewer";
-import MonacoFileViewer from "./components/asset/MonacoFIleViewer";
+import MonacoFileViewer from "./components/asset/MonacoFileViewer";
+import VideoFileViewer from "./components/asset/VideoFileViewer";
 
 // content imports
 import ByteSize from "./components/content/ByteSize";
@@ -50,8 +53,10 @@ import Spinner from "./components/feedback/Spinner";
 // form imports
 import Button from "./components/form/Button";
 import ButtonGroup from "./components/form/ButtonGroup";
+import Checkbox from './components/form/Checkbox';
 import Form from "./components/form/Form";
 import NumberInput from "./components/form/NumberInput";
+import Switch from './components/form/Switch';
 import TextInput from "./components/form/TextInput";
 
 // layout imports 
@@ -83,9 +88,12 @@ export {
     // asset
     AssetBrowser,
     AssetIcon,
+    AssetViewer,
     HexFileViewer,
+    ImageFileViewer,
     LogFileViewer,
     MonacoFileViewer,
+    VideoFileViewer,
     
     // content
     ByteSize,
@@ -111,8 +119,10 @@ export {
     // form
     Button,
     ButtonGroup,
+    Checkbox,
     Form,
     NumberInput,
+    Switch,
     TextInput,
 
     // layout
