@@ -20,11 +20,15 @@
  */
 
 import React from 'react';
+import { decipherMonacoLanguage } from '../../Utils';
 
 interface MonacoFileViewerProps {
     contents: string;
-    language: string;
+    language?: string;
+    mimeType?: string;
+    extension?: string;
     readOnly?: boolean;
+    showMiniMap?: boolean
 }
 
 /**
@@ -40,7 +44,8 @@ export default class MonacoFileViewer extends React.Component<MonacoFileViewerPr
      * Set default properties.
      */
     static defaultProps = {
-        readOnly: true
+        readOnly: true,
+        showMiniMap: false
     };
 
     /**
@@ -70,12 +75,13 @@ export default class MonacoFileViewer extends React.Component<MonacoFileViewerPr
      * @returns
      */
     componentDidMount(): void {
-        const { contents, language, readOnly } = this.props;
+        const { contents, readOnly, mimeType, extension, showMiniMap } = this.props;
         const node = this.editorRef.current;
         if (!node) {
             return;
         }
 
+        const language = this.props.language ? this.props.language : decipherMonacoLanguage(extension, mimeType);
         const monaco = (window as any).monaco;
         if (!monaco) {
             return;
@@ -84,7 +90,10 @@ export default class MonacoFileViewer extends React.Component<MonacoFileViewerPr
         this.editorModel = monaco.editor.createModel(contents || '', language);
         monaco.editor.create(node, {
             model: this.editorModel,
-            readOnly: readOnly
+            readOnly: readOnly,
+            minimap: {
+                enabled: showMiniMap
+            }
         });
     }
 
