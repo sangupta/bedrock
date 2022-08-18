@@ -55,6 +55,21 @@ const ONE_YEAR: number = 365 * ONE_DAY;
  */
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+const EXTENSION_MONACO_LANG_MAP: { [key: string]: string } = {
+    'ts': 'typescript',
+    'tsx': 'typescript',
+    'js': 'javascript',
+    'jsx': 'javascript',
+    'go': 'go',
+    'java': 'java',
+    'xml': 'xml',
+    'jsonl': 'json',
+    'yaml': 'yaml',
+    'swift': 'swift',
+    'rb': 'ruby',
+    'css': 'css'
+}
+
 /**
  * File icons mapped to the extension they should be used in.
  * 
@@ -484,7 +499,7 @@ export function pad(str: string | number, length: number, fill: string): string 
 
 export function getAssetIcon(asset: Asset): string {
     if (asset.isFolder) {
-        return 'bi bi-folder';
+        return 'bi bi-folder-fill';
     }
 
     const mime = asset.mimeType;
@@ -521,4 +536,45 @@ export function asChar(chr: number): string {
     }
 
     return String.fromCharCode(chr);
+}
+
+export function decipherMonacoLanguage(extension: string, mimeType: string): string {
+    let language = getMonacoLanguageByMimeType(mimeType);
+
+    if (!language || language === 'text') {
+        if (!extension) {
+            return language;
+        }
+
+        if (extension.startsWith('.')) {
+            extension = extension.substring(1);
+        }
+
+        const extLang = EXTENSION_MONACO_LANG_MAP[extension.toLowerCase()];
+        if (extLang) {
+            return extLang;
+        }
+    }
+
+    return language;
+}
+
+export function getMonacoLanguageByMimeType(mimeType: string): string {
+    if (!mimeType) {
+        return '';
+    }
+
+    if (mimeType.startsWith('text/plain')) {
+        return 'text';
+    }
+
+    if (mimeType.startsWith('application/json')) {
+        return 'json';
+    }
+
+    if (mimeType.startsWith('text/css')) {
+        return 'css';
+    }
+
+    return '';
 }
