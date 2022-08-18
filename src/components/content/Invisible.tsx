@@ -45,7 +45,7 @@ export default class Invisible extends React.Component<InvisibleProps> {
         invisible: true
     }
 
-    render() {
+    render(): React.ReactNode {
         const { invisible, className, children, ...extraProps } = this.props;
 
         const css: string = buildCss(invisible ? 'invisible' : 'visible', className);

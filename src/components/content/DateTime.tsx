@@ -30,7 +30,7 @@ interface DateTimeProps {
 
 export default class DateTime extends React.Component<DateTimeProps> {
 
-    formatValue(type: DateTimeFormatType, value: number) {
+    formatValue(type: DateTimeFormatType, value: number): string | number {
         switch (type) {
             case 'date-time':
                 return asDateTime(value);
@@ -46,7 +46,7 @@ export default class DateTime extends React.Component<DateTimeProps> {
         }
     }
 
-    render() {
+    render(): React.ReactNode {
         const { value, valueType, type } = this.props;
         const millis = valueType === 'seconds' ? value * 1000 : value;
         const formattedValue = this.formatValue(type, millis);

@@ -52,7 +52,7 @@ interface TimeAgoProps {
  */
 export default class TimeAgo extends React.PureComponent<TimeAgoProps> {
 
-    render() {
+    render(): React.ReactNode {
         const { value, valueType } = this.props;
         const millis = valueType === 'seconds' ? value * 1000 : value;
         const timeAgo = asTimeAgo(millis)
