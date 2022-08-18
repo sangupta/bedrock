@@ -71,7 +71,7 @@ export default class ProgressBar extends React.Component<ProgressBarProps> {
         label: ''
     }
 
-    render() {
+    render(): React.ReactNode {
         const { value: originalValue, min: originalMin, max: originalMax, label, variant, striped, animated,
             className, children, ...extraProps } = this.props;
 

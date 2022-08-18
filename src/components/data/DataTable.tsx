@@ -215,7 +215,7 @@ export default class DataTable extends React.Component<DataTableProps, DataTable
      *
      * @returns 
      */
-    render() {
+    render(): React.ReactNode {
         const { data, columns, rowKeyAttribute } = this.props;
         if (!data || data.length == 0) {
             return null;
@@ -257,7 +257,7 @@ class DataTableRow extends React.Component<DataTableRowProps> {
         }
     }
 
-    render() {
+    render(): React.ReactNode {
         return <div className={'data-table-row ' + (this.props.className || '')} onClick={this.handleRowClick} onDoubleClick={this.handleRowDoubleClick}>
             {this.props.children}
         </div>

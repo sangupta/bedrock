@@ -57,6 +57,8 @@ interface AlertState {
 
 /**
  * An `alert` or informational component, also called as `MessageBar`.
+ * They are used to provide contextual feedback messages for typical 
+ * user actions with the handful of available and flexible alert messages.
  * 
  * @author sangupta
  */

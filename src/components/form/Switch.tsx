@@ -68,7 +68,7 @@ interface SwitchProps {
 
 export default class Switch extends React.Component<SwitchProps> {
 
-    render() {
+    render(): React.ReactNode {
         const { selected, ...extraProps } = this.props;
 
         return <div className="form-check form-switch">

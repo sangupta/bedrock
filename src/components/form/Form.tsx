@@ -144,7 +144,7 @@ export default class Form extends React.Component<FormProps> {
         }
     }
 
-    render() {
+    render(): React.ReactNode {
         const { className, autoCapitalize, autoComplete, noValidate, onSubmit, onUpdate, ...extraProps } = this.props;
 
         return <FormContext.Provider value={this.contextPayload}>

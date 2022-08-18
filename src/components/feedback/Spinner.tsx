@@ -37,7 +37,7 @@ export default class Spinner extends React.Component<SpinnerProps> {
         variant: 'primary'
     }
 
-    render() {
+    render(): React.ReactNode {
         return <div className={"spinner-border text-" + this.props.variant} role="status">
             {this.props.ariaLabel ? <span className="visually-hidden">{this.props.ariaLabel}</span> : null}
         </div>

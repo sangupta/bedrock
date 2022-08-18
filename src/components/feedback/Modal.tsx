@@ -20,6 +20,7 @@
  */
 
 import React from 'react';
+import { buildCss } from '../../Utils';
 import Underlay from './../layout/Underlay';
 
 interface ModalProps extends BaseProps {
@@ -38,11 +39,12 @@ export default class Modal extends React.Component<ModalProps> {
         align: 'top'
     }
 
-    render() {
+    render(): React.ReactNode {
         const css = this.props.align === 'top' ? 'modal-align-top' : 'flex-center';
+
         return <>
             <Underlay show={this.props.backdrop} />
-            <div className='modal fade show d-block' role='dialog'>
+            <div className={buildCss('modal fade show d-block', this.props.className)} role='dialog'>
                 <div className={'d-flex  modal-dialog ' + css} role='document'>
                     <div className='modal-content'>
                         {this.props.children}

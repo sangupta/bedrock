@@ -77,7 +77,21 @@ interface ButtonProps extends BaseProps {
 }
 
 /**
- * The `button` component
+ * The `button` component. Use custom button styles for actions in 
+ * forms, dialogs, and more with support for multiple sizes, states, 
+ * and more. Bedrock includes several predefined button styles, each 
+ * serving its own semantic purpose, with a few extras thrown in for 
+ * more control.
+ * 
+ * ## Conveying meaning to assistive technologies 
+ * Using color to add meaning only provides a visual indication, which 
+ * will not be conveyed to users of assistive technologies – such as 
+ * screen readers. Ensure that information denoted by the color is either 
+ * obvious from the content itself (e.g. the visible text), or is included 
+ * through alternative means, such as additional text hidden with the 
+ * `.visually-hidden` class.
+ * 
+ * @author sangupta
  */
 export default class Button extends React.PureComponent<ButtonProps> {
 

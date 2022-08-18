@@ -30,7 +30,7 @@ import { buildCss } from '../../Utils';
  */
 export default class LoadingDots extends React.Component<BaseProps> {
 
-    render() {
+    render(): React.ReactNode {
         const { className, ...extraProps } = this.props;
         const css: string = buildCss('loading-dots', this.props.className);
 
