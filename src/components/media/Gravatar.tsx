@@ -53,7 +53,7 @@ export default class Gravatar extends React.Component<GravatarProps> {
         scheme: '//'
     }
 
-    render() {
+    render(): React.ReactNode {
         const { className, children, email, md5, size, rating, defaultImage, scheme, ...extraProps } = this.props;
         const url: string = `https://www.gravatar.com/avatar/${md5}.jpg?s=${size}&r=${rating}&d=${defaultImage}`;
         

@@ -34,7 +34,7 @@ export default class Underlay extends React.PureComponent<UnderlayProps> {
         show: true
     }
 
-    render() {
+    render(): React.ReactNode {
         const { className, children, show, ...extraProps } = this.props;
         if (!this.props.show) {
             return null;

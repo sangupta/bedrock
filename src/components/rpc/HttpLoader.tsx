@@ -84,7 +84,7 @@ export default class HttpLoader extends React.Component<HttpLoaderProps, HttpLoa
         }
     }
 
-    render() {
+    render(): React.ReactNode {
         const { loading, error, errorData, data } = this.state;
 
         if (loading) {
