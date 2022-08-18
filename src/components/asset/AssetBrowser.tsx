@@ -66,7 +66,7 @@ export default class AssetBrowser extends React.Component<AssetBrowserProps, Ass
         return <AssetIcon asset={asset} />
     }
 
-    render() {
+    render(): React.ReactNode {
         const { assets, displayColumns } = this.props;
 
         return <DataTable

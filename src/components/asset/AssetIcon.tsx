@@ -34,7 +34,7 @@ interface AssetIconProps {
  */
 export default class AssetIcon extends React.PureComponent<AssetIconProps> {
 
-    render() {
+    render(): React.ReactNode {
         const { asset } = this.props;
         const icon = getAssetIcon(asset);
         return <i className={'format-file-icon ' + (icon || '')} />
