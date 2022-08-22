@@ -22,7 +22,10 @@
 import React from 'react'
 import HexFileViewer from './HexFileViewer';
 import ImageFileViewer from './ImageFileViewer';
+import MarkdownFileViewer from './MarkdownFileViewer';
 import MonacoFileViewer from './MonacoFileViewer';
+
+const MONACO_EXTENSIONS = ['.json', '.tsx', '.ts', '.jsx', '.js'];
 
 interface AssetViewerProps {
     asset: Asset;
@@ -58,7 +61,7 @@ export default class AssetViewer extends React.Component<AssetViewerProps, Asset
             element = <ImageFileViewer url={url} />
         }
 
-        if (asset.mimeType?.startsWith('text/')) {
+        if (asset.mimeType?.startsWith('text/') || MONACO_EXTENSIONS.includes(asset.extension)) {
             const decoder = new TextDecoder();
             const buffer = await this.props.getBytes(asset);
             element = <MonacoFileViewer
@@ -67,6 +70,13 @@ export default class AssetViewer extends React.Component<AssetViewerProps, Asset
                 readOnly={true}
                 extension={asset.extension}
                 mimeType={asset.mimeType} />
+        }
+
+        if (asset.extension === '.md') {
+            const decoder = new TextDecoder();
+            const buffer = await this.props.getBytes(asset);
+            element = <MarkdownFileViewer key={asset.id}
+                contents={decoder.decode(buffer)} />
         }
 
         if (element) {
