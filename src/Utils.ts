@@ -55,6 +55,10 @@ const ONE_YEAR: number = 365 * ONE_DAY;
  */
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+/**
+ * Map of extension v/s the Monaco language that should
+ * be used to display contents.
+ */
 const EXTENSION_MONACO_LANG_MAP: { [key: string]: string } = {
     'ts': 'typescript',
     'tsx': 'typescript',
@@ -67,7 +71,7 @@ const EXTENSION_MONACO_LANG_MAP: { [key: string]: string } = {
     'yaml': 'yaml',
     'swift': 'swift',
     'rb': 'ruby',
-    'css': 'css'
+    'css': 'css',
 }
 
 /**
