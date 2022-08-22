@@ -29,6 +29,7 @@ const MONACO_EXTENSIONS = ['.json', '.tsx', '.ts', '.jsx', '.js'];
 
 interface AssetViewerProps {
     asset: Asset;
+    useHexViwerAsDefault?: boolean;
     getUrl: (asset: Asset) => Promise<string>;
     getBytes: (asset: Asset) => Promise<ArrayBuffer>;
 }
@@ -39,6 +40,10 @@ interface AssetViewerState {
 
 export default class AssetViewer extends React.Component<AssetViewerProps, AssetViewerState> {
 
+    static defaultProps = {
+        useHexViwerAsDefault: true
+    }
+
     constructor(props: AssetViewerProps) {
         super(props);
 
@@ -48,13 +53,8 @@ export default class AssetViewer extends React.Component<AssetViewerProps, Asset
     }
 
     componentDidMount = async (): Promise<void> => {
-        const { asset } = this.props;
+        const { asset, useHexViwerAsDefault } = this.props;
         let element: any;
-
-        if (asset.mimeType?.startsWith('application/octet-stream')) {
-            const buffer = await this.props.getBytes(asset);
-            element = <HexFileViewer bytes={new Uint8Array(buffer)} />
-        }
 
         if (asset.mimeType?.startsWith('image')) {
             const url = await this.props.getUrl(asset);
@@ -77,6 +77,11 @@ export default class AssetViewer extends React.Component<AssetViewerProps, Asset
             const buffer = await this.props.getBytes(asset);
             element = <MarkdownFileViewer key={asset.id}
                 contents={decoder.decode(buffer)} />
+        }
+
+        if (!element && (useHexViwerAsDefault || asset.mimeType?.startsWith('application/octet-stream'))) {
+            const buffer = await this.props.getBytes(asset);
+            element = <HexFileViewer bytes={new Uint8Array(buffer)} />
         }
 
         if (element) {
