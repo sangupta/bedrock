@@ -48,6 +48,10 @@ export default class DateTime extends React.Component<DateTimeProps> {
 
     render(): React.ReactNode {
         const { value, valueType, type } = this.props;
+        if(value === undefined || value === null || value < 0) {
+            return "";
+        }
+
         const millis = valueType === 'seconds' ? value * 1000 : value;
         const formattedValue = this.formatValue(type, millis);
         return <span className='format-date-time' title={'' + formattedValue}>{formattedValue}</span>

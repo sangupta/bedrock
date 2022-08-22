@@ -54,6 +54,10 @@ export default class TimeAgo extends React.PureComponent<TimeAgoProps> {
 
     render(): React.ReactNode {
         const { value, valueType } = this.props;
+        if(value === undefined || value === null || value < 0) {
+            return "";
+        }
+
         const millis = valueType === 'seconds' ? value * 1000 : value;
         const timeAgo = asTimeAgo(millis)
 

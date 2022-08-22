@@ -38,7 +38,12 @@ interface ByteSizeProps {
 export default class ByteSize extends React.Component<ByteSizeProps> {
 
     render(): React.ReactNode {
-        const formatted = asByteSize(this.props.bytes);
+        const { bytes } = this.props;
+        if (bytes === undefined || bytes === null || bytes < 0) {
+            return "";
+        }
+
+        const formatted = asByteSize(bytes);
         return <span className='format-byte-size' title={'' + this.props.bytes}>{formatted}</span>
     }
 
