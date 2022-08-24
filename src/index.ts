@@ -36,7 +36,10 @@ import Countdown from "./components/content/Countdown";
 import DateTime from "./components/content/DateTime";
 import Indicator from "./components/content/Indicator";
 import Invisible from "./components/content/Invisible";
+import JSMemory from "./components/content/JSMemory";
 import StaticContent from "./components/content/StaticContent";
+import StockTicker from "./components/content/StockTicker";
+import Time from "./components/content/Time";
 import TimeAgo from "./components/content/TimeAgo";
 import Typewriter from "./components/content/Typewriter";
 
@@ -56,6 +59,7 @@ import ButtonGroup from "./components/form/ButtonGroup";
 import Checkbox from './components/form/Checkbox';
 import Form from "./components/form/Form";
 import NumberInput from "./components/form/NumberInput";
+import Select from './components/form/Select';
 import Switch from './components/form/Switch';
 import TextInput from "./components/form/TextInput";
 
@@ -102,7 +106,10 @@ export {
     DateTime,
     Indicator,
     Invisible,
+    JSMemory,
     StaticContent,
+    StockTicker,
+    Time,
     TimeAgo,
     Typewriter,
 
@@ -122,6 +129,7 @@ export {
     Checkbox,
     Form,
     NumberInput,
+    Select,
     Switch,
     TextInput,
 

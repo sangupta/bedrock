@@ -1,0 +1,18 @@
+.stock-ticker {
+    padding-right: 16px;
+    
+    .symbol {
+        padding-right: 8px;
+    }
+    .currency {
+        padding: 0 4px;
+    }
+
+    .loss {
+        color: var(--bs-red);
+    }
+
+    .gain {
+        color: var(--bs-green);
+    }
+}

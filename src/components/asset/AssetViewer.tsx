@@ -25,13 +25,14 @@ import ImageFileViewer from './ImageFileViewer';
 import MarkdownFileViewer from './MarkdownFileViewer';
 import MonacoFileViewer from './MonacoFileViewer';
 
-const MONACO_EXTENSIONS = ['.json', '.tsx', '.ts', '.jsx', '.js'];
+const MONACO_EXTENSIONS = ['.json', '.tsx', '.ts', '.jsx', '.js', '.yml'];
 
 interface AssetViewerProps {
     asset: Asset;
     useHexViwerAsDefault?: boolean;
     getUrl: (asset: Asset) => Promise<string>;
     getBytes: (asset: Asset) => Promise<ArrayBuffer>;
+    onMountComplete?: () => void;
 }
 
 interface AssetViewerState {
@@ -86,6 +87,10 @@ export default class AssetViewer extends React.Component<AssetViewerProps, Asset
 
         if (element) {
             this.setState({ elementToMount: element });
+        }
+
+        if (this.props.onMountComplete) {
+            this.props.onMountComplete();
         }
         return;
     }

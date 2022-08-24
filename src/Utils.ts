@@ -72,6 +72,7 @@ const EXTENSION_MONACO_LANG_MAP: { [key: string]: string } = {
     'swift': 'swift',
     'rb': 'ruby',
     'css': 'css',
+    'yml': 'yaml'
 }
 
 /**

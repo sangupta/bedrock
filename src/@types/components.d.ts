@@ -160,4 +160,14 @@ interface DataColumnFormat {
 
 type ModalVerticalAlignment = 'top' | 'center';
 
-type HtmlInputType = 'text' | 'password' | 'number' | 'checkbox';
+type HtmlInputType = 'text' | 'password' | 'number' | 'checkbox' | 'color';
+
+interface SelectOptionData {
+    value?: string;
+    label: string;
+}
+
+interface AccordionPaneData {
+    title: string;
+    component: React.ReactNode
+}
