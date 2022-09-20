@@ -1,3 +1,7 @@
+```js:playground
+<Typewriter message='Hello World!' timeInMillis={50} />
+```
+
 # Writing mode
 
 ```js

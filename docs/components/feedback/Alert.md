@@ -1,4 +1,8 @@
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+```js:playground
+<Alert variant='primary'>A simple alert.</Alert>
+```
+
+# Default
 
 ```js
 <Alert variant='primary'>A simple primary alert.</Alert>
@@ -10,6 +14,8 @@ Provide contextual feedback messages for typical user actions with the handful o
 <Alert variant='light'>A simple light alert.</Alert>
 <Alert variant='dark'>A simple dark alert.</Alert>
 ```
+
+# Dismissable alerts
 
 Alerts can also be set to show a cross-button to dismiss them.
 

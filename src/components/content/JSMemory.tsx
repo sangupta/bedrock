@@ -3,14 +3,24 @@ import { buildCss } from '../../Utils';
 import ByteSize from './ByteSize';
 
 interface JSMemoryProps extends BaseProps {
+
+    /**
+     * Interval in milliseconds at which the value is automatically
+     * updated. Use a value of less than zero to disable auto-updates.
+     */
     updateIntervalInMillis?: number;
 }
 
 /**
  * Displays and updates the memory consumed by the browser
  * for this particular tab/window. It is automatically updated
- * at specified interval (default 5 seconds).
+ * at specified interval (default 5 seconds). The component
+ * requires that `window.performance` object is available in
+ * the browser. If the object `window.performance` is not available,
+ * the component will not render anything. Refer to 
+ * https://caniuse.com/mdn-api_performance for browser compatibility.
  * 
+ * @author sangupta
  */
 export default class JSMemory extends React.Component<JSMemoryProps> {
 
@@ -24,6 +34,10 @@ export default class JSMemory extends React.Component<JSMemoryProps> {
 
     componentDidMount() {
         const { updateIntervalInMillis } = this.props;
+        if (updateIntervalInMillis < 0) {
+            return;
+        }
+
         this.timer = setInterval(() => {
             if (!document.hidden) {
                 this.forceUpdate();
@@ -38,6 +52,9 @@ export default class JSMemory extends React.Component<JSMemoryProps> {
     render() {
         const performance: any = window.performance;
         const heapSize = performance?.memory?.usedJSHeapSize;
+        if (!heapSize) {
+            return null;
+        }
 
         const css: string = buildCss('span-jsmemory', this.props.className);
 

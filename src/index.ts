@@ -58,6 +58,7 @@ import Button from "./components/form/Button";
 import ButtonGroup from "./components/form/ButtonGroup";
 import Checkbox from './components/form/Checkbox';
 import Form from "./components/form/Form";
+import IconButton from "./components/form/IconButton";
 import NumberInput from "./components/form/NumberInput";
 import Select from './components/form/Select';
 import Switch from './components/form/Switch';
@@ -87,6 +88,9 @@ import Code from "./components/typography/Code";
 import Heading from "./components/typography/Heading";
 import Para from "./components/typography/Para";
 
+// utilities
+import { buildCss, buildProps } from './Utils';
+
 // Export all the components from this library
 export {
     // asset
@@ -98,7 +102,7 @@ export {
     LogFileViewer,
     MonacoFileViewer,
     VideoFileViewer,
-    
+
     // content
     ByteSize,
     ColorBox,
@@ -128,6 +132,7 @@ export {
     ButtonGroup,
     Checkbox,
     Form,
+    IconButton,
     NumberInput,
     Select,
     Switch,
@@ -156,4 +161,8 @@ export {
     Code,
     Heading,
     Para,
+
+    // utility methods
+    buildCss,
+    buildProps
 };
