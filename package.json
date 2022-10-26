@@ -63,5 +63,35 @@
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "typescript": "^4.7.4"
+    },
+    "redefine": {
+        "src": {
+            "root": "src",
+            "includes": [
+                "*.ts",
+                "*.tsx"
+            ]
+        },
+        "docs": {
+            "root": "docs",
+            "includes": [
+                "*.md"
+            ],
+            "hasFrontMatter": true,
+            "index": "index.md"
+        },
+        "build": {
+            "dist": "dist",
+            "publishFolder": "redefine",
+            "css": [
+                "dist/bedrock.css"
+            ],
+            "fonts": [],
+            "js": []
+        },
+        "template": {
+            "title": "Bedrock Component Library",
+            "favicon": "bedrock.png"
+        }
     }
 }
