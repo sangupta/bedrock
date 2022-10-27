@@ -23,6 +23,7 @@ interface AssetViewerProps {
     getUrl: (asset: Asset) => Promise<string>;
     getBytes: (asset: Asset) => Promise<ArrayBuffer>;
     onMountComplete?: () => void;
+    markdownRenderer?: any;
 }
 
 interface AssetViewerState {
@@ -44,7 +45,7 @@ export default class AssetViewer extends React.Component<AssetViewerProps, Asset
     }
 
     componentDidMount = async (): Promise<void> => {
-        const { asset, useHexViwerAsDefault } = this.props;
+        const { asset, useHexViwerAsDefault, markdownRenderer } = this.props;
         let element: any;
 
         if (asset.mimeType?.startsWith('image')) {
@@ -66,8 +67,7 @@ export default class AssetViewer extends React.Component<AssetViewerProps, Asset
         if (asset.extension === '.md') {
             const decoder = new TextDecoder();
             const buffer = await this.props.getBytes(asset);
-            element = <MarkdownFileViewer key={asset.id}
-                contents={decoder.decode(buffer)} />
+            element = <MarkdownFileViewer key={asset.id} contents={decoder.decode(buffer)} renderer={markdownRenderer} />
         }
 
         if (!element && (useHexViwerAsDefault || asset.mimeType?.startsWith('application/octet-stream'))) {
