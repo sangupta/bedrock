@@ -1,3 +1,24 @@
+/**
+ *
+ * bedrock - UI Component Library
+ * Copyright (c) 2020, Sandeep Gupta
+ *
+ * https://bedrock.sangupta.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * 		http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
 import React from 'react';
 import Image from './Image';
 
@@ -56,7 +77,7 @@ export default class Gravatar extends React.Component<GravatarProps> {
     render(): React.ReactNode {
         const { className, children, email, md5, size, rating, defaultImage, scheme, ...extraProps } = this.props;
         const url: string = `https://www.gravatar.com/avatar/${md5}.jpg?s=${size}&r=${rating}&d=${defaultImage}`;
-        
+
         return <Image {...extraProps}
             className={className}
             src={url} />;
