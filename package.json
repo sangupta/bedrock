@@ -37,7 +37,7 @@
         "build": "parcel build --target main --target css",
         "serve": "parcel serve --target main --target css --port 1309",
         "watch": "parcel serve --target main --target css --port 1309 --no-hmr",
-        "tsc": "tsc --noEmit"
+        "test": "tsc --noEmit"
     },
     "author": {
         "name": "Sandeep Gupta",
