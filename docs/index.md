@@ -17,7 +17,7 @@ Using Bedrock involves the following 3 steps:
 
 ## License
 
-All code is licensed under Apache License Version 2.0
+All code is licensed under the MIT License.
 
 [1]: https://reactjs.org/
 [2]: https://www.typescriptlang.org/

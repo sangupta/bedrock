@@ -36,7 +36,8 @@ ReactDOM.render(<HelloWorld />, document.getElementById('root'));
 
 ## License
 
-Apache License Version 2.0. Copyright (c) 2019, Sandeep Gupta.
+MIT License. Copyright (c) 2022, Sandeep Gupta.
+
 
 <!-- Do not add any visible content below this line -->
 

@@ -1,5 +1,5 @@
 {
-    "name": "bedrock",
+    "name": "@sangupta/bedrock",
     "version": "0.1.0",
     "description": "Bedrock: UI Component Library",
     "homepage": "https://bedrock.sangupta.com",
@@ -44,7 +44,7 @@
         "email": "sandy.pec@gmail.com",
         "url": "https://sangupta.com"
     },
-    "license": "Apache-2.0",
+    "license": "MIT",
     "peerDependencies": {
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
