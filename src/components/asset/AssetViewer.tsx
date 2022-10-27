@@ -24,6 +24,7 @@ interface AssetViewerProps {
     getBytes: (asset: Asset) => Promise<ArrayBuffer>;
     onMountComplete?: () => void;
     markdownRenderer?: any;
+    monacoInstance?: any;
 }
 
 interface AssetViewerState {
@@ -45,7 +46,7 @@ export default class AssetViewer extends React.Component<AssetViewerProps, Asset
     }
 
     componentDidMount = async (): Promise<void> => {
-        const { asset, useHexViwerAsDefault, markdownRenderer } = this.props;
+        const { asset, useHexViwerAsDefault, markdownRenderer, monacoInstance } = this.props;
         let element: any;
 
         if (asset.mimeType?.startsWith('image')) {
@@ -58,6 +59,7 @@ export default class AssetViewer extends React.Component<AssetViewerProps, Asset
             const buffer = await this.props.getBytes(asset);
             element = <MonacoFileViewer
                 key={asset.id}
+                monacoInstance={monacoInstance}
                 contents={decoder.decode(buffer)}
                 readOnly={true}
                 extension={asset.extension}

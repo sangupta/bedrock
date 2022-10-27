@@ -13,12 +13,40 @@ import React from 'react';
 import { decipherMonacoLanguage } from '../../Utils';
 
 interface MonacoFileViewerProps {
+    /**
+     * The contents to display inside
+     */
     contents: string;
+
+    /**
+     * The language of the contents to syntax highlight in
+     */
     language?: string;
+
+    /**
+     * The MIME type for the content if known
+     */
     mimeType?: string;
+
+    /**
+     * The file extension for the content if known
+     */
     extension?: string;
+
+    /**
+     * Should the content be displayed read-only ?
+     */
     readOnly?: boolean;
-    showMiniMap?: boolean
+
+    /**
+     * Whether to show mini map or not?
+     */
+    showMiniMap?: boolean;
+
+    /**
+     * The monaco instance to use
+     */
+    monacoInstance: any;
 }
 
 /**
@@ -65,20 +93,19 @@ export default class MonacoFileViewer extends React.Component<MonacoFileViewerPr
      * @returns
      */
     componentDidMount(): void {
-        const { contents, readOnly, mimeType, extension, showMiniMap } = this.props;
+        const { contents, readOnly, mimeType, extension, showMiniMap, monacoInstance } = this.props;
+        if (!monacoInstance) {
+            return;
+        }
+
         const node = this.editorRef.current;
         if (!node) {
             return;
         }
 
         const language = this.props.language ? this.props.language : decipherMonacoLanguage(extension, mimeType);
-        const monaco = (window as any).monaco;
-        if (!monaco) {
-            return;
-        }
-
-        this.editorModel = monaco.editor.createModel(contents || '', language);
-        monaco.editor.create(node, {
+        this.editorModel = monacoInstance.editor.createModel(contents || '', language);
+        monacoInstance.editor.create(node, {
             model: this.editorModel,
             readOnly: readOnly,
             minimap: {
@@ -87,9 +114,9 @@ export default class MonacoFileViewer extends React.Component<MonacoFileViewerPr
         });
     }
 
-    componentWillUnmount() {
-        const monaco = (window as any).monaco;
-        if (!monaco) {
+    componentWillUnmount(): void {
+        const { monacoInstance } = this.props;
+        if (!monacoInstance) {
             return;
         }
 
