@@ -5,11 +5,14 @@
     "homepage": "https://bedrock.sangupta.com",
     "source": "src/index.ts",
     "main": "dist/bedrock.js",
+    "module": "dist/bedrock.mjs",
     "types": "dist/index.d.ts",
     "type": "module",
     "targets": {
         "main": {
             "source": "src/index.ts"
+        },
+        "types": {
         },
         "css": {
             "source": "src/bedrock.scss"
@@ -34,7 +37,7 @@
     "scripts": {
         "clean": "npx rimraf dist",
         "playground": "parcel serve src/playground.html --port 1309",
-        "build": "parcel build --target main --target css",
+        "build": "parcel build --target main --target css --target types",
         "serve": "parcel serve --target main --target css --port 1309",
         "watch": "parcel serve --target main --target css --port 1309 --no-hmr",
         "test": "tsc --noEmit"
