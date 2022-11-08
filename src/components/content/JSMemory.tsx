@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 import ByteSize from './ByteSize';
 
@@ -69,6 +70,6 @@ export default class JSMemory extends React.Component<JSMemoryProps> {
 
         const css: string = buildCss('span-jsmemory', this.props.className);
 
-        return heapSize ? <span className="">JS memory: <ByteSize bytes={heapSize} /></span> : null
+        return heapSize ? <span className={css}>JS memory: <ByteSize bytes={heapSize} /></span> : null
     }
 }

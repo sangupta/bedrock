@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import { BaseProps, ButtonType, ComponentSize, Variant } from '../../types';
 import { buildCss } from '../../Utils';
 
 /**

@@ -11,7 +11,7 @@
 
 import React from 'react';
 
-interface LogLine {
+export interface LogLine {
     lineNumber: number;
     offset: number;
     text: string;

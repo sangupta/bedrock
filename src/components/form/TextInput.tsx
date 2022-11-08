@@ -10,7 +10,9 @@
  */
 
 import React from 'react';
+import { BaseProps, ComponentSize } from '../../types';
 import BaseInput from './BaseInput';
+import { FormFieldPayload, FormValueValidator } from './FormTypes';
 
 interface TextInputProps extends BaseProps {
 
@@ -42,7 +44,7 @@ interface TextInputProps extends BaseProps {
     /**
      * Validators, if any, required on the component
      */
-    validators?: Array<Validator<string>>;
+    validators?: Array<FormValueValidator<string>>;
 
     /**
      * Whether to show invalid state via red border and an

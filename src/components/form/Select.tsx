@@ -10,8 +10,15 @@
  */
 
 import React from 'react';
+import { BaseProps } from '../../types';
 import { buildCss, buildProps } from '../../Utils';
 import { FormContext } from './Form';
+import { FormFieldPayload } from './FormTypes';
+
+export interface SelectOptionData {
+    value?: string;
+    label: string;
+}
 
 interface SelectProps extends BaseProps {
     /**

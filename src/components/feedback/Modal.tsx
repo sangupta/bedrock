@@ -10,8 +10,11 @@
  */
 
 import React from 'react';
+import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 import Underlay from './../layout/Underlay';
+
+export type ModalVerticalAlignment = 'top' | 'center';
 
 interface ModalProps extends BaseProps {
     /**

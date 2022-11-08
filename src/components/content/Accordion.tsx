@@ -10,7 +10,13 @@
  */
 
 import React, { Children } from 'react';
+import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
+
+export interface AccordionPaneData {
+    title: string;
+    component: React.ReactNode
+}
 
 interface AccordionProps extends BaseProps {
     flushed?: boolean;

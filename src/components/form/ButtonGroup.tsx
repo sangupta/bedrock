@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import { BaseProps, ComponentSize } from '../../types';
 import { buildCss } from '../../Utils';
 
 /**

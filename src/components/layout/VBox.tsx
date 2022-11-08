@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import { BaseProps, BoxAlign, BoxJustify } from '../../types';
 import { buildCss } from '../../Utils';
 
 interface VBoxProps extends BaseProps {
@@ -17,12 +18,12 @@ interface VBoxProps extends BaseProps {
     /**
      * Horizontal justification to use when aligning elements inside
      */
-    justify?: BoxJustify
+    justify?: BoxJustify;
 
     /**
      * Vertical justification to use when aligning items
      */
-    align?: BoxAlign
+    align?: BoxAlign;
 
     /**
      * Reverse the arrangement of items inside this container

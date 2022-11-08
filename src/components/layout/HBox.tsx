@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import { BaseProps, BoxAlign, BoxJustify } from '../../types';
 import { buildCss } from '../../Utils';
 
 interface HBoxProps extends BaseProps {

@@ -9,7 +9,11 @@
  * that can be found in LICENSE file in the code repository.
  */
 
-interface Asset {
+/**
+ * The structure for any object that provides
+ * details about an `asset`.
+ */
+export interface Asset {
     /**
      * Unique ID for this file/asset
      */

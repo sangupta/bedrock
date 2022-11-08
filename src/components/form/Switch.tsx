@@ -10,7 +10,9 @@
  */
 
 import React from 'react';
+import { ComponentSize } from '../../types';
 import Checkbox from './Checkbox';
+import { FormFieldPayload, FormValueValidator } from './FormTypes';
 
 interface SwitchProps {
     /**
@@ -41,7 +43,7 @@ interface SwitchProps {
     /**
      * Validators, if any, required on the component
      */
-    validators?: Array<Validator<boolean>>;
+    validators?: Array<FormValueValidator<boolean>>;
 
     /**
      * Whether to show invalid state via red border and an
@@ -61,8 +63,9 @@ export default class Switch extends React.Component<SwitchProps> {
     render(): React.ReactNode {
         const { selected, ...extraProps } = this.props;
 
+        const Element: any = Checkbox;
         return <div className="form-check form-switch">
-            <Checkbox checked={selected} {...extraProps} role="switch" />
+            <Element checked={selected} {...extraProps} role="switch" />
         </div>
     }
 

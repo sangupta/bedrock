@@ -11,6 +11,7 @@
 
 import React from 'react';
 import { asDate, asDateTime, asTime } from '../../Utils';
+import { DateTimeFormatType, ValueType } from '../data/Data';
 
 interface DateTimeProps {
     value: number;

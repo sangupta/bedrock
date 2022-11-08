@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import { BaseProps } from '../../types';
 import { buildCss, getUniqueString, isDigit } from '../../Utils';
 import HBox from '../layout/HBox';
 

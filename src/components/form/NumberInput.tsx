@@ -10,7 +10,9 @@
  */
 
 import React from 'react';
+import { BaseProps, ComponentSize } from '../../types';
 import BaseInput from './BaseInput';
+import { FormFieldPayload, FormValueValidator } from './FormTypes';
 
 interface NumberInputProps extends BaseProps {
 
@@ -42,7 +44,7 @@ interface NumberInputProps extends BaseProps {
     /**
      * Validators, if any, required on the component
      */
-    validators?: Array<Validator<number>>;
+    validators?: Array<FormValueValidator<number>>;
 
     /**
      * Whether to show invalid state via red border and an
@@ -106,7 +108,8 @@ export default class NumberInput extends React.PureComponent<NumberInputProps> {
     render(): React.ReactNode {
         const { children, ...extraProps } = this.props;
 
-        return <BaseInput<number> type='number' {...extraProps} valueConverter={this.handleValueConversion} hasValue={this.hasValue}>{children}</BaseInput>
+        const Element: any = BaseInput<number>;
+        return <Element type='number' {...extraProps} valueConverter={this.handleValueConversion} hasValue={this.hasValue}>{children}</Element>
     }
 
 }

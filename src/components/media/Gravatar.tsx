@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import { BaseProps } from '../../types';
 import Image from './Image';
 
 interface GravatarProps extends BaseProps {

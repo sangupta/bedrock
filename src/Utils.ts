@@ -9,6 +9,10 @@
  * that can be found in LICENSE file in the code repository.
  */
 
+import { Asset } from "./components/asset/Asset";
+import { FormValueValidator } from "./components/form/FormTypes";
+import { MapStringBoolean, MapStringString } from "./types";
+
 /**
  * The following declaration takes care of eliminating
  * Typescript compiler warning around `window.crypto.randomUUID()`
@@ -290,7 +294,7 @@ export function reduceValidityMap(map: MapStringBoolean): boolean {
  * 
  * @returns `undefined` if all validators pass, else returns `Validator.errorMessage`
  */
-export function validateField(value: any, validators: Array<Validator<any>>): string {
+export function validateField(value: any, validators: Array<FormValueValidator<any>>): string {
     if (!validators || validators.length === 0) {
         return undefined;
     }

@@ -10,6 +10,7 @@
  */
 
 import React from 'react'
+import { Variant } from '../../types';
 
 interface SpinnerProps {
     ariaLabel?: string;

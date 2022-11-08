@@ -10,6 +10,7 @@
  */
 
 import React from 'react'
+import { Asset } from './Asset';
 import HexFileViewer from './HexFileViewer';
 import ImageFileViewer from './ImageFileViewer';
 import MarkdownFileViewer from './MarkdownFileViewer';

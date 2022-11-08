@@ -13,15 +13,11 @@ import React from 'react';
 import { asTimeAgo } from '../../Utils';
 
 interface TimeAgoProps {
-    /**
-     * Time in milliseconds from which the duration needs to be computed.
-     */
-    value: number;
 
     /**
-     * Time in seconds from which the duration needs to be computed.
+     * Time in milli-seconds from which the duration needs to be computed.
      */
-    valueType?: ValueType;
+    millis: number;
 }
 
 /**
@@ -43,14 +39,12 @@ interface TimeAgoProps {
 export default class TimeAgo extends React.PureComponent<TimeAgoProps> {
 
     render(): React.ReactNode {
-        const { value, valueType } = this.props;
-        if(value === undefined || value === null || value < 0) {
+        const { millis } = this.props;
+        if (millis === undefined || millis === null || millis < 0) {
             return "";
         }
-
-        const millis = valueType === 'seconds' ? value * 1000 : value;
+        
         const timeAgo = asTimeAgo(millis)
-
         return <span className='format-time-ago' title={timeAgo}>{timeAgo}</span>
     }
 

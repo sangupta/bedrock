@@ -10,6 +10,7 @@
  */
 
 import * as React from 'react';
+import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 
 interface UnderlayProps extends BaseProps {
@@ -18,6 +19,7 @@ interface UnderlayProps extends BaseProps {
      */
     show?: boolean;
 }
+
 export default class Underlay extends React.PureComponent<UnderlayProps> {
 
     static defaultProps = {

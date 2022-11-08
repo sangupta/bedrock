@@ -10,7 +10,9 @@
  */
 
 import React from 'react';
+import { BaseProps, ComponentSize } from '../../types';
 import BaseInput from './BaseInput';
+import { FormFieldPayload } from './FormTypes';
 
 interface ColorInputProps extends BaseProps {
 

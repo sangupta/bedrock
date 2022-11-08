@@ -10,8 +10,8 @@
  */
 
 import React from 'react';
+import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
-
 
 /**
  * A component that will never ever re-render. The `shouldComponentUpdate`

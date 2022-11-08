@@ -13,6 +13,8 @@ import React from 'react';
 import TimeAgo from '../content/TimeAgo';
 import ByteSize from '../content/ByteSize';
 import DateTime from '../content/DateTime';
+import { BaseProps } from '../../types';
+import { DataColumnFormat, DataColumnType, ValueType } from './Data';
 
 /**
  * PROP attributes for DataTable component.
@@ -190,7 +192,7 @@ export default class DataTable extends React.Component<DataTableProps, DataTable
                 return <DateTime value={value} type={formatAs} valueType={valueType} />
 
             case 'time-ago':
-                return <TimeAgo value={value} valueType={valueType} />
+                return <TimeAgo millis={value} />
 
             case 'icon':
                 return this.props.getIconForItem ? this.props.getIconForItem(value) : ''

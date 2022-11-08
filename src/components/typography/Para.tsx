@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import { Alignment, BaseProps, TextTransform, Variant } from '../../types';
 import { buildCss } from '../../Utils';
 
 /**

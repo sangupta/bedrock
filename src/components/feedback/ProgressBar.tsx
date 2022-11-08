@@ -10,6 +10,7 @@
  */
 
 import * as React from 'react';
+import { BaseProps, Variant } from '../../types';
 import { buildCss } from '../../Utils';
 
 interface ProgressBarProps extends BaseProps {

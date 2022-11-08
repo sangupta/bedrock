@@ -10,7 +10,9 @@
  */
 
 import React from 'react'
+import { DataColumnFormat } from '../data/Data';
 import DataTable from '../data/DataTable';
+import { Asset } from './Asset';
 import AssetIcon from './AssetIcon';
 
 interface AssetBrowserProps {

@@ -11,6 +11,7 @@
 
 import React from 'react';
 import { getAssetIcon } from '../../Utils';
+import { Asset } from './Asset';
 
 interface AssetIconProps {
     asset: Asset;

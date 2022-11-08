@@ -9,8 +9,10 @@
  * that can be found in LICENSE file in the code repository.
  */
 
-import React from 'react';
+import React, { Validator } from 'react';
+import { BaseProps, ComponentSize } from '../../types';
 import BaseInput from './BaseInput';
+import { FormFieldPayload } from './FormTypes';
 
 interface CheckboxProps extends BaseProps {
 
@@ -80,14 +82,15 @@ export default class Checkbox extends React.PureComponent<CheckboxProps> {
     render(): React.ReactNode {
         const { children, checked, ...extraProps } = this.props;
 
-        return <BaseInput<boolean>
+        const Element: any = BaseInput<boolean>
+        return <Element
             type='checkbox'
             {...extraProps}
             valueConverter={this.handleValueConversion}
             value={checked}
             hasValue={this.hasValue}>
             {children}
-        </BaseInput>
+        </Element>
     }
 
 }
