@@ -92,7 +92,13 @@ export default class TextInput extends React.PureComponent<TextInputProps> {
     render(): React.ReactNode {
         const { children, ...extraProps } = this.props;
 
-        return <BaseInput<string> type='text' {...extraProps} valueConverter={this.handleValueConversion} hasValue={this.hasValue}>{children}</BaseInput>
+        return <BaseInput<string>
+            type='text'
+            valueConverter={this.handleValueConversion}
+            hasValue={this.hasValue}
+            {...extraProps} >
+            {children}
+        </BaseInput>
     }
 
 }

@@ -108,8 +108,7 @@ export default class NumberInput extends React.PureComponent<NumberInputProps> {
     render(): React.ReactNode {
         const { children, ...extraProps } = this.props;
 
-        const Element: any = BaseInput<number>;
-        return <Element type='number' {...extraProps} valueConverter={this.handleValueConversion} hasValue={this.hasValue}>{children}</Element>
+        return <BaseInput<number> type='number' {...extraProps} valueConverter={this.handleValueConversion} hasValue={this.hasValue}>{children}</BaseInput>
     }
 
 }

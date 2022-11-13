@@ -9,10 +9,10 @@
  * that can be found in LICENSE file in the code repository.
  */
 
-import React, { Validator } from 'react';
+import React from 'react';
 import { BaseProps, ComponentSize } from '../../types';
 import BaseInput from './BaseInput';
-import { FormFieldPayload } from './FormTypes';
+import { FormFieldPayload, FormValueValidator } from './FormTypes';
 
 interface CheckboxProps extends BaseProps {
 
@@ -44,7 +44,7 @@ interface CheckboxProps extends BaseProps {
     /**
      * Validators, if any, required on the component
      */
-    validators?: Array<Validator<boolean>>;
+    validators?: Array<FormValueValidator<boolean>>;
 
     /**
      * Whether to show invalid state via red border and an
@@ -82,15 +82,14 @@ export default class Checkbox extends React.PureComponent<CheckboxProps> {
     render(): React.ReactNode {
         const { children, checked, ...extraProps } = this.props;
 
-        const Element: any = BaseInput<boolean>
-        return <Element
+        return <BaseInput<boolean>
             type='checkbox'
             {...extraProps}
             valueConverter={this.handleValueConversion}
             value={checked}
             hasValue={this.hasValue}>
             {children}
-        </Element>
+        </BaseInput>
     }
 
 }
