@@ -35,7 +35,7 @@
     ],
     "scripts": {
         "clean": "npx rimraf dist",
-        "playground": "parcel serve src/playground.html --port 1309",
+        "play": "parcel serve play/playground.html --port 1309",
         "build": "parcel build --target main --target css --target types",
         "serve": "parcel serve --target main --target css --port 1309",
         "watch": "parcel serve --target main --target css --port 1309 --no-hmr",
@@ -62,6 +62,7 @@
         "@types/react": "^17.0.41",
         "@types/react-dom": "^17.0.14",
         "parcel": "^2.7.0",
+        "process": "^0.11.10",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "typescript": "^4.7.4"

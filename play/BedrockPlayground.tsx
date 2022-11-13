@@ -15,15 +15,15 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Countdown from './components/content/Countdown';
-import StockTicker from './components/content/StockTicker';
-import Typewriter from './components/content/Typewriter';
-import Form from './components/form/Form';
-import NumberInput from './components/form/NumberInput';
-import TextInput from './components/form/TextInput';
-import TokenInput from './components/form/TokenInput';
-import Heading from './components/typography/Heading';
-import Para from './components/typography/Para';
+import Countdown from '../src/components/content/Countdown';
+import StockTicker from '../src/components/content/StockTicker';
+import Typewriter from '../src/components/content/Typewriter';
+import Form from '../src/components/form/Form';
+import NumberInput from '../src/components/form/NumberInput';
+import TextInput from '../src/components/form/TextInput';
+import TokenInput from '../src/components/form/TokenInput';
+import Heading from '../src/components/typography/Heading';
+import Para from '../src/components/typography/Para';
 
 function test() {
 

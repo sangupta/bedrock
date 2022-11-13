@@ -42,7 +42,8 @@
     },
     "include": [
         "src/**/*.tsx",
-        "src/**/*.ts"
+        "src/**/*.ts",
+        "play/BedrockPlayground.tsx"
     ],
     "exclude": [
         "node_modules",
