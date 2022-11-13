@@ -18,9 +18,15 @@ import { FormFieldPayload, FormValueValidator } from './FormTypes';
 interface BaseInputProps<T> extends BaseProps {
 
     /**
+     * The actual HTML element to emit. The default value
+     * is `input`.
+     */
+    as?: string;
+
+    /**
      * The type of element to render. 
      */
-    type: HtmlInputType;
+    type?: HtmlInputType;
 
     /**
      * The initial value of the component 
@@ -116,7 +122,8 @@ export default class BaseInput<T> extends React.Component<BaseInputProps<T>, Bas
      */
     static defaultProps = {
         size: 'default',
-        showInvalidState: true
+        showInvalidState: true,
+        as: 'input'
     }
 
     /**
@@ -203,7 +210,7 @@ export default class BaseInput<T> extends React.Component<BaseInputProps<T>, Bas
     render(): React.ReactNode {
         const {
             // component props
-            type, value, form, name, size, required, validators, onChange, showInvalidState, valueConverter, hasValue,
+            type, value, form, name, size, required, validators, onChange, showInvalidState, valueConverter, hasValue, as,
 
             // standard props
             children, className, ...extraProps
@@ -224,19 +231,21 @@ export default class BaseInput<T> extends React.Component<BaseInputProps<T>, Bas
         }
 
         // add value render, for checkbox we use `checked` attribute
-        if (type.toLowerCase() === 'checkbox') {
+        if ((type || '').toLowerCase() === 'checkbox') {
             extraProps['checked'] = this.state.value || false;
         } else {
             extraProps['value'] = this.state.value;
         }
 
-        return <input type={type}
+        // render the element
+        const Element: any = as;
+        return <Element
+            type={type}
             className={css}
             name={name}
             onChange={this.handleValueChange}
             required={required}
-            {...extraProps}
-        />
+            {...extraProps} />
     }
 
 }
