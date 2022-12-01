@@ -11,13 +11,19 @@
 
 import React from 'react';
 
+interface MozillaPdfFileViewerProps {
+    pdfUrl: string;
+    sdkUrl?: string;
+    loadDefaultSDK?: boolean;
+}
+
 /**
  * A Mozilla PDF.js based PDF viewer.
  * Refer https://github.com/mozilla/pdf.js for more details.
  * 
  * @author sangupta
  */
-export default class MozillaPdfFileViewer extends React.Component {
+export default class MozillaPdfFileViewer extends React.Component<MozillaPdfFileViewerProps> {
 
     render() {
         return null;

@@ -30,3 +30,19 @@
 .cursor-pointer {
     cursor: pointer;
 }
+
+.gist-iframe {
+    width: 100%;
+    height: 100%;
+}
+.address-container {
+    width: 572px;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.login-form-container {
+    width: 320px;
+}

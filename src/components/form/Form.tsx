@@ -9,7 +9,7 @@
  * that can be found in LICENSE file in the code repository.
  */
 
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { BaseProps, MapStringAny, MapStringMapStringBoolean } from '../../types';
 import { reduceValidityMap } from '../../Utils';
 import { FormContextData } from './FormTypes';
@@ -90,7 +90,7 @@ export default class Form extends React.Component<FormProps> {
         super(props);
 
         // define the form name that we will use throughout.
-        // It does not change
+        // It does not change throughout the life of form
         this.formName = props.name || 'form-' + Date.now();
 
         // create context data for this form
@@ -103,6 +103,10 @@ export default class Form extends React.Component<FormProps> {
         Form.formBuckets[this.formName] = {};
         Form.fieldValidity[this.formName] = {};
         Form.formComponents[this.formName] = this.props.onUpdate;
+    }
+
+    componentDidMount(): void {
+        this.setState({});
     }
 
     componentWillUnmount() {
@@ -128,7 +132,9 @@ export default class Form extends React.Component<FormProps> {
         }
     }
 
-    handleFormSubmit = () => {
+    handleFormSubmit = (e: FormEvent) => {
+        e.preventDefault();
+
         if (this.props.onSubmit) {
             const payload = Form.formBuckets[this.formName];
             const validityBucket = Form.fieldValidity[this.formName] || {};
@@ -139,12 +145,17 @@ export default class Form extends React.Component<FormProps> {
     render(): React.ReactNode {
         const { className, autoCapitalize, autoComplete, noValidate, onSubmit, onUpdate, ...extraProps } = this.props;
 
+        delete extraProps['name'];
+
         return <FormContext.Provider value={this.contextPayload}>
-            <form className={className} name={this.formName} onSubmit={this.handleFormSubmit}
+            <form
+                className={className}
+                id={this.formName}
+                onSubmit={this.handleFormSubmit}
                 autoCapitalize={autoCapitalize}
                 autoComplete={autoComplete}
-                noValidate={noValidate}
-                {...extraProps}>
+                {...extraProps}
+                noValidate={noValidate}>
                 {this.props.children}
             </form>
         </FormContext.Provider>

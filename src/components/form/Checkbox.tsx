@@ -67,7 +67,7 @@ interface CheckboxProps extends BaseProps {
 export default class Checkbox extends React.PureComponent<CheckboxProps> {
 
     static defaultProps = {
-        value: false
+        checked: false
     }
 
     handleValueConversion(e: React.ChangeEvent<HTMLInputElement>): boolean {
