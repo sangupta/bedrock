@@ -39,7 +39,7 @@
         "build": "parcel build --target main --target css --target types",
         "serve": "parcel serve --target main --target css --port 1309",
         "watch": "parcel serve --target main --target css --port 1309 --no-hmr",
-        "test": "tsc --noEmit"
+        "test": "jest --coverage"
     },
     "author": {
         "name": "Sandeep Gupta",
