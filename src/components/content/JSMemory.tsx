@@ -50,7 +50,7 @@ export default class JSMemory extends React.Component<JSMemoryProps> {
             return;
         }
 
-        this.timer = setInterval(() => {
+        this.timer = window.setInterval(() => {
             if (!document.hidden) {
                 this.forceUpdate();
             }

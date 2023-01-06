@@ -68,7 +68,7 @@ export default class Countdown extends React.PureComponent<CountdownProps, Count
     }
 
     componentDidMount(): void {
-        this.timer = setInterval(this.updateValue, this.props.timeInMillis);
+        this.timer = window.setInterval(this.updateValue, this.props.timeInMillis);
         this.timerCreated = true;
     }
 
