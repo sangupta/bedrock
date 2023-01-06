@@ -98,4 +98,5 @@ export type MapStringBoolean = { [key: string]: boolean };
 
 export type MapStringMapStringBoolean = { [key: string]: MapStringBoolean };
 
-export type HtmlInputType = 'text' | 'password' | 'number' | 'checkbox' | 'color' | 'date' | 'email' | 'hidden' | 'url' | 'time' | 'tel';
+export type HtmlInputType = 'text' | 'password' | 'number' | 'checkbox' | 'color' | 'date' | 'email'
+    | 'hidden' | 'url' | 'time' | 'tel' | 'range';
