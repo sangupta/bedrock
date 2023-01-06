@@ -10,11 +10,18 @@
     "type": "module",
     "targets": {
         "main": {
-            "source": "src/index.ts"
+            "source": "src/index.ts",
+            "context": "browser",
+            "isLibrary": true,
+            "optimize": true,
+            "includeNodeModules": false
         },
         "types": {},
         "css": {
-            "source": "src/bedrock.scss"
+            "source": "src/bedrock.scss",
+            "context": "browser",
+            "isLibrary": true,
+            "optimize": true
         }
     },
     "repository": {
