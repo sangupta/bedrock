@@ -23,6 +23,7 @@ export { default as MozillaPdfFileViewer } from "./components/asset/MozillaPdfFi
 export { default as VideoFileViewer } from "./components/asset/VideoFileViewer";
 
 // content imports
+export { default as Accordion } from "./components/content/Accordion";
 export { default as ByteSize } from "./components/content/ByteSize";
 export { default as ColorBox } from "./components/content/ColorBox";
 export { default as Countdown } from "./components/content/Countdown";
@@ -61,8 +62,11 @@ export { default as EmailInput } from './components/form/EmailInput';
 export { default as Form } from "./components/form/Form";
 export { default as HiddenInput } from './components/form/HiddenInput';
 export { default as IconButton } from "./components/form/IconButton";
+export { default as InputGroup } from "./components/form/InputGroup";
+export { default as Label } from "./components/form/Label";
 export { default as NumberInput } from "./components/form/NumberInput";
 export { default as PasswordInput } from "./components/form/PasswordInput";
+export { default as RangeInput } from "./components/form/RangeInput";
 export { default as Select } from './components/form/Select';
 export { default as Switch } from './components/form/Switch';
 export { default as TelInput } from './components/form/TelInput';
@@ -80,6 +84,7 @@ export { default as Underlay } from "./components/layout/Underlay";
 export { default as VBox } from "./components/layout/VBox";
 
 // media imports
+export { default as Figure } from "./components/media/Figure";
 export { default as Gravatar } from "./components/media/Gravatar";
 export { default as Image } from "./components/media/Image";
 export { default as MediaSource } from "./components/media/MediaSource";
@@ -99,6 +104,9 @@ export { default as Para } from "./components/typography/Para";
 // fragments
 export { default as AddressBox } from "./fragments/AddressBox";
 export { default as LoginForm } from "./fragments/LoginForm";
+
+// views
+export { default as HttpRequestViewer } from './views/http/HttpRequestViewer';
 
 // utilities
 export { buildCss, buildProps } from './Utils';
