@@ -32,7 +32,7 @@
      name: string;
  
      /**
-      * Specify the role for the checkbox
+      * Specify the role for the tel input
       */
      role?: string;
  
