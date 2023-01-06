@@ -122,6 +122,7 @@ export default class DataTable extends React.Component<DataTableProps, DataTable
                 <DataTableRow
                     className={this.props.selectedRow === item ? 'selected' : ''}
                     key={itemID || index}
+                    rowKey={itemID || index}
                     dataRow={item}
                     onRowClick={this.props.onRowClick}
                     onRowDoubleClick={this.props.onRowDoubleClick} >
@@ -148,7 +149,7 @@ export default class DataTable extends React.Component<DataTableProps, DataTable
         }
 
         formats.forEach((format, index) => {
-            let columnValue = format.attributeName !== '$' ? row[format.attributeName] : row;
+            let columnValue = format.attributeName ? row[format.attributeName] : format.getValue(row);
 
             // choose formatter based on field type
             if (format.formatAs) {
@@ -225,8 +226,8 @@ export default class DataTable extends React.Component<DataTableProps, DataTable
  * Prop attributes for DataTableRow component.
  */
 interface DataTableRowProps extends BaseProps {
+    rowKey: string;
     dataRow: any;
-    key: string;
     className?: string;
     onRowClick?: (dataRow: any) => void;
     onRowDoubleClick?: (dataRow: any) => void;
@@ -250,7 +251,7 @@ class DataTableRow extends React.Component<DataTableRowProps> {
     }
 
     render(): React.ReactNode {
-        return <div className={'data-table-row ' + (this.props.className || '')} onClick={this.handleRowClick} onDoubleClick={this.handleRowDoubleClick}>
+        return <div data-rowid={this.props.rowKey} className={'data-table-row ' + (this.props.className || '')} onClick={this.handleRowClick} onDoubleClick={this.handleRowDoubleClick}>
             {this.props.children}
         </div>
     }

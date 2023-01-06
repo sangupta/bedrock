@@ -16,18 +16,41 @@ export type DataColumnType = 'string' | 'bytes' | 'time-ago' | 'time-ago' | Date
 export type ValueType = '' | 'seconds' | 'millis' | 'string' | 'number' | 'boolean';
 
 export interface DataColumnFormat {
-    attributeName: string;
+    /**
+     * The attribute to read from the data array object
+     */
+    attributeName?: string;
 
+    /**
+     * Title to use for the column
+     */
     title: string;
 
+    /**
+     * Control how column is displayed
+     */
     formatAs?: DataColumnType;
 
+    /**
+     * How should the value be treated
+     */
     valueType?: ValueType;
 
+    /**
+     * Test if the column should be displayed based on the
+     * data row object.
+     */
     displayColumn?: (item: any) => boolean;
 
+    /**
+     * CSS classname to attach
+     */
     className?: string;
 
+    /**
+     * Function to call with entire data row object
+     * that will return the value to render
+     */
     getValue?: (item: any) => any;
 }
 
