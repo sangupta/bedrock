@@ -54,6 +54,21 @@ interface BaseInputProps<T> extends BaseProps {
     required?: boolean;
 
     /**
+     * Min value. Applicable for date, month, week, time, datetime-local, number, range
+     */
+    min?: string | number;
+
+    /**
+     * Max value. Applicable for date, month, week, time, datetime-local, number, range
+     */
+    max?: string | number;
+
+    /**
+     * Incremental value. Applicable for date, month, week, time, datetime-local, number, range
+     */
+    step?:string|number;
+
+    /**
      * Validators, if any, required on the component
      */
     validators?: Array<FormValueValidator<T>>;
@@ -221,6 +236,7 @@ export default class BaseInput<T> extends React.Component<BaseInputProps<T>, Bas
             'form-check-input': type === 'checkbox',
             'form-control-lg': size === 'large',
             'form-control-sm': size === 'small',
+            'form-range': type === 'range',
             'is-invalid': showInvalidState && !this.state.isValid
         }, className);
 
