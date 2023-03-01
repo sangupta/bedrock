@@ -3,9 +3,9 @@
 [![Build status](https://img.shields.io/github/workflow/status/sangupta/bedrock/ci?label=CI&logo=github&style=flat-square)](https://github.com/sangupta/bedrock/actions/workflows/ci.yml)
 
 Bedrock is a [ReactJS][reactjs] UI component library built using [Typescript][typescript].
-It uses [Bootstrap 5][bootstrap] CSS framework for styling. The CSS is not built into the
-library and is included directly in HTML or imported in the application. This allows for
-using any CSS design system built on top of Bootstrap.
+It uses [Bootstrap 5][bootstrap] CSS framework for styling. `bedrock` still follows the
+classic way of including CSS in HTML file to decouple the design system from component
+library and also to improve load performance by leveraging browser caching.
 
 ### NOTE: Rewrite in progress. Old code is in `bedrock-old` branch.
 
@@ -29,10 +29,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from '@sangupta/bedrock';
 
-const HelloWorld = (props) => {
+const HelloWorld = () => {
     return <Button label='Hello World' />
 }
 
+// for React 16/17
 ReactDOM.render(<HelloWorld />, document.getElementById('root'));
 ```
 
