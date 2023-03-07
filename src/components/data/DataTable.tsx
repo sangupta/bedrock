@@ -149,7 +149,9 @@ export default class DataTable extends React.Component<DataTableProps, DataTable
         }
 
         formats.forEach((format, index) => {
-            let columnValue = format.attributeName ? row[format.attributeName] : format.getValue(row);
+            let columnValue = format.attributeName
+                ? row[format.attributeName]
+                : format.getValue ? format.getValue(row) : row;
 
             // choose formatter based on field type
             if (format.formatAs) {
@@ -193,6 +195,9 @@ export default class DataTable extends React.Component<DataTableProps, DataTable
                 return <DateTime value={value} type={formatAs} valueType={valueType} />
 
             case 'time-ago':
+                if ((valueType || '').toLowerCase() === 'seconds') {
+                    value = value * 1000;
+                }
                 return <TimeAgo millis={value} />
 
             case 'icon':

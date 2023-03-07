@@ -13,7 +13,7 @@
 @import "./styles/bedrock-vars.scss";
 
 // Step 2. Include remainder of required Bootstrap stylesheets
-@import "./../node_modules/bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap";
 
 // Step 3. Add additional custom code here
 @import "./styles/colorbox";
@@ -23,6 +23,7 @@
 @import "./styles/datatable";
 @import "./styles/loadingdots";
 @import "./styles/stockticker";
+@import "./styles/hex-viewer";
 
 /**
  * General CSS rules

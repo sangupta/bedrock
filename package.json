@@ -1,110 +1,113 @@
 {
-    "name": "@sangupta/bedrock",
-    "version": "0.1.0",
-    "description": "Bedrock: UI Component Library",
-    "homepage": "https://bedrock.sangupta.com",
-    "source": "src/index.ts",
-    "main": "dist/bedrock.js",
-    "module": "dist/bedrock.mjs",
-    "types": "dist/index.d.ts",
-    "type": "module",
-    "targets": {
-        "main": {
-            "source": "src/index.ts",
-            "context": "browser",
-            "isLibrary": true,
-            "optimize": true,
-            "includeNodeModules": false
-        },
-        "types": {},
-        "css": {
-            "source": "src/bedrock.scss",
-            "context": "browser",
-            "isLibrary": true,
-            "optimize": true
-        }
+  "name": "@sangupta/bedrock",
+  "version": "0.1.0",
+  "description": "Bedrock: UI Component Library",
+  "homepage": "https://bedrock.sangupta.com",
+  "source": "src/index.ts",
+  "main": "dist/bedrock.js",
+  "module": "dist/bedrock.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "targets": {
+    "main": {
+      "source": "src/index.ts",
+      "context": "browser",
+      "isLibrary": true,
+      "optimize": true,
+      "includeNodeModules": false
     },
-    "repository": {
-        "url": "https://github.com/sangupta/bedrock",
-        "type": "git"
-    },
-    "bugs": {
-        "url": "https://github.com/sangupta/bedrock/issues"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "files": [
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        "tsconfig.json",
-        "dist/**"
-    ],
-    "scripts": {
-        "clean": "npx rimraf dist",
-        "play": "parcel serve play/playground.html --port 1309",
-        "build": "parcel build --target main --target css --target types",
-        "serve": "parcel serve --target main --target css --port 1309",
-        "watch": "parcel serve --target main --target css --port 1309 --no-hmr",
-        "test": "jest --coverage"
-    },
-    "author": {
-        "name": "Sandeep Gupta",
-        "email": "sandy.pec@gmail.com",
-        "url": "https://sangupta.com"
-    },
-    "license": "MIT",
-    "peerDependencies": {
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2"
-    },
-    "dependencies": {
-        "bootstrap": "^5.2.3"
-    },
-    "devDependencies": {
-        "@jest/globals": "^29.4.3",
-        "@parcel/packager-ts": "^2.8.3",
-        "@parcel/transformer-sass": "^2.8.3",
-        "@parcel/transformer-typescript-types": "^2.8.3",
-        "@parcel/types": "^2.8.3",
-        "@types/jest": "^29.4.0",
-        "@types/react": "^18.0.28",
-        "@types/react-dom": "^18.0.11",
-        "jest": "^29.4.3",
-        "parcel": "^2.8.3",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "ts-jest": "^29.0.5",
-        "typescript": "^4.9.5"
-    },
-    "redefine": {
-        "src": {
-            "root": "src",
-            "includes": [
-                "*.ts",
-                "*.tsx"
-            ]
-        },
-        "docs": {
-            "root": "docs",
-            "includes": [
-                "*.md"
-            ],
-            "hasFrontMatter": true,
-            "index": "index.md"
-        },
-        "build": {
-            "dist": "dist",
-            "publishFolder": "redefine",
-            "css": [
-                "dist/bedrock.css"
-            ],
-            "fonts": [],
-            "js": []
-        },
-        "template": {
-            "title": "Bedrock Component Library",
-            "favicon": "bedrock.png"
-        }
+    "types": {},
+    "css": {
+      "source": "src/bedrock.scss",
+      "context": "browser",
+      "isLibrary": true,
+      "optimize": true
     }
+  },
+  "repository": {
+    "url": "https://github.com/sangupta/bedrock",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/sangupta/bedrock/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "tsconfig.json",
+    "dist/**"
+  ],
+  "scripts": {
+    "clean": "npx rimraf dist",
+    "play": "parcel serve play/playground.html --port 1309",
+    "build": "parcel build --target main --target css --target types",
+    "serve": "parcel serve --target main --target css --port 1309",
+    "watch": "parcel watch --target main --target css --no-hmr",
+    "test": "jest"
+  },
+  "author": {
+    "name": "Sandeep Gupta",
+    "email": "sandy.pec@gmail.com",
+    "url": "https://sangupta.com"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.4.3",
+    "@parcel/packager-ts": "^2.8.3",
+    "@parcel/transformer-sass": "^2.8.3",
+    "@parcel/transformer-typescript-types": "^2.8.3",
+    "@parcel/types": "^2.8.3",
+    "@types/jest": "^29.4.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "jest": "^29.5.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "parcel": "^2.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.5",
+    "@testing-library/react": "^14.0.0",
+    "jest-environment-jsdom": "^29.4.3"
+  },
+  "redefine": {
+    "src": {
+      "root": "src",
+      "includes": [
+        "*.ts",
+        "*.tsx"
+      ]
+    },
+    "docs": {
+      "root": "docs",
+      "includes": [
+        "*.md"
+      ],
+      "hasFrontMatter": true,
+      "index": "index.md"
+    },
+    "build": {
+      "dist": "dist",
+      "publishFolder": "redefine",
+      "css": [
+        "dist/bedrock.css"
+      ],
+      "fonts": [],
+      "js": []
+    },
+    "template": {
+      "title": "Bedrock Component Library",
+      "favicon": "bedrock.png"
+    }
+  }
 }

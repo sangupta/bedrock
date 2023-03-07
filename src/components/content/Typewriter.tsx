@@ -35,6 +35,13 @@ interface TypewriterState {
     index: number;
 }
 
+/**
+ * Typewriter component mimics displaying text that appears
+ * one character at a time. In erase mode, it removes one
+ * character from the string at a time. The time gap between
+ * each addition/removal of character is configurable.
+ * 
+ */
 export default class Typewriter extends React.PureComponent<TypewriterProps, TypewriterState> {
 
     static defaultProps = {

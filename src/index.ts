@@ -97,6 +97,7 @@ export { default as Link } from "./components/navigation/Link";
 export { default as HttpLoader } from "./components/rpc/HttpLoader";
 
 // typography imports
+export { default as BlockQuote } from "./components/typography/BlockQuote";
 export { default as Code } from "./components/typography/Code";
 export { default as Heading } from "./components/typography/Heading";
 export { default as Para } from "./components/typography/Para";
@@ -104,9 +105,6 @@ export { default as Para } from "./components/typography/Para";
 // fragments
 export { default as AddressBox } from "./fragments/AddressBox";
 export { default as LoginForm } from "./fragments/LoginForm";
-
-// views
-export { default as HttpRequestViewer } from './views/http/HttpRequestViewer';
 
 // utilities
 export { buildCss, buildProps } from './Utils';
