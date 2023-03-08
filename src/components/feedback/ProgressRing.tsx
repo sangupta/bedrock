@@ -15,8 +15,22 @@ import { buildCss } from '../../Utils';
 
 export interface ProgressRingProps extends BaseProps {
     variant?: Variant;
+
+    /**
+     * The progress percentage to display, represented as a whole
+     * number between 0-100.
+     */
+    value: number;
 }
 
+/**
+ * Displays a progress ring that is determinate. You may
+ * use it to display the percentage completion of an activity
+ * that needs time. If the percentage cannot be computed, and
+ * an indeterminate ring is needed, use `<Spinner />` instead.
+ * 
+ * @author sangupta
+ */
 export default class ProgressRing extends React.Component<ProgressRingProps> {
 
     static defaultProps = {
@@ -30,4 +44,5 @@ export default class ProgressRing extends React.Component<ProgressRingProps> {
 
         </div>
     }
+
 }
