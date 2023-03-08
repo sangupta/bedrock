@@ -13,7 +13,7 @@ import * as React from 'react';
 import { BaseProps, Variant } from '../../types';
 import { buildCss } from '../../Utils';
 
-interface ProgressBarProps extends BaseProps {
+export interface ProgressBarProps extends BaseProps {
     /**
      * The minimum value to use when computing percentage progress.
      */

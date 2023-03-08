@@ -13,13 +13,15 @@ import React from 'react';
 import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 
+export type StaticContentProps = BaseProps & React.HTMLProps<HTMLDivElement>;
+
 /**
  * A component that will never ever re-render. The `shouldComponentUpdate`
  * method always returns `false`.
  * 
  * @author sangupta
  */
-export default class StaticContent extends React.PureComponent<BaseProps> {
+export default class StaticContent extends React.PureComponent<StaticContentProps> {
 
     /**
      * As this component should never ever re-render, this returns

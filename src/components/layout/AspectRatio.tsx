@@ -13,7 +13,7 @@ import React from 'react';
 import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 
-interface AspectRatioProps extends BaseProps {
+export interface AspectRatioProps extends BaseProps {
     ratio: '1x1' | '16x9' | '4x3' | '21x9';
 }
 

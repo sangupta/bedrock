@@ -13,7 +13,7 @@ import React from 'react';
 import { BaseProps, FlexAlignContent, FlexDirection, FlexJustifyContent } from '../../types';
 import { buildCss } from '../../Utils';
 
-interface FlexBoxProps extends BaseProps {
+export interface FlexBoxProps extends BaseProps {
 
     /**
      * `justify-content` value

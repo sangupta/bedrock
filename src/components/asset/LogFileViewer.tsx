@@ -17,7 +17,7 @@ export interface LogLine {
     text: string;
 }
 
-interface LogFileViewerProps {
+export interface LogFileViewerProps {
     logLines: Array<LogLine>;
 }
 

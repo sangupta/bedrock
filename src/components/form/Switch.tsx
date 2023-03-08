@@ -14,7 +14,7 @@ import { ComponentSize } from '../../types';
 import Checkbox from './Checkbox';
 import { FormFieldPayload, FormValueValidator } from './FormTypes';
 
-interface SwitchProps {
+export interface SwitchProps {
     /**
      * The initial value of the component 
      */

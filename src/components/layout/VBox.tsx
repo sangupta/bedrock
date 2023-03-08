@@ -13,7 +13,7 @@ import React from 'react';
 import { BaseProps, BoxAlign, BoxJustify } from '../../types';
 import { buildCss } from '../../Utils';
 
-interface VBoxProps extends BaseProps {
+export interface VBoxProps extends BaseProps {
 
     /**
      * Horizontal justification to use when aligning elements inside

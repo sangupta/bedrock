@@ -15,7 +15,7 @@ import DataTable from '../data/DataTable';
 import { Asset } from './Asset';
 import AssetIcon from './AssetIcon';
 
-interface AssetBrowserProps {
+export interface AssetBrowserProps {
     assets?: Array<Asset>
     onAssetClick?: (asset: Asset) => void;
     onAssetOpen?: (asset: Asset) => void;

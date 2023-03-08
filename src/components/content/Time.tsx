@@ -9,9 +9,9 @@
  * that can be found in LICENSE file in the code repository.
  */
 
-import React from 'react'
+import React from 'react';
 
-interface TimeProps {
+export interface TimeProps {
     time: Date | number;
     timeZone?: string;
     name?: string;

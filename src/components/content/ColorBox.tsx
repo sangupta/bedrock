@@ -16,7 +16,7 @@ import { buildCss } from '../../Utils';
 /**
  * Props for the component.
  */
-interface ColorBoxProps extends BaseProps {
+export interface ColorBoxProps extends BaseProps {
     color: string;
 
     label?: string;

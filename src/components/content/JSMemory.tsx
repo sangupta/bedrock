@@ -14,7 +14,7 @@ import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 import ByteSize from './ByteSize';
 
-interface JSMemoryProps extends BaseProps {
+export interface JSMemoryProps extends BaseProps {
 
     /**
      * Interval in milliseconds at which the value is automatically

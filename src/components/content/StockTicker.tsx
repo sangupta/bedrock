@@ -13,7 +13,7 @@ import React from 'react';
 import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 
-interface StockTickerProps extends BaseProps {
+export interface StockTickerProps extends BaseProps {
     symbol: string;
     currency: string;
     currentPrice: number;

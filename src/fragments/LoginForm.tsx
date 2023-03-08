@@ -12,7 +12,7 @@ export interface LoginInfo {
     keepMeSignedIn: string;
 }
 
-interface LoginFormProps {
+export interface LoginFormProps {
     formName?: string;
     username?: string;
     password?: string;

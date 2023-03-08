@@ -16,7 +16,7 @@ import { buildCss } from '../../Utils';
 /**
  * Props for the component.
  */
-interface VideoProps extends BaseProps {
+export interface VideoProps extends BaseProps {
     autoPlay?: boolean;
     autoPip?: boolean;
     controls?: boolean;

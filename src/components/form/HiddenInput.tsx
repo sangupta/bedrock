@@ -14,7 +14,7 @@
  import BaseInput from './BaseInput';
  import { FormFieldPayload } from './FormTypes';
  
- interface HiddenInputProps extends BaseProps {
+ export interface HiddenInputProps extends BaseProps {
  
      /**
       * The initial value of the component 

@@ -14,7 +14,7 @@ import React from 'react';
 /**
  * Props for the component
  */
-interface TypewriterProps {
+export interface TypewriterProps {
     /**
      * The message to work on
      */

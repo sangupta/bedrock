@@ -14,14 +14,14 @@ import { BaseProps } from '../../types';
 
 export type AdobePdfEmbedMode = 'fullWindow' | 'sizedContainer' | 'inline' | 'lightbox';
 
-const EMBED_MODES = {
+export const EMBED_MODES = {
     fullWindow: 'FULL_WINDOW',
     sizedContainer: 'SIZED_CONTAINER',
     inline: 'IN_LINE',
     lightbox: 'LIGHT_BOX'
 };
 
-interface AdobePdfFileViewerProps extends BaseProps {
+export interface AdobePdfFileViewerProps extends BaseProps {
     divID: string;
     clientID: string;
     pdfUrl: string;

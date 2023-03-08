@@ -16,9 +16,9 @@ import ImageFileViewer from './ImageFileViewer';
 import MarkdownFileViewer from './MarkdownFileViewer';
 import MonacoFileViewer from './MonacoFileViewer';
 
-const MONACO_EXTENSIONS = ['.json', '.tsx', '.ts', '.jsx', '.js', '.yml'];
+export const MONACO_EXTENSIONS = ['.json', '.tsx', '.ts', '.jsx', '.js', '.yml'];
 
-interface AssetViewerProps {
+export interface AssetViewerProps {
     asset: Asset;
     useHexViwerAsDefault?: boolean;
     getUrl: (asset: Asset) => Promise<string>;

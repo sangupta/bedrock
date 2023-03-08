@@ -16,7 +16,7 @@ import { buildCss } from '../../Utils';
 /**
  * Props for the component.
  */
-interface ButtonGroupProps extends BaseProps {
+export interface ButtonGroupProps extends BaseProps {
 
     ariaLabel?: string;
 

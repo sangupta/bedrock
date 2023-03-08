@@ -20,7 +20,7 @@ export interface SelectOptionData {
     label: string;
 }
 
-interface SelectProps extends BaseProps {
+export interface SelectProps extends BaseProps {
     /**
      * The form to bind to, unless its the nearest ancestoral form
      */

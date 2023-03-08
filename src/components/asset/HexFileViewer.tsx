@@ -15,7 +15,7 @@ import { asChar } from '../../Utils';
 /**
  * Props for HexViewer component.
  */
-interface HexFileViewerProps {
+export interface HexFileViewerProps {
     bytes: Uint8Array;
 }
 

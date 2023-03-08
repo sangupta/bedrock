@@ -13,7 +13,7 @@ import * as React from 'react';
 import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 
-interface UnderlayProps extends BaseProps {
+export interface UnderlayProps extends BaseProps {
     /**
      * Whether to display the underlay or not
      */

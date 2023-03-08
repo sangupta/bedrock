@@ -18,7 +18,7 @@ export interface AccordionPaneData {
     component: React.ReactNode
 }
 
-interface AccordionProps extends BaseProps {
+export interface AccordionProps extends BaseProps {
     flushed?: boolean;
     selectedIndex?: number;
     source: Array<AccordionPaneData>

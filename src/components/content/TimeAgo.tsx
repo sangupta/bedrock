@@ -12,7 +12,7 @@
 import React from 'react';
 import { asTimeAgo } from '../../Utils';
 
-interface TimeAgoProps {
+export interface TimeAgoProps {
 
     /**
      * Time in milli-seconds from which the duration needs to be computed.

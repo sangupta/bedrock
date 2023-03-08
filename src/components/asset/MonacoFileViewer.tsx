@@ -12,7 +12,7 @@
 import React from 'react';
 import { decipherMonacoLanguage } from '../../Utils';
 
-interface MonacoFileViewerProps {
+export interface MonacoFileViewerProps {
     /**
      * The contents to display inside
      */

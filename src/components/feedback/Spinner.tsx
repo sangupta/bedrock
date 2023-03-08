@@ -12,7 +12,7 @@
 import React from 'react'
 import { Variant } from '../../types';
 
-interface SpinnerProps {
+export interface SpinnerProps {
     ariaLabel?: string;
     variant?: Variant;
 }

@@ -19,7 +19,7 @@ import { DataColumnFormat, DataColumnType, ValueType } from './Data';
 /**
  * PROP attributes for DataTable component.
  */
-interface DataTableProps {
+export interface DataTableProps {
     /**
      * The columns to be displayed in the data table.
      */

@@ -16,7 +16,7 @@ import { asByteSize } from '../../Utils';
  * Props for `ByteSize` component.
  * 
  */
-interface ByteSizeProps {
+export interface ByteSizeProps {
     bytes: number;
 }
 

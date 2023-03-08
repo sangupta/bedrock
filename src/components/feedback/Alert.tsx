@@ -16,7 +16,7 @@ import { buildCss } from '../../Utils';
 /**
  * Props for the component.
  */
-interface AlertProps extends BaseProps {
+export interface AlertProps extends BaseProps {
     /**
      * Look and feel variant of the button
      */

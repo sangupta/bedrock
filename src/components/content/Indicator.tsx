@@ -16,7 +16,7 @@ import { buildCss } from '../../Utils';
 /**
  * Props for the component.
  */
-interface IndicatorProps extends BaseProps {
+export interface IndicatorProps extends BaseProps {
 
     /**
      * Theming variant to use.

@@ -14,7 +14,7 @@
  import BaseInput from './BaseInput';
  import { FormFieldPayload, FormValueValidator } from './FormTypes';
  
- interface PasswordInputProps extends BaseProps {
+ export interface PasswordInputProps extends BaseProps {
  
      /**
       * The initial value of the component 

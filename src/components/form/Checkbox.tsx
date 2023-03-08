@@ -14,7 +14,7 @@ import { BaseProps, ComponentSize } from '../../types';
 import BaseInput from './BaseInput';
 import { FormFieldPayload, FormValueValidator } from './FormTypes';
 
-interface CheckboxProps extends BaseProps {
+export interface CheckboxProps extends BaseProps {
 
     /**
      * The initial value of the component 

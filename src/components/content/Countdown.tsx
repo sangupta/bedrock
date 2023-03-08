@@ -14,7 +14,7 @@ import React from 'react';
 /**
  * Props for the component
  */
-interface CountdownProps {
+export interface CountdownProps {
     /**
      * The starting value
      */

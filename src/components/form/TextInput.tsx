@@ -14,7 +14,7 @@ import { BaseProps, ComponentSize } from '../../types';
 import BaseInput from './BaseInput';
 import { FormFieldPayload, FormValueValidator } from './FormTypes';
 
-interface TextInputProps extends BaseProps {
+export interface TextInputProps extends BaseProps {
 
     /**
      * The initial value of the component 

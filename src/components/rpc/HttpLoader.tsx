@@ -11,7 +11,7 @@
 
 import React from 'react';
 
-interface HttpLoaderProps {
+export interface HttpLoaderProps {
     httpCallInvoker: () => Promise<any>;
 
     /**

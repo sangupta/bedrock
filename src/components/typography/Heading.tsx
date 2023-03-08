@@ -16,7 +16,7 @@ import { buildCss } from '../../Utils';
 /**
  * Props for the component.
  */
-interface HeadingProps extends BaseProps, React.HTMLProps<HTMLHeadingElement> {
+export interface HeadingProps extends BaseProps, React.HTMLProps<HTMLHeadingElement> {
     level?: 1 | 2 | 3 | 4 | 5 | 6;
 
     displayHeading?: boolean;

@@ -40,7 +40,7 @@ export const FormContext = React.createContext(contextDefault);
 /**
  * Props for the component.
  */
-interface FormProps extends BaseProps {
+export interface FormProps extends BaseProps {
     onSubmit?: (data: any, isValid: boolean) => void;
     onUpdate?: (data: any, isValid: boolean) => void;
     name?: string;

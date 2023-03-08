@@ -11,7 +11,7 @@
 
  import React from 'react';
 
- interface VideoFileViewerProps {
+ export interface VideoFileViewerProps {
      url: string;
  }
  

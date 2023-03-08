@@ -14,7 +14,7 @@
  import BaseInput from './BaseInput';
  import { FormFieldPayload } from './FormTypes';
  
- interface EmailInputProps extends BaseProps {
+ export interface EmailInputProps extends BaseProps {
  
      /**
       * The initial value of the component 

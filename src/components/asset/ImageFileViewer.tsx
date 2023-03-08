@@ -11,7 +11,7 @@
 
 import React from 'react';
 
-interface ImageFileViewerProps {
+export interface ImageFileViewerProps {
     url: string;
 }
 

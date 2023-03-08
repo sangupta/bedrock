@@ -16,7 +16,7 @@ import { buildCss } from '../../Utils';
 /**
  * Props for the component.
  */
-interface LinkProps extends BaseProps, React.HTMLProps<HTMLAnchorElement> {
+export interface LinkProps extends BaseProps, React.HTMLProps<HTMLAnchorElement> {
     variant?: Variant;
 
     href?: string;

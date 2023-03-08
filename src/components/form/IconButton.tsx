@@ -13,7 +13,7 @@ import React from 'react';
 import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 
-interface IconButtonProps extends BaseProps {
+export interface IconButtonProps extends BaseProps {
     /**
      * The icon to display.
      */

@@ -13,7 +13,7 @@ import React from 'react';
 import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 
-interface InvisibleProps extends BaseProps {
+export interface InvisibleProps extends BaseProps {
 
     /**
      * Whether the content is invisible or not.

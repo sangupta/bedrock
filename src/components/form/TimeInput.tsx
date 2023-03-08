@@ -14,7 +14,7 @@
  import BaseInput from './BaseInput';
  import { FormFieldPayload } from './FormTypes';
  
- interface TimeInputProps extends BaseProps {
+ export interface TimeInputProps extends BaseProps {
  
      /**
       * The initial value of the component 

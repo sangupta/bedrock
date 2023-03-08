@@ -12,7 +12,7 @@ export interface Address {
     phone?: string;
 }
 
-interface AddressBoxProps {
+export interface AddressBoxProps {
     /**
      * The form name to use
      */

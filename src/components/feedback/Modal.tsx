@@ -16,7 +16,7 @@ import Underlay from './../layout/Underlay';
 
 export type ModalVerticalAlignment = 'top' | 'center';
 
-interface ModalProps extends BaseProps {
+export interface ModalProps extends BaseProps {
     /**
      * Whether to show the backdrop or not
      */

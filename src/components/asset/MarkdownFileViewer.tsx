@@ -13,7 +13,7 @@ import React from 'react';
 import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 
-interface MarkdownFileViewerProps extends BaseProps {
+export interface MarkdownFileViewerProps extends BaseProps {
 
     /**
      * The markdown content represented as `string`

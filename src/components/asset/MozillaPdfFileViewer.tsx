@@ -11,7 +11,7 @@
 
 import React from 'react';
 
-interface MozillaPdfFileViewerProps {
+export interface MozillaPdfFileViewerProps {
     pdfUrl: string;
     sdkUrl?: string;
     loadDefaultSDK?: boolean;

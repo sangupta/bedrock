@@ -14,7 +14,7 @@ import { BaseProps } from '../../types';
 import { buildCss, getUniqueString, isDigit } from '../../Utils';
 import HBox from '../layout/HBox';
 
-interface TokenInputProps extends BaseProps {
+export interface TokenInputProps extends BaseProps {
     /**
      * The number of digits the token will contain
      */

@@ -16,7 +16,7 @@ import { buildCss } from '../../Utils';
 /**
  * Props for the component.
  */
-interface ParaProps extends BaseProps, React.HTMLProps<HTMLParagraphElement> {
+export interface ParaProps extends BaseProps, React.HTMLProps<HTMLParagraphElement> {
     /**
      * Theme variant to use
      */
