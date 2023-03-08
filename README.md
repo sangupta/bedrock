@@ -8,6 +8,12 @@ It uses [Bootstrap 5][bootstrap] CSS framework for styling. `bedrock` still foll
 classic way of including CSS in HTML file to decouple the design system from component
 library and also to improve load performance by leveraging browser caching.
 
+The library is built and tested against the latest versions (as of date):
+
+* React 18.2.0
+* Bootstrap 5.2.3
+* Node 18
+
 ### NOTE: Rewrite in progress. Old code is in `bedrock-old` branch.
 
 ## Usage
