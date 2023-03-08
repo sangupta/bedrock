@@ -25,6 +25,7 @@ export { default as VideoFileViewer } from "./components/asset/VideoFileViewer";
 // content imports
 export { default as Accordion } from "./components/content/Accordion";
 export { default as ByteSize } from "./components/content/ByteSize";
+export { default as Callout } from "./components/content/Callout";
 export { default as ColorBox } from "./components/content/ColorBox";
 export { default as Countdown } from "./components/content/Countdown";
 export { default as DateTime } from "./components/content/DateTime";
