@@ -8,12 +8,17 @@ export interface FigureProps extends BaseProps {
     imgSrc: string;
     alt?: string;
     captionClass?: string;
+    role?: string;
 }
 
 export default class Figure extends React.Component<FigureProps> {
 
+    static defaultProps = {
+        role: 'img'
+    }
+
     render() {
-        const { children, className, responsive, rounded, imgSrc, alt, captionClass } = this.props;
+        const { children, className, responsive, rounded, imgSrc, alt, captionClass, role } = this.props;
 
         const css: string = buildCss('figure', className);
         const imgCss: string = buildCss('figure-img', {
@@ -23,9 +28,9 @@ export default class Figure extends React.Component<FigureProps> {
         const captionCss: string = buildCss('figure-caption', captionClass)
 
         return <figure className={css}>
-            <img src={imgSrc} className={imgCss} alt={alt} />
+            <img src={imgSrc} className={imgCss} alt={alt} role={role} />
             <figcaption className={captionCss}>{children}</figcaption>
         </figure>
     }
-    
+
 }
