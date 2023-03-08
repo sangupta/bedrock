@@ -33,6 +33,8 @@ interface AlertProps extends BaseProps {
      */
     allowClose?: boolean;
 
+    onClose?: () => void;
+
     /**
      * Used to control show/hide state outside of component.
      * Recommended to be paired with `allowClose` prop.
