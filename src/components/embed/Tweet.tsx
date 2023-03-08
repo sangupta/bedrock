@@ -73,7 +73,7 @@ export default class Tweet extends React.Component<TweetProps> {
     }
 
     render() {
-        return <div ref={this.tweetRef} />
+        return <div className='embedded-tweet' ref={this.tweetRef} />
     }
 
 }
