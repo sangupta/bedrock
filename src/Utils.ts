@@ -32,6 +32,7 @@ const MB = KB * KB;
 const GB = KB * MB;
 const TB = KB * GB;
 const PB = KB * TB;
+const EB = KB * PB;
 
 /**
  * Constants to define standard (and approximate) time intervals.
@@ -444,7 +445,11 @@ export function asByteSize(num: number): string {
         return roundedDecimal(num / TB) + ' TB';
     }
 
-    return roundedDecimal(num / PB) + ' PB'
+    if (num < EB) {
+        return roundedDecimal(num / PB) + ' PB';
+    }
+
+    return roundedDecimal(num / EB) + ' EB'
 }
 
 export function roundedDecimal(num: number) {
