@@ -13,12 +13,14 @@ import React from 'react';
 import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 
+export type BlockQuoteProps = BaseProps & React.HTMLProps<HTMLQuoteElement>;
+
 /**
  * The `blockquote` component.
  * 
  * @author sangupta
  */
-export default class BlockQuote extends React.PureComponent<BaseProps> {
+export default class BlockQuote extends React.PureComponent<BlockQuoteProps> {
 
     render(): React.ReactNode {
         const { className, children, ...extraProps } = this.props;
