@@ -22,6 +22,11 @@ export interface HeadingProps extends BaseProps, React.HTMLProps<HTMLHeadingElem
     displayHeading?: boolean;
 
     asParagraph?: boolean;
+
+    /**
+     * The ARIA role for this heading.
+     */
+    role?: string;
 }
 
 /**
@@ -38,19 +43,20 @@ export default class Heading extends React.PureComponent<HeadingProps> {
     static defaultProps: HeadingProps = {
         level: 1,
         displayHeading: false,
-        asParagraph: false
+        asParagraph: false,
+        role: 'heading'
     }
 
     render(): React.ReactNode {
-        const { level, displayHeading, asParagraph, className, children, ...extraProps } = this.props;
+        const { level, role, displayHeading, asParagraph, className, children, ...extraProps } = this.props;
         const css: string = buildCss(className, displayHeading ? 'display-' + level : '');
 
         if (!asParagraph) {
             const Element: any = 'h' + level;
-            return <Element className={css}>{children}</Element>
+            return <Element role={role} className={css} aria-level={level}>{children}</Element>
         }
 
-        return <p {...extraProps} className={buildCss({ h: level }, css)}>{children}</p>
+        return <p {...extraProps} role={role} className={buildCss({ h: level }, css)}>{children}</p>
     }
 
 }
