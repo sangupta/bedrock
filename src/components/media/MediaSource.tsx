@@ -10,18 +10,19 @@
  */
 
 import React from 'react';
+import { BaseProps } from '../../types';
 import { buildProps } from '../../Utils';
 
 /**
  * Props for the component
  */
-interface MediaSourceProps {
+interface MediaSourceProps extends BaseProps, React.HTMLProps<HTMLSourceElement> {
 
     /**
      * The MIME type for the source as described in https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types
      * optionally with a codec parameter.
      */
-    mimeType: string;
+    type: string;
 
     src?: string;
 
@@ -37,7 +38,7 @@ interface MediaSourceProps {
 export default class MediaSource extends React.PureComponent<MediaSourceProps> {
 
     render(): React.ReactNode {
-        const { mimeType, src, srcSet, mediaQuery, width, height } = this.props;
+        const { type, src, srcSet, mediaQuery, width, height, className } = this.props;
         const extraProps = buildProps({
             width: width,
             height: height,
@@ -46,7 +47,7 @@ export default class MediaSource extends React.PureComponent<MediaSourceProps> {
             media: srcSet && mediaQuery ? mediaQuery : ''
         });
 
-        return <source type={mimeType} {...extraProps} />
+        return <source type={type} {...extraProps} className={className} />
     }
 
 }
