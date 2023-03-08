@@ -1,8 +1,20 @@
+/**
+ * bedrock - UI Component Library
+ * https://github.com/sangupta/bedrock
+ *
+ * MIT License.
+ * Copyright (c) 2022, Sandeep Gupta.
+ *
+ * Use of this source code is governed by a MIT style license
+ * that can be found in LICENSE file in the code repository.
+ */
+
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Heading } from '../../../src';
 
 describe('Heading component', () => {
+
     it('renders a level 1 heading with correct text', () => {
         const text = 'Heading Level 1';
         const { getByRole } = render(<Heading level={1}>{text}</Heading>);
@@ -60,4 +72,5 @@ describe('Heading component', () => {
         expect(heading).toHaveTextContent(text);
         expect(heading).toHaveClass(className);
     });
+
 });
