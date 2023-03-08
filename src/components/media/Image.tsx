@@ -16,7 +16,8 @@ import { buildCss } from '../../Utils';
 /**
  * Props for the component.
  */
-interface ImageProps extends BaseProps {
+interface ImageProps extends BaseProps, React.HTMLProps<HTMLImageElement> {
+    
     src: string;
 
     responsive?: boolean;
