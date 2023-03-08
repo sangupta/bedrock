@@ -26,9 +26,9 @@ export default class LoadingDots extends React.Component<BaseProps> {
         const css: string = buildCss('loading-dots', this.props.className);
 
         return <div {...extraProps} className={css}>
-            <div className="bounce1"></div>
-            <div className="bounce2"></div>
-            <div className="bounce3"></div>
+            <div className="loading-dot bounce1"></div>
+            <div className="loading-dot bounce2"></div>
+            <div className="loading-dot bounce3"></div>
         </div>;
     }
 
