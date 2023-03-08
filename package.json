@@ -46,7 +46,7 @@
     "build": "parcel build --target main --target css --target types",
     "serve": "parcel serve --target main --target css --port 1309",
     "watch": "parcel watch --target main --target css --no-hmr",
-    "test": "jest --config=jest.config.js"
+    "test": "jest --config=jest.config.js --maxWorkers=1"
   },
   "author": {
     "name": "Sandeep Gupta",
