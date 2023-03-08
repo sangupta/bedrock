@@ -8,7 +8,7 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,   // Ensure that casing is correct in imports
         "incremental": false,                       // Enable incremental compilation
-        "jsx": "react-jsx",                          // Specify what JSX code is generated
+        "jsx": "react",                          // Specify what JSX code is generated
         // "jsxFactory": "React.createElement",        // Specify the JSX factory function used when targeting React JSX emit, e.g. 'React.createElement' or 'h'
         "module": "ESNext",                         // Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'.
         "moduleResolution": "Node",                 // Specify how TypeScript looks up a file from a given module specifier
