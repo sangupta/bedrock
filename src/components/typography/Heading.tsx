@@ -16,8 +16,8 @@ import { buildCss } from '../../Utils';
 /**
  * Props for the component.
  */
-interface HeadingProps extends BaseProps {
-    size?: 1 | 2 | 3 | 4 | 5 | 6;
+interface HeadingProps extends BaseProps, React.HTMLProps<HTMLHeadingElement> {
+    level?: 1 | 2 | 3 | 4 | 5 | 6;
 
     displayHeading?: boolean;
 
@@ -36,21 +36,21 @@ export default class Heading extends React.PureComponent<HeadingProps> {
      * the default properties
      */
     static defaultProps: HeadingProps = {
-        size: 1,
+        level: 1,
         displayHeading: false,
         asParagraph: false
     }
 
     render(): React.ReactNode {
-        const { size, displayHeading, asParagraph, className, children, ...extraProps } = this.props;
-        const css: string = buildCss(className, displayHeading ? 'display-' + size : '');
+        const { level, displayHeading, asParagraph, className, children, ...extraProps } = this.props;
+        const css: string = buildCss(className, displayHeading ? 'display-' + level : '');
 
         if (!asParagraph) {
-            const Element: any = 'h' + size;
+            const Element: any = 'h' + level;
             return <Element className={css}>{children}</Element>
         }
 
-        return <p {...extraProps} className={buildCss({ h: size }, css)}>{children}</p>
+        return <p {...extraProps} className={buildCss({ h: level }, css)}>{children}</p>
     }
 
 }
