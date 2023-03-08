@@ -16,7 +16,7 @@ import { buildCss } from '../../Utils';
 /**
  * Props for the component.
  */
-export interface VideoProps extends BaseProps {
+export interface VideoProps extends BaseProps, React.HTMLProps<HTMLVideoElement> {
     autoPlay?: boolean;
     autoPip?: boolean;
     controls?: boolean;
@@ -62,14 +62,17 @@ export default class Video extends React.PureComponent<VideoProps> {
     render(): React.ReactNode {
         const {
             isResponsive,
-
-            className, children, ...extraProps
+            className,
+            children,
+            autoPip,
+            src,
+            ...extraProps
         } = this.props;
 
         const css = buildCss({
             'embed-responsive-item': isResponsive
         })
 
-        return <video className={css} {...extraProps}>{children}</video>
+        return <video className={css} src={src}>{children}</video>
     }
 }
