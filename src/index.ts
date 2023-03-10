@@ -84,6 +84,7 @@ export { default as Underlay } from "./components/layout/Underlay";
 export { default as VBox } from "./components/layout/VBox";
 
 // media imports
+export { default as Carousel } from "./components/media/Carousel";
 export { default as Figure } from "./components/media/Figure";
 export { default as Gravatar } from "./components/media/Gravatar";
 export { default as Image } from "./components/media/Image";
