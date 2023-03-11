@@ -25,3 +25,12 @@ export function getFirstByTagName(container: HTMLElement, tagName: string): Elem
 
     return undefined;
 }
+
+export function getFirstByClassName(container: HTMLElement, className: string): Element {
+    const elements = container.getElementsByClassName(className);
+    if (elements && elements.length > 0) {
+        return elements[0];
+    }
+
+    return undefined;
+}
