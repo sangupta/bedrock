@@ -19,7 +19,7 @@ import { buildCss } from '../../Utils';
 export interface IndicatorProps extends BaseProps {
 
     /**
-     * Theming variant to use.
+     * The built-in color variant to use.
      */
     variant: Variant;
 
@@ -29,6 +29,11 @@ export interface IndicatorProps extends BaseProps {
      */
     label?: string;
 
+    /**
+     * The actual CSS color value/name that is used via `style` attribute.
+     * This value will supersede any `variant` value that may be specified.
+     */
+    color?: string;
 }
 
 /**
@@ -47,15 +52,19 @@ export default class Indicator extends React.PureComponent<IndicatorProps> {
      */
     static defaultProps = {
         variant: 'primary',
-        label: ''
+        label: '',
+        color: ''
     }
 
     render(): React.ReactNode {
-        const { variant, label, children, className, ...extraProps } = this.props;
+        const { variant, label, children, color, className, ...extraProps } = this.props;
+
         const css = buildCss('indicator', className);
+        const dotCss = buildCss('indicator-dot', !color ? 'bg-' + variant : '');
+        const dotStyle = color ? { backgroundColor: color } : {};
 
         return <div className={css} {...extraProps}>
-            <span className={'indicator-dot bg-' + variant} />
+            <span className={dotCss} style={dotStyle} />
             {!!label ? label : children}
         </div>
     }
