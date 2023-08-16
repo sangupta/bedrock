@@ -7,8 +7,9 @@ target/
 **/target/
 **/.settings/
 
-# Windows noise
+# OS noise
 desktop.ini
+.DS_Store
 
 # CSS bundler noise
 .sass-cache
