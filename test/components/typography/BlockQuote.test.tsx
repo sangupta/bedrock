@@ -19,6 +19,7 @@ describe('BlockQuote component', () => {
         const text = 'This is a quote.';
         const { getByText } = render(<BlockQuote>{text}</BlockQuote>);
         const blockQuoteElement = getByText(text);
+        expect(blockQuoteElement).toHaveClass('blockquote');
         expect(blockQuoteElement.tagName).toBe('BLOCKQUOTE');
     });
 
@@ -30,6 +31,7 @@ describe('BlockQuote component', () => {
         );
         const blockQuoteElement = getByText(text);
         expect(blockQuoteElement.tagName).toBe('BLOCKQUOTE');
+        expect(blockQuoteElement).toHaveClass('blockquote');
         expect(blockQuoteElement).toHaveClass(className);
     });
     
