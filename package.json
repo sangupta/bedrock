@@ -25,7 +25,7 @@
     }
   },
   "repository": {
-    "url": "https://github.com/sangupta/bedrock",
+    "url": "git+https://github.com/sangupta/bedrock.git",
     "type": "git"
   },
   "bugs": {
