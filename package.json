@@ -36,7 +36,10 @@
   },
   "files": [
     "tsconfig.json",
-    "dist/**"
+    "package.json",
+    "README.md",
+    "dist/**",
+    "src/**"
   ],
   "scripts": {
     "clean": "npx rimraf dist",
