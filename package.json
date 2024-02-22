@@ -1,6 +1,6 @@
 {
   "name": "@sangupta/bedrock",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Bedrock: UI Component Library",
   "homepage": "https://bedrock.sangupta.com",
   "source": "src/index.ts",
