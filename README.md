@@ -6,15 +6,23 @@
 Bedrock is a [ReactJS][reactjs] UI component library built using [Typescript][typescript].
 It uses [Bootstrap 5][bootstrap] CSS framework for styling. `bedrock` still follows the
 classic way of including CSS in HTML file to decouple the design system from component
-library and also to improve load performance by leveraging browser caching.
+library and also to improve load performance by leveraging browser caching. The library
+is published as browser-compatible ESM version. Thus, you can directly leverage the
+component library in your `importmap` and point it to the latest version.
 
-The library is built and tested against the latest versions (as of date):
+## Technical notes
 
-* React 18.2.0
-* Bootstrap 5.2.3
-* Node 18
+* The `bedrock.css` file includes all definitions from the corresponding `bootstrap.css` file
+and thus including `bedrock.css` should be sufficient in your project.
 
-### NOTE: Rewrite in progress. Old code is in `bedrock-old` branch.
+* The library is built and tested against the latest versions (as of date):
+  * React 18.2.0 (runtime dependency)
+  * Bootstrap 5.2.3 (dev dependency)
+  * Node 20 (dev dependency)
+
+* CSS file needs to be currently manually included in your `index.html` file. In future,
+once **CSS import assertions** `import styles from './bedrock.css' assert { type: 'css }`
+become available, this requirement will be removed.
 
 ## Usage
 
@@ -29,11 +37,15 @@ $ npm install --save @sangupta/bedrock
 $ yarn add @sangupta/bedrock
 ```
 
-3. Use the components in your application:
+3. Include the `bedrock.css` file in your `index.html` file as:
+```sh
+<link href="node_modules/@sangupta/bedrock/dist/bedrock.css" rel="stylesheet">
+```
+
+4. Use the components in your application:
 
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Button } from '@sangupta/bedrock';
 
 const HelloWorld = () => {
@@ -41,7 +53,15 @@ const HelloWorld = () => {
 }
 
 // for React 16/17
+import ReactDOM from 'react-dom';
 ReactDOM.render(<HelloWorld />, document.getElementById('root'));
+
+// for React 18
+import { createRoot } from 'react-dom/client';
+
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(<HelloWorld />);
 ```
 
 ## License
