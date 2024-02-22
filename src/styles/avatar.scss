@@ -1,0 +1,38 @@
+/**
+ * bedrock - UI Component Library
+ * https://github.com/sangupta/bedrock
+ *
+ * MIT License.
+ * Copyright (c) 2022, Sandeep Gupta.
+ *
+ * Use of this source code is governed by a MIT style license
+ * that can be found in LICENSE file in the code repository.
+ */
+
+.avatar {
+    // styles for avatar
+
+    .avatar-square {
+        border-radius: 4px;
+    }
+
+    .avatar-round {
+        border-radius: 50%;
+    }
+
+    // sizes for avatar
+    .avatar-small {
+        width: 28px;
+        height: 28px;            
+    }
+
+    .avatar-medium {
+        width: 40px;
+        height: 40px;            
+    }
+
+    .avatar-large {
+        width: 56px;
+        height: 56px;            
+    }
+}
