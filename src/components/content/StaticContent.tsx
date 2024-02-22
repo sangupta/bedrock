@@ -21,7 +21,7 @@ export type StaticContentProps = BaseProps & React.HTMLProps<HTMLDivElement>;
  * 
  * @author sangupta
  */
-export default class StaticContent extends React.PureComponent<StaticContentProps> {
+export default class StaticContent extends React.Component<StaticContentProps> {
 
     /**
      * As this component should never ever re-render, this returns
