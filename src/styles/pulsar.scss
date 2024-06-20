@@ -1,0 +1,50 @@
+/**
+ * bedrock - UI Component Library
+ * https://github.com/sangupta/bedrock
+ *
+ * MIT License.
+ * Copyright (c) 2022, Sandeep Gupta.
+ *
+ * Use of this source code is governed by a MIT style license
+ * that can be found in LICENSE file in the code repository.
+ */
+
+@import "~bootstrap/scss/functions";
+
+$pulsar-width: 1rem;
+$pulsar-height: 1rem;
+$pulsar-vertical-align: -0.125em !default;
+$pulsar-border-width: 0.25em !default;
+$pulsar-animation-speed: 0.75s !default;
+
+@if $enable-reduced-motion {
+    @media (prefers-reduced-motion: reduce) {
+        .pulsar-border,
+        .pulsar-grow {
+            $pulsar-animation-speed: #{$spinner-animation-speed * 2};
+        }
+    }
+}
+
+.pulsar {
+    display: inline-block;
+    width: $pulsar-width;
+    height: $pulsar-height;
+
+    vertical-align: $pulsar-vertical-align;
+    border-radius: 50%;
+    animation: $pulsar-animation-speed linear infinite pulsar-grow;
+
+    background-color: currentcolor;
+    opacity: 0;
+}
+
+@keyframes pulsar-grow {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: none;
+    }
+}
