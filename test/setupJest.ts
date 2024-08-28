@@ -9,4 +9,4 @@
  * that can be found in LICENSE file in the code repository.
  */
 
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
