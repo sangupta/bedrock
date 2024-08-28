@@ -4,10 +4,17 @@
   "description": "Bedrock: UI Component Library",
   "homepage": "https://bedrock.sangupta.com",
   "source": "src/index.ts",
-  "main": "dist/bedrock.mjs",
+  "src": "src/index.ts"
+  "main": "dist/bedrock.cjs",
   "module": "dist/bedrock.mjs",
   "types": "dist/index.d.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/bedrock.mjs",
+      "require": "./dist/bedrock.cjs"
+    }
+  },
   "targets": {
     "main": {
       "source": "src/index.ts",
