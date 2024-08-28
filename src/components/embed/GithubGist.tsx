@@ -10,13 +10,14 @@
  */
 
 import React from 'react';
+import { getUniqueString } from '../../Utils';
 
 export interface GithubGistProps {
 
     /**
      * The gist ID that you want to load.
      */
-    id: string;
+    gistID: string;
 
     /**
      * Used to load a specific file from the gist.
@@ -48,15 +49,15 @@ export default class GithubGist extends React.Component<GithubGistProps> {
             return
         }
 
-        const elementID = 'ele-' + crypto.randomUUID();
+        const elementID = getUniqueString('ele-');
         iframe.setAttribute('id', elementID);
 
-        const { baseUrl, id, file } = this.props;
-        if (!id) {
+        const { baseUrl, gistID, file } = this.props;
+        if (!gistID) {
             return;
         }
 
-        const gistUrl = baseUrl + id + '.js' + (file ? '?file=' + file : '');
+        const gistUrl = baseUrl + gistID + '.js' + (file ? '?file=' + file : '');
         const iframeDoc = iframe.contentDocument;
         const html = `
             <html>
@@ -74,7 +75,13 @@ export default class GithubGist extends React.Component<GithubGistProps> {
     }
 
     render() {
-        return <iframe ref={this.gistRef} className='gist-iframe' data-testid='hello' />
+        const { gistID } = this.props;
+
+        return <iframe
+            ref={this.gistRef}
+            className='gist-iframe'
+            data-testid='github-gist'
+            data-gistid={gistID} />
     }
 
 }
