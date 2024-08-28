@@ -4,7 +4,7 @@
   "description": "Bedrock: UI Component Library",
   "homepage": "https://bedrock.sangupta.com",
   "source": "src/index.ts",
-  "src": "src/index.ts"
+  "src": "src/index.ts",
   "main": "dist/bedrock.cjs",
   "module": "dist/bedrock.mjs",
   "types": "dist/index.d.ts",
