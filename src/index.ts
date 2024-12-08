@@ -50,6 +50,7 @@ export { default as Alert } from "./components/feedback/Alert";
 export { default as LoadingDots } from "./components/feedback/LoadingDots";
 export { default as Modal } from "./components/feedback/Modal";
 export { default as ProgressBar } from "./components/feedback/ProgressBar";
+export { default as ProgressRing } from "./components/feedback/ProgressRing";
 export { default as Spinner } from "./components/feedback/Spinner";
 
 // form imports
