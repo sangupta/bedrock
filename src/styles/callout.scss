@@ -1,0 +1,38 @@
+/**
+ * bedrock - UI Component Library
+ * https://github.com/sangupta/bedrock
+ *
+ * MIT License.
+ * Copyright (c) 2022, Sandeep Gupta.
+ *
+ * Use of this source code is governed by a MIT style license
+ * that can be found in LICENSE file in the code repository.
+ */
+
+@import "~bootstrap/scss/functions";
+
+.callout {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+$callout-bg-scale: -80%;
+$callout-border-scale: -30%;
+$callout-color-scale: 40%;
+
+@each $state, $value in $theme-colors {
+    $callout-background: shift-color($value, $callout-bg-scale);
+    $callout-border: shift-color($value, $callout-border-scale);
+    $callout-color: shift-color($value, $callout-color-scale);
+
+    @if (contrast-ratio($callout-background, $callout-color) < $min-contrast-ratio) {
+        $callout-color: mix($value, color-contrast($callout-background), abs($callout-color-scale));
+    }
+    .callout-#{$state} {
+        background-color: $callout-background;
+        border-left: 4px solid $callout-border;
+        color: $callout-color;
+    }
+}
