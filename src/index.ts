@@ -104,6 +104,7 @@ export { default as Para } from "./components/typography/Para";
 
 // fragments
 export { default as AddressBox } from "./fragments/AddressBox";
+export { default as Legend } from "./fragments/Legend";
 export { default as LoginForm } from "./fragments/LoginForm";
 
 // utilities
