@@ -10,7 +10,7 @@
  */
 
 import React from 'react';
-import { asByteSize } from '../../Utils';
+import { asByteSize, buildCss } from '../../Utils';
 
 /**
  * Props for `ByteSize` component.
@@ -18,6 +18,7 @@ import { asByteSize } from '../../Utils';
  */
 export interface ByteSizeProps {
     bytes: number;
+    className?: string;
 }
 
 /**
@@ -28,13 +29,14 @@ export interface ByteSizeProps {
 export default class ByteSize extends React.Component<ByteSizeProps> {
 
     render(): React.ReactNode {
-        const { bytes } = this.props;
+        const { bytes, className = '' } = this.props;
         if (bytes === undefined || bytes === null || bytes < 0) {
             return "";
         }
 
         const formatted = asByteSize(bytes);
-        return <span className='format-byte-size' title={'' + this.props.bytes}>{formatted}</span>
+        const css = buildCss('format-byte-size', className)
+        return <span className={css} title={'' + this.props.bytes}>{formatted}</span>
     }
 
 }
