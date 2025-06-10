@@ -10,20 +10,20 @@
  */
 
 // Step 1. Include any default variable overrides here
-@import "./styles/bedrock-vars.scss";
+@use "./styles/bedrock-vars.scss";
 
 // Step 2. Include remainder of required Bootstrap stylesheets
-@import "~bootstrap/scss/bootstrap";
+@use "~bootstrap/scss/bootstrap";
 
 // Step 3. Add additional custom code here
-@import "./styles/colorbox";
-@import "./styles/indicator";
-@import "./styles/tokeninput";
-@import "./styles/modal";
-@import "./styles/datatable";
-@import "./styles/loadingdots";
-@import "./styles/stockticker";
-@import "./styles/hex-viewer";
+@use "./styles/colorbox";
+@use "./styles/indicator";
+@use "./styles/tokeninput";
+@use "./styles/modal";
+@use "./styles/datatable";
+@use "./styles/loadingdots";
+@use "./styles/stockticker";
+@use "./styles/hex-viewer";
 
 /**
  * General CSS rules
