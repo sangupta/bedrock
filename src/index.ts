@@ -30,7 +30,6 @@ export { default as Countdown } from "./components/content/Countdown";
 export { default as DateTime } from "./components/content/DateTime";
 export { default as Indicator } from "./components/content/Indicator";
 export { default as Invisible } from "./components/content/Invisible";
-export { default as JSMemory } from "./components/content/JSMemory";
 export { default as StaticContent } from "./components/content/StaticContent";
 export { default as StockTicker } from "./components/content/StockTicker";
 export { default as Time } from "./components/content/Time";
