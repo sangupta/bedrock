@@ -4,7 +4,6 @@
         "allowUnreachableCode": false,              // Disable error reporting for unreachable code
         "checkJs": false,                           // Enable error reporting in type-checked JavaScript files
         "declaration": true,                        // Generate .d.ts files from TypeScript and JavaScript files in your project
-        "declarationDir": "./dist",                 // Specify the output directory for generated declaration files
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,   // Ensure that casing is correct in imports
         "incremental": false,                       // Enable incremental compilation

@@ -37,9 +37,26 @@ $ npm install --save @sangupta/bedrock
 $ yarn add @sangupta/bedrock
 ```
 
-3. Include the `bedrock.css` file in your `index.html` file as:
-```sh
+3. Include the `bedrock.css` file in your project. You have several options:
+
+**Option A: Include in your `index.html` file:**
+```html
 <link href="node_modules/@sangupta/bedrock/dist/bedrock.css" rel="stylesheet">
+```
+
+**Option B: Import in your main CSS/SCSS file:**
+```css
+@import '@sangupta/bedrock/css';
+```
+
+**Option C: Import in your JavaScript entry point (if your bundler supports CSS imports):**
+```js
+import '@sangupta/bedrock/css';
+```
+
+**Option D: Direct path import:**
+```js
+import '@sangupta/bedrock/dist/bedrock.css';
 ```
 
 4. Use the components in your application:

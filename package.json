@@ -6,12 +6,18 @@
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "main": "dist/bedrock.mjs",
+  "module": "dist/bedrock.mjs",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/bedrock.mjs",
-      "require": "./dist/bedrock.cjs"
-    }
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/bedrock.mjs"
+      },
+      "types": "./dist/index.d.ts"
+    },
+    "./css": "./dist/bedrock.css",
+    "./dist/bedrock.css": "./dist/bedrock.css"
   },
   "targets": {
     "main": {
@@ -38,15 +44,21 @@
   "bugs": {
     "url": "https://github.com/sangupta/bedrock/issues"
   },
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "typescript",
+    "esm",
+    "bootstrap"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "files": [
-    "tsconfig.json",
-    "package.json",
+    "dist/",
     "README.md",
-    "dist/**",
-    "src/**"
+    "LICENSE"
   ],
   "scripts": {
     "clean": "npx rimraf dist",
@@ -54,7 +66,9 @@
     "build": "parcel build --target main --target css --target types --no-cache",
     "serve": "parcel serve --target main --target css --port 1309",
     "watch": "parcel watch --target main --target css --no-hmr",
-    "test": "jest --config=jest.config.js --maxWorkers=1"
+    "test": "jest --config=jest.config.js --maxWorkers=1",
+    "prepublishOnly": "npm run clean && npm run build && npm run test",
+    "validate": "npm run build && npm run test"
   },
   "author": {
     "name": "Sandeep Gupta",
@@ -67,7 +81,7 @@
     "react-dom": "^18.3.1"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.6"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
