@@ -20,7 +20,10 @@ export default {
   collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: undefined,
+  collectCoverageFrom: [
+    "src/**/*.{ts,tsx}",
+    "!src/**/*.d.ts"
+  ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: "./coverage",
@@ -121,7 +124,7 @@ export default {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
-  rootDir: "./test",
+  rootDir: "./",
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
@@ -136,7 +139,7 @@ export default {
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   setupFilesAfterEnv: [
-    '<rootDir>/setupJest.ts'
+    '<rootDir>/test/setupJest.ts'
   ],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
@@ -155,10 +158,10 @@ export default {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.[jt]s?(x)",
-  //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  // ],
+  testMatch: [
+    "<rootDir>/test/**/*.(test|spec).{ts,tsx}",
+    "<rootDir>/test/**/*Test.{ts,tsx}"
+  ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
