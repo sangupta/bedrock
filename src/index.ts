@@ -10,17 +10,8 @@
  */
 
 // asset imports
-export { default as AdobePdfFileViewer } from './components/asset/AdobePdfFileViewer';
 export { default as AssetBrowser } from "./components/asset/AssetBrowser";
 export { default as AssetIcon } from "./components/asset/AssetIcon";
-export { default as AssetViewer } from "./components/asset/AssetViewer";
-export { default as HexFileViewer } from "./components/asset/HexFileViewer";
-export { default as ImageFileViewer } from "./components/asset/ImageFileViewer";
-export { default as LogFileViewer } from "./components/asset/LogFileViewer";
-export { default as MarkdownFileViewer } from "./components/asset/MarkdownFileViewer";
-export { default as MonacoFileViewer } from "./components/asset/MonacoFileViewer";
-export { default as MozillaPdfFileViewer } from "./components/asset/MozillaPdfFileViewer";
-export { default as VideoFileViewer } from "./components/asset/VideoFileViewer";
 
 // content imports
 export { default as Accordion } from "./components/content/Accordion";
