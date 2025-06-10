@@ -62,7 +62,7 @@
   ],
   "scripts": {
     "clean": "npx rimraf dist",
-    "play": "parcel serve play/playground.html --port 1309",
+    "docs": "parcel serve docs/index.html --port 1309",
     "build": "parcel build --target main --target css --target types --no-cache",
     "serve": "parcel serve --target main --target css --port 1309",
     "watch": "parcel watch --target main --target css --no-hmr",
