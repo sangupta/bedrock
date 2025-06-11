@@ -1,12 +1,16 @@
 import AccordionDocs from "./components/content/AccordionDocs";
 import AlertDocs from "./components/feedback/AlertDocs";
+import BlockQuoteDocs from "./components/typography/BlockQuoteDocs";
 import ByteSizeDocs from "./components/content/ByteSizeDocs";
+import CodeDocs from "./components/typography/CodeDocs";
 import ColorBoxDocs from "./components/content/ColorBoxDocs";
 import CountdownDocs from "./components/content/CountdownDocs";
 import DateTimeDocs from "./components/content/DateTimeDocs";
+import HeadingDocs from "./components/typography/HeadingDocs";
 import IndicatorDocs from "./components/content/IndicatorDocs";
 import LoadingDotsDocs from "./components/feedback/LoadingDotsDocs";
 import ModalDocs from "./components/feedback/ModalDocs";
+import ParaDocs from "./components/typography/ParaDocs";
 import ProgressBarDocs from "./components/feedback/ProgressBarDocs";
 import SpinnerDocs from "./components/feedback/SpinnerDocs";
 import StockTickerDocs from "./components/content/StockTickerDocs";
@@ -35,10 +39,22 @@ const AVAILABLE_COMPONENTS: BedrockComponent[] = [
         component: AlertDocs,
     },
     {
+        name: 'BlockQuote',
+        path: '/components/blockquote',
+        description: 'The blockquote component is used for quoting blocks of content from another source.',
+        component: BlockQuoteDocs,
+    },
+    {
         name: 'ByteSize',
         path: '/components/bytesize',
         description: 'A component that displays a byte size in a readable format.',
         component: ByteSizeDocs,
+    },
+    {
+        name: 'Code',
+        path: '/components/code',
+        description: 'The code component is used for displaying inline code snippets and programming elements within text.',
+        component: CodeDocs,
     },
     {
         name: 'ColorBox',
@@ -59,6 +75,12 @@ const AVAILABLE_COMPONENTS: BedrockComponent[] = [
         component: DateTimeDocs,
     },
     {
+        name: 'Heading',
+        path: '/components/heading',
+        description: 'All HTML headings from h1 to h6 with support for display headings and paragraph styling.',
+        component: HeadingDocs,
+    },
+    {
         name: 'Indicator',
         path: '/components/indicator',
         description: 'A traffic light style indicator that can be used as a status in notification areas or with bulleted items.',
@@ -75,6 +97,12 @@ const AVAILABLE_COMPONENTS: BedrockComponent[] = [
         path: '/components/modal',
         description: 'A modal dialog component that displays content in a dialog overlay.',
         component: ModalDocs,
+    },
+    {
+        name: 'Para',
+        path: '/components/para',
+        description: 'The paragraph component provides enhanced styling and formatting options for text content.',
+        component: ParaDocs,
     },
     {
         name: 'ProgressBar',
