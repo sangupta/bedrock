@@ -10,21 +10,34 @@
  */
 
 import React from 'react';
+import { BedrockComponent } from './BedrockComponents';
 import ReactDOM from 'react-dom/client';
-import StockTicker from '../src/components/content/StockTicker';
+import DocsHeader from './DocsHeader';
+import DocsSidebar from './DocsSidebar';
+import DocsContentPane from './DocsContentPane';
+import AccordionDocs from './components/content/AccordionDocs';
 
-const playground = <>
-    <StockTicker
-        symbol='ADBE'
-        currency='USD'
-        currentPrice={412}
-        prevClosingPrice={410}
-    />
-</>
+
+
+const DocsMain = () => {
+    const [selectedComponent, setSelectedComponent] = React.useState<BedrockComponent | undefined>(undefined);
+
+    const handleSelect = (component: BedrockComponent): void => {
+        setSelectedComponent(component);
+    }
+
+    return <>
+        <DocsHeader />
+        <div className='content-wrapper'>
+            <DocsSidebar onSelect={handleSelect} />
+            <DocsContentPane component={selectedComponent} />
+        </div>
+    </>
+}
 
 // render the playground
 const container = document.getElementById('root');
 if (container) {
     const root = ReactDOM.createRoot(container);
-    root.render(playground);
+    root.render(<DocsMain />);
 }

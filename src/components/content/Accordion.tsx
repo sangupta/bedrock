@@ -9,7 +9,7 @@
  * that can be found in LICENSE file in the code repository.
  */
 
-import React, { Children } from 'react';
+import React from 'react';
 import { BaseProps } from '../../types';
 import { buildCss } from '../../Utils';
 

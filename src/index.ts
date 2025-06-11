@@ -14,7 +14,7 @@ export { default as AssetBrowser } from "./components/asset/AssetBrowser";
 export { default as AssetIcon } from "./components/asset/AssetIcon";
 
 // content imports
-export { default as Accordion } from "./components/content/Accordion";
+export { default as Accordion, AccordionItem } from "./components/content/Accordion";
 export { default as ByteSize } from "./components/content/ByteSize";
 export { default as ColorBox } from "./components/content/ColorBox";
 export { default as Countdown } from "./components/content/Countdown";
