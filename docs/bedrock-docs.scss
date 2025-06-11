@@ -28,15 +28,19 @@ header {
     flex-direction: row;
     width: 100%;
     flex-grow: 1;
+    overflow-y: hidden;
 }
 
 aside {
     width: 200px;
+    min-width: 200px;
+    max-width: 200px;
     border-right: 1px solid #e0e0e0;
     padding: 16px;
     font-size: 14px;
     font-weight: 500;
     color: #333;
+    overflow-y: auto;
 
     ul {
         padding-left: 0;
@@ -50,4 +54,5 @@ aside {
 
 main {
     padding: 16px;
+    overflow-y: auto;
 }
