@@ -6,9 +6,14 @@ import CodeDocs from "./components/typography/CodeDocs";
 import ColorBoxDocs from "./components/content/ColorBoxDocs";
 import CountdownDocs from "./components/content/CountdownDocs";
 import DateTimeDocs from "./components/content/DateTimeDocs";
+import FigureDocs from "./components/media/FigureDocs";
+import GravatarDocs from "./components/media/GravatarDocs";
 import HeadingDocs from "./components/typography/HeadingDocs";
+import ImageDocs from "./components/media/ImageDocs";
 import IndicatorDocs from "./components/content/IndicatorDocs";
+import LinkDocs from "./components/navigation/LinkDocs";
 import LoadingDotsDocs from "./components/feedback/LoadingDotsDocs";
+import MediaSourceDocs from "./components/media/MediaSourceDocs";
 import ModalDocs from "./components/feedback/ModalDocs";
 import ParaDocs from "./components/typography/ParaDocs";
 import ProgressBarDocs from "./components/feedback/ProgressBarDocs";
@@ -17,6 +22,7 @@ import StockTickerDocs from "./components/content/StockTickerDocs";
 import TimeAgoDocs from "./components/content/TimeAgoDocs";
 import TimeDocs from "./components/content/TimeDocs";
 import TypewriterDocs from "./components/content/TypewriterDocs";
+import VideoDocs from "./components/media/VideoDocs";
 
 export interface BedrockComponent {
     name: string;
@@ -75,10 +81,28 @@ const AVAILABLE_COMPONENTS: BedrockComponent[] = [
         component: DateTimeDocs,
     },
     {
+        name: 'Figure',
+        path: '/components/figure',
+        description: 'A semantic way to display images with captions, supporting responsive sizing and rounded corners.',
+        component: FigureDocs,
+    },
+    {
+        name: 'Gravatar',
+        path: '/components/gravatar',
+        description: 'Renders profile images from Gravatar.com based on email addresses with various sizes and options.',
+        component: GravatarDocs,
+    },
+    {
         name: 'Heading',
         path: '/components/heading',
         description: 'All HTML headings from h1 to h6 with support for display headings and paragraph styling.',
         component: HeadingDocs,
+    },
+    {
+        name: 'Image',
+        path: '/components/image',
+        description: 'Enhanced image component with support for responsive sizing, thumbnail styling, and rounded corners.',
+        component: ImageDocs,
     },
     {
         name: 'Indicator',
@@ -87,10 +111,22 @@ const AVAILABLE_COMPONENTS: BedrockComponent[] = [
         component: IndicatorDocs,
     },
     {
+        name: 'Link',
+        path: '/components/link',
+        description: 'The anchor or simple hyperlink component provides enhanced styling and functionality for navigation links.',
+        component: LinkDocs,
+    },
+    {
         name: 'LoadingDots',
         path: '/components/loadingdots',
         description: 'Displays animated dots that represent the loading status in a page.',
         component: LoadingDotsDocs,
+    },
+    {
+        name: 'MediaSource',
+        path: '/components/mediasource',
+        description: 'Provides multiple sources for media elements like images and videos with format and resolution options.',
+        component: MediaSourceDocs,
     },
     {
         name: 'Modal',
@@ -139,6 +175,12 @@ const AVAILABLE_COMPONENTS: BedrockComponent[] = [
         path: '/components/typewriter',
         description: 'A typewriter component that displays text one character at a time with configurable timing.',
         component: TypewriterDocs,
+    },
+    {
+        name: 'Video',
+        path: '/components/video',
+        description: 'Enhanced HTML video element with additional props for playback control, responsiveness, and modern features.',
+        component: VideoDocs,
     },
 ];
 
